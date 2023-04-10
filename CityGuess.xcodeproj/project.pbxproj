@@ -17,9 +17,12 @@
 		3EEB998C29E43C6000514F79 /* RedditApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998B29E43C6000514F79 /* RedditApiClient.swift */; };
 		3EEB999229E4580600514F79 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB999129E4580600514F79 /* cities.json */; };
 		3EEB999429E4679B00514F79 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999329E4679B00514F79 /* City.swift */; };
-		3EEB999829E4697200514F79 /* JSONUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999729E4697200514F79 /* JSONUtility.swift */; };
+		3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999729E4697200514F79 /* Bundle+Extension.swift */; };
 		3EEB999B29E47CEB00514F79 /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999A29E47CEB00514F79 /* JsonService.swift */; };
 		3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */; };
+		3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A129E491E000514F79 /* GameStartView.swift */; };
+		3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A329E4923100514F79 /* CityGuessView.swift */; };
+		3EEB99A629E49BFE00514F79 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A529E49BFE00514F79 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +36,12 @@
 		3EEB998B29E43C6000514F79 /* RedditApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditApiClient.swift; sourceTree = "<group>"; };
 		3EEB999129E4580600514F79 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		3EEB999329E4679B00514F79 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		3EEB999729E4697200514F79 /* JSONUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtility.swift; sourceTree = "<group>"; };
+		3EEB999729E4697200514F79 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		3EEB999A29E47CEB00514F79 /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
 		3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessViewModel.swift; sourceTree = "<group>"; };
+		3EEB99A129E491E000514F79 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+		3EEB99A329E4923100514F79 /* CityGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessView.swift; sourceTree = "<group>"; };
+		3EEB99A529E49BFE00514F79 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +75,15 @@
 		3E64ADA529DEFD5300DCCF2E /* CityGuess */ = {
 			isa = PBXGroup;
 			children = (
+				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
+				3EEB99A029E4909D00514F79 /* Views */,
 				3EEB999C29E47E3600514F79 /* ViewModel */,
 				3EEB999929E47CDD00514F79 /* Service */,
 				3EEB999629E467CD00514F79 /* Network */,
 				3EEB999529E467C200514F79 /* Model */,
-				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
-				3E64ADA829DEFD5300DCCF2E /* ContentView.swift */,
 				3EEB999129E4580600514F79 /* cities.json */,
 				3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */,
+				3EEB999F29E4906300514F79 /* Extensions */,
 				3E64ADAC29DEFD5400DCCF2E /* Preview Content */,
 			);
 			path = CityGuess;
@@ -112,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				3EEB999A29E47CEB00514F79 /* JsonService.swift */,
-				3EEB999729E4697200514F79 /* JSONUtility.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -123,6 +129,25 @@
 				3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3EEB999F29E4906300514F79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3EEB999729E4697200514F79 /* Bundle+Extension.swift */,
+				3EEB99A529E49BFE00514F79 /* Array+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3EEB99A029E4909D00514F79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E64ADA829DEFD5300DCCF2E /* ContentView.swift */,
+				3EEB99A129E491E000514F79 /* GameStartView.swift */,
+				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EEB999829E4697200514F79 /* JSONUtility.swift in Sources */,
+				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
+				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
+				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
+				3EEB99A629E49BFE00514F79 /* Array+Extension.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditApiClient.swift in Sources */,
 				3EEB999429E4679B00514F79 /* City.swift in Sources */,

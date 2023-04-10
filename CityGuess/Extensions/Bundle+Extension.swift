@@ -1,41 +1,11 @@
 //
-//  JsonService.swift
+//  Bundle+Extension.swift
 //  CityGuess
 //
 //  Created by Tom Phillips on 4/10/23.
 //
 
 import Foundation
-
-struct JSONUtility {
-
-    static func write<T: Codable>(_ data: T, to file: String) {
-        do {
-            let filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                .appendingPathComponent(file)
-
-            try JSONEncoder().encode(data)
-                .write(to: filePath)
-            
-        } catch (let error) {
-            print(error)
-        }
-    }
-    
-    static func read<T: Codable> (from file: String) -> T? {
-        do {
-            let filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-                .appendingPathComponent(file)
-            
-            let data = try Data(contentsOf: filePath)
-            let decodedData = try JSONDecoder().decode(T.self, from: data)
-            return decodedData
-        } catch {
-            print(error)
-            return nil
-        }
-    }
-}
 
 extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {

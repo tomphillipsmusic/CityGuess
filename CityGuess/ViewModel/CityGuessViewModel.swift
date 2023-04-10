@@ -16,14 +16,13 @@ class CityGuessViewModel: ObservableObject {
     @Published var isCorrect = false
     @Published var priorAnswer = ""
     @Published var guess = ""
-
     
     var cities: [City] = []
     
     let cityService: CityService
     let imageFetcher: CityImageFetching
     
-    init(cityService: CityService, imageFetcher: CityImageFetching) {
+    init(cityService: CityService = JsonCityService(), imageFetcher: CityImageFetching = RedditApiClient()) {
         self.cityService = cityService
         self.imageFetcher = imageFetcher
         
@@ -33,12 +32,12 @@ class CityGuessViewModel: ObservableObject {
         
         cities = cityService.loadCities()
     }
-    
+        
     func fetchCityImages() async {
         try? await cityImages = imageFetcher.fetchCities()
     }
     
-    func submit() {
+    func submit(guess: String) {
         let title = cityImages[currentCityIndex].title
         if title.lowercased().contains(guess.lowercased()) {
             isCorrect = true
@@ -49,6 +48,12 @@ class CityGuessViewModel: ObservableObject {
         
         priorAnswer = title
         currentCityIndex += 1
-        guess = ""
+        self.guess = ""
+    }
+    
+    var autofillSuggestions: [City] {
+        guard !guess.isEmpty else { return [] }
+        let filteredCities = cities.filter { $0.name.starts(with: guess)}
+        return Array(filteredCities.prefix(upToIfPossible: 5))
     }
 }
