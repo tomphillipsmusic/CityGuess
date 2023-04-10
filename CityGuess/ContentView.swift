@@ -8,14 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = CityGuessViewModel(cityService: JsonCityService(), imageFetcher: RedditApiClient())
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            
+            VStack {
+                
+                if !vm.isPlaying {
+                    Button("Start") {
+                        vm.isPlaying = true
+                    }
+                    .disabled(vm.cityImages.isEmpty)
+                } else {
+                    VStack {
+                        Text(vm.priorAnswer)
+                            .foregroundColor(vm.isCorrect ? .green : .red)
+                        Text("Score: \(vm.score)")
+                        AsyncImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url)) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } placeholder: {
+                            ProgressView()
+                        }
+
+                        TextField("Guess", text: $vm.guess)
+                        Button("Guess") {
+                            vm.submit()
+                        }
+                    }
+                }
+            }
+            .navigationTitle("City Guess")
         }
-        .padding()
+        .task {
+            await vm.fetchCityImages()
+            print(vm.cities.count)
+        }
     }
 }
 

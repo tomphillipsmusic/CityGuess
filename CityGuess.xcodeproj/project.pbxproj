@@ -11,6 +11,15 @@
 		3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* ContentView.swift */; };
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
 		3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */; };
+		3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */; };
+		3EEB998829DF69AC00514F79 /* SwiftUl in Frameworks */ = {isa = PBXBuildFile; productRef = 3EEB998729DF69AC00514F79 /* SwiftUl */; };
+		3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998929E43C4700514F79 /* CityImage.swift */; };
+		3EEB998C29E43C6000514F79 /* RedditApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998B29E43C6000514F79 /* RedditApiClient.swift */; };
+		3EEB999229E4580600514F79 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB999129E4580600514F79 /* cities.json */; };
+		3EEB999429E4679B00514F79 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999329E4679B00514F79 /* City.swift */; };
+		3EEB999829E4697200514F79 /* JSONUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999729E4697200514F79 /* JSONUtility.swift */; };
+		3EEB999B29E47CEB00514F79 /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999A29E47CEB00514F79 /* JsonService.swift */; };
+		3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,14 @@
 		3E64ADA829DEFD5300DCCF2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3EEB998929E43C4700514F79 /* CityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImage.swift; sourceTree = "<group>"; };
+		3EEB998B29E43C6000514F79 /* RedditApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditApiClient.swift; sourceTree = "<group>"; };
+		3EEB999129E4580600514F79 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		3EEB999329E4679B00514F79 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3EEB999729E4697200514F79 /* JSONUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtility.swift; sourceTree = "<group>"; };
+		3EEB999A29E47CEB00514F79 /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
+		3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EEB998829DF69AC00514F79 /* SwiftUl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +69,13 @@
 		3E64ADA529DEFD5300DCCF2E /* CityGuess */ = {
 			isa = PBXGroup;
 			children = (
+				3EEB999C29E47E3600514F79 /* ViewModel */,
+				3EEB999929E47CDD00514F79 /* Service */,
+				3EEB999629E467CD00514F79 /* Network */,
+				3EEB999529E467C200514F79 /* Model */,
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
 				3E64ADA829DEFD5300DCCF2E /* ContentView.swift */,
+				3EEB999129E4580600514F79 /* cities.json */,
 				3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */,
 				3E64ADAC29DEFD5400DCCF2E /* Preview Content */,
 			);
@@ -65,6 +88,41 @@
 				3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3EEB999529E467C200514F79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EEB998929E43C4700514F79 /* CityImage.swift */,
+				3EEB999329E4679B00514F79 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3EEB999629E467CD00514F79 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */,
+				3EEB998B29E43C6000514F79 /* RedditApiClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3EEB999929E47CDD00514F79 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3EEB999A29E47CEB00514F79 /* JsonService.swift */,
+				3EEB999729E4697200514F79 /* JSONUtility.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3EEB999C29E47E3600514F79 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +141,9 @@
 			dependencies = (
 			);
 			name = CityGuess;
+			packageProductDependencies = (
+				3EEB998729DF69AC00514F79 /* SwiftUl */,
+			);
 			productName = CityGuess;
 			productReference = 3E64ADA329DEFD5300DCCF2E /* CityGuess.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +172,9 @@
 				Base,
 			);
 			mainGroup = 3E64AD9A29DEFD5300DCCF2E;
+			packageReferences = (
+				3EEB998629DF69AC00514F79 /* XCRemoteSwiftPackageReference "SwiftUl" */,
+			);
 			productRefGroup = 3E64ADA429DEFD5300DCCF2E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EEB999229E4580600514F79 /* cities.json in Resources */,
 				3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */,
 				3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +202,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EEB999829E4697200514F79 /* JSONUtility.swift in Sources */,
+				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
+				3EEB998C29E43C6000514F79 /* RedditApiClient.swift in Sources */,
+				3EEB999429E4679B00514F79 /* City.swift in Sources */,
+				3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */,
+				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,
 				3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */,
+				3EEB999B29E47CEB00514F79 /* JsonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3EEB998629DF69AC00514F79 /* XCRemoteSwiftPackageReference "SwiftUl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sibutrip/SwiftUl";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3EEB998729DF69AC00514F79 /* SwiftUl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EEB998629DF69AC00514F79 /* XCRemoteSwiftPackageReference "SwiftUl" */;
+			productName = SwiftUl;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E64AD9B29DEFD5300DCCF2E /* Project object */;
 }
