@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* ContentView.swift */; };
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
 		3E64ADA829DEFD5300DCCF2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				3EEB999729E4697200514F79 /* Bundle+Extension.swift */,
 				3EEB99A529E49BFE00514F79 /* Array+Extension.swift */,
+				3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
+				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
 				3EEB99A629E49BFE00514F79 /* Array+Extension.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,

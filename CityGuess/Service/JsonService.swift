@@ -15,6 +15,6 @@ struct JsonCityService: CityService {
     static private let filename = "cities.json"
     
     func loadCities() -> [City] {
-        Bundle.main.decode([City].self, from: Self.filename)
+        Bundle.main.decode([City].self, from: Self.filename).sorted(by: { $0.name < $1.name})
     }
 }

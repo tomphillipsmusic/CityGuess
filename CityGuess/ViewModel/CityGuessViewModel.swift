@@ -39,6 +39,7 @@ class CityGuessViewModel: ObservableObject {
     
     func submit(guess: String) {
         let title = cityImages[currentCityIndex].title
+        
         if title.lowercased().contains(guess.lowercased()) {
             isCorrect = true
             score += 1
@@ -53,7 +54,7 @@ class CityGuessViewModel: ObservableObject {
     
     var autofillSuggestions: [City] {
         guard !guess.isEmpty else { return [] }
-        let filteredCities = cities.filter { $0.name.starts(with: guess)}
-        return Array(filteredCities.prefix(upToIfPossible: 5))
+        let numberOfSuggestions = 5
+        return cities.filter({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)
     }
 }
