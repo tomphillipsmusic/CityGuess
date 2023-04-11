@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = CityGuessViewModel(cityService: JsonCityService(), imageFetcher: RedditApiClient())
+    @StateObject var vm = CityGuessViewModel(cityService: JsonCityService(), imageFetcher: RedditClient())
     
     var body: some View {
         NavigationStack {
-            
             VStack {
                 
                 if !vm.isPlaying {

@@ -21,7 +21,7 @@ class CityGuessViewModel: ObservableObject {
     let cityService: CityService
     let imageFetcher: CityImageFetching
     
-    init(cityService: CityService = JsonCityService(), imageFetcher: CityImageFetching = RedditApiClient()) {
+    init(cityService: CityService = JsonCityService(), imageFetcher: CityImageFetching = RedditClient()) {
         self.cityService = cityService
         self.imageFetcher = imageFetcher
         
@@ -33,7 +33,7 @@ class CityGuessViewModel: ObservableObject {
     }
         
     func fetchCityImages() async {
-        try? await cityImages = imageFetcher.fetchCities()
+        try? await cityImages = imageFetcher.fetchCityImages()
     }
     
     func startGame() {

@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */; };
+		3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A436D29E5DE9C00A9D2BE /* testcities.json */; };
+		3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* ContentView.swift */; };
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
 		3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */; };
 		3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */; };
-		3EEB998829DF69AC00514F79 /* SwiftUl in Frameworks */ = {isa = PBXBuildFile; productRef = 3EEB998729DF69AC00514F79 /* SwiftUl */; };
 		3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998929E43C4700514F79 /* CityImage.swift */; };
-		3EEB998C29E43C6000514F79 /* RedditApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998B29E43C6000514F79 /* RedditApiClient.swift */; };
+		3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998B29E43C6000514F79 /* RedditClient.swift */; };
 		3EEB999229E4580600514F79 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB999129E4580600514F79 /* cities.json */; };
 		3EEB999429E4679B00514F79 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999329E4679B00514F79 /* City.swift */; };
 		3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999729E4697200514F79 /* Bundle+Extension.swift */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		3E0A436D29E5DE9C00A9D2BE /* testcities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testcities.json; sourceTree = "<group>"; };
+		3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImagesResponse.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
 		3E64ADA829DEFD5300DCCF2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,7 +38,7 @@
 		3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3EEB998929E43C4700514F79 /* CityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImage.swift; sourceTree = "<group>"; };
-		3EEB998B29E43C6000514F79 /* RedditApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditApiClient.swift; sourceTree = "<group>"; };
+		3EEB998B29E43C6000514F79 /* RedditClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditClient.swift; sourceTree = "<group>"; };
 		3EEB999129E4580600514F79 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		3EEB999329E4679B00514F79 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3EEB999729E4697200514F79 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EEB998829DF69AC00514F79 /* SwiftUl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */,
+				3E0A436D29E5DE9C00A9D2BE /* testcities.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -104,6 +107,7 @@
 			children = (
 				3EEB998929E43C4700514F79 /* CityImage.swift */,
 				3EEB999329E4679B00514F79 /* City.swift */,
+				3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */,
-				3EEB998B29E43C6000514F79 /* RedditApiClient.swift */,
+				3EEB998B29E43C6000514F79 /* RedditClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -170,7 +174,6 @@
 			);
 			name = CityGuess;
 			packageProductDependencies = (
-				3EEB998729DF69AC00514F79 /* SwiftUl */,
 			);
 			productName = CityGuess;
 			productReference = 3E64ADA329DEFD5300DCCF2E /* CityGuess.app */;
@@ -217,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */,
 				3EEB999229E4580600514F79 /* cities.json in Resources */,
 				3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */,
 				3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */,
@@ -236,11 +240,12 @@
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
 				3EEB99A629E49BFE00514F79 /* Array+Extension.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
-				3EEB998C29E43C6000514F79 /* RedditApiClient.swift in Sources */,
+				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
 				3EEB999429E4679B00514F79 /* City.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */,
 				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,
+				3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */,
 				3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */,
 				3EEB999B29E47CEB00514F79 /* JsonService.swift in Sources */,
 			);
@@ -454,14 +459,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3EEB998729DF69AC00514F79 /* SwiftUl */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3EEB998629DF69AC00514F79 /* XCRemoteSwiftPackageReference "SwiftUl" */;
-			productName = SwiftUl;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E64AD9B29DEFD5300DCCF2E /* Project object */;
 }
