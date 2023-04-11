@@ -9,15 +9,14 @@ import Foundation
 
 @MainActor
 class CityGuessViewModel: ObservableObject {
-    @Published var cityImages = [CityImage]()
-    @Published var score = 0
-    @Published var currentCityIndex = 0
-    @Published var isPlaying = false
-    @Published var isCorrect = false
-    @Published var priorAnswer = ""
-    @Published var guess = ""
+    @Published private(set) var cityImages = [CityImage]()
+    @Published private(set) var score = 0
+    @Published private(set) var currentCityIndex = 0
+    @Published private(set) var isPlaying = false
+    @Published private(set) var isCorrect = false
+    @Published private(set) var priorAnswer = ""
     
-    var cities: [City] = []
+    private var cities: [City] = []
     
     let cityService: CityService
     let imageFetcher: CityImageFetching
@@ -37,6 +36,10 @@ class CityGuessViewModel: ObservableObject {
         try? await cityImages = imageFetcher.fetchCities()
     }
     
+    func startGame() {
+        isPlaying = true
+    }
+    
     func submit(guess: String) {
         let title = cityImages[currentCityIndex].title
         
@@ -49,10 +52,9 @@ class CityGuessViewModel: ObservableObject {
         
         priorAnswer = title
         currentCityIndex += 1
-        self.guess = ""
     }
-    
-    var autofillSuggestions: [City] {
+
+    func autofillSuggestions(for guess: String) -> [City] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 5
         return cities.filter({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)

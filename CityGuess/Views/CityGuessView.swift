@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CityGuessView: View {
     @ObservedObject var vm: CityGuessViewModel
+    @State private var guess = ""
+    
     var body: some View {
         VStack {
             Text(vm.priorAnswer)
@@ -24,10 +26,11 @@ struct CityGuessView: View {
             
             ScrollView(.horizontal){
                 VStack(alignment: .center) {
-                    ForEach(vm.autofillSuggestions) { autofill in
+                    ForEach(vm.autofillSuggestions(for: guess)) { autofill in
                         let cityName = autofill.name
                         Button(autofill.name) {
                             vm.submit(guess: cityName)
+                            self.guess = ""
                         }
                         .padding()
                         
@@ -35,11 +38,9 @@ struct CityGuessView: View {
                 }
             }
             
-            TextField("Guess", text: $vm.guess)
+            TextField("Guess", text: $guess)
                 .padding()
-
         }
-        
     }
 }
 

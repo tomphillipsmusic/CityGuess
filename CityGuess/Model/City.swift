@@ -17,3 +17,9 @@ struct City: Codable, Identifiable {
         country + name + lat + lng
     }
 }
+
+extension City: Equatable {
+    static func == (lhs: City, rhs: City) -> Bool {
+        lhs.name == rhs.name
+    }
+}

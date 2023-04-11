@@ -11,7 +11,7 @@ struct GameStartView: View {
     @ObservedObject var vm: CityGuessViewModel
     var body: some View {
         Button("Start") {
-            vm.isPlaying = true
+            vm.startGame()
         }
         .disabled(vm.cityImages.isEmpty)
     }

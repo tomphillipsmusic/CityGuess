@@ -25,7 +25,6 @@ struct ContentView: View {
         }
         .task {
             await vm.fetchCityImages()
-            print(vm.cities.count)
         }
     }
 }
