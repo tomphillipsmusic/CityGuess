@@ -17,9 +17,8 @@ class CityGuessViewModel: ObservableObject {
     @Published private(set) var priorAnswer = ""
     
     private var cities: [City] = []
-    
-    let cityService: CityService
-    let imageFetcher: CityImageFetching
+    private let cityService: CityService
+    private let imageFetcher: CityImageFetching
     
     init(cityService: CityService = JsonCityService(), imageFetcher: CityImageFetching = RedditClient()) {
         self.cityService = cityService

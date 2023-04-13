@@ -24,7 +24,6 @@
 		3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */; };
 		3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A129E491E000514F79 /* GameStartView.swift */; };
 		3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A329E4923100514F79 /* CityGuessView.swift */; };
-		3EEB99A629E49BFE00514F79 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A529E49BFE00514F79 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +45,6 @@
 		3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessViewModel.swift; sourceTree = "<group>"; };
 		3EEB99A129E491E000514F79 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		3EEB99A329E4923100514F79 /* CityGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessView.swift; sourceTree = "<group>"; };
-		3EEB99A529E49BFE00514F79 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				3EEB999729E4697200514F79 /* Bundle+Extension.swift */,
-				3EEB99A529E49BFE00514F79 /* Array+Extension.swift */,
 				3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */,
 			);
 			path = Extensions;
@@ -238,7 +235,6 @@
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
 				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
-				3EEB99A629E49BFE00514F79 /* Array+Extension.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
 				3EEB999429E4679B00514F79 /* City.swift in Sources */,
