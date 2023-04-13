@@ -11,6 +11,11 @@ protocol CityImageFetching {
     func fetchCityImages() async throws -> [CityImage]
 }
 
+protocol CityFetching {
+    associatedtype CityModel: City
+    func fetchCities() async throws -> [CityModel]
+}
+
 class RedditClient: CityImageFetching {
     enum Endpoint {
         static let new = "new.json"
@@ -30,7 +35,12 @@ struct MockRedditClient: CityImageFetching {
     static private let filename = "testcities.json"
     
     func fetchCityImages() async throws -> [CityImage] {
-        let decodedJson = Bundle.main.decode(CityImagesResponse.self, from: Self.filename)
-        return decodedJson.data.children.map { $0.data }
+        do {
+            let decodedJson = try Bundle.main.decode(CityImagesResponse.self, from: Self.filename)
+            return decodedJson.data.children.map { $0.data }
+        } catch  {
+            print(error)
+            throw error
+        }
     }
 }

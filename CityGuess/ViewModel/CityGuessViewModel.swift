@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class CityGuessViewModel: ObservableObject {
+class CityGuessViewModel<T: City>: ObservableObject {
     @Published private(set) var cityImages = [CityImage]()
     @Published private(set) var score = 0
     @Published private(set) var currentCityIndex = 0
@@ -16,7 +16,7 @@ class CityGuessViewModel: ObservableObject {
     @Published private(set) var isCorrect = false
     @Published private(set) var priorAnswer = ""
     
-    private var cities: [City] = []
+    private var cities: [T] = []
     private let cityService: CityService
     private let imageFetcher: CityImageFetching
     
@@ -25,14 +25,38 @@ class CityGuessViewModel: ObservableObject {
         self.imageFetcher = imageFetcher
         
         Task {
-            await fetchCityImages()
+            //await fetchCityImages()
+            
+            if let cityFetcher = imageFetcher as? any CityFetching {
+                if let cities = try? await cityFetcher.fetchCities() as? [T] {
+                    self.cities = cities
+                    try? cityService.save(cities)
+                    print(cities.count)
+                    
+                    do {
+                        cityImages = try await imageFetcher.fetchCityImages()
+                        print(cityImages.count)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+//            do {
+//                cities = try cityService.loadCities()
+//            } catch {
+//                print(error)
+//            }
         }
         
-        cities = cityService.loadCities()
     }
         
     func fetchCityImages() async {
         try? await cityImages = imageFetcher.fetchCityImages()
+    }
+    
+    func fetchCities() async {
+        //try? await cities = imageFetcher.
     }
     
     func startGame() {
@@ -53,9 +77,9 @@ class CityGuessViewModel: ObservableObject {
         currentCityIndex += 1
     }
 
-    func autofillSuggestions(for guess: String) -> [City] {
+    func autofillSuggestions(for guess: String) -> [T] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 5
-        return cities.filter({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)
+        return cities.filterUniqueItems({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)
     }
 }

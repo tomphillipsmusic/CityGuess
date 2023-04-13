@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CityGuessView: View {
-    @ObservedObject var vm: CityGuessViewModel
+    @ObservedObject var vm: CityGuessViewModel<TeleportApiClient.TeleportCity>
     @State private var guess = ""
     
     var body: some View {

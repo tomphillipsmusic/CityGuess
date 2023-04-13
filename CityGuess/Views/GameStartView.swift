@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameStartView: View {
-    @ObservedObject var vm: CityGuessViewModel
+    @ObservedObject var vm: CityGuessViewModel<TeleportApiClient.TeleportCity>
     var body: some View {
         Button("Start") {
             vm.startGame()

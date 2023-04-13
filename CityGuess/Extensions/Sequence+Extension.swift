@@ -8,19 +8,19 @@
 import Foundation
 
 extension Sequence {
-    func filter(_ isIncluded: (Self.Element) -> Bool, limit: Int) -> [Self.Element] where Element: Equatable {
+    func filterUniqueItems(_ isIncluded: (Self.Element) -> Bool, limit: Int) -> [Self.Element] where Element: Hashable {
         var filteredCount = 0
-        var results: [Self.Element] = []
+        var results: Set<Self.Element> = []
         results.reserveCapacity(limit)
         var iterator = self.makeIterator()
         
         while filteredCount < limit, let element = iterator.next() {
             if isIncluded(element), !results.contains(where: { $0 == element }) {
                 filteredCount += 1
-                results.append(element)
+                results.insert(element)
             }
         }
         
-        return results
+        return Array(results)
     }
 }
