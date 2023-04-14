@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CityGuessView: View {
-    @ObservedObject var vm: CityGuessViewModel<TeleportApiClient.TeleportCity>
+    @ObservedObject var vm: CityGuessViewModel<TeleportCity>
     @State private var guess = ""
     
     var body: some View {
@@ -50,6 +50,6 @@ struct CityGuessView: View {
 
 struct CityGuessView_Previews: PreviewProvider {
     static var previews: some View {
-        CityGuessView(vm: CityGuessViewModel(imageFetcher: MockRedditClient()))
+        CityGuessView(vm: CityGuessViewModel<TeleportCity>())
     }
 }

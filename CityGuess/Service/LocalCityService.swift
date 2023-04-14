@@ -8,7 +8,11 @@
 import Foundation
 
 struct LocalCityService: CityService {
-    let jsonService = JsonService()
+    let service: ReadWrite
+    
+    init(service: ReadWrite = JsonService()) {
+        self.service = service
+    }
     
     func save<T: City>(_ cities: [T]) throws where T : City, T : Encodable {
         write(cities)
@@ -23,10 +27,10 @@ struct LocalCityService: CityService {
     }
     
     func write<T: Codable>(_ data: T) -> Void {
-        jsonService.write(data, to: Self.filename)
+        service.write(data, to: Self.filename)
     }
     
     func read<T: Codable> () -> T? {
-        jsonService.read(from: Self.filename)
+        service.read(from: Self.filename)
     }
 }

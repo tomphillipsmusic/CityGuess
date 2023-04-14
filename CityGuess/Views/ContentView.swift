@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = CityGuessViewModel<TeleportApiClient.TeleportCity>(cityService: LocalCityService(), imageFetcher: TeleportApiClient())
+    @StateObject var vm = CityGuessViewModel<TeleportCity>()
     
     var body: some View {
         NavigationStack {

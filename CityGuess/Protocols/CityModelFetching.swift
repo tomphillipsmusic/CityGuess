@@ -7,7 +7,13 @@
 
 import Foundation
 
-protocol CityFetching {
+typealias CityFetching = CityModelFetching & CityImageFetching
+
+protocol CityModelFetching {
     associatedtype CityModel: City
     func fetchCities() async throws -> [CityModel]
+}
+
+protocol CityImageFetching {
+    func fetchCityImages() async throws -> [CityImage]
 }

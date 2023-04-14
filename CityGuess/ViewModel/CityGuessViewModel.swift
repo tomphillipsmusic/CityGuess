@@ -18,41 +18,31 @@ class CityGuessViewModel<T: City>: ObservableObject {
     
     private var cities: [T] = []
     private let cityService: CityService
-    private let imageFetcher: CityImageFetching
+    private let cityFetcher: any CityFetching
     
-    init(cityService: CityService = LocalCityService(), imageFetcher: CityImageFetching = RedditClient()) {
+    init(cityService: CityService = LocalCityService(), cityFetcher: any CityFetching = TeleportApiClient()) {
         self.cityService = cityService
-        self.imageFetcher = imageFetcher
+        self.cityFetcher = cityFetcher
         
         Task {
-            //await fetchCityImages()
-            
-            if let cityFetcher = imageFetcher as? any CityFetching {
-                if let cities = try? await cityFetcher.fetchCities() as? [T] {
-                    self.cities = cities
-                    try? cityService.save(cities)
-                    print(cities.count)
-                    
-                    do {
-                        cityImages = try await imageFetcher.fetchCityImages()
-                        print(cityImages.count)
-                    } catch {
-                        print(error)
-                    }
+            if let cities = try? await cityFetcher.fetchCities() as? [T] {
+                self.cities = cities
+                try? cityService.save(cities)
+                print("Cities Count: " + "\(cities.count)")
+                
+                do {
+                    cityImages = try await cityFetcher.fetchCityImages()
+                    print("City images count: " + "\(cityImages.count)")
+                } catch {
+                    print(error)
                 }
             }
-            
-//            do {
-//                cities = try cityService.loadCities()
-//            } catch {
-//                print(error)
-//            }
         }
         
     }
         
     func fetchCityImages() async {
-        try? await cityImages = imageFetcher.fetchCityImages()
+        try? await cityImages = cityFetcher.fetchCityImages()
     }
     
     func fetchCities() async {

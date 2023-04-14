@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameStartView: View {
-    @ObservedObject var vm: CityGuessViewModel<TeleportApiClient.TeleportCity>
+    @ObservedObject var vm: CityGuessViewModel<TeleportCity>
     var body: some View {
         Button("Start") {
             vm.startGame()
@@ -19,6 +19,6 @@ struct GameStartView: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-        GameStartView(vm: CityGuessViewModel(cityService: LocalCityService(), imageFetcher: RedditClient()))
+        GameStartView(vm: CityGuessViewModel())
     }
 }
