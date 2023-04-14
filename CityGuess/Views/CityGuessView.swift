@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CityGuessView: View {
     @ObservedObject var vm: CityGuessViewModel<TeleportCity>
     @State private var guess = ""
-    
+
     var body: some View {
         VStack {
             if vm.cityImages.isEmpty {
@@ -19,8 +20,9 @@ struct CityGuessView: View {
                 Text(vm.priorAnswer)
                     .foregroundColor(vm.isCorrect ? .green : .red)
                 Text("Score: \(vm.score)")
-                Spacer()
-                AsyncImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url)) { image in
+                    .padding()
+                
+                CachedAsyncImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url)) { image in
                     image
                         .resizable()
                         .scaledToFit()
@@ -28,6 +30,7 @@ struct CityGuessView: View {
                     ProgressView()
                 }
                 
+                Spacer()
                 ScrollView(.horizontal){
                     VStack(alignment: .center) {
                         ForEach(vm.autofillSuggestions(for: guess)) { autofill in
