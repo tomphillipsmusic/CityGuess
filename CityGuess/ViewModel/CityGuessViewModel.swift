@@ -15,6 +15,7 @@ class CityGuessViewModel<T: City>: ObservableObject {
     @Published private(set) var isPlaying = false
     @Published private(set) var isCorrect = false
     @Published private(set) var priorAnswer = ""
+    @Published var numberOfRounds = 5
     
     private var cities: [T] = []
     private let cityService: CityService
@@ -33,6 +34,14 @@ class CityGuessViewModel<T: City>: ObservableObject {
     
     var isGameOver: Bool {
         currentCityIndex == roundLength
+    }
+    
+    var roundOptions: [Int] {
+        [5, 10, 25, 50, 100, cities.count]
+    }
+    
+    var currentRound: Int {
+        currentCityIndex + 1
     }
         
     func fetchCityImages() async {
@@ -59,10 +68,12 @@ class CityGuessViewModel<T: City>: ObservableObject {
         }
     }
     
-    func startGame() {
+    func startGame(with numberOfRounds: Int) {
+        self.numberOfRounds = numberOfRounds
         isPlaying = true
         score = 0
         cities.shuffle()
+        priorAnswer = ""
         currentCityIndex = 0
     }
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TrainingView: View {
     @StateObject var vm = CityGuessViewModel<TeleportCity>()
     
     var body: some View {
@@ -22,7 +22,8 @@ struct ContentView: View {
                     CityGuessView(vm: vm)
                 }
             }
-            .navigationTitle("City Guess")
+            .navigationTitle("Training")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .task {
             await vm.fetchCityImages()
@@ -32,6 +33,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TrainingView()
     }
 }

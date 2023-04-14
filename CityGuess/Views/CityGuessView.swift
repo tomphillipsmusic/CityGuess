@@ -19,6 +19,7 @@ struct CityGuessView: View {
                 Text(vm.priorAnswer)
                     .foregroundColor(vm.isCorrect ? .green : .red)
                 Text("Score: \(vm.score)")
+                Spacer()
                 AsyncImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url)) { image in
                     image
                         .resizable()
@@ -43,6 +44,13 @@ struct CityGuessView: View {
                 
                 TextField("Guess", text: $guess)
                     .padding()
+            }
+                
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Text("\(vm.currentRound) / \(vm.numberOfRounds)")
+                    .font(.title2)
             }
         }
     }
