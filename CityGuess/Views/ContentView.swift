@@ -16,6 +16,8 @@ struct ContentView: View {
                 
                 if !vm.isPlaying {
                   GameStartView(vm: vm)
+                } else if vm.isGameOver {
+                  GameOverOver(vm: vm)
                 } else {
                     CityGuessView(vm: vm)
                 }
