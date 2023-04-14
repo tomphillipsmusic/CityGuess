@@ -19,6 +19,7 @@ class CityGuessViewModel<T: City>: ObservableObject {
     private var cities: [T] = []
     private let cityService: CityService
     private let cityFetcher: any CityFetching
+    private let roundLength = 10
     
     init(cityService: CityService = LocalCityService(), cityFetcher: any CityFetching = TeleportApiClient()) {
         self.cityService = cityService
@@ -28,6 +29,10 @@ class CityGuessViewModel<T: City>: ObservableObject {
             await fetchCities()
             await fetchCityImages()
         }
+    }
+    
+    var isGameOver: Bool {
+        currentCityIndex == roundLength
     }
         
     func fetchCityImages() async {
@@ -56,6 +61,13 @@ class CityGuessViewModel<T: City>: ObservableObject {
     
     func startGame() {
         isPlaying = true
+        score = 0
+        cities.shuffle()
+        currentCityIndex = 0
+    }
+    
+    func endGame() {
+        isPlaying = false
     }
     
     func submit(guess: String) {
