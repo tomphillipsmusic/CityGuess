@@ -21,7 +21,7 @@ struct JsonService: ReadWrite {
         }
     }
     
-    func read<T: Decodable> (from filename: String) -> T? {
+    func read<T: Decodable> (from filename: String) throws -> T {
         do {
             let filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
                 .appendingPathComponent(filename)
@@ -31,7 +31,7 @@ struct JsonService: ReadWrite {
             return decodedData
         } catch {
             print(error)
-            return nil
+            throw error
         }
     }
 }

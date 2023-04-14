@@ -25,13 +25,20 @@ class CityGuessViewModel<T: City>: ObservableObject {
         self.cityFetcher = cityFetcher
         
         Task {
+            
             if let cities = try? await cityFetcher.fetchCities() as? [T] {
                 self.cities = cities
-                try? cityService.save(cities)
+                try cityService.save(cities)
                 print("Cities Count: " + "\(cities.count)")
                 
                 do {
-                    cityImages = try await cityFetcher.fetchCityImages()
+                    if let cityImages = try? cityService.loadImages() {
+                        self.cityImages = cityImages.shuffled()
+                    } else {
+                        cityImages = try await cityFetcher.fetchCityImages().shuffled()
+                        cityService.save(cityImages)
+                    }
+                    
                     print("City images count: " + "\(cityImages.count)")
                 } catch {
                     print(error)

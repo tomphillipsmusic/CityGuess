@@ -10,7 +10,7 @@ import Foundation
 typealias ReadWrite = Read & Write
 
 protocol Read {
-    func read<T: Decodable> (from filename: String) -> T?
+    func read<T: Decodable> (from filename: String) throws -> T
 }
 
 protocol Write {

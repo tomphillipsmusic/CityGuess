@@ -8,29 +8,30 @@
 import Foundation
 
 struct LocalCityService: CityService {
+    static private let citiesFile = "cities.json"
+    static private let imagesFile = "images.json"
+    
     let service: ReadWrite
     
     init(service: ReadWrite = JsonService()) {
         self.service = service
     }
     
-    func save<T: City>(_ cities: [T]) throws where T : City, T : Encodable {
-        write(cities)
+    func loadImages() throws -> [CityImage] {
+        try service.read(from: Self.imagesFile)
     }
-    
-    static private let filename = "cities.json"
     
     func loadCities<T: City>() throws -> [T] where T: Decodable {
         do {
-            return try Bundle.main.decode([T].self, from: Self.filename).sorted(by: { $0.name < $1.name})
+            return try Bundle.main.decode([T].self, from: Self.citiesFile).sorted(by: { $0.name < $1.name})
         }
     }
     
-    func write<T: Codable>(_ data: T) -> Void {
-        service.write(data, to: Self.filename)
+    func save(_ images: [CityImage]) {
+        service.write(images, to: Self.imagesFile)
     }
     
-    func read<T: Codable> () -> T? {
-        service.read(from: Self.filename)
+    func save<T: City>(_ cities: [T]) throws where T : City, T : Encodable {
+        service.write(cities, to: Self.citiesFile)
     }
 }
