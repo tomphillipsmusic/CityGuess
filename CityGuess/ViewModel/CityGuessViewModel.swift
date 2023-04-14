@@ -25,35 +25,33 @@ class CityGuessViewModel<T: City>: ObservableObject {
         self.cityFetcher = cityFetcher
         
         Task {
-            
-            if let cities = try? await cityFetcher.fetchCities() as? [T] {
-                self.cities = cities
-                try cityService.save(cities)
-                print("Cities Count: " + "\(cities.count)")
-                
-                do {
-                    if let cityImages = try? cityService.loadImages() {
-                        self.cityImages = cityImages.shuffled()
-                    } else {
-                        cityImages = try await cityFetcher.fetchCityImages().shuffled()
-                        cityService.save(cityImages)
-                    }
-                    
-                    print("City images count: " + "\(cityImages.count)")
-                } catch {
-                    print(error)
-                }
-            }
+            await fetchCities()
+            await fetchCityImages()
         }
-        
     }
         
     func fetchCityImages() async {
-        try? await cityImages = cityFetcher.fetchCityImages()
+        do {
+            if let cityImages = try? cityService.loadImages() {
+                self.cityImages = cityImages.shuffled()
+            } else {
+                cityImages = try await cityFetcher.fetchCityImages().shuffled()
+                cityService.save(cityImages)
+            }
+            
+            print("City images count: " + "\(cityImages.count)")
+        } catch {
+            print(error)
+        }
     }
     
     func fetchCities() async {
-        //try? await cities = imageFetcher.
+        if let cities: [T] = try? cityService.loadCities() {
+            self.cities = cities
+        } else if let cities = try? await cityFetcher.fetchCities() as? [T] {
+            self.cities = cities
+            try? cityService.save(cities)
+        }
     }
     
     func startGame() {

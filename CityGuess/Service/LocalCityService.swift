@@ -22,9 +22,7 @@ struct LocalCityService: CityService {
     }
     
     func loadCities<T: City>() throws -> [T] where T: Decodable {
-        do {
-            return try Bundle.main.decode([T].self, from: Self.citiesFile).sorted(by: { $0.name < $1.name})
-        }
+        try service.read(from: Self.citiesFile)
     }
     
     func save(_ images: [CityImage]) {
