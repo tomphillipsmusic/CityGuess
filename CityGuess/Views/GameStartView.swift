@@ -9,11 +9,54 @@ import SwiftUI
 
 struct GameStartView: View {
     @ObservedObject var vm: CityGuessViewModel<TeleportCity>
+    @State private var numberOfRounds = 10
+
     var body: some View {
-        Button("Start") {
-            vm.startGame()
+        ZStack {
+            AsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: UIScreen.main.bounds.width)
+                    .opacity(0.8)
+            } placeholder: {
+                Color.secondary
+            }
+            VStack {
+                
+
+                Text("Do you have what it takes to be a true City Guesser?")
+                    .font(.title)
+                    .padding()
+                
+                Text("Take a spin through our images of famous cities from around the world and do your best to guess the name of the city!")
+                    .font(.headline)
+                    .padding()
+                
+                HStack {
+                    Text("Number of Cities:")
+                    
+                    Picker("Number of Cities", selection: $numberOfRounds) {
+                        ForEach(vm.roundOptions, id: \.self) {
+                            Text("\($0)")
+                                .tag($0)
+                        }
+                    }
+                }
+                
+                
+                
+                Button("Start Training!") {
+                    vm.startGame(with: numberOfRounds)
+                }
+                .disabled(vm.cityImages.isEmpty)
+                .padding()
+            }
+            .background(
+                .background
+                    .opacity(0.9)
+            )
         }
-        .disabled(vm.cityImages.isEmpty)
     }
 }
 
