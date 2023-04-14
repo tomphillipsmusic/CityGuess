@@ -18,21 +18,23 @@
 		3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438329E9818400A9D2BE /* TeleportCitiesResponse.swift */; };
 		3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438529E981B100A9D2BE /* TeleportCity.swift */; };
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
-		3E0A438B29E9C34400A9D2BE /* GameOverOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameOverOver.swift */; };
+		3E0A438B29E9C34400A9D2BE /* TrainingEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* TrainingEndView.swift */; };
 		3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
-		3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* ContentView.swift */; };
+		3E64ADA929DEFD5300DCCF2E /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* TrainingView.swift */; };
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
 		3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */; };
 		3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */; };
+		3E9C7D4329E9ED1B0073CCE4 /* DailyChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4229E9ED1B0073CCE4 /* DailyChallengeView.swift */; };
+		3E9C7D4529E9ED290073CCE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4429E9ED290073CCE4 /* ContentView.swift */; };
 		3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998929E43C4700514F79 /* CityImage.swift */; };
 		3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998B29E43C6000514F79 /* RedditClient.swift */; };
 		3EEB999229E4580600514F79 /* bigcities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB999129E4580600514F79 /* bigcities.json */; };
 		3EEB999429E4679B00514F79 /* GeoNamesCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999329E4679B00514F79 /* GeoNamesCity.swift */; };
 		3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999729E4697200514F79 /* Bundle+Extension.swift */; };
 		3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999A29E47CEB00514F79 /* LocalCityService.swift */; };
-		3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */; };
-		3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A129E491E000514F79 /* GameStartView.swift */; };
+		3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */; };
+		3EEB99A229E491E000514F79 /* TrainingStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A129E491E000514F79 /* TrainingStartView.swift */; };
 		3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A329E4923100514F79 /* CityGuessView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,21 +50,23 @@
 		3E0A438329E9818400A9D2BE /* TeleportCitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCitiesResponse.swift; sourceTree = "<group>"; };
 		3E0A438529E981B100A9D2BE /* TeleportCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCity.swift; sourceTree = "<group>"; };
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
-		3E0A438A29E9C34400A9D2BE /* GameOverOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverOver.swift; sourceTree = "<group>"; };
+		3E0A438A29E9C34400A9D2BE /* TrainingEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingEndView.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
-		3E64ADA829DEFD5300DCCF2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3E64ADA829DEFD5300DCCF2E /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
 		3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3E9C7D4229E9ED1B0073CCE4 /* DailyChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeView.swift; sourceTree = "<group>"; };
+		3E9C7D4429E9ED290073CCE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3EEB998929E43C4700514F79 /* CityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImage.swift; sourceTree = "<group>"; };
 		3EEB998B29E43C6000514F79 /* RedditClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditClient.swift; sourceTree = "<group>"; };
 		3EEB999129E4580600514F79 /* bigcities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bigcities.json; sourceTree = "<group>"; };
 		3EEB999329E4679B00514F79 /* GeoNamesCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoNamesCity.swift; sourceTree = "<group>"; };
 		3EEB999729E4697200514F79 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		3EEB999A29E47CEB00514F79 /* LocalCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCityService.swift; sourceTree = "<group>"; };
-		3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessViewModel.swift; sourceTree = "<group>"; };
-		3EEB99A129E491E000514F79 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+		3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
+		3EEB99A129E491E000514F79 /* TrainingStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStartView.swift; sourceTree = "<group>"; };
 		3EEB99A329E4923100514F79 /* CityGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,10 +111,18 @@
 			path = Reddit;
 			sourceTree = "<group>";
 		};
+		3E0A439329E9E75D00A9D2BE /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				3E64ADA829DEFD5300DCCF2E /* TrainingView.swift */,
+				3EEB99A129E491E000514F79 /* TrainingStartView.swift */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
 		3E64AD9A29DEFD5300DCCF2E = {
 			isa = PBXGroup;
 			children = (
-				3E0A438A29E9C34400A9D2BE /* GameOverOver.swift */,
 				3E64ADA529DEFD5300DCCF2E /* CityGuess */,
 				3E64ADA429DEFD5300DCCF2E /* Products */,
 			);
@@ -151,6 +163,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3E9C7D4129E9ED0F0073CCE4 /* DailyChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				3E9C7D4229E9ED1B0073CCE4 /* DailyChallengeView.swift */,
+			);
+			path = DailyChallenge;
+			sourceTree = "<group>";
+		};
 		3EEB999529E467C200514F79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +203,7 @@
 		3EEB999C29E47E3600514F79 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3EEB999D29E47E4400514F79 /* CityGuessViewModel.swift */,
+				3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -200,9 +220,11 @@
 		3EEB99A029E4909D00514F79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3E64ADA829DEFD5300DCCF2E /* ContentView.swift */,
-				3EEB99A129E491E000514F79 /* GameStartView.swift */,
+				3E9C7D4129E9ED0F0073CCE4 /* DailyChallenge */,
+				3E0A438A29E9C34400A9D2BE /* TrainingEndView.swift */,
+				3E0A439329E9E75D00A9D2BE /* Training */,
 				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
+				3E9C7D4429E9ED290073CCE4 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,24 +310,26 @@
 			files = (
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
+				3E9C7D4529E9ED290073CCE4 /* ContentView.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
 				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
-				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
+				3EEB99A229E491E000514F79 /* TrainingStartView.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
 				3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */,
 				3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */,
 				3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
 				3EEB999429E4679B00514F79 /* GeoNamesCity.swift in Sources */,
-				3EEB999E29E47E4400514F79 /* CityGuessViewModel.swift in Sources */,
+				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityModelFetching.swift in Sources */,
-				3E64ADA929DEFD5300DCCF2E /* ContentView.swift in Sources */,
+				3E64ADA929DEFD5300DCCF2E /* TrainingView.swift in Sources */,
+				3E9C7D4329E9ED1B0073CCE4 /* DailyChallengeView.swift in Sources */,
 				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,
 				3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */,
 				3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */,
-				3E0A438B29E9C34400A9D2BE /* GameOverOver.swift in Sources */,
+				3E0A438B29E9C34400A9D2BE /* TrainingEndView.swift in Sources */,
 				3E0A437229E84E1500A9D2BE /* TeleportApiClient.swift in Sources */,
 				3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */,
 			);

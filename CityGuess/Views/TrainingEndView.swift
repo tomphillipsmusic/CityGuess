@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct GameOverOver: View {
-    @ObservedObject var vm: CityGuessViewModel<TeleportCity>
+struct TrainingEndView: View {
+    @ObservedObject var vm: TrainingViewModel<TeleportCity>
     
     var body: some View {
         VStack {
@@ -30,6 +30,6 @@ struct GameOverOver: View {
 
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
-        GameOverOver(vm: CityGuessViewModel())
+        TrainingEndView(vm: CityGuessViewModel())
     }
 }

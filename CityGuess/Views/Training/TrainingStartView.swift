@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
-struct GameStartView: View {
-    @ObservedObject var vm: CityGuessViewModel<TeleportCity>
+struct TrainingStartView: View {
+    @ObservedObject var vm: TrainingViewModel<TeleportCity>
     @State private var numberOfRounds = 10
 
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
+            CachedAsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -62,6 +63,6 @@ struct GameStartView: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-        GameStartView(vm: CityGuessViewModel())
+        TrainingStartView(vm: TrainingViewModel())
     }
 }

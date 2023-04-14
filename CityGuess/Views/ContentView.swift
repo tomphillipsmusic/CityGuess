@@ -2,37 +2,29 @@
 //  ContentView.swift
 //  CityGuess
 //
-//  Created by Tom Phillips on 4/6/23.
+//  Created by Tom Phillips on 4/14/23.
 //
 
 import SwiftUI
 
-struct TrainingView: View {
-    @StateObject var vm = CityGuessViewModel<TeleportCity>()
-    
+struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            VStack {
-                
-                if !vm.isPlaying {
-                  GameStartView(vm: vm)
-                } else if vm.isGameOver {
-                  GameOverOver(vm: vm)
-                } else {
-                    CityGuessView(vm: vm)
+        TabView {
+            TrainingView()
+                .tabItem {
+                    Label("Training", systemImage: "globe.americas.fill")
                 }
-            }
-            .navigationTitle("Training")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-        .task {
-            await vm.fetchCityImages()
+            
+            DailyChallengeView()
+                .tabItem {
+                    Label("Daily Challenge", systemImage: "medal")
+                }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingView()
+        ContentView()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class CityGuessViewModel<T: City>: ObservableObject {
+class TrainingViewModel<T: City>: ObservableObject {
     @Published private(set) var cityImages = [CityImage]()
     @Published private(set) var score = 0
     @Published private(set) var currentCityIndex = 0
