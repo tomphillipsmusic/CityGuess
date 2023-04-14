@@ -7,15 +7,6 @@
 
 import Foundation
 
-protocol CityImageFetching {
-    func fetchCityImages() async throws -> [CityImage]
-}
-
-protocol CityFetching {
-    associatedtype CityModel: City
-    func fetchCities() async throws -> [CityModel]
-}
-
 class RedditClient: CityImageFetching {
     enum Endpoint {
         static let new = "new.json"

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct JsonService {
-    func write<T: Codable>(_ data: T, to filename: String) -> Void {
+struct JsonService: ReadWrite {
+    func write<T: Encodable>(_ data: T, to filename: String) -> Void {
         do {
             let filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 .appendingPathComponent(filename)
@@ -21,7 +21,7 @@ struct JsonService {
         }
     }
     
-    func read<T: Codable> (from filename: String) -> T? {
+    func read<T: Decodable> (from filename: String) -> T? {
         do {
             let filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
                 .appendingPathComponent(filename)
