@@ -20,7 +20,7 @@ class CityGuessViewModel<T: City>: ObservableObject {
     private let cityService: CityService
     private let imageFetcher: CityImageFetching
     
-    init(cityService: CityService = JsonCityService(), imageFetcher: CityImageFetching = RedditClient()) {
+    init(cityService: CityService = LocalCityService(), imageFetcher: CityImageFetching = RedditClient()) {
         self.cityService = cityService
         self.imageFetcher = imageFetcher
         

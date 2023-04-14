@@ -19,6 +19,6 @@ struct GameStartView: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-        GameStartView(vm: CityGuessViewModel(cityService: JsonCityService(), imageFetcher: RedditClient()))
+        GameStartView(vm: CityGuessViewModel(cityService: LocalCityService(), imageFetcher: RedditClient()))
     }
 }
