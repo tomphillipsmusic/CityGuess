@@ -7,7 +7,15 @@
 
 import Foundation
 
-class RedditClient: CityImageFetching {
+class RedditClient: CityFetching {
+    static let bigCities = "bigcities.json"
+    
+    func fetchCities() async throws -> [GeoNamesCity] {
+        try Bundle.main.decode([GeoNamesCity].self, from: Self.bigCities)
+    }
+    
+    typealias CityModel = GeoNamesCity
+    
     enum Endpoint {
         static let new = "new.json"
     }

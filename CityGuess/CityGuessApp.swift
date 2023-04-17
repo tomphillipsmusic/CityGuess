@@ -11,7 +11,7 @@ import SwiftUI
 struct CityGuessApp: App {
     var body: some Scene {
         WindowGroup {
-            TrainingView()
+            ContentView()
         }
     }
 }

@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
-struct GameStartView: View {
-    @ObservedObject var vm: CityGuessViewModel<TeleportCity>
+struct GameStartView<ViewModel: CityGuessViewModel>: View {
+    @ObservedObject var vm: ViewModel
     @State private var numberOfRounds = 10
 
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
+            CachedAsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -22,14 +23,13 @@ struct GameStartView: View {
             } placeholder: {
                 Color.secondary
             }
+            
             VStack {
-                
-
-                Text("Do you have what it takes to be a true City Guesser?")
+                Text(vm.gameHeadline)
                     .font(.title)
                     .padding()
                 
-                Text("Take a spin through our images of famous cities from around the world and do your best to guess the name of the city!")
+                Text(vm.gameDescription)
                     .font(.headline)
                     .padding()
                 
@@ -44,9 +44,7 @@ struct GameStartView: View {
                     }
                 }
                 
-                
-                
-                Button("Start Training!") {
+                Button(vm.startGameButtonText) {
                     vm.startGame(with: numberOfRounds)
                 }
                 .disabled(vm.cityImages.isEmpty)
@@ -62,6 +60,6 @@ struct GameStartView: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-        GameStartView(vm: CityGuessViewModel())
+        GameStartView(vm: TrainingViewModel())
     }
 }

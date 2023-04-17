@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct GameOverOver: View {
-    @ObservedObject var vm: CityGuessViewModel<TeleportCity>
+struct GameEndView<ViewModel: CityGuessViewModel>: View {
+    @ObservedObject var vm: ViewModel
     
     var body: some View {
         VStack {
-            Text("Game Over!")
+            Text(vm.gameOverText)
                 .font(.largeTitle)
                 .padding()
             
-            Text("You guessed a total of \(vm.score) cities correctly!")
+            Text(vm.gameOverScoreText)
                 .font(.headline)
                 .padding()
             
-            Button("Train Again?") {
+            Button(vm.tryAgainButtonText) {
                 vm.endGame()
             }
             .padding()
@@ -30,6 +30,6 @@ struct GameOverOver: View {
 
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
-        GameOverOver(vm: CityGuessViewModel())
+        GameEndView(vm: TrainingViewModel())
     }
 }
