@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TrainingEndView: View {
-    @ObservedObject var vm: TrainingViewModel<TeleportCity>
+    @ObservedObject var vm: TrainingViewModel
     
     var body: some View {
         VStack {

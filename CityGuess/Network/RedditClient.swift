@@ -7,7 +7,14 @@
 
 import Foundation
 
-class RedditClient: CityImageFetching {
+class RedditClient: CityFetching {
+    func fetchCities() async throws -> [GeoNamesCity] {
+        #warning("Clean this up so it is not doing a hardcoded filepath")
+        try await JsonService().read(from: "bigcities.json")
+    }
+    
+    typealias CityModel = GeoNamesCity
+    
     enum Endpoint {
         static let new = "new.json"
     }

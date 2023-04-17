@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TrainingView: View {
-    @StateObject var vm = TrainingViewModel<TeleportCity>()
+    @StateObject var vm = TrainingViewModel()
     
     var body: some View {
         NavigationStack {

@@ -9,7 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct CityGuessView: View {
-    @ObservedObject var vm: TrainingViewModel<TeleportCity>
+    @ObservedObject var vm: TrainingViewModel
     @State private var guess = ""
 
     var body: some View {
@@ -61,6 +61,6 @@ struct CityGuessView: View {
 
 struct CityGuessView_Previews: PreviewProvider {
     static var previews: some View {
-        CityGuessView(vm: TrainingViewModel<TeleportCity>())
+        CityGuessView(vm: TrainingViewModel())
     }
 }

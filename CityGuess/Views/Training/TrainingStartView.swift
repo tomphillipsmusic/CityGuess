@@ -9,7 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct TrainingStartView: View {
-    @ObservedObject var vm: TrainingViewModel<TeleportCity>
+    @ObservedObject var vm: TrainingViewModel
     @State private var numberOfRounds = 10
 
     var body: some View {
