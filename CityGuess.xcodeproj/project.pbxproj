@@ -14,7 +14,7 @@
 		3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A437629E97B4F00A9D2BE /* JsonService.swift */; };
 		3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A437929E97DFB00A9D2BE /* ReadWrite.swift */; };
 		3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A437B29E97EB500A9D2BE /* CityService.swift */; };
-		3E0A438029E97EE100A9D2BE /* CityModelFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A437F29E97EE100A9D2BE /* CityModelFetching.swift */; };
+		3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A437F29E97EE100A9D2BE /* CityFetching.swift */; };
 		3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438329E9818400A9D2BE /* TeleportCitiesResponse.swift */; };
 		3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438529E981B100A9D2BE /* TeleportCity.swift */; };
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
@@ -46,7 +46,7 @@
 		3E0A437629E97B4F00A9D2BE /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
 		3E0A437929E97DFB00A9D2BE /* ReadWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWrite.swift; sourceTree = "<group>"; };
 		3E0A437B29E97EB500A9D2BE /* CityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityService.swift; sourceTree = "<group>"; };
-		3E0A437F29E97EE100A9D2BE /* CityModelFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModelFetching.swift; sourceTree = "<group>"; };
+		3E0A437F29E97EE100A9D2BE /* CityFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityFetching.swift; sourceTree = "<group>"; };
 		3E0A438329E9818400A9D2BE /* TeleportCitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCitiesResponse.swift; sourceTree = "<group>"; };
 		3E0A438529E981B100A9D2BE /* TeleportCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCity.swift; sourceTree = "<group>"; };
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			children = (
 				3E0A437929E97DFB00A9D2BE /* ReadWrite.swift */,
 				3E0A437B29E97EB500A9D2BE /* CityService.swift */,
-				3E0A437F29E97EE100A9D2BE /* CityModelFetching.swift */,
+				3E0A437F29E97EE100A9D2BE /* CityFetching.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
-				3E0A438029E97EE100A9D2BE /* CityModelFetching.swift in Sources */,
+				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* TrainingView.swift in Sources */,
 				3E9C7D4329E9ED1B0073CCE4 /* DailyChallengeView.swift in Sources */,
 				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,

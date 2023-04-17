@@ -11,40 +11,41 @@ import Foundation
 protocol CityGuessViewModel: ObservableObject {
     associatedtype CityModel: City
     
-    var cityImages: [CityImage] { get }
+    var cityImages: [CityImage] { get set }
     var cityImagesPublished: Published<[CityImage]> { get }
     var cityImagesPublisher: Published<[CityImage]>.Publisher { get }
     
-    var score: Int { get }
+    var score: Int { get set }
     var scorePublished: Published<Int> { get }
     var scorePublisher: Published<Int>.Publisher { get }
     
-    var currentCityIndex: Int { get }
+    var currentCityIndex: Int { get set }
     var currentCityIndexPublished: Published<Int> { get }
     var currentCityIndexPublisher: Published<Int>.Publisher { get }
     
-    var isPlaying: Bool { get }
+    var isPlaying: Bool { get set }
     var isPlayingPublished: Published<Bool> { get }
     var isPlayingPublisher: Published<Bool>.Publisher { get }
     
-    var isCorrect: Bool { get }
+    var isCorrect: Bool { get set }
     var isCorrectPublished: Published<Bool> { get }
     var isCorrectPublisher: Published<Bool>.Publisher { get }
     
-    var priorAnswer: String { get }
+    var priorAnswer: String { get set}
     var priorAnswerPublished: Published<String> { get }
     var priorAnswerPublisher: Published<String>.Publisher { get }
     
-    var numberOfRounds: Int { get }
+    var numberOfRounds: Int { get set }
     var numberOfRoundsPublished: Published<Int> { get }
     var numberOfRoundsPublisher: Published<Int>.Publisher { get }
     
-    var cities: [CityModel] { get }
+    var cities: [CityModel] { get set }
     var isGameOver: Bool { get }
     var roundOptions: [Int] { get }
     var currentRound: Int { get }
     var cityService: CityService { get }
     var cityFetcher: any CityFetching { get }
+    var roundLength: Int { get }
     
     func fetchCityImages() async
     func fetchCities() async
@@ -52,58 +53,12 @@ protocol CityGuessViewModel: ObservableObject {
     func endGame()
     func submit(guess: String)
     func autofillSuggestions(for guess: String) -> [CityModel]
+    
+    init(cityService: CityService, cityFetcher: any CityFetching)
 }
 
 extension CityGuessViewModel {
     #warning("Continue experimenting with making protocol to extend view model, if that don't work, maybe check out inheritance?")
-}
-
-@MainActor
-class TrainingViewModel<T: City>: CityGuessViewModel {
-    
-    @Published private(set) var cityImages = [CityImage]()
-    var cityImagesPublished: Published<[CityImage]> { _cityImages }
-    var cityImagesPublisher: Published<[CityImage]>.Publisher { $cityImages }
-    
-    @Published private(set) var score = 0
-    var scorePublished: Published<Int> { _score }
-    var scorePublisher: Published<Int>.Publisher { $score }
-    
-    @Published private(set) var currentCityIndex = 0
-    var currentCityIndexPublished: Published<Int> { _currentCityIndex }
-    var currentCityIndexPublisher: Published<Int>.Publisher { $currentCityIndex }
-    
-    @Published private(set) var isPlaying = false
-    var isPlayingPublished: Published<Bool> { _isPlaying }
-    var isPlayingPublisher: Published<Bool>.Publisher { $isPlaying }
-    
-    @Published private(set) var isCorrect = false
-    var isCorrectPublished: Published<Bool> { _isCorrect }
-    var isCorrectPublisher: Published<Bool>.Publisher { $isCorrect }
-    
-    @Published private(set) var priorAnswer = ""
-    var priorAnswerPublished: Published<String> { _priorAnswer }
-    var priorAnswerPublisher: Published<String>.Publisher { $priorAnswer }
-    
-    @Published var numberOfRounds = 5
-    var numberOfRoundsPublished: Published<Int> { _numberOfRounds }
-    var numberOfRoundsPublisher: Published<Int>.Publisher { $numberOfRounds }
-    
-    private(set) var cities: [T] = []
-    let cityService: CityService
-    let cityFetcher: any CityFetching
-    private let roundLength = 10
-    
-    init(cityService: CityService = LocalCityService(), cityFetcher: any CityFetching = TeleportApiClient()) {
-        self.cityService = cityService
-        self.cityFetcher = cityFetcher
-        
-        Task {
-            await fetchCities()
-            await fetchCityImages()
-        }
-    }
-    
     var isGameOver: Bool {
         currentCityIndex == roundLength
     }
@@ -115,7 +70,7 @@ class TrainingViewModel<T: City>: CityGuessViewModel {
     var currentRound: Int {
         currentCityIndex + 1
     }
-        
+    
     func fetchCityImages() async {
         do {
             if let cityImages = try? cityService.loadImages() {
@@ -132,9 +87,9 @@ class TrainingViewModel<T: City>: CityGuessViewModel {
     }
     
     func fetchCities() async {
-        if let cities: [T] = try? cityService.loadCities() {
+        if let cities: [CityModel] = try? cityService.loadCities() {
             self.cities = cities
-        } else if let cities = try? await cityFetcher.fetchCities() as? [T] {
+        } else if let cities = try? await cityFetcher.fetchCities() as? [CityModel] {
             self.cities = cities
             try? cityService.save(cities)
         }
@@ -166,10 +121,104 @@ class TrainingViewModel<T: City>: CityGuessViewModel {
         priorAnswer = title
         currentCityIndex += 1
     }
-
-    func autofillSuggestions(for guess: String) -> [T] {
+    
+    func autofillSuggestions(for guess: String) -> [CityModel] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 5
         return cities.filterUniqueItems({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)
+    }
+}
+
+@MainActor
+class TrainingViewModel<T: City>: CityGuessViewModel {
+    
+    @Published var cityImages = [CityImage]()
+    var cityImagesPublished: Published<[CityImage]> { _cityImages }
+    var cityImagesPublisher: Published<[CityImage]>.Publisher { $cityImages }
+    
+    @Published var score = 0
+    var scorePublished: Published<Int> { _score }
+    var scorePublisher: Published<Int>.Publisher { $score }
+    
+    @Published var currentCityIndex = 0
+    var currentCityIndexPublished: Published<Int> { _currentCityIndex }
+    var currentCityIndexPublisher: Published<Int>.Publisher { $currentCityIndex }
+    
+    @Published var isPlaying = false
+    var isPlayingPublished: Published<Bool> { _isPlaying }
+    var isPlayingPublisher: Published<Bool>.Publisher { $isPlaying }
+    
+    @Published var isCorrect = false
+    var isCorrectPublished: Published<Bool> { _isCorrect }
+    var isCorrectPublisher: Published<Bool>.Publisher { $isCorrect }
+    
+    @Published var priorAnswer = ""
+    var priorAnswerPublished: Published<String> { _priorAnswer }
+    var priorAnswerPublisher: Published<String>.Publisher { $priorAnswer }
+    
+    @Published var numberOfRounds = 5
+    var numberOfRoundsPublished: Published<Int> { _numberOfRounds }
+    var numberOfRoundsPublisher: Published<Int>.Publisher { $numberOfRounds }
+    
+    var cities: [T] = []
+    let cityService: CityService
+    let cityFetcher: any CityFetching
+    let roundLength = 10
+    
+    required init(cityService: CityService = LocalCityService(), cityFetcher: any CityFetching = TeleportApiClient()) {
+        self.cityService = cityService
+        self.cityFetcher = cityFetcher
+        
+        Task {
+            await fetchCities()
+            await fetchCityImages()
+        }
+    }
+}
+
+@MainActor
+class DailyChallengeViewModel<T: City>: CityGuessViewModel {
+    
+    @Published var cityImages = [CityImage]()
+    var cityImagesPublished: Published<[CityImage]> { _cityImages }
+    var cityImagesPublisher: Published<[CityImage]>.Publisher { $cityImages }
+    
+    @Published var score = 0
+    var scorePublished: Published<Int> { _score }
+    var scorePublisher: Published<Int>.Publisher { $score }
+    
+    @Published var currentCityIndex = 0
+    var currentCityIndexPublished: Published<Int> { _currentCityIndex }
+    var currentCityIndexPublisher: Published<Int>.Publisher { $currentCityIndex }
+    
+    @Published var isPlaying = false
+    var isPlayingPublished: Published<Bool> { _isPlaying }
+    var isPlayingPublisher: Published<Bool>.Publisher { $isPlaying }
+    
+    @Published var isCorrect = false
+    var isCorrectPublished: Published<Bool> { _isCorrect }
+    var isCorrectPublisher: Published<Bool>.Publisher { $isCorrect }
+    
+    @Published var priorAnswer = ""
+    var priorAnswerPublished: Published<String> { _priorAnswer }
+    var priorAnswerPublisher: Published<String>.Publisher { $priorAnswer }
+    
+    @Published var numberOfRounds = 5
+    var numberOfRoundsPublished: Published<Int> { _numberOfRounds }
+    var numberOfRoundsPublisher: Published<Int>.Publisher { $numberOfRounds }
+    
+    var cities: [T] = []
+    let cityService: CityService
+    let cityFetcher: any CityFetching
+    let roundLength = 10
+    
+    required init(cityService: CityService = LocalCityService(), cityFetcher: any CityFetching) {
+        self.cityService = cityService
+        self.cityFetcher = cityFetcher
+        
+        Task {
+            await fetchCities()
+            await fetchCityImages()
+        }
     }
 }
