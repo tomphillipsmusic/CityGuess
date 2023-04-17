@@ -37,7 +37,7 @@ extension CityGuessViewModel {
         self.numberOfRounds = numberOfRounds
         isPlaying = true
         score = 0
-        cities.shuffle()
+        cityImages.shuffle()
         priorAnswer = ""
         currentCityIndex = 0
     }
