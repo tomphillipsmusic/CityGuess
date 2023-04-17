@@ -30,6 +30,6 @@ struct TrainingEndView: View {
 
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingEndView(vm: CityGuessViewModel())
+        TrainingEndView(vm: TrainingViewModel())
     }
 }
