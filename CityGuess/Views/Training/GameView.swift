@@ -22,7 +22,7 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
                     CityGuessView(vm: vm)
                 }
             }
-            .navigationTitle("Training")
+            .navigationTitle(vm.modeTitle)
             .navigationBarTitleDisplayMode(.inline)
         }
         .task {

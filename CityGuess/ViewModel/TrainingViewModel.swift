@@ -28,6 +28,10 @@ protocol CityGuessViewModel: ObservableObject {
     var cityFetcher: CityFetcher { get }
     var roundLength: Int { get }
     
+    var modeTitle: String { get }
+    var gameHeadline: String { get }
+    var gameDescription: String { get }
+    
     func fetchCityImages() async
     func fetchCities() async
     func startGame(with numberOfRounds: Int)
@@ -87,7 +91,6 @@ extension CityGuessViewModel {
 
 @MainActor
 class TrainingViewModel: CityGuessViewModel {
-    
     @Published var cityImages = [CityImage]()
     @Published var score = 0
     @Published var currentCityIndex = 0
@@ -100,6 +103,10 @@ class TrainingViewModel: CityGuessViewModel {
     let cityService: CityService
     let cityFetcher: TeleportApiClient
     let roundLength = 10
+    
+    var modeTitle: String = "Training"
+    var gameHeadline: String = "Do you have what it takes to be a true City Guesser?"
+    var gameDescription: String = "Take a spin through our images of famous cities from around the world and do your best to guess the name of the city!"
     
     required init(cityService: CityService = LocalCityService(), cityFetcher: TeleportApiClient = TeleportApiClient()) {
         self.cityService = cityService
@@ -129,7 +136,7 @@ class TrainingViewModel: CityGuessViewModel {
     func fetchCities() async {
         if let cities: [CityModel] = try? cityService.loadCities() {
             self.cities = cities
-        } else if let cities = try? await cityFetcher.fetchCities() as? [CityModel] {
+        } else if let cities = try? await cityFetcher.fetchCities() {
             self.cities = cities
             try? cityService.save(cities)
         }
@@ -138,7 +145,6 @@ class TrainingViewModel: CityGuessViewModel {
 
 @MainActor
 class DailyChallengeViewModel: CityGuessViewModel {
-    
     @Published var cityImages = [CityImage]()
     @Published var score = 0
     @Published var currentCityIndex = 0
@@ -151,6 +157,10 @@ class DailyChallengeViewModel: CityGuessViewModel {
     let cityService: CityService
     let cityFetcher: RedditClient
     let roundLength = 10
+
+    var modeTitle: String = "Daily Challenge"
+    var gameHeadline: String = "Do you have what it takes to take on the Daily Challenge?"
+    var gameDescription: String = "Check in once a day to see some of the latest and greatest city photos from around the world. How many can you guess??"
     
     required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService

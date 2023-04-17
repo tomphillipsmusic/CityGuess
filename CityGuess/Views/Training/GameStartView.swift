@@ -26,11 +26,11 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             VStack {
                 
 
-                Text("Do you have what it takes to be a true City Guesser?")
+                Text(vm.gameHeadline)
                     .font(.title)
                     .padding()
                 
-                Text("Take a spin through our images of famous cities from around the world and do your best to guess the name of the city!")
+                Text(vm.gameDescription)
                     .font(.headline)
                     .padding()
                 
