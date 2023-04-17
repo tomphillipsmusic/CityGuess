@@ -23,9 +23,8 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             } placeholder: {
                 Color.secondary
             }
+            
             VStack {
-                
-
                 Text(vm.gameHeadline)
                     .font(.title)
                     .padding()
@@ -45,9 +44,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                     }
                 }
                 
-                
-                
-                Button("Start Training!") {
+                Button(vm.startGameButtonText) {
                     vm.startGame(with: numberOfRounds)
                 }
                 .disabled(vm.cityImages.isEmpty)

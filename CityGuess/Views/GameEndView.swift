@@ -12,15 +12,15 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
     
     var body: some View {
         VStack {
-            Text("Game Over!")
+            Text(vm.gameOverText)
                 .font(.largeTitle)
                 .padding()
             
-            Text("You guessed a total of \(vm.score) cities correctly!")
+            Text(vm.gameOverScoreText)
                 .font(.headline)
                 .padding()
             
-            Button("Train Again?") {
+            Button(vm.tryAgainButtonText) {
                 vm.endGame()
             }
             .padding()
