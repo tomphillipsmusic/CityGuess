@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TrainingEndView: View {
-    @ObservedObject var vm: TrainingViewModel
+struct GameEndView<ViewModel: CityGuessViewModel>: View {
+    @ObservedObject var vm: ViewModel
     
     var body: some View {
         VStack {
@@ -30,6 +30,6 @@ struct TrainingEndView: View {
 
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingEndView(vm: TrainingViewModel())
+        GameEndView(vm: TrainingViewModel())
     }
 }

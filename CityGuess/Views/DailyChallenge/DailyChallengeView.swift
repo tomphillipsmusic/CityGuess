@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct DailyChallengeView: View {
+    @StateObject var vm = DailyChallengeViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(vm.cityImages, id: \.url) { Text($0.title) }
+        }
     }
 }
 

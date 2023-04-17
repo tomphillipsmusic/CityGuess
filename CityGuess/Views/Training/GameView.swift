@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct TrainingView: View {
-    @StateObject var vm = TrainingViewModel()
+struct GameView<ViewModel: CityGuessViewModel>: View {
+    @StateObject var vm: ViewModel
     
     var body: some View {
         NavigationStack {
             VStack {
                 
                 if !vm.isPlaying {
-                    TrainingStartView(vm: vm)
+                    GameStartView(vm: vm)
                 } else if vm.isGameOver {
-                    TrainingEndView(vm: vm)
+                    GameEndView(vm: vm)
                 } else {
                     CityGuessView(vm: vm)
                 }
@@ -33,6 +33,6 @@ struct TrainingView: View {
 
 struct TrainingView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingView()
+        GameView(vm: TrainingViewModel())
     }
 }

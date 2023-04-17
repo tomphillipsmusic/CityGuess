@@ -8,8 +8,8 @@
 import SwiftUI
 import CachedAsyncImage
 
-struct TrainingStartView: View {
-    @ObservedObject var vm: TrainingViewModel
+struct GameStartView<ViewModel: CityGuessViewModel>: View {
+    @ObservedObject var vm: ViewModel
     @State private var numberOfRounds = 10
 
     var body: some View {
@@ -63,6 +63,6 @@ struct TrainingStartView: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingStartView(vm: TrainingViewModel())
+        GameStartView(vm: TrainingViewModel())
     }
 }

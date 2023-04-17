@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            TrainingView()
+            GameView(vm: TrainingViewModel())
                 .tabItem {
                     Label("Training", systemImage: "globe.americas.fill")
                 }
             
-            DailyChallengeView()
+            GameView(vm: DailyChallengeViewModel())
                 .tabItem {
                     Label("Daily Challenge", systemImage: "medal")
                 }

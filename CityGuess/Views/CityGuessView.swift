@@ -8,8 +8,8 @@
 import SwiftUI
 import CachedAsyncImage
 
-struct CityGuessView: View {
-    @ObservedObject var vm: TrainingViewModel
+struct CityGuessView<ViewModel: CityGuessViewModel>: View {
+    @ObservedObject var vm: ViewModel
     @State private var guess = ""
 
     var body: some View {
@@ -33,7 +33,7 @@ struct CityGuessView: View {
                 Spacer()
                 ScrollView(.horizontal){
                     VStack(alignment: .center) {
-                        ForEach(vm.autofillSuggestions(for: guess)) { autofill in
+                        ForEach(vm.autofillSuggestions(for: guess), id: \.name) { autofill in
                             let cityName = autofill.name
                             Button(autofill.name) {
                                 vm.submit(guess: cityName)

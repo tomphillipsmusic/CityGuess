@@ -8,9 +8,10 @@
 import Foundation
 
 class RedditClient: CityFetching {
+    static let bigCities = "bigcities.json"
+    
     func fetchCities() async throws -> [GeoNamesCity] {
-        #warning("Clean this up so it is not doing a hardcoded filepath")
-        try await JsonService().read(from: "bigcities.json")
+        try Bundle.main.decode([GeoNamesCity].self, from: Self.bigCities)
     }
     
     typealias CityModel = GeoNamesCity

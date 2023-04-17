@@ -51,30 +51,6 @@ extension CityGuessViewModel {
         currentCityIndex + 1
     }
     
-    func fetchCityImages() async {
-        do {
-            if let cityImages = try? cityService.loadImages() {
-                self.cityImages = cityImages.shuffled()
-            } else {
-                cityImages = try await cityFetcher.fetchCityImages().shuffled()
-                cityService.save(cityImages)
-            }
-            
-            print("City images count: " + "\(cityImages.count)")
-        } catch {
-            print(error)
-        }
-    }
-    
-    func fetchCities() async {
-        if let cities: [CityModel] = try? cityService.loadCities() {
-            self.cities = cities
-        } else if let cities = try? await cityFetcher.fetchCities() as? [CityModel] {
-            self.cities = cities
-            try? cityService.save(cities)
-        }
-    }
-    
     func startGame(with numberOfRounds: Int) {
         self.numberOfRounds = numberOfRounds
         isPlaying = true
@@ -134,6 +110,30 @@ class TrainingViewModel: CityGuessViewModel {
             await fetchCityImages()
         }
     }
+    
+    func fetchCityImages() async {
+        do {
+            if let cityImages = try? cityService.loadImages() {
+                self.cityImages = cityImages.shuffled()
+            } else {
+                cityImages = try await cityFetcher.fetchCityImages().shuffled()
+                cityService.save(cityImages)
+            }
+            
+            print("City images count: " + "\(cityImages.count)")
+        } catch {
+            print(error)
+        }
+    }
+    
+    func fetchCities() async {
+        if let cities: [CityModel] = try? cityService.loadCities() {
+            self.cities = cities
+        } else if let cities = try? await cityFetcher.fetchCities() as? [CityModel] {
+            self.cities = cities
+            try? cityService.save(cities)
+        }
+    }
 }
 
 @MainActor
@@ -152,13 +152,29 @@ class DailyChallengeViewModel: CityGuessViewModel {
     let cityFetcher: RedditClient
     let roundLength = 10
     
-    required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient) {
+    required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService
         self.cityFetcher = cityFetcher
         
         Task {
             await fetchCities()
             await fetchCityImages()
+        }
+    }
+    
+    func fetchCityImages() async {
+        do {
+            cityImages = try await cityFetcher.fetchCityImages().shuffled()
+            
+            print("City images count: " + "\(cityImages.count)")
+        } catch {
+            print(error)
+        }
+    }
+    
+    func fetchCities() async {
+        if let cities = try? await cityFetcher.fetchCities() {
+            self.cities = cities
         }
     }
 }
