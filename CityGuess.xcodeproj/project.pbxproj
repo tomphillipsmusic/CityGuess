@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */; };
+		3E065B6629EEE70F0057A250 /* ZoomableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E065B6529EEE70F0057A250 /* ZoomableImage.swift */; };
 		3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */; };
 		3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A436D29E5DE9C00A9D2BE /* testcities.json */; };
 		3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */; };
@@ -38,9 +40,12 @@
 		3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */; };
 		3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A129E491E000514F79 /* GameStartView.swift */; };
 		3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A329E4923100514F79 /* CityGuessView.swift */; };
+		3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
+		3E065B6529EEE70F0057A250 /* ZoomableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImage.swift; sourceTree = "<group>"; };
 		3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		3E0A436D29E5DE9C00A9D2BE /* testcities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testcities.json; sourceTree = "<group>"; };
 		3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImagesResponse.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
 		3EEB99A129E491E000514F79 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		3EEB99A329E4923100514F79 /* CityGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessView.swift; sourceTree = "<group>"; };
+		3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +220,10 @@
 				3E64ADA829DEFD5300DCCF2E /* GameView.swift */,
 				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
 				3EEB99A129E491E000514F79 /* GameStartView.swift */,
+				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
 				3E0A438A29E9C34400A9D2BE /* GameEndView.swift */,
+				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
+				3E065B6529EEE70F0057A250 /* ZoomableImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
 				3E9C7D4529E9ED290073CCE4 /* ContentView.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
+				3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */,
 				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
@@ -309,6 +319,7 @@
 				3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */,
 				3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */,
 				3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */,
+				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
 				3EEB999429E4679B00514F79 /* GeoNamesCity.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
@@ -319,6 +330,7 @@
 				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,
 				3E9C7D4929EDDD1D0073CCE4 /* CityGuessViewModel+DefaultBehavior.swift in Sources */,
 				3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */,
+				3E065B6629EEE70F0057A250 /* ZoomableImage.swift in Sources */,
 				3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */,
 				3E9C7D4B29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift in Sources */,
 				3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */,
