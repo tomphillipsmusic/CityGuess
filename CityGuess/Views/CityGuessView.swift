@@ -18,49 +18,22 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var body: some View {
         
         VStack {
+            #warning("Replace with better way of giving user feedback on answers")
+            Text(vm.priorAnswer)
+                .foregroundColor(vm.isCorrect ? .green : .red)
             
-            if vm.cityImages.isEmpty {
-                ProgressView()
-            } else {
-                Text(vm.priorAnswer)
-                    .foregroundColor(vm.isCorrect ? .green : .red)
-                
-                ZoomableImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url))
-                
-                CityGuessTextField(text: $guess)
-                
-                if !autofillSuggestions.isEmpty {
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(autofillSuggestions, id: \.name) { autofill in
-                                let cityName = autofill.name
-                                
-                                Button(cityName) {
-                                    vm.submit(guess: cityName)
-                                    self.guess = ""
-                                }
-                                .padding()
-                                .buttonStyle(.bordered)
-                                
-                            }
-                        }
-                    }
-                }
-                
+            ZoomableImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url))
+            
+            CityGuessTextField(text: $guess)
+            
+            AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
+                vm.submit(guess: cityName)
+                self.guess = ""
             }
-            
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Text("\(vm.currentRound) / \(vm.numberOfRounds)")
-                    .font(.title2)
-            }
-            
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("Score: \(vm.score)")
-                    .font(.title3)
-       
-            }
+            scoreLabel
+            roundCounterLabel
         }
         .onChange(of: guess) { guess in
             withAnimation {
@@ -68,6 +41,20 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             }
         }
         
+    }
+    
+    var scoreLabel: some ToolbarContent {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Text("\(vm.currentRound) / \(vm.numberOfRounds)")
+                    .font(.title2)
+            }
+    }
+    
+    var roundCounterLabel: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Text("Score: \(vm.score)")
+                .font(.title3)
+        }
     }
 }
 

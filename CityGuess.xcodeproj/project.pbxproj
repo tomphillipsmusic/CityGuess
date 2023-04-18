@@ -41,6 +41,7 @@
 		3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A129E491E000514F79 /* GameStartView.swift */; };
 		3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A329E4923100514F79 /* CityGuessView.swift */; };
 		3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */; };
+		3EEF7F7129EEEC8E00EEBE9D /* AutofillSuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		3EEB99A129E491E000514F79 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		3EEB99A329E4923100514F79 /* CityGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessView.swift; sourceTree = "<group>"; };
 		3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessTextField.swift; sourceTree = "<group>"; };
+		3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutofillSuggestionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				3E9C7D4429E9ED290073CCE4 /* ContentView.swift */,
 				3E64ADA829DEFD5300DCCF2E /* GameView.swift */,
 				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
+				3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */,
 				3EEB99A129E491E000514F79 /* GameStartView.swift */,
 				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
 				3E0A438A29E9C34400A9D2BE /* GameEndView.swift */,
@@ -327,6 +330,7 @@
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */,
+				3EEF7F7129EEEC8E00EEBE9D /* AutofillSuggestionsView.swift in Sources */,
 				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,
 				3E9C7D4929EDDD1D0073CCE4 /* CityGuessViewModel+DefaultBehavior.swift in Sources */,
 				3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */,
