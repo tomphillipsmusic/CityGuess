@@ -33,6 +33,9 @@ protocol CityGuessViewModel: ObservableObject {
     var gameDescription: String { get }
     var startGameButtonText: String { get }
     
+    var scoreLabelText: String { get }
+    var roundLabelText: String { get }
+    
     var gameOverText: String { get }
     var gameOverScoreText: String { get }
     var tryAgainButtonText: String { get }

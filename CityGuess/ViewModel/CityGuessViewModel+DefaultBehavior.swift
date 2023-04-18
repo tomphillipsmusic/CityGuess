@@ -21,6 +21,14 @@ extension CityGuessViewModel {
         currentCityIndex + 1
     }
     
+    var scoreLabelText: String {
+        "Score: \(score)"
+    }
+    
+    var roundLabelText: String {
+        "\(currentRound) / \(numberOfRounds)"
+    }
+    
     var gameOverText: String {
         "Game Over!"
     }

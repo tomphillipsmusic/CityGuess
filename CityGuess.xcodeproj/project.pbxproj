@@ -220,15 +220,23 @@
 			children = (
 				3E9C7D4429E9ED290073CCE4 /* ContentView.swift */,
 				3E64ADA829DEFD5300DCCF2E /* GameView.swift */,
-				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
-				3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */,
+				3EEF7F7329EF03BA00EEBE9D /* CityGuessView */,
 				3EEB99A129E491E000514F79 /* GameStartView.swift */,
-				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
 				3E0A438A29E9C34400A9D2BE /* GameEndView.swift */,
-				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
-				3E065B6529EEE70F0057A250 /* ZoomableImage.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3EEF7F7329EF03BA00EEBE9D /* CityGuessView */ = {
+			isa = PBXGroup;
+			children = (
+				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
+				3E065B6529EEE70F0057A250 /* ZoomableImage.swift */,
+				3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */,
+				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
+				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
+			);
+			path = CityGuessView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

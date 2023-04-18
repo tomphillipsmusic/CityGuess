@@ -45,14 +45,14 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     
     var scoreLabel: some ToolbarContent {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Text("\(vm.currentRound) / \(vm.numberOfRounds)")
+                Text(vm.scoreLabelText)
                     .font(.title2)
             }
     }
     
     var roundCounterLabel: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
-            Text("Score: \(vm.score)")
+            Text(vm.roundLabelText)
                 .font(.title3)
         }
     }
