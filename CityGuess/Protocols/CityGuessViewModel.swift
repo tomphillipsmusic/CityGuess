@@ -8,26 +8,25 @@
 import Foundation
 
 @MainActor
-protocol CityGuessViewModel: ObservableObject {
+protocol CityGuessViewModel: ObservableObject, GameLogic, GameMode {
     associatedtype CityModel: City
     associatedtype CityFetcher: CityFetching
     
     var cityImages: [CityImage] { get set }
-    var score: Int { get set }
     var currentCityIndex: Int { get set }
-    var isPlaying: Bool { get set }
-    var isCorrect: Bool { get set }
-    var priorAnswer: String { get set}
-    var numberOfRounds: Int { get set }
-    
     var cities: [CityModel] { get set }
-    var isGameOver: Bool { get }
-    var roundOptions: [Int] { get }
-    var currentRound: Int { get }
     var cityService: CityService { get }
     var cityFetcher: CityFetcher { get }
-    var roundLength: Int { get }
     
+    func fetchCityImages() async
+    func fetchCities() async
+    func autofillSuggestions(for guess: String) -> [CityModel]
+    
+    init(cityService: CityService, cityFetcher: CityFetcher)
+}
+
+@MainActor
+protocol GameMode: ObservableObject {
     var modeTitle: String { get }
     var gameHeadline: String { get }
     var gameDescription: String { get }
@@ -39,13 +38,22 @@ protocol CityGuessViewModel: ObservableObject {
     var gameOverText: String { get }
     var gameOverScoreText: String { get }
     var tryAgainButtonText: String { get }
-    
-    func fetchCityImages() async
-    func fetchCities() async
+}
+
+@MainActor
+protocol GameLogic: ObservableObject {
     func startGame(with numberOfRounds: Int)
     func endGame()
     func submit(guess: String)
-    func autofillSuggestions(for guess: String) -> [CityModel]
     
-    init(cityService: CityService, cityFetcher: CityFetcher)
+    var score: Int { get set }
+    var numberOfRounds: Int { get set }
+    var roundLength: Int { get }
+    var roundOptions: [Int] { get }
+    var currentRound: Int { get }
+    var isPlaying: Bool { get set }
+    var isCorrect: Bool { get set }
+    var isGameOver: Bool { get }
+    var priorAnswer: String { get set}
 }
+
