@@ -24,7 +24,10 @@ class TrainingViewModel: CityGuessViewModel {
 
     let modeTitle: String = "Training"
     let gameHeadline: String = "Do you have what it takes to be a true City Guesser?"
-    let gameDescription: String = "Take a spin through our images of famous cities from around the world and do your best to guess the name of the city!"
+    let gameDescription: String = """
+        Take a spin through our images of famous cities from around the world and
+        do your best to guess the name of the city!
+        """
     let startGameButtonText: String = "Start Training"
 
     required init(cityService: CityService = LocalCityService(), cityFetcher: TeleportApiClient = TeleportApiClient()) {

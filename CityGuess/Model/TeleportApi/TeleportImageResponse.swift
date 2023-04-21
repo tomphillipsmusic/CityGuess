@@ -13,8 +13,9 @@ struct TeleportImageResponse: Codable {
     struct Photo: Codable {
         let image: Image
 
-        struct Image: Codable {
-            let mobile: String
-        }
+    }
+
+    struct Image: Codable {
+        let mobile: String
     }
 }

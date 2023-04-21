@@ -42,6 +42,10 @@
 		3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB99A329E4923100514F79 /* CityGuessView.swift */; };
 		3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */; };
 		3EEF7F7129EEEC8E00EEBE9D /* AutofillSuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */; };
+		3EEF7F7729F2BE9D00EEBE9D /* correct.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7629F2BE9D00EEBE9D /* correct.json */; };
+		3EEF7F7929F2BEDC00EEBE9D /* incorrect.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */; };
+		3EEF7F7C29F2BF5600EEBE9D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3EEF7F7B29F2BF5600EEBE9D /* Lottie */; };
+		3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,9 @@
 		3EEB99A329E4923100514F79 /* CityGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessView.swift; sourceTree = "<group>"; };
 		3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessTextField.swift; sourceTree = "<group>"; };
 		3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutofillSuggestionsView.swift; sourceTree = "<group>"; };
+		3EEF7F7629F2BE9D00EEBE9D /* correct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = correct.json; sourceTree = "<group>"; };
+		3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incorrect.json; sourceTree = "<group>"; };
+		3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */,
+				3EEF7F7C29F2BF5600EEBE9D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +151,7 @@
 		3E64ADA529DEFD5300DCCF2E /* CityGuess */ = {
 			isa = PBXGroup;
 			children = (
+				3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */,
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
 				3EEB99A029E4909D00514F79 /* Views */,
 				3EEB999C29E47E3600514F79 /* ViewModel */,
@@ -239,6 +248,16 @@
 			path = CityGuessView;
 			sourceTree = "<group>";
 		};
+		3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3EEF7F7629F2BE9D00EEBE9D /* correct.json */,
+				3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */,
+				3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +277,7 @@
 			name = CityGuess;
 			packageProductDependencies = (
 				3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */,
+				3EEF7F7B29F2BF5600EEBE9D /* Lottie */,
 			);
 			productName = CityGuess;
 			productReference = 3E64ADA329DEFD5300DCCF2E /* CityGuess.app */;
@@ -290,6 +310,7 @@
 			packageReferences = (
 				3EEB998629DF69AC00514F79 /* XCRemoteSwiftPackageReference "SwiftUl" */,
 				3E0A439029E9E3E700A9D2BE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				3EEF7F7A29F2BF5600EEBE9D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 3E64ADA429DEFD5300DCCF2E /* Products */;
 			projectDirPath = "";
@@ -307,7 +328,9 @@
 			files = (
 				3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */,
 				3EEB999229E4580600514F79 /* bigcities.json in Resources */,
+				3EEF7F7929F2BEDC00EEBE9D /* incorrect.json in Resources */,
 				3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */,
+				3EEF7F7729F2BE9D00EEBE9D /* correct.json in Resources */,
 				3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +380,7 @@
 				3EEB999429E4679B00514F79 /* GeoNamesCity.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
+				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */,
@@ -588,6 +612,14 @@
 				kind = branch;
 			};
 		};
+		3EEF7F7A29F2BF5600EEBE9D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -595,6 +627,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3E0A439029E9E3E700A9D2BE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		3EEF7F7B29F2BF5600EEBE9D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EEF7F7A29F2BF5600EEBE9D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
