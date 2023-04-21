@@ -20,7 +20,7 @@ extension Sequence {
                 results.insert(element)
             }
         }
-        
+
         return Array(results)
     }
 }

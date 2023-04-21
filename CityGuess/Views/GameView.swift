@@ -9,11 +9,11 @@ import SwiftUI
 
 struct GameView<ViewModel: CityGuessViewModel>: View {
     @StateObject var vm: ViewModel
-    
+
     var body: some View {
         NavigationStack {
             VStack {
-                
+    
                 if !vm.isPlaying {
                     GameStartView(vm: vm)
                 } else if vm.isGameOver {

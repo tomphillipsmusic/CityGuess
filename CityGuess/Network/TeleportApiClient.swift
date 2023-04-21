@@ -8,26 +8,26 @@
 import Foundation
 
 actor TeleportApiClient: CityImageFetching, CityModelFetching {
-    
+
     var cities: [TeleportCity] = []
-    
+
     enum Endpoint {
         static let urbanAreas = "urban_areas"
         static let images = "images"
     }
-    
+
     private let baseUrl = "https://api.teleport.org/api/"
-    
+
     func fetchCityImages() async throws -> [CityImage] {
         if cities.isEmpty {
             cities = try await fetchCities()
         }
-        
+
         var cityImages: [CityImage] = []
-        
+
         for city in cities {
             let imageResponse: TeleportImageResponse = try await NetworkManager.shared.fetch(from: city.href + Endpoint.images)
-            
+
             if let photo = imageResponse.photos.first {
                 cityImages.append(CityImage(title: city.name, url: photo.image.mobile))
             }

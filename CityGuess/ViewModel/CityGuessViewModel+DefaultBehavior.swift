@@ -8,39 +8,39 @@
 import Foundation
 
 extension CityGuessViewModel {
-    
+
     var isGameOver: Bool {
         currentCityIndex == roundLength
     }
-    
+
     var roundOptions: [Int] {
         [5, 10, 25, 50, 100, cities.count]
     }
-    
+
     var currentRound: Int {
         currentCityIndex + 1
     }
-    
+
     var scoreLabelText: String {
         "Score: \(score)"
     }
-    
+
     var roundLabelText: String {
         "\(currentRound) / \(numberOfRounds)"
     }
-    
+
     var gameOverText: String {
         "Game Over!"
     }
-    
+
     var gameOverScoreText: String {
         "You guessed a total of \(score) cities correctly!"
     }
-    
+
     var tryAgainButtonText: String {
         "Try Again"
     }
-    
+
     func startGame(with numberOfRounds: Int) {
         self.numberOfRounds = numberOfRounds
         isPlaying = true
@@ -49,25 +49,25 @@ extension CityGuessViewModel {
         priorAnswer = ""
         currentCityIndex = 0
     }
-    
+
     func endGame() {
         isPlaying = false
     }
-    
+
     func submit(guess: String) {
         let title = cityImages[currentCityIndex].title
-        
+
         if title.lowercased().contains(guess.lowercased()) {
             isCorrect = true
             score += 1
         } else {
             isCorrect = false
         }
-        
+
         priorAnswer = title
         currentCityIndex += 1
     }
-    
+
     func autofillSuggestions(for guess: String) -> [CityModel] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 8

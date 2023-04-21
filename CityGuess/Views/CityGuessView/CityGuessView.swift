@@ -13,19 +13,18 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
     @State private var autofillSuggestions = [ViewModel.CityModel]()
-    @State private var zoomableScrollView = ZoomableScrollView() {}
         
     var body: some View {
-        
+
         VStack {
             #warning("Replace with better way of giving user feedback on answers")
             Text(vm.priorAnswer)
                 .foregroundColor(vm.isCorrect ? .green : .red)
-            
+
             ZoomableImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url))
-            
+
             CityGuessTextField(text: $guess)
-            
+
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 vm.submit(guess: cityName)
                 self.guess = ""
@@ -40,16 +39,16 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
                 autofillSuggestions = vm.autofillSuggestions(for: guess)
             }
         }
-        
+
     }
-    
+
     var scoreLabel: some ToolbarContent {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Text(vm.scoreLabelText)
                     .font(.title2)
             }
     }
-    
+
     var roundCounterLabel: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
             Text(vm.roundLabelText)

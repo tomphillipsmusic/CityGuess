@@ -9,11 +9,11 @@ import Foundation
 
 struct CityImagesResponse: Codable {
     let data: Data
-    
+
     struct Data: Codable {
         let children: [Post]
     }
-    
+
     struct Post: Codable {
         let data: CityImage
     }

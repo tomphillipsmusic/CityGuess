@@ -10,7 +10,7 @@ import SwiftUI
 struct CityGuessTextField: View {
     @FocusState private var textFieldFocused: Bool
     @Binding var text: String
-    
+
     var body: some View {
         TextField("Guess", text: $text)
             .padding()

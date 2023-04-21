@@ -23,19 +23,18 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             } placeholder: {
                 Color.secondary
             }
-            
+
             VStack {
                 Text(vm.gameHeadline)
                     .font(.title)
                     .padding()
-                
+
                 Text(vm.gameDescription)
                     .font(.headline)
-                    .padding()
-                
+
                 HStack {
                     Text("Number of Cities:")
-                    
+
                     Picker("Number of Cities", selection: $numberOfRounds) {
                         ForEach(vm.roundOptions, id: \.self) {
                             Text("\($0)")
@@ -43,7 +42,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                         }
                     }
                 }
-                
+
                 Button(vm.startGameButtonText) {
                     vm.startGame(with: numberOfRounds)
                 }
