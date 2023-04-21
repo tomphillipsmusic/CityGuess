@@ -15,7 +15,7 @@ struct JsonService: ReadWrite {
 
             try JSONEncoder().encode(data)
                 .write(to: filePath)
-            
+
         } catch let error {
             print(error)
         }

@@ -29,7 +29,7 @@ struct LocalCityService: CityService {
         service.write(images, to: Self.imagesFile)
     }
 
-    func save<T: City>(_ cities: [T]) throws where T : City, T : Encodable {
+    func save<T: City>(_ cities: [T]) throws where T: City, T: Encodable {
         service.write(cities, to: Self.citiesFile)
     }
 }

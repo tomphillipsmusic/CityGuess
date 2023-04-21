@@ -13,7 +13,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
     @State private var autofillSuggestions = [ViewModel.CityModel]()
-        
+
     var body: some View {
 
         VStack {

@@ -32,10 +32,10 @@ actor TeleportApiClient: CityImageFetching, CityModelFetching {
                 cityImages.append(CityImage(title: city.name, url: photo.image.mobile))
             }
         }
-            
+
         return cityImages
     }
-    
+
     func fetchCities() async throws -> [TeleportCity] {
         let url = "\(baseUrl)\(Endpoint.urbanAreas)"
         let response: TeleportCitiesResponse = try await NetworkManager.shared.fetch(from: url)

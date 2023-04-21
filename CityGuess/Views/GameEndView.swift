@@ -15,7 +15,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             Text(vm.gameOverText)
                 .font(.largeTitle)
                 .padding()
-  
+
             Text(vm.gameOverScoreText)
                 .font(.headline)
                 .padding()

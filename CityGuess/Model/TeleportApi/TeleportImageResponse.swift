@@ -9,10 +9,10 @@ import Foundation
 
 struct TeleportImageResponse: Codable {
     let photos: [Photo]
-    
+
     struct Photo: Codable {
         let image: Image
-        
+
         struct Image: Codable {
             let mobile: String
         }

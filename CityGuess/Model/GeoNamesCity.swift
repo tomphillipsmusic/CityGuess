@@ -16,7 +16,7 @@ struct GeoNamesCity: Codable, Identifiable, City {
     let name: String
     let lat: String
     let lng: String
-    
+
     var id: String {
         country + name + lat + lng
     }

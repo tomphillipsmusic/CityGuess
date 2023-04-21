@@ -10,7 +10,7 @@ import CachedAsyncImage
 
 struct ZoomableImage: View {
     let url: URL?
-    
+
     var body: some View {
         CachedAsyncImage(url: url) { image in
             ZoomableScrollView {
@@ -18,7 +18,7 @@ struct ZoomableImage: View {
                     .resizable()
                     .scaledToFit()
             }
-            
+
         } placeholder: {
             ProgressView()
         }
