@@ -14,15 +14,17 @@ struct CityGuessTextField: View {
 
     var body: some View {
         TextField("Guess", text: $text)
-            .padding()
-            .disableAutocorrection(true)
             .keyboardType(.alphabet)
+            .disableAutocorrection(true)
+            .padding()
             .focused($textFieldFocused)
             .onAppear {
                 textFieldFocused = true
             }
-            .onChange(of: isLoadingNextQuestion) { _ in
-                textFieldFocused = true
+            .onChange(of: text) { _ in
+                if isLoadingNextQuestion {
+                    text = ""
+                }
             }
     }
 }

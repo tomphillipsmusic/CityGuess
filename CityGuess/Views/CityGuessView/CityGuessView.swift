@@ -13,14 +13,11 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
     @State private var autofillSuggestions = [ViewModel.CityModel]()
-    @State private var showingNotice
+    @State private var showingNotice: Bool = false
 
     var body: some View {
 
         VStack {
-            #warning("Replace with better way of giving user feedback on answers")
-            Text(vm.priorAnswer)
-                .foregroundColor(vm.isCorrect ? .green : .red)
 
             ZStack {
                 ZoomableImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url))
@@ -34,7 +31,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             }
 
             CityGuessTextField(text: $guess, isLoadingNextQuestion: $showingNotice)
-                .disabled(showingNotice)
 
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 vm.submit(guess: cityName)
