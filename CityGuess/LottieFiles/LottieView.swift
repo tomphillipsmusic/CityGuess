@@ -10,23 +10,19 @@ import Lottie
 
 struct LottieView: UIViewRepresentable {
 
-    var animationName: String
+    var animationType: AnimationType
 
     func makeUIView(context: Context) -> some UIView {
         let view = UIView(frame: .zero)
-
         let animationView = LottieAnimationView()
-        let animation = LottieAnimation.named(animationName)
+        let animation = LottieAnimation.named(animationType.name)
 
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
+        animationView.animationSpeed *= animationType.speedMultiplier
 
-        if animationName == "correct" {
-            animationView.animationSpeed *= 1.45
-        }
         animationView.play { _ in
             animationView.removeFromSuperview()
-            print(animationName + " \(animation?.duration)" )
         }
 
         animationView.translatesAutoresizingMaskIntoConstraints = false

@@ -15,7 +15,7 @@ class VerticalTextAnimationViewModel: ViewModel {
     @Published var opacity: CGFloat = 1
 
     let text: String
-    let animation: Animation
+    let animation: AnimationType
     let completion: () -> Void
 
     init(text: String, isCorrect: Bool, completion: @escaping () -> Void) {
@@ -38,37 +38,6 @@ class VerticalTextAnimationViewModel: ViewModel {
         DispatchQueue.main.asyncAfter(deadline: .now() + (animationLength + 1.0)) { [weak self] in
             guard let self else { return }
             self.completion()
-        }
-    }
-
-    enum Animation {
-        case correct, incorrect
-
-        var initialOffset: CGFloat {
-            switch self {
-            case .correct:
-                return -150
-            case .incorrect:
-                return 150
-            }
-        }
-
-        var endingOffset: TimeInterval {
-            switch self {
-            case .correct:
-                return -100
-            case .incorrect:
-                return 100
-            }
-        }
-
-        var length: CGFloat {
-            switch self {
-            case .correct:
-                return 3.0
-            case .incorrect:
-                return 1.5
-            }
         }
     }
 }

@@ -23,6 +23,7 @@
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
 		3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */; };
 		3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */; };
+		3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FBA29F80C2D00A861F0 /* AnimationType.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* GameView.swift */; };
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
 		3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAnimationViewModel.swift; sourceTree = "<group>"; };
+		3E298FBA29F80C2D00A861F0 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
 		3E64ADA829DEFD5300DCCF2E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				3E0A438229E9817600A9D2BE /* TeleportApi */,
 				3EEB998929E43C4700514F79 /* CityImage.swift */,
 				3EEB999329E4679B00514F79 /* GeoNamesCity.swift */,
+				3E298FBA29F80C2D00A861F0 /* AnimationType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
 				3E9C7D4529E9ED290073CCE4 /* ContentView.swift in Sources */,
+				3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
 				3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */,
 				3EC3688D29F302A600AE92D9 /* FloatingAnimationView.swift in Sources */,
