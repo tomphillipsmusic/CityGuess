@@ -51,6 +51,7 @@ protocol GameLogic: ViewModel {
     func submit(guess: String)
 
     var score: Int { get set }
+    var questions: [Question] { get set }
     var numberOfRounds: Int { get set }
     var roundLength: Int { get }
     var roundOptions: [Int] { get }

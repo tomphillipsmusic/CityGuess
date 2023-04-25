@@ -9,19 +9,18 @@ import SwiftUI
 
 struct ProgressBar: View {
     var progress: CGFloat
-    var color: Color
+    let questions: [Question]
 
     var body: some View {
         GeometryReader { geo in
-            ZStack(alignment: .leading) {
 
-                Rectangle()
-                    .fill(color.opacity(0.3))
-
-                Rectangle()
-                    .fill(color)
-                    .frame(width: min(geo.size.width, geo.size.width * progress))
-                    .animation(.linear, value: progress)
+            HStack {
+                ForEach(questions) { question in
+                    Rectangle()
+                        .foregroundColor(question.color)
+                        .frame(maxWidth: geo.size.width / CGFloat(questions.count - 2))
+                        .animation(.linear, value: progress)
+                }
             }
             .cornerRadius(45.0)
         }
@@ -30,6 +29,12 @@ struct ProgressBar: View {
 
 struct ProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBar(progress: 20.0, color: .green)
+        ProgressBar(progress: 20.0, questions: [
+            Question(state: .correct, text: "answer"),
+            Question(state: .incorrect, text: "asdf"),
+            Question(state: .correct, text: "ansasdfasdfwer"),
+            Question(state: .incorrect, text: "asdfasd"),
+            Question(text: "asdfasdfasdfas")
+        ])
     }
 }

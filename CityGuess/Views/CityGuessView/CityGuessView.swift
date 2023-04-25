@@ -17,7 +17,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var body: some View {
 
         VStack {
-            ProgressBar(progress: CGFloat(vm.currentCityIndex) / CGFloat(vm.roundLength), color: .green)
+            ProgressBar(progress: CGFloat(vm.currentCityIndex) / CGFloat(vm.roundLength), questions: vm.questions)
                     .frame(height: 20)
                     .padding()
 
@@ -34,7 +34,10 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             CityGuessTextField(text: $guess, isLoadingNextQuestion: $vm.isShowingAnimation)
 
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
-                vm.submit(guess: cityName)
+                withAnimation(.linear(duration: 1.0)) {
+                    vm.submit(guess: cityName)
+                }
+
                 self.guess = ""
             }
         }

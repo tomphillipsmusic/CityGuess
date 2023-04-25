@@ -52,6 +52,7 @@ extension CityGuessViewModel {
         cityImages.shuffle()
         priorAnswer = ""
         currentCityIndex = 0
+        questions = (0..<roundLength).map { Question(text: cityImages[$0].title) }
     }
 
     func endGame() {
@@ -79,6 +80,7 @@ extension CityGuessViewModel {
     }
 
     func animationCompleted() {
+        questions[currentCityIndex].state = isCorrect ? .correct : .incorrect
         currentCityIndex += 1
         isShowingAnimation = false
     }

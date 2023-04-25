@@ -14,8 +14,11 @@ struct FloatingAnimationView<ViewModel: CityGuessViewModel>: View {
         ZStack {
             LottieView(animationType: vm.isCorrect ? .correct : .incorrect)
             VerticalTextAnimationView(vm:
-                VerticalTextAnimationViewModel(text: vm.priorAnswer, isCorrect: vm.isCorrect) {
-                vm.animationCompleted()
+                                        VerticalTextAnimationViewModel(text: vm.priorAnswer, isCorrect: vm.isCorrect) {
+                withAnimation {
+                    vm.animationCompleted()
+                }
+
             })
         }
     }
