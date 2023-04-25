@@ -13,10 +13,10 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ProgressBar(progress: CGFloat(vm.currentCityIndex) / CGFloat(vm.roundLength), questions: vm.questions)
+                ProgressBar(progress: CGFloat(vm.currentCityIndex) / CGFloat(vm.numberOfRounds), questions: vm.questions)
                         .frame(height: 20)
                         .padding()
-                
+
                 if !vm.isPlaying {
                     GameStartView(vm: vm)
                 } else if vm.isGameOver {

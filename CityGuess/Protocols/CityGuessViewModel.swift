@@ -53,7 +53,6 @@ protocol GameLogic: ViewModel {
     var score: Int { get set }
     var questions: [Question] { get set }
     var numberOfRounds: Int { get set }
-    var roundLength: Int { get }
     var roundOptions: [Int] { get }
     var currentRound: Int { get }
     var isPlaying: Bool { get set }

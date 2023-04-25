@@ -10,7 +10,6 @@ import CachedAsyncImage
 
 struct GameStartView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var vm: ViewModel
-    @State private var numberOfRounds = 10
 
     var body: some View {
         ZStack {
@@ -35,16 +34,21 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 HStack {
                     Text("Number of Cities:")
 
-                    Picker("Number of Cities", selection: $numberOfRounds) {
+                    Picker("Number of Cities", selection: $vm.numberOfRounds) {
                         ForEach(vm.roundOptions, id: \.self) {
                             Text("\($0)")
                                 .tag($0)
+                        }
+                        .onChange(of: vm.numberOfRounds) { newValue in
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                vm.questions = Array(repeating: Question(text: ""), count: newValue)
+                            }
                         }
                     }
                 }
 
                 Button(vm.startGameButtonText) {
-                    vm.startGame(with: numberOfRounds)
+                    vm.startGame(with: vm.numberOfRounds)
                 }
                 .disabled(vm.cityImages.isEmpty)
                 .padding()

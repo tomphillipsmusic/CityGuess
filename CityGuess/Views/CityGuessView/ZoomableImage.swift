@@ -20,7 +20,11 @@ struct ZoomableImage: View {
             }
 
         } placeholder: {
-            ProgressView()
+            VStack {
+                Spacer()
+                ProgressView()
+                Spacer()
+            }
         }
     }
 }

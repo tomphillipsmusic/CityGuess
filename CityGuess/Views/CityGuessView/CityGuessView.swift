@@ -18,7 +18,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
         VStack {
 
-
             ZStack {
                 ZoomableImage(url: URL(string: vm.currentCityImage.url))
 
