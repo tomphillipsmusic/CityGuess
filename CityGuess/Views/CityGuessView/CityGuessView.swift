@@ -17,6 +17,9 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var body: some View {
 
         VStack {
+            ProgressBar(progress: CGFloat(vm.currentCityIndex) / CGFloat(vm.roundLength), color: .green)
+                    .frame(height: 20)
+                    .padding()
 
             ZStack {
                 ZoomableImage(url: URL(string: vm.currentCityImage.url))
