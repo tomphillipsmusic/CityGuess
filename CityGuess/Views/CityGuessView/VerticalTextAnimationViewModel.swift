@@ -15,23 +15,22 @@ class VerticalTextAnimationViewModel: ViewModel {
     @Published var opacity: CGFloat = 1
 
     let text: String
-    let isCorrect: Bool
+    let animation: Animation
     let completion: () -> Void
 
     init(text: String, isCorrect: Bool, completion: @escaping () -> Void) {
         self.text = text
-        self.isCorrect = isCorrect
+        self.animation = isCorrect ? .correct : .incorrect
         self.completion = completion
     }
 
     func beginAnimation() {
         isAnimating = true
-        offset = isCorrect ? -150 : 150
-        animationLength = isCorrect ? 3.0 : 1.5
+        offset = animation.initialOffset
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + animationLength / 2) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + animation.length / 2) { [weak self] in
             guard let self else { return }
-            self.offset = self.offset > 0 ? 100 : -100
+            self.offset = self.animation.endingOffset
             self.opacity = 0
             self.isAnimating = false
         }
@@ -54,21 +53,21 @@ class VerticalTextAnimationViewModel: ViewModel {
             }
         }
 
-        var endingOffset: CGFloat {
-            switch self {
-            case .correct:
-                return 3.0
-            case .incorrect:
-                return 1.5
-            }
-        }
-
-        var length: TimeInterval {
+        var endingOffset: TimeInterval {
             switch self {
             case .correct:
                 return -100
             case .incorrect:
                 return 100
+            }
+        }
+
+        var length: CGFloat {
+            switch self {
+            case .correct:
+                return 3.0
+            case .incorrect:
+                return 1.5
             }
         }
     }
