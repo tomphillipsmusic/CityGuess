@@ -20,9 +20,13 @@ struct LottieView: UIViewRepresentable {
 
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
-
+        
+        if animationName == "correct" {
+            animationView.animationSpeed *= 1.45
+        }
         animationView.play { _ in
             animationView.removeFromSuperview()
+            print(animationName + " \(animation?.duration)" )
         }
 
         animationView.translatesAutoresizingMaskIntoConstraints = false

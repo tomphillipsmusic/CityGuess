@@ -10,6 +10,7 @@ import SwiftUI
 struct VerticalTextAnimationView: View {
     let text: String
     let isCorrect: Bool
+    @State private var animationLength: TimeInterval = 1.5
     @Binding var isShowing: Bool
     @State private var isAnimating = true
     @State private var offset: CGFloat = 0
@@ -28,15 +29,15 @@ struct VerticalTextAnimationView: View {
             .onAppear {
                 self.isAnimating = true
                 offset = isCorrect ? -150 : 150
+                animationLength = isCorrect ? 3.0 : 1.5
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + animationLength / 2) {
                     offset = offset > 0 ? 100 : -100
                     opacity = 0
                     isAnimating = false
-
                 }
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + (animationLength + 1.0)) {
                      isShowing = false
                 }
             }
