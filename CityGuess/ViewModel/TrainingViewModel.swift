@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 class TrainingViewModel: CityGuessViewModel {
     @Published var cityImages = [CityImage]()
-    @Published var questions: [Question] = []
+    @Published var questions: [Question] = Array(repeating: Question(text: ""), count: 10)
     @Published var score = 0
     @Published var currentCityIndex = 0
     @Published var isPlaying = false
