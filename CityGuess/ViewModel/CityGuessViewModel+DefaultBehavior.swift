@@ -21,6 +21,10 @@ extension CityGuessViewModel {
         currentCityIndex + 1
     }
 
+    var currentCityImage: CityImage {
+        cityImages[currentCityIndex]
+    }
+
     var scoreLabelText: String {
         "Score: \(score)"
     }

@@ -17,6 +17,7 @@ protocol CityGuessViewModel: ViewModel, CityGuessGame {
 
     var cityImages: [CityImage] { get set }
     var currentCityIndex: Int { get set }
+    var currentCityImage: CityImage { get }
     var cities: [CityModel] { get set }
     var cityService: CityService { get }
     var cityFetcher: CityFetcher { get }

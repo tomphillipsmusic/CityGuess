@@ -19,7 +19,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
         VStack {
 
             ZStack {
-                ZoomableImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url))
+                ZoomableImage(url: URL(string: vm.currentCityImage.url))
 
                 if vm.isShowingAnimation {
                     withAnimation(.easeIn(duration: 1)) {
