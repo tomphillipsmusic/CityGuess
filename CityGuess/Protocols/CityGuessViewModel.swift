@@ -8,9 +8,10 @@
 import Foundation
 
 protocol ViewModel: ObservableObject {}
+typealias CityGuessGame = GameLogic & GameMode & AnimatedGame
 
 @MainActor
-protocol CityGuessViewModel: ViewModel, GameLogic, GameMode {
+protocol CityGuessViewModel: ViewModel, CityGuessGame {
     associatedtype CityModel: City
     associatedtype CityFetcher: CityFetching
 
@@ -57,4 +58,10 @@ protocol GameLogic: ViewModel {
     var isCorrect: Bool { get set }
     var isGameOver: Bool { get }
     var priorAnswer: String { get set}
+}
+
+@MainActor
+protocol AnimatedGame: ViewModel {
+    var isShowingAnimation: Bool { get set }
+    func animationCompleted()
 }

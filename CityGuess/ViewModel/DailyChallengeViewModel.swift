@@ -16,6 +16,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var isCorrect = false
     @Published var priorAnswer = ""
     @Published var numberOfRounds = 5
+    @Published var isShowingAnimation: Bool = false
 
     var cities: [GeoNamesCity] = []
     let cityService: CityService

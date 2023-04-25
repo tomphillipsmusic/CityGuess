@@ -13,7 +13,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
     @State private var autofillSuggestions = [ViewModel.CityModel]()
-    @State private var showingNotice: Bool = false
 
     var body: some View {
 
@@ -22,20 +21,18 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             ZStack {
                 ZoomableImage(url: URL(string: vm.cityImages[vm.currentCityIndex].url))
 
-                if showingNotice {
+                if vm.isShowingAnimation {
                     withAnimation(.easeIn(duration: 1)) {
-                        FloatingAnimationView( isShowing: $showingNotice, isCorrect: vm.isCorrect, correctAnswer: vm.priorAnswer)
-
+                        FloatingAnimationView(vm: vm)
                     }
                 }
             }
 
-            CityGuessTextField(text: $guess, isLoadingNextQuestion: $showingNotice)
+            CityGuessTextField(text: $guess, isLoadingNextQuestion: $vm.isShowingAnimation)
 
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 vm.submit(guess: cityName)
                 self.guess = ""
-                showingNotice = true
             }
         }
         .toolbar {
