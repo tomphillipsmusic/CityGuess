@@ -13,14 +13,14 @@ extension Sequence {
         var results: Set<Self.Element> = []
         results.reserveCapacity(limit)
         var iterator = self.makeIterator()
-        
+
         while filteredCount < limit, let element = iterator.next() {
             if isIncluded(element), !results.contains(where: { $0 == element }) {
                 filteredCount += 1
                 results.insert(element)
             }
         }
-        
+
         return Array(results)
     }
 }

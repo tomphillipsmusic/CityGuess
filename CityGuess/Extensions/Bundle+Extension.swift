@@ -9,7 +9,13 @@ import Foundation
 
 extension Bundle {
 
-    func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) throws -> T {
+    func decode<T: Decodable>(
+        _ type: T.Type,
+        from file: String,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
+        keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    ) throws -> T {
+
         guard let url = self.url(forResource: file, withExtension: nil) else {
             print("Failed to locate \(file) in bundle.")
             throw URLError(.fileDoesNotExist)
@@ -26,7 +32,7 @@ extension Bundle {
         do {
             return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
-            print("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' not found – \(context.debugDescription)")
+            print("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' \(context.debugDescription)")
             throw DecodingError.keyNotFound(key, context)
         } catch DecodingError.typeMismatch(let type, let context) {
             print("Failed to decode \(file) from bundle due to type mismatch – \(context.debugDescription)")

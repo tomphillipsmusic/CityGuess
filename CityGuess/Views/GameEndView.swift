@@ -9,17 +9,17 @@ import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var vm: ViewModel
-    
+
     var body: some View {
         VStack {
             Text(vm.gameOverText)
                 .font(.largeTitle)
                 .padding()
-            
+
             Text(vm.gameOverScoreText)
                 .font(.headline)
                 .padding()
-            
+
             Button(vm.tryAgainButtonText) {
                 vm.endGame()
             }

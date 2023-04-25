@@ -14,7 +14,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Training", systemImage: "globe.americas.fill")
                 }
-            
+
             GameView(vm: DailyChallengeViewModel())
                 .tabItem {
                     Label("Daily Challenge", systemImage: "medal")

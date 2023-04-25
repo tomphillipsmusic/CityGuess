@@ -14,5 +14,5 @@ protocol Read {
 }
 
 protocol Write {
-    func write<T: Encodable>(_ data: T, to filename: String) -> Void
+    func write<T: Encodable>(_ data: T, to filename: String)
 }

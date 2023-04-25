@@ -10,12 +10,12 @@ import Foundation
 struct TeleportCitiesResponse: Codable {
     let count: Int
     let links: Links
-    
+
     enum CodingKeys: String, CodingKey {
         case links = "_links"
         case count
     }
-    
+
     struct Links: Codable {
         let cities: [TeleportCity]
         enum CodingKeys: String, CodingKey {
