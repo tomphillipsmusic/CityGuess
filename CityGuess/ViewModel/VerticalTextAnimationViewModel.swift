@@ -35,7 +35,7 @@ class VerticalTextAnimationViewModel: ViewModel {
             self.isAnimating = false
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + (animationLength + 1.0)) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + (animationLength * animation.speedMultiplier)) { [weak self] in
             guard let self else { return }
             self.completion()
         }
