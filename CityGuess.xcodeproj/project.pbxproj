@@ -159,8 +159,8 @@
 		3E64ADA529DEFD5300DCCF2E /* CityGuess */ = {
 			isa = PBXGroup;
 			children = (
-				3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */,
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
+				3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */,
 				3EEB99A029E4909D00514F79 /* Views */,
 				3EEB999C29E47E3600514F79 /* ViewModel */,
 				3EEB999929E47CDD00514F79 /* Service */,
@@ -220,6 +220,7 @@
 				3E9C7D4829EDDD1D0073CCE4 /* CityGuessViewModel+DefaultBehavior.swift */,
 				3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */,
 				3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */,
+				3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -254,7 +255,6 @@
 				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
 				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
 				3EC3688C29F302A600AE92D9 /* FloatingAnimationView.swift */,
-				3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */,
 				3EC3688E29F3032B00AE92D9 /* VerticalTextAnimationView.swift */,
 			);
 			path = CityGuessView;
