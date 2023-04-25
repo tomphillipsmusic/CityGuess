@@ -8,7 +8,7 @@
 import Foundation
 
 enum AnimationType: String {
-    case correct, incorrect
+    case correct, incorrect, skyscraper
 
     var name: String { rawValue }
 
@@ -18,6 +18,8 @@ enum AnimationType: String {
             return -150
         case .incorrect:
             return 150
+        default:
+            return 0
         }
     }
 
@@ -27,6 +29,8 @@ enum AnimationType: String {
             return -100
         case .incorrect:
             return 100
+        default:
+            return 0
         }
     }
 
@@ -36,6 +40,8 @@ enum AnimationType: String {
             return 3.0
         case .incorrect:
             return 1.5
+        default:
+            return 0
         }
     }
 

@@ -21,9 +21,13 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 .padding()
 
             Button(vm.tryAgainButtonText) {
-                vm.endGame()
+                withAnimation {
+                    vm.endGame()
+                }
             }
             .padding()
+            
+            LottieView(animationType: .skyscraper)
         }
     }
 }

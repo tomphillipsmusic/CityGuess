@@ -20,7 +20,7 @@ struct LottieView: UIViewRepresentable {
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.animationSpeed *= animationType.speedMultiplier
-
+        
         animationView.play { _ in
             animationView.removeFromSuperview()
         }

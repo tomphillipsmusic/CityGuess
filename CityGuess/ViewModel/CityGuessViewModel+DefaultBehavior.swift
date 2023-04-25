@@ -10,11 +10,11 @@ import Foundation
 extension CityGuessViewModel {
 
     var isGameOver: Bool {
-        currentCityIndex == roundLength
+        currentCityIndex == numberOfRounds
     }
 
     var roundOptions: [Int] {
-        [5, 10, 25, 50, 100, cities.count]
+        [5, 10, 25]
     }
 
     var currentRound: Int {
@@ -52,10 +52,16 @@ extension CityGuessViewModel {
         cityImages.shuffle()
         priorAnswer = ""
         currentCityIndex = 0
+        questions = resetQuestions()
     }
 
     func endGame() {
         isPlaying = false
+        questions = resetQuestions()
+    }
+
+    private func resetQuestions() -> [Question] {
+        (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
     }
 
     func submit(guess: String) {
@@ -79,6 +85,7 @@ extension CityGuessViewModel {
     }
 
     func animationCompleted() {
+        questions[currentCityIndex].state = isCorrect ? .correct : .incorrect
         currentCityIndex += 1
         isShowingAnimation = false
     }

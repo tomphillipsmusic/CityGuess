@@ -7,21 +7,23 @@
 
 import Foundation
 
+private let defaultNumberOfRounds = 5
+
 @MainActor
 class TrainingViewModel: CityGuessViewModel {
     @Published var cityImages = [CityImage]()
+    @Published var questions: [Question] = Array(repeating: Question(text: ""), count: defaultNumberOfRounds)
     @Published var score = 0
     @Published var currentCityIndex = 0
     @Published var isPlaying = false
     @Published var isCorrect = false
     @Published var priorAnswer = ""
-    @Published var numberOfRounds = 5
+    @Published var numberOfRounds = defaultNumberOfRounds
     @Published var isShowingAnimation: Bool = false
 
     var cities: [TeleportCity] = []
     let cityService: CityService
     let cityFetcher: TeleportApiClient
-    let roundLength = 10
 
     let modeTitle: String = "Training"
     let gameHeadline: String = "Do you have what it takes to be a true City Guesser?"

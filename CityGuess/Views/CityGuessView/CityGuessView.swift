@@ -31,7 +31,10 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             CityGuessTextField(text: $guess, isLoadingNextQuestion: $vm.isShowingAnimation)
 
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
-                vm.submit(guess: cityName)
+                withAnimation(.linear(duration: 1.0)) {
+                    vm.submit(guess: cityName)
+                }
+
                 self.guess = ""
             }
         }
