@@ -15,7 +15,9 @@ struct FloatingAnimationView: View {
     var body: some View {
         ZStack {
             LottieView(animationName: isCorrect ? "correct" : "incorrect")
-            VerticalTextAnimationView(text: correctAnswer, isCorrect: isCorrect, isShowing: $isShowing)
+            VerticalTextAnimationView(vm: VerticalTextAnimationViewModel(text: correctAnswer, isCorrect: isCorrect) {
+                isShowing = false
+            })
         }
     }
 }

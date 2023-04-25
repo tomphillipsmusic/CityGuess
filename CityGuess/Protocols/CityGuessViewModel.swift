@@ -7,8 +7,10 @@
 
 import Foundation
 
+protocol ViewModel: ObservableObject {}
+
 @MainActor
-protocol CityGuessViewModel: ObservableObject, GameLogic, GameMode {
+protocol CityGuessViewModel: ViewModel, GameLogic, GameMode {
     associatedtype CityModel: City
     associatedtype CityFetcher: CityFetching
 
@@ -26,7 +28,7 @@ protocol CityGuessViewModel: ObservableObject, GameLogic, GameMode {
 }
 
 @MainActor
-protocol GameMode: ObservableObject {
+protocol GameMode: ViewModel {
     var modeTitle: String { get }
     var gameHeadline: String { get }
     var gameDescription: String { get }
@@ -41,7 +43,7 @@ protocol GameMode: ObservableObject {
 }
 
 @MainActor
-protocol GameLogic: ObservableObject {
+protocol GameLogic: ViewModel {
     func startGame(with numberOfRounds: Int)
     func endGame()
     func submit(guess: String)
