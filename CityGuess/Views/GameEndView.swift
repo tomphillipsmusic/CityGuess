@@ -26,6 +26,8 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 }
             }
             .padding()
+            
+            LottieView(animationType: .skyscraper)
         }
     }
 }

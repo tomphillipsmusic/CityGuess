@@ -13,7 +13,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
 
     var body: some View {
         ZStack {
-            CachedAsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
+            AsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
                 image
                     .resizable()
                     .scaledToFill()
