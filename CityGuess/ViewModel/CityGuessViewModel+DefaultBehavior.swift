@@ -67,7 +67,7 @@ extension CityGuessViewModel {
     func submit(guess: String) {
         let title = cityImages[currentCityIndex].title
 
-        if title.lowercased().contains(guess.lowercased()) {
+        if title.caseInsensitiveContains(guess) {
             isCorrect = true
             score += 1
             HapticsManager.shared.correct()
@@ -83,7 +83,7 @@ extension CityGuessViewModel {
     func autofillSuggestions(for guess: String) -> [CityModel] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 8
-        return cities.filterUniqueItems({ $0.name.lowercased().starts(with: guess.lowercased())}, limit: numberOfSuggestions)
+        return cities.filterUniqueItems({ $0.name.caseInsensitiveStarts(with: guess) }, limit: numberOfSuggestions)
     }
 
     func animationCompleted() {

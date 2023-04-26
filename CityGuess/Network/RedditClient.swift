@@ -37,7 +37,7 @@ class RedditClient: CityFetching {
 
         for image in cityImages {
             for city in cities {
-                if image.title.lowercased().contains(city.name.lowercased()) {
+                if image.title.caseInsensitiveContains(city.name) {
                     result.append(image)
                     break
                 }
