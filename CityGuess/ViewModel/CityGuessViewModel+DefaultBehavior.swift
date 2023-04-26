@@ -70,8 +70,10 @@ extension CityGuessViewModel {
         if title.lowercased().contains(guess.lowercased()) {
             isCorrect = true
             score += 1
+            HapticsManager.shared.correct()
         } else {
             isCorrect = false
+            HapticsManager.shared.incorrect()
         }
 
         priorAnswer = title
