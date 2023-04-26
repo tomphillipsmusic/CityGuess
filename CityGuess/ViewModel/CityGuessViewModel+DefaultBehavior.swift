@@ -83,7 +83,7 @@ extension CityGuessViewModel {
     func autofillSuggestions(for guess: String) -> [CityModel] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 8
-        return cities.filterUniqueItems({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)
+        return cities.filterUniqueItems({ $0.name.lowercased().starts(with: guess.lowercased())}, limit: numberOfSuggestions)
     }
 
     func animationCompleted() {

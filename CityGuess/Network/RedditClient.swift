@@ -9,9 +9,11 @@ import Foundation
 
 class RedditClient: CityFetching {
     static let bigCities = "bigcities.json"
+    var cities: [GeoNamesCity] = []
 
     func fetchCities() async throws -> [GeoNamesCity] {
-        try Bundle.main.decode([GeoNamesCity].self, from: Self.bigCities)
+        cities = try Bundle.main.decode([GeoNamesCity].self, from: Self.bigCities)
+        return cities
     }
 
     typealias CityModel = GeoNamesCity
@@ -26,7 +28,23 @@ class RedditClient: CityFetching {
     func fetchCityImages() async throws -> [CityImage] {
         let url = "\(baseUrl)\(Endpoint.new)?size=\(count)"
         let decodedResponse: CityImagesResponse = try await NetworkManager.shared.fetch(from: url)
-        return decodedResponse.data.children.map { $0.data }
+        let decodedCities = decodedResponse.data.children.map { $0.data }
+        return filterValid(decodedCities)
+    }
+
+    private func filterValid(_ cityImages: [CityImage]) -> [CityImage] {
+        var result = [CityImage]()
+
+        for image in cityImages {
+            for city in cities {
+                if image.title.lowercased().contains(city.name.lowercased()) {
+                    result.append(image)
+                    break
+                }
+            }
+        }
+
+        return result
     }
 }
 
