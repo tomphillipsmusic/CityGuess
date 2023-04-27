@@ -26,6 +26,7 @@
 		3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FBA29F80C2D00A861F0 /* AnimationType.swift */; };
 		3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B497D29F86F9E00260B88 /* HapticsManager.swift */; };
 		3E2B498229F96F8B00260B88 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B498129F96F8B00260B88 /* String+Extension.swift */; };
+		3E2B498A29F97DBF00260B88 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* GameView.swift */; };
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
@@ -57,6 +58,16 @@
 		3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3E2B498B29F97DBF00260B88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E64AD9B29DEFD5300DCCF2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E64ADA229DEFD5300DCCF2E;
+			remoteInfo = CityGuess;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		3E065B6529EEE70F0057A250 /* ZoomableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImage.swift; sourceTree = "<group>"; };
@@ -76,6 +87,8 @@
 		3E298FBA29F80C2D00A861F0 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		3E2B497D29F86F9E00260B88 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		3E2B498129F96F8B00260B88 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3E2B498729F97DBF00260B88 /* CityGuessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityGuessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
 		3E64ADA829DEFD5300DCCF2E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -108,6 +121,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E2B498429F97DBF00260B88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E64ADA029DEFD5300DCCF2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,10 +170,19 @@
 			path = Reddit;
 			sourceTree = "<group>";
 		};
+		3E2B498829F97DBF00260B88 /* CityGuessTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */,
+			);
+			path = CityGuessTests;
+			sourceTree = "<group>";
+		};
 		3E64AD9A29DEFD5300DCCF2E = {
 			isa = PBXGroup;
 			children = (
 				3E64ADA529DEFD5300DCCF2E /* CityGuess */,
+				3E2B498829F97DBF00260B88 /* CityGuessTests */,
 				3E64ADA429DEFD5300DCCF2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3E64ADA329DEFD5300DCCF2E /* CityGuess.app */,
+				3E2B498729F97DBF00260B88 /* CityGuessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +318,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3E2B498629F97DBF00260B88 /* CityGuessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E2B498D29F97DBF00260B88 /* Build configuration list for PBXNativeTarget "CityGuessTests" */;
+			buildPhases = (
+				3E2B498329F97DBF00260B88 /* Sources */,
+				3E2B498429F97DBF00260B88 /* Frameworks */,
+				3E2B498529F97DBF00260B88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E2B498C29F97DBF00260B88 /* PBXTargetDependency */,
+			);
+			name = CityGuessTests;
+			productName = CityGuessTests;
+			productReference = 3E2B498729F97DBF00260B88 /* CityGuessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3E64ADA229DEFD5300DCCF2E /* CityGuess */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E64ADB129DEFD5400DCCF2E /* Build configuration list for PBXNativeTarget "CityGuess" */;
@@ -320,6 +368,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					3E2B498629F97DBF00260B88 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 3E64ADA229DEFD5300DCCF2E;
+					};
 					3E64ADA229DEFD5300DCCF2E = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -344,11 +396,19 @@
 			projectRoot = "";
 			targets = (
 				3E64ADA229DEFD5300DCCF2E /* CityGuess */,
+				3E2B498629F97DBF00260B88 /* CityGuessTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3E2B498529F97DBF00260B88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E64ADA129DEFD5300DCCF2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +447,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3E2B498329F97DBF00260B88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2B498A29F97DBF00260B88 /* StringExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E64AD9F29DEFD5300DCCF2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,7 +503,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3E2B498C29F97DBF00260B88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E64ADA229DEFD5300DCCF2E /* CityGuess */;
+			targetProxy = 3E2B498B29F97DBF00260B88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3E2B498E29F97DBF00260B88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PU4JAM9L7Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomphillipsmusic.CityGuessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityGuess.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CityGuess";
+			};
+			name = Debug;
+		};
+		3E2B498F29F97DBF00260B88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PU4JAM9L7Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomphillipsmusic.CityGuessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityGuess.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CityGuess";
+			};
+			name = Release;
+		};
 		3E64ADAF29DEFD5400DCCF2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -611,6 +723,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3E2B498D29F97DBF00260B88 /* Build configuration list for PBXNativeTarget "CityGuessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2B498E29F97DBF00260B88 /* Debug */,
+				3E2B498F29F97DBF00260B88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3E64AD9E29DEFD5300DCCF2E /* Build configuration list for PBXProject "CityGuess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
