@@ -60,4 +60,21 @@ final class SequenceExtensionTests: XCTestCase {
         XCTAssertTrue(actualResult.sorted() == expectedOutput, "\(actualResult)")
     }
 
+    func testFilteringUniqueItemsWithNegativeLimitReturnsEmptyArray() {
+        let input = [1, 2, 3]
+
+        let expectedOutput: [Int] = []
+        let actualResult = input.filterUniqueItems({ $0 > 0 }, limit: -1)
+
+        XCTAssertTrue(actualResult == expectedOutput)
+    }
+
+    func testFilteringUniqueItemsWithZeroLimitReturnsEmptyArray() {
+        let input = [1, 2, 3]
+
+        let expectedOutput: [Int] = []
+        let actualResult = input.filterUniqueItems({ $0 > 0 }, limit: 0)
+
+        XCTAssertTrue(actualResult == expectedOutput)
+    }
 }
