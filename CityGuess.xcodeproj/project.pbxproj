@@ -181,6 +181,16 @@
 			path = CityGuessTests;
 			sourceTree = "<group>";
 		};
+		3E5FF33129FFFC8F00851A11 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */,
+				3EC3688C29F302A600AE92D9 /* FloatingAnimationView.swift */,
+				3EC3688E29F3032B00AE92D9 /* VerticalTextAnimationView.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		3E64AD9A29DEFD5300DCCF2E = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +293,7 @@
 		3EEB99A029E4909D00514F79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E5FF33129FFFC8F00851A11 /* Animations */,
 				3E9C7D4429E9ED290073CCE4 /* ContentView.swift */,
 				3E64ADA829DEFD5300DCCF2E /* GameView.swift */,
 				3EEF7F7329EF03BA00EEBE9D /* CityGuessView */,
@@ -300,8 +311,6 @@
 				3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */,
 				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
 				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
-				3EC3688C29F302A600AE92D9 /* FloatingAnimationView.swift */,
-				3EC3688E29F3032B00AE92D9 /* VerticalTextAnimationView.swift */,
 				3EBC175A29F84CF100A0B353 /* ProgressBar.swift */,
 			);
 			path = CityGuessView;
@@ -313,7 +322,6 @@
 				3EEF7F7629F2BE9D00EEBE9D /* correct.json */,
 				3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */,
 				3EBC176029F86B3E00A0B353 /* skyscraper.json */,
-				3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
