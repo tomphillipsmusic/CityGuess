@@ -5,7 +5,7 @@
 //  Created by Tom Phillips on 4/17/23.
 //
 
-import Foundation
+import SwiftUI
 
 @MainActor
 class DailyChallengeViewModel: CityGuessViewModel {
@@ -19,6 +19,12 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var numberOfRounds = 5
     @Published var isShowingAnimation: Bool = false
 
+    @AppStorage("dailyChallengeUnlockInterval") var unlockInterval = Date().timeIntervalSinceNow
+
+    var isLocked: Bool {
+        unlockInterval < Date().timeIntervalSinceNow
+    }
+    
     var cities: [GeoNamesCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
@@ -55,5 +61,11 @@ class DailyChallengeViewModel: CityGuessViewModel {
         if let cities = try? await cityFetcher.fetchCities() {
             self.cities = cities
         }
+    }
+    
+    func endGame() {
+        isPlaying = false
+        questions = (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
+        unlockInterval = Date().timeIntervalSinceNow
     }
 }

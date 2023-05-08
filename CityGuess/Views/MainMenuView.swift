@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    @State private var isCompleted = true
+    @StateObject var trainingViewModel = TrainingViewModel()
+    @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
+
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         NavigationStack {
@@ -18,38 +21,50 @@ struct MainMenuView: View {
                     .scaledToFill()
 
                 VStack {
+
+                    Text("\(dailyChallengeViewModel.unlockInterval)")
+                    Text("\(Date().timeIntervalSinceNow)")
+
+
                     Button("Training") {
 
                     }
                     .buttonStyle(.bordered)
                     .padding()
 
-                    
                     ZStack {
-                        if isCompleted {
+                        if dailyChallengeViewModel.isLocked {
                             Image("lock")
-                                .resizable()
-                                //.opacity(0.1)
+                                .resizable() 
                                 .frame(width: 50, height: 50)
                         }
-                      
+
                         Button("Daily Challenge") {
 
                         }
-                        .disabled(isCompleted)
+                        .disabled(dailyChallengeViewModel.isLocked)
                         .buttonStyle(.bordered)
                         .padding()
                     }
 
-                    Button("Unlock") {
+                    Button("Lock") {
                         withAnimation {
-                            isCompleted.toggle()
+                            dailyChallengeViewModel.unlockInterval = Date().timeIntervalSinceNow - 5
                         }
                     }
-                    
+
                     Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
                 }
             }
+            .onReceive(timer, perform: { _ in
+                dailyChallengeViewModel.unlockInterval += 1
+
+//                if timeDailyChallengeCompleted >= unlockTimeInterval {
+//                    withAnimation {
+//                        isCompleted = false
+//                    }
+//                }
+            })
             .navigationTitle("City Guess")
         }
     }
