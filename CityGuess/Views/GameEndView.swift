@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
+    @EnvironmentObject var router: Router
     @ObservedObject var vm: ViewModel
 
     var body: some View {
@@ -23,6 +24,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             Button(vm.tryAgainButtonText) {
                 withAnimation {
                     vm.endGame()
+                    router.currentScreen = .menu
                 }
             }
             .padding()

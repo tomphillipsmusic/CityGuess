@@ -7,79 +7,80 @@
 
 import SwiftUI
 
-struct MainMenuView: View {
-    @StateObject var trainingViewModel = TrainingViewModel()
-    @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
-    @State private var currentScreen: Screen = .menu
-    
+class Router: ObservableObject {
+    @Published var currentScreen: Screen = .menu
+
     enum Screen {
         case menu, training, challenge
     }
+}
+
+struct MainMenuView: View {
+    @StateObject var trainingViewModel = TrainingViewModel()
+    @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
+    @StateObject private var router = Router()
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        switch currentScreen {
-        case .menu:
-            NavigationStack {
-                ZStack {
-                    Image("city-skyline-background")
-                        .resizable()
-                        .scaledToFill()
+        Group {
+            switch router.currentScreen {
+            case .menu:
+                NavigationStack {
+                    ZStack {
+                        Image("city-skyline-background")
+                            .resizable()
+                            .scaledToFill()
 
-                    VStack {
+                        VStack {
 
-                        Text("\(dailyChallengeViewModel.unlockInterval)")
-                        Text("\(Date().timeIntervalSinceNow)")
+                            Text("\(dailyChallengeViewModel.unlockInterval)")
+                            Text("\(Date().timeIntervalSince1970)")
 
-
-                        Button("Training") {
-                            currentScreen = .training
-                        }
-                        .buttonStyle(.bordered)
-                        .padding()
-
-                        ZStack {
-                            if dailyChallengeViewModel.isLocked {
-                                Image("lock")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
+                            Button("Training") {
+                                router.currentScreen = .training
                             }
-
-                            Button("Daily Challenge") {
-                                currentScreen = .challenge
-                            }
-                            .disabled(dailyChallengeViewModel.isLocked)
                             .buttonStyle(.bordered)
                             .padding()
-                        }
 
-                        Button("Lock") {
-                            withAnimation {
-                                dailyChallengeViewModel.unlockInterval = Date().timeIntervalSinceNow - 5
+                            ZStack {
+                                if dailyChallengeViewModel.isLocked {
+                                    Image("lock")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }
+
+                                Button("Daily Challenge") {
+                                    router.currentScreen = .challenge
+                                }
+                                .disabled(dailyChallengeViewModel.isLocked)
+                                .buttonStyle(.bordered)
+                                .padding()
                             }
+
+                            Button("Lock") {
+                                withAnimation {
+                                    dailyChallengeViewModel.unlockInterval = Date().timeIntervalSinceNow - 5
+                                }
+                            }
+
+                            Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
                         }
-
-                        Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
                     }
+                    .onReceive(timer, perform: { _ in
+                        dailyChallengeViewModel.unlockInterval += 1
+                    })
+                    .navigationTitle("City Guess")
                 }
-                .onReceive(timer, perform: { _ in
-                    dailyChallengeViewModel.unlockInterval += 1
 
-    //                if timeDailyChallengeCompleted >= unlockTimeInterval {
-    //                    withAnimation {
-    //                        isCompleted = false
-    //                    }
-    //                }
-                })
-                .navigationTitle("City Guess")
+            case .training:
+                GameView(vm: trainingViewModel)
+            case .challenge:
+                GameView(vm: dailyChallengeViewModel)
+
             }
-
-        case .training:
-            GameView(vm: TrainingViewModel())
-        case .challenge:
-            GameView(vm: DailyChallengeViewModel())
         }
+        .environmentObject(router)
     }
 }
 

@@ -19,12 +19,12 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var numberOfRounds = 5
     @Published var isShowingAnimation: Bool = false
 
-    @AppStorage("dailyChallengeUnlockInterval") var unlockInterval = Date().timeIntervalSinceNow
+    @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 
     var isLocked: Bool {
-        unlockInterval < Date().timeIntervalSinceNow
+        unlockInterval >= Date().timeIntervalSince1970
     }
-    
+
     var cities: [GeoNamesCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
@@ -62,10 +62,10 @@ class DailyChallengeViewModel: CityGuessViewModel {
             self.cities = cities
         }
     }
-    
+
     func endGame() {
         isPlaying = false
         questions = (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
-        unlockInterval = Date().timeIntervalSinceNow
+        unlockInterval = Date().timeIntervalSince1970 + 60 * 60 * 24
     }
 }

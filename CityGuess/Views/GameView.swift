@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView<ViewModel: CityGuessViewModel>: View {
-    @StateObject var vm: ViewModel
+    @ObservedObject var vm: ViewModel
 
     var body: some View {
         NavigationStack {

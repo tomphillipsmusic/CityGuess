@@ -22,6 +22,7 @@
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
 		3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */; };
+		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */; };
 		3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FBA29F80C2D00A861F0 /* AnimationType.swift */; };
 		3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B497D29F86F9E00260B88 /* HapticsManager.swift */; };
@@ -85,6 +86,7 @@
 		3E0A438529E981B100A9D2BE /* TeleportCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCity.swift; sourceTree = "<group>"; };
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
+		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAnimationViewModel.swift; sourceTree = "<group>"; };
 		3E298FBA29F80C2D00A861F0 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		3E2B497D29F86F9E00260B88 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
@@ -174,6 +176,14 @@
 			path = Reddit;
 			sourceTree = "<group>";
 		};
+		3E210FE02A09805B000FA523 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
 		3E2B498829F97DBF00260B88 /* CityGuessTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 		3E64ADA529DEFD5300DCCF2E /* CityGuess */ = {
 			isa = PBXGroup;
 			children = (
+				3E210FE02A09805B000FA523 /* PropertyWrappers */,
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
 				3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */,
 				3EEB99A029E4909D00514F79 /* Views */,
@@ -496,6 +507,7 @@
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E2B498229F96F8B00260B88 /* String+Extension.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
+				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
