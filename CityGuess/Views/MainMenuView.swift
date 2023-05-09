@@ -7,15 +7,7 @@
 
 import SwiftUI
 
-class Router: ObservableObject {
-    @Published var currentScreen: Screen = .menu
-
-    enum Screen {
-        case menu, training, challenge
-    }
-}
-
-struct MainMenuView: View {
+struct ContentView: View {
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
     @StateObject private var router = Router()
@@ -26,53 +18,7 @@ struct MainMenuView: View {
         Group {
             switch router.currentScreen {
             case .menu:
-                NavigationStack {
-                    ZStack {
-                        Image("city-skyline-background")
-                            .resizable()
-                            .scaledToFill()
-
-                        VStack {
-
-                            Text("\(dailyChallengeViewModel.unlockInterval)")
-                            Text("\(Date().timeIntervalSince1970)")
-
-                            Button("Training") {
-                                router.currentScreen = .training
-                            }
-                            .buttonStyle(.bordered)
-                            .padding()
-
-                            ZStack {
-                                if dailyChallengeViewModel.isLocked {
-                                    Image("lock")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }
-
-                                Button("Daily Challenge") {
-                                    router.currentScreen = .challenge
-                                }
-                                .disabled(dailyChallengeViewModel.isLocked)
-                                .buttonStyle(.bordered)
-                                .padding()
-                            }
-
-                            Button("Lock") {
-                                withAnimation {
-                                    dailyChallengeViewModel.unlockInterval = Date().timeIntervalSinceNow - 5
-                                }
-                            }
-
-                            Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
-                        }
-                    }
-                    .onReceive(timer, perform: { _ in
-                        dailyChallengeViewModel.unlockInterval += 1
-                    })
-                    .navigationTitle("City Guess")
-                }
-
+                mainMenu
             case .training:
                 GameView(vm: trainingViewModel)
             case .challenge:
@@ -82,10 +28,60 @@ struct MainMenuView: View {
         }
         .environmentObject(router)
     }
+
+    var mainMenu: some View {
+        NavigationStack {
+            ZStack {
+                Image("city-skyline-background")
+                    .resizable()
+                    .scaledToFill()
+
+                VStack {
+
+                    Text("\(dailyChallengeViewModel.unlockInterval)")
+                    Text("\(Date().timeIntervalSince1970)")
+
+                    Button("Training") {
+                        router.currentScreen = .training
+                    }
+                    .buttonStyle(.bordered)
+                    .padding()
+
+                    ZStack {
+                        if dailyChallengeViewModel.isLocked {
+                            Image("lock")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                        }
+
+                        Button("Daily Challenge") {
+                            router.currentScreen = .challenge
+                        }
+                        .disabled(dailyChallengeViewModel.isLocked)
+                        .buttonStyle(.bordered)
+                        .padding()
+                    }
+
+                    Button("Lock") {
+                        withAnimation {
+                            dailyChallengeViewModel.unlockInterval = Date().timeIntervalSinceNow - 5
+                        }
+                    }
+
+                    Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
+                }
+            }
+            .onReceive(timer, perform: { _ in
+                dailyChallengeViewModel.unlockInterval += 1
+            })
+            .navigationTitle("City Guess")
+        }
+    }
+
 }
 
 struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView()
+        ContentView()
     }
 }
