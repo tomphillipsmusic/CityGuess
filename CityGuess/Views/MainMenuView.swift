@@ -74,6 +74,9 @@ struct ContentView: View {
             .onReceive(timer, perform: { _ in
                 dailyChallengeViewModel.unlockInterval += 1
             })
+            .onAppear {
+                LocalNotificationService.shared.requestNotificationPermission()
+            }
             .navigationTitle("City Guess")
         }
     }

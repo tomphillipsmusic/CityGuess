@@ -16,7 +16,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var isPlaying = false
     @Published var isCorrect = false
     @Published var priorAnswer = ""
-    @Published var numberOfRounds = 5
+    @Published var numberOfRounds = 1
     @Published var isShowingAnimation: Bool = false
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
@@ -45,6 +45,11 @@ class DailyChallengeViewModel: CityGuessViewModel {
             await fetchCities()
             await fetchCityImages()
         }
+
+        let unlockIntervalDate = Date(timeIntervalSince1970: unlockInterval)
+
+        let timeSinceAppWasPutIntoBackground = Date().timeIntervalSince(unlockIntervalDate)
+        unlockInterval += timeSinceAppWasPutIntoBackground
     }
 
     func fetchCityImages() async {
@@ -66,6 +71,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
     func endGame() {
         isPlaying = false
         questions = (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
-        unlockInterval = Date().timeIntervalSince1970 + 60 * 60 * 24
+//        unlockInterval = Date().timeIntervalSince1970 + 60 * 60 * 24
+        unlockInterval = Date().timeIntervalSince1970 + 30
+        LocalNotificationService.shared.scheduleLocalNotification(with: "Daily Challenge Mode Unlocked!", scheduledIn: 30)
     }
 }
