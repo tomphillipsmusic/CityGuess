@@ -29,13 +29,6 @@ struct ActivityRingView: View {
                     style: StrokeStyle(lineWidth: 5, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
-
-            Circle()
-                .frame(width: lineWidth, height: lineWidth)
-                .foregroundColor(progress > 0.95 ? gradientColors[1] : gradientColors[1].opacity(0))
-                .offset(y: -radius)
-                .rotationEffect(.degrees(360 * Double(progress)))
-                .shadow(color: progress > 0.96 ? .black.opacity(0.1): .clear, radius: 3, x: 4, y: 0)
         }
         .frame(idealWidth: radius * 2, idealHeight: radius * 2, alignment: .center)
         .animation(.spring(response: 0.6, dampingFraction: 1.0, blendDuration: 1.0), value: progress)

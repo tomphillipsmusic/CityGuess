@@ -93,11 +93,10 @@ class DailyChallengeViewModel: CityGuessViewModel {
     func endGame() {
         isPlaying = false
         questions = (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
-//        unlockInterval = Date().timeIntervalSince1970 + 60 * 60 * 24
-        unlockInterval = Date().timeIntervalSince1970 + 30
+        unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
         LocalNotificationService.shared.scheduleLocalNotification(with: "Daily Challenge Mode Unlocked!", scheduledIn: 30)
     }
-    
+
     func calculateUnlockProgress() {
         let unlockDate = Date(timeIntervalSince1970: unlockInterval)
         let startDate = unlockDate.addingTimeInterval(-30)

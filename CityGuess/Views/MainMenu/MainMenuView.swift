@@ -38,9 +38,6 @@ struct ContentView: View {
 
                 VStack {
 
-                    Text("\(dailyChallengeViewModel.unlockInterval)")
-                    Text("\(Date().timeIntervalSince1970)")
-
                     Button("Training") {
                         router.currentScreen = .training
                     }
@@ -61,17 +58,14 @@ struct ContentView: View {
                             Image("lock")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            ActivityRingView(progress: dailyChallengeViewModel.unlockProgress, gradientColors: [.red, .green], outlineColor: .gray, lineWidth: 10)
+                            ActivityRingView(progress: dailyChallengeViewModel.unlockProgress, gradientColors: [.red, .green], outlineColor: .gray.opacity(0.5), lineWidth: 10)
                                 .frame(width: 100, height: 100)
-                                .opacity(0.8)
-
                         }
+
                     }
 
-                    Button("Lock") {
-                        withAnimation {
-                            dailyChallengeViewModel.unlockInterval = Date().timeIntervalSince1970 + 30
-                        }
+                    if dailyChallengeViewModel.isLocked {
+                        Text("Daily Challenge will unlock in \(Date(timeIntervalSince1970: dailyChallengeViewModel.unlockInterval).formatted())")
                     }
 
                     Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
@@ -79,7 +73,9 @@ struct ContentView: View {
             }
             .onReceive(timer, perform: { _ in
                 print(dailyChallengeViewModel.unlockProgress)
-                dailyChallengeViewModel.calculateUnlockProgress()
+                withAnimation {
+                    dailyChallengeViewModel.calculateUnlockProgress()
+                }
             })
             .onAppear {
                 LocalNotificationService.shared.requestNotificationPermission()
