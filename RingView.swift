@@ -15,15 +15,12 @@ struct ActivityRingView: View {
     var lineWidth: CGFloat
 
     var body: some View {
-        // Activity Ring is created by layering a number of different circles
+
         ZStack {
 
-            // Botttom circle represents the underlying outline visible in an empty ring
             Circle()
                 .stroke(outlineColor, lineWidth: lineWidth)
 
-            // Second circle represents what part of the circle is filled in. The circle is trimmed based on the
-            // current progress value to only show how much of the progress is complete. The circle is rotated 90 degress to make the progress start at the top of the circle
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(
@@ -33,9 +30,6 @@ struct ActivityRingView: View {
                 )
                 .rotationEffect(.degrees(-90))
 
-            // This circle represents the smaller circle at the beginning the progress 
-
-            // This represents the smaller circle at the end of the progress circle's arc
             Circle()
                 .frame(width: lineWidth, height: lineWidth)
                 .foregroundColor(progress > 0.95 ? gradientColors[1] : gradientColors[1].opacity(0))

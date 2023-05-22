@@ -97,7 +97,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
         unlockInterval = Date().timeIntervalSince1970 + 30
         LocalNotificationService.shared.scheduleLocalNotification(with: "Daily Challenge Mode Unlocked!", scheduledIn: 30)
     }
-
+    
     func calculateUnlockProgress() {
         let unlockDate = Date(timeIntervalSince1970: unlockInterval)
         let startDate = unlockDate.addingTimeInterval(-30)
