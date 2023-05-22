@@ -18,6 +18,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var priorAnswer = ""
     @Published var numberOfRounds = 1
     @Published var isShowingAnimation: Bool = false
+    @Published var unlockProgress: CGFloat = 0
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 
@@ -96,4 +97,13 @@ class DailyChallengeViewModel: CityGuessViewModel {
         unlockInterval = Date().timeIntervalSince1970 + 30
         LocalNotificationService.shared.scheduleLocalNotification(with: "Daily Challenge Mode Unlocked!", scheduledIn: 30)
     }
+
+    func calculateUnlockProgress() {
+        let unlockDate = Date(timeIntervalSince1970: unlockInterval)
+        let startDate = unlockDate.addingTimeInterval(-30)
+
+         let duration = unlockDate.timeIntervalSince(startDate)
+         let elapsed = Date().timeIntervalSince(startDate)
+         unlockProgress = elapsed / duration
+     }
 }

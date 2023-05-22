@@ -48,23 +48,29 @@ struct ContentView: View {
                     .padding()
 
                     ZStack {
-                        if dailyChallengeViewModel.isLocked {
-                            Image("lock")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        }
-
                         Button("Daily Challenge") {
                             router.currentScreen = .challenge
                         }
                         .disabled(dailyChallengeViewModel.isLocked)
+                        .opacity(dailyChallengeViewModel.isLocked ? 0.8 : 1.0)
                         .buttonStyle(.bordered)
                         .padding()
+
+                        if dailyChallengeViewModel.isLocked {
+
+                            Image("lock")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            ActivityRingView(progress: dailyChallengeViewModel.unlockProgress, gradientColors: [.red, .green], outlineColor: .gray, lineWidth: 10)
+                                .frame(width: 100, height: 100)
+                                .opacity(0.8)
+
+                        }
                     }
 
                     Button("Lock") {
                         withAnimation {
-                            dailyChallengeViewModel.unlockInterval = Date().timeIntervalSinceNow - 5
+                            dailyChallengeViewModel.unlockInterval = Date().timeIntervalSince1970 + 30
                         }
                     }
 
@@ -72,7 +78,8 @@ struct ContentView: View {
                 }
             }
             .onReceive(timer, perform: { _ in
-                dailyChallengeViewModel.unlockInterval += 1
+                print(dailyChallengeViewModel.unlockProgress)
+                dailyChallengeViewModel.calculateUnlockProgress()
             })
             .onAppear {
                 LocalNotificationService.shared.requestNotificationPermission()
