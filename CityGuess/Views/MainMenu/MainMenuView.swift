@@ -23,7 +23,6 @@ struct ContentView: View {
                 GameView(vm: trainingViewModel)
             case .challenge:
                 GameView(vm: dailyChallengeViewModel)
-
             }
         }
         .environmentObject(router)
@@ -32,47 +31,20 @@ struct ContentView: View {
     var mainMenu: some View {
         NavigationStack {
             ZStack {
-                Image("city-skyline-background")
-                    .resizable()
-                    .scaledToFill()
+                menuBackgroud
 
                 VStack {
-
-                    Button("Training") {
-                        router.currentScreen = .training
-                    }
-                    .buttonStyle(.bordered)
-                    .padding()
-
-                    ZStack {
-                        Button("Daily Challenge") {
-                            router.currentScreen = .challenge
-                        }
-                        .disabled(dailyChallengeViewModel.isLocked)
-                        .opacity(dailyChallengeViewModel.isLocked ? 0.8 : 1.0)
-                        .buttonStyle(.bordered)
-                        .padding()
-
-                        if dailyChallengeViewModel.isLocked {
-
-                            Image("lock")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            ActivityRingView(progress: dailyChallengeViewModel.unlockProgress, gradientColors: [.red, .green], outlineColor: .gray.opacity(0.5), lineWidth: 10)
-                                .frame(width: 100, height: 100)
-                        }
-
-                    }
+                    trainingButton
+                    dailyChallengeButton
 
                     if dailyChallengeViewModel.isLocked {
-                        Text("Daily Challenge will unlock in \(Date(timeIntervalSince1970: dailyChallengeViewModel.unlockInterval).formatted())")
+                        Text(dailyChallengeViewModel.unlockText)
                     }
 
                     Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
                 }
             }
             .onReceive(timer, perform: { _ in
-                print(dailyChallengeViewModel.unlockProgress)
                 withAnimation {
                     dailyChallengeViewModel.calculateUnlockProgress()
                 }
@@ -81,6 +53,33 @@ struct ContentView: View {
                 LocalNotificationService.shared.requestNotificationPermission()
             }
             .navigationTitle("City Guess")
+        }
+    }
+
+    var menuBackgroud: some View {
+        Image("city-skyline-background")
+            .resizable()
+            .scaledToFill()
+    }
+
+    var trainingButton: some View {
+        MainMenuButton("Training") {
+            router.currentScreen = .training
+        }
+    }
+
+    var dailyChallengeButton: some View {
+        ZStack {
+            MainMenuButton("Daily Challenge") {
+                router.currentScreen = .challenge
+            }
+            .disabled(dailyChallengeViewModel.isLocked)
+            .opacity(dailyChallengeViewModel.isLocked ? 0.8 : 1.0)
+
+            if dailyChallengeViewModel.isLocked {
+                LockView(progress: dailyChallengeViewModel.unlockProgress)
+            }
+
         }
     }
 

@@ -28,6 +28,8 @@
 		3E25FC062A1BF01E0040E50C /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC052A1BF01E0040E50C /* RingView.swift */; };
 		3E25FC0A2A1C0B8C0040E50C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC092A1C0B8C0040E50C /* City.swift */; };
 		3E25FC0C2A1C0C0A0040E50C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC0B2A1C0C0A0040E50C /* Constants.swift */; };
+		3E25FC0E2A1C0D850040E50C /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC0D2A1C0D850040E50C /* MainMenuButton.swift */; };
+		3E25FC102A1C0E450040E50C /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC0F2A1C0E450040E50C /* LockView.swift */; };
 		3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */; };
 		3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FBA29F80C2D00A861F0 /* AnimationType.swift */; };
 		3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B497D29F86F9E00260B88 /* HapticsManager.swift */; };
@@ -95,6 +97,8 @@
 		3E25FC052A1BF01E0040E50C /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		3E25FC092A1C0B8C0040E50C /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3E25FC0B2A1C0C0A0040E50C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3E25FC0D2A1C0D850040E50C /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		3E25FC0F2A1C0E450040E50C /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAnimationViewModel.swift; sourceTree = "<group>"; };
 		3E298FBA29F80C2D00A861F0 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		3E2B497D29F86F9E00260B88 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			children = (
 				3E9EC5C02A02A75E006E79E9 /* MainMenuView.swift */,
 				3E25FC052A1BF01E0040E50C /* RingView.swift */,
+				3E25FC0D2A1C0D850040E50C /* MainMenuButton.swift */,
+				3E25FC0F2A1C0E450040E50C /* LockView.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
+				3E25FC0E2A1C0D850040E50C /* MainMenuButton.swift in Sources */,
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
 				3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */,
 				3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */,
@@ -546,6 +553,7 @@
 				3E0A437229E84E1500A9D2BE /* TeleportApiClient.swift in Sources */,
 				3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */,
 				3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */,
+				3E25FC102A1C0E450040E50C /* LockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

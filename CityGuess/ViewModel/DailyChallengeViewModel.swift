@@ -39,6 +39,10 @@ class DailyChallengeViewModel: CityGuessViewModel {
     """
     let startGameButtonText: String = "Start Daily Challenge"
 
+    var unlockText: String {
+        "Daily Challenge will unlock in \(Date(timeIntervalSince1970: unlockInterval).formatted())"
+    }
+
     required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService
         self.cityFetcher = cityFetcher
