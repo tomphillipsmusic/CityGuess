@@ -8,15 +8,17 @@
 import Foundation
 
 class RedditClient: CityFetching {
-    static let bigCities = "bigcities.json"
-    var cities: [GeoNamesCity] = []
+    static let bigCities = "cities.json"
+    var cities: [TeleportCity] = []
+    let localCityService = LocalCityService()
 
-    func fetchCities() async throws -> [GeoNamesCity] {
-        cities = try Bundle.main.decode([GeoNamesCity].self, from: Self.bigCities)
+    func fetchCities() async throws -> [TeleportCity] {
+        cities = try localCityService.loadCities()
+        print(cities.count.description + " cities in cities.json")
         return cities
     }
 
-    typealias CityModel = GeoNamesCity
+    typealias CityModel = TeleportCity
 
     enum Endpoint {
         static let new = "new.json"

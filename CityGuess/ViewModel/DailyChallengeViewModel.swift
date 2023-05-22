@@ -25,7 +25,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
         unlockInterval >= Date().timeIntervalSince1970
     }
 
-    var cities: [GeoNamesCity] = []
+    var cities: [TeleportCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
     let roundLength = 10
