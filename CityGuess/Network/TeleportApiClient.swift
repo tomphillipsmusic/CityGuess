@@ -7,7 +7,7 @@
 
 import Foundation
 
-actor TeleportApiClient: CityImageFetching, CityModelFetching {
+actor TeleportApiClient: CityFetching {
 
     var cities: [TeleportCity] = []
 

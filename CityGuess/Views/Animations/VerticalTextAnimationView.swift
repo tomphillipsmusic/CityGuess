@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct VerticalTextAnimationView: View {
-    @StateObject var vm: VerticalTextAnimationViewModel
+    @StateObject var viewModel: VerticalTextAnimationViewModel
 
     var body: some View {
-        Text(vm.text)
+        Text(viewModel.text)
             .padding()
             .background(RoundedRectangle(cornerRadius: 10.0).foregroundColor(Color("Background")))
             .font(.largeTitle)
-            .opacity(vm.opacity)
-            .offset(y: vm.offset)
-            .animation(.easeInOut(duration: 1.5), value: vm.offset)
-            .animation(.easeInOut(duration: 1.5), value: vm.isAnimating)
+            .opacity(viewModel.opacity)
+            .offset(y: viewModel.offset)
+            .animation(.easeInOut(duration: 1.5), value: viewModel.offset)
+            .animation(.easeInOut(duration: 1.5), value: viewModel.isAnimating)
 
             .onAppear {
-                vm.beginAnimation()
+                viewModel.beginAnimation()
             }
     }
 }
@@ -29,7 +29,7 @@ struct VerticalTextAnimationView: View {
 struct VerticalTextAnimationView_Previews: PreviewProvider {
 
     static var previews: some View {
-        VerticalTextAnimationView(vm: VerticalTextAnimationViewModel(text: "Hello", isCorrect: false) {
+        VerticalTextAnimationView(viewModel: VerticalTextAnimationViewModel(text: "Hello", isCorrect: false) {
         })
     }
 }

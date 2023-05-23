@@ -59,7 +59,8 @@ class TrainingViewModel: CityGuessViewModel {
     }
 
     func fetchCities() async {
-        if let cities: [CityModel] = try? cityService.loadCities() {
+        if let cities: [CityModel] = try? cityService.loadCities(),
+           !cities.isEmpty {
             self.cities = cities
         } else if let cities = try? await cityFetcher.fetchCities() {
             self.cities = cities

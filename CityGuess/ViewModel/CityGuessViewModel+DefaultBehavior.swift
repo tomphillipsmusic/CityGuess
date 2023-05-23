@@ -60,14 +60,14 @@ extension CityGuessViewModel {
         questions = resetQuestions()
     }
 
-    private func resetQuestions() -> [Question] {
+    func resetQuestions() -> [Question] {
         (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
     }
 
     func submit(guess: String) {
         let title = cityImages[currentCityIndex].title
 
-        if title.lowercased().contains(guess.lowercased()) {
+        if title.caseInsensitiveContains(guess) {
             isCorrect = true
             score += 1
             HapticsManager.shared.correct()
@@ -83,12 +83,16 @@ extension CityGuessViewModel {
     func autofillSuggestions(for guess: String) -> [CityModel] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 8
-        return cities.filterUniqueItems({ $0.name.starts(with: guess)}, limit: numberOfSuggestions)
+        return cities.filterUniqueItems({ $0.name.caseInsensitiveStarts(with: guess) }, limit: numberOfSuggestions)
     }
 
     func animationCompleted() {
         questions[currentCityIndex].state = isCorrect ? .correct : .incorrect
         currentCityIndex += 1
         isShowingAnimation = false
+    }
+
+    var gameProgress: CGFloat {
+        CGFloat(currentCityIndex) / CGFloat(numberOfRounds)
     }
 }

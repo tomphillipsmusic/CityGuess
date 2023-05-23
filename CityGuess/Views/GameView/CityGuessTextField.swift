@@ -17,6 +17,8 @@ struct CityGuessTextField: View {
             .keyboardType(.alphabet)
             .disableAutocorrection(true)
             .padding()
+            .border(.ultraThickMaterial, width: 2)
+            .padding()
             .focused($textFieldFocused)
             .onAppear {
                 textFieldFocused = true

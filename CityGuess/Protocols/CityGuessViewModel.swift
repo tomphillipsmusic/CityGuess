@@ -59,6 +59,7 @@ protocol GameLogic: ViewModel {
     var isCorrect: Bool { get set }
     var isGameOver: Bool { get }
     var priorAnswer: String { get set}
+    var gameProgress: CGFloat { get }
 }
 
 @MainActor

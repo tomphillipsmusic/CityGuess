@@ -8,25 +8,25 @@
 import Foundation
 
 class RedditClient: CityFetching {
-    static let bigCities = "bigcities.json"
+    typealias CityModel = TeleportCity
 
-    func fetchCities() async throws -> [GeoNamesCity] {
-        try Bundle.main.decode([GeoNamesCity].self, from: Self.bigCities)
-    }
-
-    typealias CityModel = GeoNamesCity
+    private let baseUrl = "https://www.reddit.com/r/cityporn/"
+    private let count = 100
 
     enum Endpoint {
         static let new = "new.json"
     }
 
-    private let baseUrl = "https://www.reddit.com/r/cityporn/"
-    private let count = 100
+    // TODO: Find a cleaner of doing this. Using TeleportAPI Client here to guarantee smaller list of cities.
+    func fetchCities() async throws -> [TeleportCity] {
+        try await TeleportApiClient().fetchCities()
+    }
 
     func fetchCityImages() async throws -> [CityImage] {
         let url = "\(baseUrl)\(Endpoint.new)?size=\(count)"
         let decodedResponse: CityImagesResponse = try await NetworkManager.shared.fetch(from: url)
-        return decodedResponse.data.children.map { $0.data }
+        let decodedCities = decodedResponse.data.children.map { $0.data }
+        return decodedCities
     }
 }
 

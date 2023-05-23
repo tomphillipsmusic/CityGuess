@@ -5,7 +5,7 @@
 //  Created by Tom Phillips on 4/17/23.
 //
 
-import Foundation
+import SwiftUI
 
 @MainActor
 class DailyChallengeViewModel: CityGuessViewModel {
@@ -18,8 +18,11 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var priorAnswer = ""
     @Published var numberOfRounds = 5
     @Published var isShowingAnimation: Bool = false
+    @Published var unlockProgress: CGFloat = 0
 
-    var cities: [GeoNamesCity] = []
+    @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
+
+    var cities: [TeleportCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
     let roundLength = 10
@@ -27,7 +30,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
     let modeTitle: String = "Daily Challenge"
     let gameHeadline: String = "Do you have what it takes to take on the Daily Challenge?"
     let gameDescription: String = """
-        Check in once a day to see some of the latest and greatest city photos from around the world. How many can you guess??
+        Check in once a day to see some of the latest and greatest city photos from
+        around the world. How many can you guess??
     """
     let startGameButtonText: String = "Start Daily Challenge"
 
@@ -43,8 +47,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     func fetchCityImages() async {
         do {
-            cityImages = try await cityFetcher.fetchCityImages().shuffled()
-
+            let cityImages = try await cityFetcher.fetchCityImages().shuffled()
+            self.cityImages = filterValid(cityImages)
             print("City images count: " + "\(cityImages.count)")
         } catch {
             print(error)
@@ -52,8 +56,57 @@ class DailyChallengeViewModel: CityGuessViewModel {
     }
 
     func fetchCities() async {
-        if let cities = try? await cityFetcher.fetchCities() {
+        if let cities: [CityModel] = try? cityService.loadCities(),
+           !cities.isEmpty {
             self.cities = cities
+            return
+        } else if let cities = try? await cityFetcher.fetchCities() {
+            self.cities = cities
+            try? cityService.save(cities)
         }
+    }
+
+    private func filterValid(_ cityImages: [CityImage]) -> [CityImage] {
+        var result = [CityImage]()
+
+        for image in cityImages {
+            for city in cities {
+                if image.title.caseInsensitiveContains(city.name) {
+                    result.append(image)
+                    break
+                }
+            }
+        }
+
+        return result
+    }
+
+    func endGame() {
+        isPlaying = false
+        questions = resetQuestions()
+        LocalNotificationService.shared.scheduleLocalNotification(
+            with: "Daily Challenge Mode Unlocked!",
+            scheduledIn: DateConstants.unlockInterval
+        )
+
+        unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
+    }
+}
+
+extension DailyChallengeViewModel: Unlockable {
+    var unlockText: String {
+        "Daily Challenge will unlock in \(Date(timeIntervalSince1970: unlockInterval).formatted())"
+    }
+
+    var isLocked: Bool {
+        unlockInterval >= Date().timeIntervalSince1970
+    }
+
+    func calculateUnlockProgress() {
+        let unlockDate = Date(timeIntervalSince1970: unlockInterval)
+        let startDate = unlockDate.addingTimeInterval(-DateConstants.unlockInterval)
+        let duration = unlockDate.timeIntervalSince(startDate)
+        let elapsed = Date().timeIntervalSince(startDate)
+        unlockProgress = elapsed / duration
     }
 }
