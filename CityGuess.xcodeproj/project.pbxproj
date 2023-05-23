@@ -46,6 +46,8 @@
 		3E9C7D4B29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */; };
 		3E9EC5C12A02A75E006E79E9 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EC5C02A02A75E006E79E9 /* MainMenuView.swift */; };
 		3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */; };
+		3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */; };
+		3EADE82D2A1D1959004ADEC2 /* citycoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EADE82C2A1D1959004ADEC2 /* citycoordinates.json */; };
 		3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175A29F84CF100A0B353 /* ProgressBar.swift */; };
 		3EBC175F29F851D800A0B353 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175E29F851D800A0B353 /* Question.swift */; };
 		3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC176029F86B3E00A0B353 /* skyscraper.json */; };
@@ -118,6 +120,8 @@
 		3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeViewModel.swift; sourceTree = "<group>"; };
 		3E9EC5C02A02A75E006E79E9 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlockable.swift; sourceTree = "<group>"; };
+		3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCitiesView.swift; sourceTree = "<group>"; };
+		3EADE82C2A1D1959004ADEC2 /* citycoordinates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = citycoordinates.json; sourceTree = "<group>"; };
 		3EBC175A29F84CF100A0B353 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		3EBC175E29F851D800A0B353 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3EBC176029F86B3E00A0B353 /* skyscraper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skyscraper.json; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		3E64AD9A29DEFD5300DCCF2E = {
 			isa = PBXGroup;
 			children = (
+				3EADE82C2A1D1959004ADEC2 /* citycoordinates.json */,
 				3E64ADA529DEFD5300DCCF2E /* CityGuess */,
 				3E2B498829F97DBF00260B88 /* CityGuessTests */,
 				3E64ADA429DEFD5300DCCF2E /* Products */,
@@ -252,6 +257,7 @@
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
 				3EEB999529E467C200514F79 /* Model */,
 				3EEB99A029E4909D00514F79 /* Views */,
+				3EADE8272A1CF999004ADEC2 /* Map */,
 				3EEB999C29E47E3600514F79 /* ViewModel */,
 				3EEB999929E47CDD00514F79 /* Service */,
 				3EEB999629E467CD00514F79 /* Network */,
@@ -274,6 +280,14 @@
 				3E0A436D29E5DE9C00A9D2BE /* testcities.json */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3EADE8272A1CF999004ADEC2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		3EEB999529E467C200514F79 /* Model */ = {
@@ -464,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EADE82D2A1D1959004ADEC2 /* citycoordinates.json in Resources */,
 				3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */,
 				3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */,
 				3EEB999229E4580600514F79 /* bigcities.json in Resources */,
@@ -540,6 +555,7 @@
 				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
+				3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */,
 				3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */,
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,

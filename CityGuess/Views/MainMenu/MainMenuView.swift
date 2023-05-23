@@ -23,6 +23,8 @@ struct ContentView: View {
                 GameView(viewModel: trainingViewModel)
             case .challenge:
                 GameView(viewModel: dailyChallengeViewModel)
+            case .explore:
+                ExploreCitiesView(currentScreen: $router.currentScreen)
             }
         }
         .environmentObject(router)
@@ -34,12 +36,14 @@ struct ContentView: View {
                 menuBackgroud
 
                 VStack {
-                    trainingButton
                     dailyChallengeButton
 
                     if dailyChallengeViewModel.isLocked {
                         Text(dailyChallengeViewModel.unlockText)
                     }
+
+                    trainingButton
+                    exploreButton
 
                     Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
                 }
@@ -62,12 +66,6 @@ struct ContentView: View {
             .scaledToFill()
     }
 
-    var trainingButton: some View {
-        MainMenuButton("Training") {
-            router.currentScreen = .training
-        }
-    }
-
     var dailyChallengeButton: some View {
         ZStack {
             MainMenuButton("Daily Challenge") {
@@ -83,6 +81,17 @@ struct ContentView: View {
         }
     }
 
+    var trainingButton: some View {
+        MainMenuButton("Training") {
+            router.currentScreen = .training
+        }
+    }
+
+    var exploreButton: some View {
+        MainMenuButton("Explore Cities") {
+            router.currentScreen = .explore
+        }
+    }
 }
 
 struct MainMenuView_Previews: PreviewProvider {

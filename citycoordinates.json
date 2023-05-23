@@ -1,0 +1,5595 @@
+[
+  {
+    "lng" : "55.30927",
+    "country" : "AE",
+    "lat" : "25.07725",
+    "name" : "Dubai"
+  },
+  {
+    "lng" : "44.51361",
+    "country" : "AM",
+    "lat" : "40.18111",
+    "name" : "Yerevan"
+  },
+  {
+    "lng" : "-58.50524",
+    "country" : "AR",
+    "lat" : "-31.62487",
+    "name" : "San Salvador"
+  },
+  {
+    "lng" : "-59.64517",
+    "country" : "AR",
+    "lat" : "-30.74179",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-58.37723",
+    "country" : "AR",
+    "lat" : "-34.61315",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-60.15478",
+    "country" : "AR",
+    "lat" : "-32.61841",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-68.53639",
+    "country" : "AR",
+    "lat" : "-31.5375",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-65.70874",
+    "country" : "AR",
+    "lat" : "-28.01009",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-65.33471",
+    "country" : "AR",
+    "lat" : "-24.36753",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-67.54956",
+    "country" : "AR",
+    "lat" : "-33.46091",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "16.37208",
+    "country" : "AT",
+    "lat" : "48.20849",
+    "name" : "Vienna"
+  },
+  {
+    "lng" : "11.39454",
+    "country" : "AT",
+    "lat" : "47.26266",
+    "name" : "Innsbruck"
+  },
+  {
+    "lng" : "115.8614",
+    "country" : "AU",
+    "lat" : "-31.95224",
+    "name" : "Perth"
+  },
+  {
+    "lng" : "138.52351",
+    "country" : "AU",
+    "lat" : "-35.0182",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "121.4912",
+    "country" : "AU",
+    "lat" : "-30.78204",
+    "name" : "Boulder"
+  },
+  {
+    "lng" : "138.59863",
+    "country" : "AU",
+    "lat" : "-34.92866",
+    "name" : "Adelaide"
+  },
+  {
+    "lng" : "148.94508",
+    "country" : "AU",
+    "lat" : "-32.55588",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "151.20732",
+    "country" : "AU",
+    "lat" : "-33.86785",
+    "name" : "Sydney"
+  },
+  {
+    "lng" : "145.48763",
+    "country" : "AU",
+    "lat" : "-37.79802",
+    "name" : "Seville"
+  },
+  {
+    "lng" : "144.70077",
+    "country" : "AU",
+    "lat" : "-36.36352",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "147.43833",
+    "country" : "AU",
+    "lat" : "-42.73554",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "145.00176",
+    "country" : "AU",
+    "lat" : "-37.81819",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "150.75142",
+    "country" : "AU",
+    "lat" : "-33.59956",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "147.17096",
+    "country" : "AU",
+    "lat" : "-41.57231",
+    "name" : "Perth"
+  },
+  {
+    "lng" : "144.96332",
+    "country" : "AU",
+    "lat" : "-37.814",
+    "name" : "Melbourne"
+  },
+  {
+    "lng" : "150.92588",
+    "country" : "AU",
+    "lat" : "-33.91938",
+    "name" : "Liverpool"
+  },
+  {
+    "lng" : "147.30351",
+    "country" : "AU",
+    "lat" : "-42.97638",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "140.35",
+    "country" : "AU",
+    "lat" : "-34.23333",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "153.11667",
+    "country" : "AU",
+    "lat" : "-27.66667",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "145.74443",
+    "country" : "AU",
+    "lat" : "-17.01902",
+    "name" : "Edmonton"
+  },
+  {
+    "lng" : "153.26516",
+    "country" : "AU",
+    "lat" : "-27.52677",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "151.6544",
+    "country" : "AU",
+    "lat" : "-32.94201",
+    "name" : "Cardiff"
+  },
+  {
+    "lng" : "147.45",
+    "country" : "AU",
+    "lat" : "-42.83333",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "153.02809",
+    "country" : "AU",
+    "lat" : "-27.46794",
+    "name" : "Brisbane"
+  },
+  {
+    "lng" : "145.00279",
+    "country" : "AU",
+    "lat" : "-37.90561",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "153.05721",
+    "country" : "AU",
+    "lat" : "-27.29582",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "153.44158",
+    "country" : "AU",
+    "lat" : "-28.07173",
+    "name" : "Miami"
+  },
+  {
+    "lng" : "138.56322",
+    "country" : "AU",
+    "lat" : "-34.94199",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "144.93542",
+    "country" : "AU",
+    "lat" : "-37.67083",
+    "name" : "Dallas"
+  },
+  {
+    "lng" : "147.24489",
+    "country" : "AU",
+    "lat" : "-42.69814",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "149.14658",
+    "country" : "AU",
+    "lat" : "-35.31525",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "151.59373",
+    "country" : "AU",
+    "lat" : "-33.01357",
+    "name" : "Toronto"
+  },
+  {
+    "lng" : "49.89201",
+    "country" : "AZ",
+    "lat" : "40.37767",
+    "name" : "Baku"
+  },
+  {
+    "lng" : "18.35644",
+    "country" : "BA",
+    "lat" : "43.84864",
+    "name" : "Sarajevo"
+  },
+  {
+    "lng" : "4.82313",
+    "country" : "BE",
+    "lat" : "51.24197",
+    "name" : "Lille"
+  },
+  {
+    "lng" : "4.34878",
+    "country" : "BE",
+    "lat" : "50.85045",
+    "name" : "Brussels"
+  },
+  {
+    "lng" : "4.82935",
+    "country" : "BE",
+    "lat" : "50.47138",
+    "name" : "Belgrade"
+  },
+  {
+    "lng" : "23.32415",
+    "country" : "BG",
+    "lat" : "42.69751",
+    "name" : "Sofia"
+  },
+  {
+    "lng" : "-68.15",
+    "country" : "BO",
+    "lat" : "-16.5",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-42.71",
+    "country" : "BR",
+    "lat" : "-3.89333",
+    "name" : "Porto"
+  },
+  {
+    "lng" : "-54.86722",
+    "country" : "BR",
+    "lat" : "-29.19167",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-51.23019",
+    "country" : "BR",
+    "lat" : "-30.03283",
+    "name" : "Porto Alegre"
+  },
+  {
+    "lng" : "-49.27306",
+    "country" : "BR",
+    "lat" : "-25.42778",
+    "name" : "Curitiba"
+  },
+  {
+    "lng" : "27.56667",
+    "country" : "BY",
+    "lat" : "53.9",
+    "name" : "Minsk"
+  },
+  {
+    "lng" : "-88.57121",
+    "country" : "BZ",
+    "lat" : "18.1958",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "-89.02417",
+    "country" : "BZ",
+    "lat" : "16.24361",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-88.19756",
+    "country" : "BZ",
+    "lat" : "17.49952",
+    "name" : "Belize City"
+  },
+  {
+    "lng" : "-62.88197",
+    "country" : "CA",
+    "lat" : "46.08341",
+    "name" : "Belfast"
+  },
+  {
+    "lng" : "-81.24998",
+    "country" : "CA",
+    "lat" : "43.74316",
+    "name" : "Brussels"
+  },
+  {
+    "lng" : "-114.08529",
+    "country" : "CA",
+    "lat" : "51.05011",
+    "name" : "Calgary"
+  },
+  {
+    "lng" : "-80.31269",
+    "country" : "CA",
+    "lat" : "43.3601",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-113.46871",
+    "country" : "CA",
+    "lat" : "53.55014",
+    "name" : "Edmonton"
+  },
+  {
+    "lng" : "-126.67008",
+    "country" : "CA",
+    "lat" : "54.39976",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-76.48098",
+    "country" : "CA",
+    "lat" : "44.22976",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-81.23304",
+    "country" : "CA",
+    "lat" : "42.98339",
+    "name" : "London"
+  },
+  {
+    "lng" : "-75.69812",
+    "country" : "CA",
+    "lat" : "45.41117",
+    "name" : "Ottawa"
+  },
+  {
+    "lng" : "-63.86542",
+    "country" : "CA",
+    "lat" : "45.73345",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-76.24939",
+    "country" : "CA",
+    "lat" : "44.90011",
+    "name" : "Perth"
+  },
+  {
+    "lng" : "-72.1491",
+    "country" : "CA",
+    "lat" : "45.66677",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-75.83266",
+    "country" : "CA",
+    "lat" : "45.1834",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-123.13683",
+    "country" : "CA",
+    "lat" : "49.17003",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-106.66892",
+    "country" : "CA",
+    "lat" : "52.13238",
+    "name" : "Saskatoon"
+  },
+  {
+    "lng" : "-79.4163",
+    "country" : "CA",
+    "lat" : "43.70011",
+    "name" : "Toronto"
+  },
+  {
+    "lng" : "-123.11934",
+    "country" : "CA",
+    "lat" : "49.24966",
+    "name" : "Vancouver"
+  },
+  {
+    "lng" : "-123.35155",
+    "country" : "CA",
+    "lat" : "48.4359",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-97.14704",
+    "country" : "CA",
+    "lat" : "49.8844",
+    "name" : "Winnipeg"
+  },
+  {
+    "lng" : "-63.57688",
+    "country" : "CA",
+    "lat" : "44.64269",
+    "name" : "Halifax"
+  },
+  {
+    "lng" : "-60.1831",
+    "country" : "CA",
+    "lat" : "46.1351",
+    "name" : "Sydney"
+  },
+  {
+    "lng" : "-80.38333",
+    "country" : "CA",
+    "lat" : "43.2",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "6.63282",
+    "country" : "CH",
+    "lat" : "46.516",
+    "name" : "Lausanne"
+  },
+  {
+    "lng" : "7.44744",
+    "country" : "CH",
+    "lat" : "46.94809",
+    "name" : "Bern"
+  },
+  {
+    "lng" : "-72.33292",
+    "country" : "CL",
+    "lat" : "-38.23291",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-70.64827",
+    "country" : "CL",
+    "lat" : "-33.45694",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-71.60746",
+    "country" : "CL",
+    "lat" : "-33.59473",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "10.01176",
+    "country" : "CM",
+    "lat" : "5.88737",
+    "name" : "Bali"
+  },
+  {
+    "lng" : "121.45806",
+    "country" : "CN",
+    "lat" : "31.22222",
+    "name" : "Shanghai"
+  },
+  {
+    "lng" : "116.39723",
+    "country" : "CN",
+    "lat" : "39.9075",
+    "name" : "Beijing"
+  },
+  {
+    "lng" : "104.36915",
+    "country" : "CN",
+    "lat" : "34.30613",
+    "name" : "Bali"
+  },
+  {
+    "lng" : "-74.91101",
+    "country" : "CO",
+    "lat" : "5.31648",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-76.14928",
+    "country" : "CO",
+    "lat" : "8.25801",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "-75.16547",
+    "country" : "CO",
+    "lat" : "6.47282",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-72.7162",
+    "country" : "CO",
+    "lat" : "7.86432",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-77.0045",
+    "country" : "CO",
+    "lat" : "1.14844",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-73.18203",
+    "country" : "CO",
+    "lat" : "10.33623",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-74.69346",
+    "country" : "CO",
+    "lat" : "9.93303",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-75.48009",
+    "country" : "CO",
+    "lat" : "3.91423",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-74.26419",
+    "country" : "CO",
+    "lat" : "4.73245",
+    "name" : "Madrid"
+  },
+  {
+    "lng" : "-73.17332",
+    "country" : "CO",
+    "lat" : "10.38439",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-73.58948",
+    "country" : "CO",
+    "lat" : "6.17848",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-76.64612",
+    "country" : "CO",
+    "lat" : "3.01397",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-84.15499",
+    "country" : "CR",
+    "lat" : "10.06389",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-84.4442",
+    "country" : "CR",
+    "lat" : "10.02275",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-84.31428",
+    "country" : "CR",
+    "lat" : "9.84636",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-84.31694",
+    "country" : "CR",
+    "lat" : "10.10248",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-84.07876",
+    "country" : "CR",
+    "lat" : "9.96188",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-84.0017",
+    "country" : "CR",
+    "lat" : "9.90028",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-84.18592",
+    "country" : "CR",
+    "lat" : "9.9816",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-83.33277",
+    "country" : "CR",
+    "lat" : "9.17298",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-80.24261",
+    "country" : "CU",
+    "lat" : "22.58677",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-82.38304",
+    "country" : "CU",
+    "lat" : "23.13302",
+    "name" : "Havana"
+  },
+  {
+    "lng" : "33.3642",
+    "country" : "CY",
+    "lat" : "35.17531",
+    "name" : "Nicosia"
+  },
+  {
+    "lng" : "14.42076",
+    "country" : "CZ",
+    "lat" : "50.08804",
+    "name" : "Prague"
+  },
+  {
+    "lng" : "16.60796",
+    "country" : "CZ",
+    "lat" : "49.19522",
+    "name" : "Brno"
+  },
+  {
+    "lng" : "9.17702",
+    "country" : "DE",
+    "lat" : "48.78232",
+    "name" : "Stuttgart"
+  },
+  {
+    "lng" : "11.57549",
+    "country" : "DE",
+    "lat" : "48.13743",
+    "name" : "Munich"
+  },
+  {
+    "lng" : "12.37129",
+    "country" : "DE",
+    "lat" : "51.33962",
+    "name" : "Leipzig"
+  },
+  {
+    "lng" : "8.40444",
+    "country" : "DE",
+    "lat" : "49.00937",
+    "name" : "Karlsruhe"
+  },
+  {
+    "lng" : "9.73322",
+    "country" : "DE",
+    "lat" : "52.37052",
+    "name" : "Hannover"
+  },
+  {
+    "lng" : "9.99302",
+    "country" : "DE",
+    "lat" : "53.55073",
+    "name" : "Hamburg"
+  },
+  {
+    "lng" : "13.73832",
+    "country" : "DE",
+    "lat" : "51.05089",
+    "name" : "Dresden"
+  },
+  {
+    "lng" : "13.41053",
+    "country" : "DE",
+    "lat" : "52.52437",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "9.96374",
+    "country" : "DE",
+    "lat" : "52.80837",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "12.27448",
+    "country" : "DE",
+    "lat" : "50.471",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "11.114",
+    "country" : "DE",
+    "lat" : "49.07347",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "12.58982",
+    "country" : "DE",
+    "lat" : "47.80837",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "12.56553",
+    "country" : "DK",
+    "lat" : "55.67594",
+    "name" : "Copenhagen"
+  },
+  {
+    "lng" : "-69.89232",
+    "country" : "DO",
+    "lat" : "18.47186",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-78.52495",
+    "country" : "EC",
+    "lat" : "-0.22985",
+    "name" : "Quito"
+  },
+  {
+    "lng" : "26.72509",
+    "country" : "EE",
+    "lat" : "58.38062",
+    "name" : "Tartu"
+  },
+  {
+    "lng" : "24.75353",
+    "country" : "EE",
+    "lat" : "59.43696",
+    "name" : "Tallinn"
+  },
+  {
+    "lng" : "31.24967",
+    "country" : "EG",
+    "lat" : "30.06263",
+    "name" : "Cairo"
+  },
+  {
+    "lng" : "-0.37739",
+    "country" : "ES",
+    "lat" : "39.46975",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "-15.41343",
+    "country" : "ES",
+    "lat" : "28.09973",
+    "name" : "Las Palmas de Gran Canaria"
+  },
+  {
+    "lng" : "-5.08713",
+    "country" : "ES",
+    "lat" : "41.6206",
+    "name" : "San Salvador"
+  },
+  {
+    "lng" : "-6.89934",
+    "country" : "ES",
+    "lat" : "42.16737",
+    "name" : "Porto"
+  },
+  {
+    "lng" : "-3.70256",
+    "country" : "ES",
+    "lat" : "40.4165",
+    "name" : "Madrid"
+  },
+  {
+    "lng" : "-3.16185",
+    "country" : "ES",
+    "lat" : "40.62862",
+    "name" : "Guadalajara"
+  },
+  {
+    "lng" : "-2.92528",
+    "country" : "ES",
+    "lat" : "43.26271",
+    "name" : "Bilbao"
+  },
+  {
+    "lng" : "2.15899",
+    "country" : "ES",
+    "lat" : "41.38879",
+    "name" : "Barcelona"
+  },
+  {
+    "lng" : "-0.44721",
+    "country" : "ES",
+    "lat" : "40.97655",
+    "name" : "Andorra"
+  },
+  {
+    "lng" : "22.26869",
+    "country" : "FI",
+    "lat" : "60.45148",
+    "name" : "Turku"
+  },
+  {
+    "lng" : "23.78712",
+    "country" : "FI",
+    "lat" : "61.49911",
+    "name" : "Tampere"
+  },
+  {
+    "lng" : "25.46816",
+    "country" : "FI",
+    "lat" : "65.01236",
+    "name" : "Oulu"
+  },
+  {
+    "lng" : "24.93545",
+    "country" : "FI",
+    "lat" : "60.16952",
+    "name" : "Helsinki"
+  },
+  {
+    "lng" : "1.44367",
+    "country" : "FR",
+    "lat" : "43.60426",
+    "name" : "Toulouse"
+  },
+  {
+    "lng" : "2.3488",
+    "country" : "FR",
+    "lat" : "48.85341",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "7.26608",
+    "country" : "FR",
+    "lat" : "43.70313",
+    "name" : "Nice"
+  },
+  {
+    "lng" : "-1.55336",
+    "country" : "FR",
+    "lat" : "47.21725",
+    "name" : "Nantes"
+  },
+  {
+    "lng" : "5.38107",
+    "country" : "FR",
+    "lat" : "43.29695",
+    "name" : "Marseille"
+  },
+  {
+    "lng" : "4.84671",
+    "country" : "FR",
+    "lat" : "45.74846",
+    "name" : "Lyon"
+  },
+  {
+    "lng" : "3.05858",
+    "country" : "FR",
+    "lat" : "50.63297",
+    "name" : "Lille"
+  },
+  {
+    "lng" : "5.71479",
+    "country" : "FR",
+    "lat" : "45.17869",
+    "name" : "Grenoble"
+  },
+  {
+    "lng" : "-0.5805",
+    "country" : "FR",
+    "lat" : "44.84044",
+    "name" : "Bordeaux"
+  },
+  {
+    "lng" : "-2.51667",
+    "country" : "GB",
+    "lat" : "52.7",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-2.74214",
+    "country" : "GB",
+    "lat" : "52.12934",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-2.2649",
+    "country" : "GB",
+    "lat" : "55.2752",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "0.50546",
+    "country" : "GB",
+    "lat" : "51.38764",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-1.73434",
+    "country" : "GB",
+    "lat" : "54.4036",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-0.30633",
+    "country" : "GB",
+    "lat" : "51.46171",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-3.43139",
+    "country" : "GB",
+    "lat" : "56.39522",
+    "name" : "Perth"
+  },
+  {
+    "lng" : "-1.25596",
+    "country" : "GB",
+    "lat" : "51.75222",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-0.85925",
+    "country" : "GB",
+    "lat" : "53.88755",
+    "name" : "Melbourne"
+  },
+  {
+    "lng" : "-1.42522",
+    "country" : "GB",
+    "lat" : "52.8219",
+    "name" : "Melbourne"
+  },
+  {
+    "lng" : "-2.23743",
+    "country" : "GB",
+    "lat" : "53.48095",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-0.12574",
+    "country" : "GB",
+    "lat" : "51.50853",
+    "name" : "London"
+  },
+  {
+    "lng" : "-2.97794",
+    "country" : "GB",
+    "lat" : "53.41058",
+    "name" : "Liverpool"
+  },
+  {
+    "lng" : "-1.54785",
+    "country" : "GB",
+    "lat" : "53.79648",
+    "name" : "Leeds"
+  },
+  {
+    "lng" : "-4.55201",
+    "country" : "GB",
+    "lat" : "55.86859",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-1.85",
+    "country" : "GB",
+    "lat" : "53.71667",
+    "name" : "Halifax"
+  },
+  {
+    "lng" : "-4.25763",
+    "country" : "GB",
+    "lat" : "55.86515",
+    "name" : "Glasgow"
+  },
+  {
+    "lng" : "-0.05798",
+    "country" : "GB",
+    "lat" : "51.62561",
+    "name" : "Edmonton"
+  },
+  {
+    "lng" : "-3.19648",
+    "country" : "GB",
+    "lat" : "55.95206",
+    "name" : "Edinburgh"
+  },
+  {
+    "lng" : "-1.78129",
+    "country" : "GB",
+    "lat" : "50.73583",
+    "name" : "Christchurch"
+  },
+  {
+    "lng" : "-3.18",
+    "country" : "GB",
+    "lat" : "51.48",
+    "name" : "Cardiff"
+  },
+  {
+    "lng" : "0.11667",
+    "country" : "GB",
+    "lat" : "52.2",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-2.59665",
+    "country" : "GB",
+    "lat" : "51.45523",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-0.13947",
+    "country" : "GB",
+    "lat" : "50.82838",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-0.02664",
+    "country" : "GB",
+    "lat" : "52.97633",
+    "name" : "Boston"
+  },
+  {
+    "lng" : "-1.89983",
+    "country" : "GB",
+    "lat" : "52.48142",
+    "name" : "Birmingham"
+  },
+  {
+    "lng" : "-5.92541",
+    "country" : "GB",
+    "lat" : "54.59682",
+    "name" : "Belfast"
+  },
+  {
+    "lng" : "-61.70677",
+    "country" : "GD",
+    "lat" : "12.19021",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "44.83368",
+    "country" : "GE",
+    "lat" : "41.69411",
+    "name" : "Tbilisi"
+  },
+  {
+    "lng" : "-5.35257",
+    "country" : "GI",
+    "lat" : "36.14474",
+    "name" : "Gibraltar"
+  },
+  {
+    "lng" : "23.72784",
+    "country" : "GR",
+    "lat" : "37.98376",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-89.77639",
+    "country" : "GT",
+    "lat" : "14.78979",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-90.51327",
+    "country" : "GT",
+    "lat" : "14.64072",
+    "name" : "Guatemala City"
+  },
+  {
+    "lng" : "114.17469",
+    "country" : "HK",
+    "lat" : "22.27832",
+    "name" : "Hong Kong"
+  },
+  {
+    "lng" : "114.14417",
+    "country" : "HK",
+    "lat" : "22.2875",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-87.82625",
+    "country" : "HN",
+    "lat" : "15.50381",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-86.46667",
+    "country" : "HN",
+    "lat" : "14.05",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-87.15",
+    "country" : "HN",
+    "lat" : "15.6",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-87.15",
+    "country" : "HN",
+    "lat" : "15.33333",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-87.45",
+    "country" : "HN",
+    "lat" : "15.01667",
+    "name" : "Las Vegas"
+  },
+  {
+    "lng" : "-87.67917",
+    "country" : "HN",
+    "lat" : "14.31944",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-88.96667",
+    "country" : "HN",
+    "lat" : "15.03333",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "15.97798",
+    "country" : "HR",
+    "lat" : "45.81444",
+    "name" : "Zagreb"
+  },
+  {
+    "lng" : "19.04045",
+    "country" : "HU",
+    "lat" : "47.49835",
+    "name" : "Budapest"
+  },
+  {
+    "lng" : "106.84513",
+    "country" : "ID",
+    "lat" : "-6.21462",
+    "name" : "Jakarta"
+  },
+  {
+    "lng" : "-6.24889",
+    "country" : "IE",
+    "lat" : "53.33306",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-8.47061",
+    "country" : "IE",
+    "lat" : "51.89797",
+    "name" : "Cork"
+  },
+  {
+    "lng" : "34.78057",
+    "country" : "IL",
+    "lat" : "32.08088",
+    "name" : "Tel Aviv"
+  },
+  {
+    "lng" : "76.78442",
+    "country" : "IN",
+    "lat" : "11.36552",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "80.27847",
+    "country" : "IN",
+    "lat" : "13.08784",
+    "name" : "Chennai"
+  },
+  {
+    "lng" : "77.23149",
+    "country" : "IN",
+    "lat" : "28.65195",
+    "name" : "Delhi"
+  },
+  {
+    "lng" : "72.88261",
+    "country" : "IN",
+    "lat" : "19.07283",
+    "name" : "Mumbai"
+  },
+  {
+    "lng" : "77.59369",
+    "country" : "IN",
+    "lat" : "12.97194",
+    "name" : "Bengaluru"
+  },
+  {
+    "lng" : "51.42151",
+    "country" : "IR",
+    "lat" : "35.69439",
+    "name" : "Tehran"
+  },
+  {
+    "lng" : "14.39218",
+    "country" : "IT",
+    "lat" : "37.74747",
+    "name" : "Nicosia"
+  },
+  {
+    "lng" : "7.68682",
+    "country" : "IT",
+    "lat" : "45.07049",
+    "name" : "Turin"
+  },
+  {
+    "lng" : "12.51133",
+    "country" : "IT",
+    "lat" : "41.89193",
+    "name" : "Rome"
+  },
+  {
+    "lng" : "14.26811",
+    "country" : "IT",
+    "lat" : "40.85216",
+    "name" : "Naples"
+  },
+  {
+    "lng" : "9.18951",
+    "country" : "IT",
+    "lat" : "45.46427",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "11.24626",
+    "country" : "IT",
+    "lat" : "43.77925",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "9.9418",
+    "country" : "IT",
+    "lat" : "45.57862",
+    "name" : "Cologne"
+  },
+  {
+    "lng" : "11.33875",
+    "country" : "IT",
+    "lat" : "44.49381",
+    "name" : "Bologna"
+  },
+  {
+    "lng" : "14.25724",
+    "country" : "IT",
+    "lat" : "40.84395",
+    "name" : "Porto"
+  },
+  {
+    "lng" : "-76.88799",
+    "country" : "JM",
+    "lat" : "18.25478",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-76.79358",
+    "country" : "JM",
+    "lat" : "17.99702",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-77.90252",
+    "country" : "JM",
+    "lat" : "18.31326",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "139.69171",
+    "country" : "JP",
+    "lat" : "35.6895",
+    "name" : "Tokyo"
+  },
+  {
+    "lng" : "135.50218",
+    "country" : "JP",
+    "lat" : "34.69374",
+    "name" : "Osaka"
+  },
+  {
+    "lng" : "135.75385",
+    "country" : "JP",
+    "lat" : "35.02107",
+    "name" : "Kyoto"
+  },
+  {
+    "lng" : "130.41667",
+    "country" : "JP",
+    "lat" : "33.6",
+    "name" : "Fukuoka"
+  },
+  {
+    "lng" : "36.81667",
+    "country" : "KE",
+    "lat" : "-1.28333",
+    "name" : "Nairobi"
+  },
+  {
+    "lng" : "104.91601",
+    "country" : "KH",
+    "lat" : "11.56245",
+    "name" : "Phnom Penh"
+  },
+  {
+    "lng" : "126.9784",
+    "country" : "KR",
+    "lat" : "37.566",
+    "name" : "Seoul"
+  },
+  {
+    "lng" : "76.91667",
+    "country" : "KZ",
+    "lat" : "43.25",
+    "name" : "Almaty"
+  },
+  {
+    "lng" : "35.50157",
+    "country" : "LB",
+    "lat" : "33.89332",
+    "name" : "Beirut"
+  },
+  {
+    "lng" : "25.2798",
+    "country" : "LT",
+    "lat" : "54.68916",
+    "name" : "Vilnius"
+  },
+  {
+    "lng" : "6.13",
+    "country" : "LU",
+    "lat" : "49.61167",
+    "name" : "Luxembourg"
+  },
+  {
+    "lng" : "24.10589",
+    "country" : "LV",
+    "lat" : "56.946",
+    "name" : "Riga"
+  },
+  {
+    "lng" : "-7.61138",
+    "country" : "MA",
+    "lat" : "33.58831",
+    "name" : "Casablanca"
+  },
+  {
+    "lng" : "28.8575",
+    "country" : "MD",
+    "lat" : "47.00556",
+    "name" : "Chisinau"
+  },
+  {
+    "lng" : "21.43141",
+    "country" : "MK",
+    "lat" : "41.99646",
+    "name" : "Skopje"
+  },
+  {
+    "lng" : "14.5148",
+    "country" : "MT",
+    "lat" : "35.89968",
+    "name" : "Valletta"
+  },
+  {
+    "lng" : "14.23972",
+    "country" : "MT",
+    "lat" : "36.04444",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "57.61222",
+    "country" : "MU",
+    "lat" : "-20.24472",
+    "name" : "Providence"
+  },
+  {
+    "lng" : "-92.10361",
+    "country" : "MX",
+    "lat" : "15.03067",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-97.154",
+    "country" : "MX",
+    "lat" : "19.91714",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-99.01457",
+    "country" : "MX",
+    "lat" : "20.28583",
+    "name" : "San Salvador"
+  },
+  {
+    "lng" : "-98.6654",
+    "country" : "MX",
+    "lat" : "20.05073",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-99.84091",
+    "country" : "MX",
+    "lat" : "25.5428",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-98.90322",
+    "country" : "MX",
+    "lat" : "21.62059",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-99.71038",
+    "country" : "MX",
+    "lat" : "20.53204",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-97.18687",
+    "country" : "MX",
+    "lat" : "19.27053",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-95.83037",
+    "country" : "MX",
+    "lat" : "18.44884",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-99.12766",
+    "country" : "MX",
+    "lat" : "19.42847",
+    "name" : "Mexico City"
+  },
+  {
+    "lng" : "-91.41682",
+    "country" : "MX",
+    "lat" : "17.02819",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-92.48121",
+    "country" : "MX",
+    "lat" : "14.8898",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-90.11667",
+    "country" : "MX",
+    "lat" : "20.6",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-95.24879",
+    "country" : "MX",
+    "lat" : "18.46463",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-99.6679",
+    "country" : "MX",
+    "lat" : "19.61745",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-99.65434",
+    "country" : "MX",
+    "lat" : "19.00833",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-100.101",
+    "country" : "MX",
+    "lat" : "21.91692",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-101.76793",
+    "country" : "MX",
+    "lat" : "21.81608",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-101.7361",
+    "country" : "MX",
+    "lat" : "23.3267",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-100.16965",
+    "country" : "MX",
+    "lat" : "22.28325",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-100.15205",
+    "country" : "MX",
+    "lat" : "25.42533",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-101.45898",
+    "country" : "MX",
+    "lat" : "22.45477",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-102.33769",
+    "country" : "MX",
+    "lat" : "22.11948",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-102.43848",
+    "country" : "MX",
+    "lat" : "19.13563",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-107.33135",
+    "country" : "MX",
+    "lat" : "24.3825",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-100.05844",
+    "country" : "MX",
+    "lat" : "25.63868",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-102.25034",
+    "country" : "MX",
+    "lat" : "22.22823",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-101.96453",
+    "country" : "MX",
+    "lat" : "21.91801",
+    "name" : "Palo Alto"
+  },
+  {
+    "lng" : "-100.2213",
+    "country" : "MX",
+    "lat" : "20.54065",
+    "name" : "Palo Alto"
+  },
+  {
+    "lng" : "-103.87123",
+    "country" : "MX",
+    "lat" : "19.08459",
+    "name" : "Madrid"
+  },
+  {
+    "lng" : "-108.48095",
+    "country" : "MX",
+    "lat" : "25.60289",
+    "name" : "Los Angeles"
+  },
+  {
+    "lng" : "-103.56757",
+    "country" : "MX",
+    "lat" : "25.52206",
+    "name" : "Los Angeles"
+  },
+  {
+    "lng" : "-103.35852",
+    "country" : "MX",
+    "lat" : "25.5939",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-110.31316",
+    "country" : "MX",
+    "lat" : "24.14231",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-103.05239",
+    "country" : "MX",
+    "lat" : "20.54052",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "-103.39182",
+    "country" : "MX",
+    "lat" : "20.66682",
+    "name" : "Guadalajara"
+  },
+  {
+    "lng" : "-102.17999",
+    "country" : "MX",
+    "lat" : "19.07499",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-100.21545",
+    "country" : "MX",
+    "lat" : "21.21183",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-101.40973",
+    "country" : "MX",
+    "lat" : "20.88838",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-100.0304",
+    "country" : "MX",
+    "lat" : "19.24677",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-100.39987",
+    "country" : "MX",
+    "lat" : "20.86675",
+    "name" : "Palo Alto"
+  },
+  {
+    "lng" : "-102.28583",
+    "country" : "MX",
+    "lat" : "18.02444",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-101.26806",
+    "country" : "MX",
+    "lat" : "19.66722",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-97.36111",
+    "country" : "MX",
+    "lat" : "19.85667",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-116.94111",
+    "country" : "MX",
+    "lat" : "32.42278",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-97.74833",
+    "country" : "MX",
+    "lat" : "20.15333",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-97.35694",
+    "country" : "MX",
+    "lat" : "19.75611",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-97.32361",
+    "country" : "MX",
+    "lat" : "19.81194",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-99.5853",
+    "country" : "MX",
+    "lat" : "18.97291",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "101.68653",
+    "country" : "MY",
+    "lat" : "3.1412",
+    "name" : "Kuala Lumpur"
+  },
+  {
+    "lng" : "167.96628",
+    "country" : "NF",
+    "lat" : "-29.05459",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "3.39467",
+    "country" : "NG",
+    "lat" : "6.45407",
+    "name" : "Lagos"
+  },
+  {
+    "lng" : "-85.08235",
+    "country" : "NI",
+    "lat" : "12.26438",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-86.2504",
+    "country" : "NI",
+    "lat" : "12.13282",
+    "name" : "Managua"
+  },
+  {
+    "lng" : "-85.81661",
+    "country" : "NI",
+    "lat" : "11.46916",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "5.12222",
+    "country" : "NL",
+    "lat" : "52.09083",
+    "name" : "Utrecht"
+  },
+  {
+    "lng" : "4.29861",
+    "country" : "NL",
+    "lat" : "52.07667",
+    "name" : "The Hague"
+  },
+  {
+    "lng" : "4.47917",
+    "country" : "NL",
+    "lat" : "51.9225",
+    "name" : "Rotterdam"
+  },
+  {
+    "lng" : "5.47778",
+    "country" : "NL",
+    "lat" : "51.44083",
+    "name" : "Eindhoven"
+  },
+  {
+    "lng" : "4.70417",
+    "country" : "NL",
+    "lat" : "52.66917",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "4.88969",
+    "country" : "NL",
+    "lat" : "52.37403",
+    "name" : "Amsterdam"
+  },
+  {
+    "lng" : "10.74609",
+    "country" : "NO",
+    "lat" : "59.91273",
+    "name" : "Oslo"
+  },
+  {
+    "lng" : "5.32415",
+    "country" : "NO",
+    "lat" : "60.39299",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "85.3206",
+    "country" : "NP",
+    "lat" : "27.70169",
+    "name" : "Kathmandu"
+  },
+  {
+    "lng" : "174.77557",
+    "country" : "NZ",
+    "lat" : "-41.28664",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "173.18333",
+    "country" : "NZ",
+    "lat" : "-41.33333",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "172.18333",
+    "country" : "NZ",
+    "lat" : "-43.3",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "172.63333",
+    "country" : "NZ",
+    "lat" : "-43.53333",
+    "name" : "Christchurch"
+  },
+  {
+    "lng" : "172.63333",
+    "country" : "NZ",
+    "lat" : "-43.45",
+    "name" : "Belfast"
+  },
+  {
+    "lng" : "174.76349",
+    "country" : "NZ",
+    "lat" : "-36.84853",
+    "name" : "Auckland"
+  },
+  {
+    "lng" : "172.65013",
+    "country" : "NZ",
+    "lat" : "-43.50833",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "175.4402",
+    "country" : "NZ",
+    "lat" : "-37.87822",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-82.71365",
+    "country" : "PA",
+    "lat" : "8.5104",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-80.2414",
+    "country" : "PA",
+    "lat" : "7.74856",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-81.01346",
+    "country" : "PA",
+    "lat" : "8.3032",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-81.99544",
+    "country" : "PA",
+    "lat" : "8.27962",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-80.92971",
+    "country" : "PA",
+    "lat" : "8.0722",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-79.94775",
+    "country" : "PA",
+    "lat" : "8.63146",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-81.47993",
+    "country" : "PA",
+    "lat" : "8.41453",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-79.54743",
+    "country" : "PA",
+    "lat" : "9.1729",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-79.87417",
+    "country" : "PE",
+    "lat" : "-5.02611",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-78.49931",
+    "country" : "PE",
+    "lat" : "-7.29043",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-73.28139",
+    "country" : "PE",
+    "lat" : "-3.77611",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-76.35",
+    "country" : "PE",
+    "lat" : "-6.36667",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-77.82315",
+    "country" : "PE",
+    "lat" : "-6.61825",
+    "name" : "Montevideo"
+  },
+  {
+    "lng" : "-79.04028",
+    "country" : "PE",
+    "lat" : "-8.13861",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-79.96417",
+    "country" : "PE",
+    "lat" : "-5.26083",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-76.32706",
+    "country" : "PE",
+    "lat" : "-6.79415",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-75.71124",
+    "country" : "PE",
+    "lat" : "-14.18469",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-71.77389",
+    "country" : "PE",
+    "lat" : "-13.49361",
+    "name" : "San Salvador"
+  },
+  {
+    "lng" : "-75.16222",
+    "country" : "PE",
+    "lat" : "-15.36528",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-74.2022",
+    "country" : "PE",
+    "lat" : "-14.66019",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-75.65",
+    "country" : "PE",
+    "lat" : "-13.2",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-77.02824",
+    "country" : "PE",
+    "lat" : "-12.04318",
+    "name" : "Lima"
+  },
+  {
+    "lng" : "-72.62305",
+    "country" : "PE",
+    "lat" : "-14.16967",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-73.56722",
+    "country" : "PE",
+    "lat" : "-3.885",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-78.4975",
+    "country" : "PE",
+    "lat" : "-9.12417",
+    "name" : "Buenos Aires"
+  },
+  {
+    "lng" : "-70.92593",
+    "country" : "PE",
+    "lat" : "-17.21718",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-71.9843",
+    "country" : "PE",
+    "lat" : "-13.52728",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "120.6822",
+    "country" : "PH",
+    "lat" : "15.5775",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "121.3292",
+    "country" : "PH",
+    "lat" : "14.2277",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "121.27806",
+    "country" : "PH",
+    "lat" : "13.17722",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "124.31111",
+    "country" : "PH",
+    "lat" : "12.44722",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "124.5725",
+    "country" : "PH",
+    "lat" : "11.10889",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "123.6126",
+    "country" : "PH",
+    "lat" : "10.136",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "123.36742",
+    "country" : "PH",
+    "lat" : "9.77158",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "124.208",
+    "country" : "PH",
+    "lat" : "9.6097",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "123.2455",
+    "country" : "PH",
+    "lat" : "9.2815",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "120.41083",
+    "country" : "PH",
+    "lat" : "17.63528",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "121.75183",
+    "country" : "PH",
+    "lat" : "17.15999",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "120.877",
+    "country" : "PH",
+    "lat" : "15.5873",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "120.75703",
+    "country" : "PH",
+    "lat" : "15.07289",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "120.74341",
+    "country" : "PH",
+    "lat" : "14.9912",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "120.55672",
+    "country" : "PH",
+    "lat" : "14.96532",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "122.8883",
+    "country" : "PH",
+    "lat" : "14.1338",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "123.16667",
+    "country" : "PH",
+    "lat" : "13.7",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "123.4486",
+    "country" : "PH",
+    "lat" : "13.42",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "123.77722",
+    "country" : "PH",
+    "lat" : "13.23528",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "120.4449",
+    "country" : "PH",
+    "lat" : "17.2939",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "121.5487",
+    "country" : "PH",
+    "lat" : "16.68808",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "120.51134",
+    "country" : "PH",
+    "lat" : "14.90371",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "121.2792",
+    "country" : "PH",
+    "lat" : "14.0211",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "122.91167",
+    "country" : "PH",
+    "lat" : "11.05806",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "124.3066",
+    "country" : "PH",
+    "lat" : "10.5897",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "126.57333",
+    "country" : "PH",
+    "lat" : "7.28889",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "120.45833",
+    "country" : "PH",
+    "lat" : "17.74222",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "120.7324",
+    "country" : "PH",
+    "lat" : "17.6829",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "121.74745",
+    "country" : "PH",
+    "lat" : "17.40562",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "120.34139",
+    "country" : "PH",
+    "lat" : "16.66861",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "120.0648",
+    "country" : "PH",
+    "lat" : "15.2897",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "120.67714",
+    "country" : "PH",
+    "lat" : "15.0231",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "121.0333",
+    "country" : "PH",
+    "lat" : "14.6",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "121.22931",
+    "country" : "PH",
+    "lat" : "14.05715",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "121.3982",
+    "country" : "PH",
+    "lat" : "13.83379",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "122.5813",
+    "country" : "PH",
+    "lat" : "13.5232",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "124.53917",
+    "country" : "PH",
+    "lat" : "11.00056",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "122.8651",
+    "country" : "PH",
+    "lat" : "10.3865",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "125.17556",
+    "country" : "PH",
+    "lat" : "10.26694",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "123.4926",
+    "country" : "PH",
+    "lat" : "9.1603",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "121.87125",
+    "country" : "PH",
+    "lat" : "17.89269",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "121.6",
+    "country" : "PH",
+    "lat" : "17.15",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "120.7833",
+    "country" : "PH",
+    "lat" : "15.0333",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "121.1045",
+    "country" : "PH",
+    "lat" : "13.8784",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "120.94951",
+    "country" : "PH",
+    "lat" : "13.85209",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "123.5178",
+    "country" : "PH",
+    "lat" : "13.6993",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "123.55",
+    "country" : "PH",
+    "lat" : "13.35",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "123.37136",
+    "country" : "PH",
+    "lat" : "13.24629",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "124.4875",
+    "country" : "PH",
+    "lat" : "12.5296",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "121.06761",
+    "country" : "PH",
+    "lat" : "12.35275",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "125.03528",
+    "country" : "PH",
+    "lat" : "10.98889",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "122.53389",
+    "country" : "PH",
+    "lat" : "10.77028",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "121.9415",
+    "country" : "PH",
+    "lat" : "10.745",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "125.56833",
+    "country" : "PH",
+    "lat" : "10.18",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "118.75694",
+    "country" : "PH",
+    "lat" : "9.80056",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "123.23806",
+    "country" : "PH",
+    "lat" : "9.41194",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "125.07028",
+    "country" : "PH",
+    "lat" : "7.73667",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "121.4867",
+    "country" : "PH",
+    "lat" : "14.1872",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "120.6255",
+    "country" : "PH",
+    "lat" : "14.0422",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "121.79121",
+    "country" : "PH",
+    "lat" : "17.27329",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "121.10917",
+    "country" : "PH",
+    "lat" : "16.35028",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "120.856",
+    "country" : "PH",
+    "lat" : "15.3062",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "120.67163",
+    "country" : "PH",
+    "lat" : "15.28636",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "120.68817",
+    "country" : "PH",
+    "lat" : "15.15258",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "120.61183",
+    "country" : "PH",
+    "lat" : "14.96668",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "120.08673",
+    "country" : "PH",
+    "lat" : "14.94659",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "121.5",
+    "country" : "PH",
+    "lat" : "14.2",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "121.29017",
+    "country" : "PH",
+    "lat" : "13.89654",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "123.4202",
+    "country" : "PH",
+    "lat" : "13.371",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "124.2791",
+    "country" : "PH",
+    "lat" : "12.4129",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "125.01141",
+    "country" : "PH",
+    "lat" : "11.27682",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "122.45",
+    "country" : "PH",
+    "lat" : "10.8",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "125.73972",
+    "country" : "PH",
+    "lat" : "7.12",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "122.83528",
+    "country" : "PH",
+    "lat" : "11.00278",
+    "name" : "San Salvador"
+  },
+  {
+    "lng" : "123.9622",
+    "country" : "PH",
+    "lat" : "11.1286",
+    "name" : "Medellin"
+  },
+  {
+    "lng" : "120.9822",
+    "country" : "PH",
+    "lat" : "14.6042",
+    "name" : "Manila"
+  },
+  {
+    "lng" : "124.37529",
+    "country" : "PH",
+    "lat" : "12.23686",
+    "name" : "Malaga"
+  },
+  {
+    "lng" : "125.96437",
+    "country" : "PH",
+    "lat" : "9.26211",
+    "name" : "Madrid"
+  },
+  {
+    "lng" : "125.60806",
+    "country" : "PH",
+    "lat" : "9.0125",
+    "name" : "Los Angeles"
+  },
+  {
+    "lng" : "120.6864",
+    "country" : "PH",
+    "lat" : "17.6746",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "121.66824",
+    "country" : "PH",
+    "lat" : "16.91075",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "120.72863",
+    "country" : "PH",
+    "lat" : "15.44125",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "124.95583",
+    "country" : "PH",
+    "lat" : "10.8925",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "122.5162",
+    "country" : "PH",
+    "lat" : "10.4131",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "126.26299",
+    "country" : "PH",
+    "lat" : "8.98471",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "125.79972",
+    "country" : "PH",
+    "lat" : "8.27083",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "125.73333",
+    "country" : "PH",
+    "lat" : "7.31583",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "126.36417",
+    "country" : "PH",
+    "lat" : "7.87111",
+    "name" : "Boston"
+  },
+  {
+    "lng" : "123.0485",
+    "country" : "PH",
+    "lat" : "13.7715",
+    "name" : "Barcelona"
+  },
+  {
+    "lng" : "124.1419",
+    "country" : "PH",
+    "lat" : "12.8683",
+    "name" : "Barcelona"
+  },
+  {
+    "lng" : "123.4587",
+    "country" : "PH",
+    "lat" : "8.5275",
+    "name" : "Barcelona"
+  },
+  {
+    "lng" : "126.43417",
+    "country" : "PH",
+    "lat" : "8.15917",
+    "name" : "Barcelona"
+  },
+  {
+    "lng" : "68.37366",
+    "country" : "PK",
+    "lat" : "25.39242",
+    "name" : "Hyderabad"
+  },
+  {
+    "lng" : "21.01178",
+    "country" : "PL",
+    "lat" : "52.22977",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-67.09851",
+    "country" : "PR",
+    "lat" : "18.49217",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-66.30267",
+    "country" : "PR",
+    "lat" : "18.44884",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-66.94962",
+    "country" : "PR",
+    "lat" : "18.45161",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-66.10572",
+    "country" : "PR",
+    "lat" : "18.46633",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-66.7524",
+    "country" : "PR",
+    "lat" : "18.0633",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-9.13333",
+    "country" : "PT",
+    "lat" : "38.71667",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-8.67422",
+    "country" : "PT",
+    "lat" : "37.10202",
+    "name" : "Lagos"
+  },
+  {
+    "lng" : "-8.61099",
+    "country" : "PT",
+    "lat" : "41.14961",
+    "name" : "Porto"
+  },
+  {
+    "lng" : "-56.76803",
+    "country" : "PY",
+    "lat" : "-27.1431",
+    "name" : "Santiago"
+  },
+  {
+    "lng" : "-57.54725",
+    "country" : "PY",
+    "lat" : "-25.42126",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-56.47891",
+    "country" : "PY",
+    "lat" : "-23.88496",
+    "name" : "Lima"
+  },
+  {
+    "lng" : "51.53096",
+    "country" : "QA",
+    "lat" : "25.28545",
+    "name" : "Doha"
+  },
+  {
+    "lng" : "27.1673",
+    "country" : "RO",
+    "lat" : "47.61018",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "27.58333",
+    "country" : "RO",
+    "lat" : "47.28333",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "24.7028",
+    "country" : "RO",
+    "lat" : "45.72968",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "27.61667",
+    "country" : "RO",
+    "lat" : "44.81667",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "23.6",
+    "country" : "RO",
+    "lat" : "46.76667",
+    "name" : "Cluj-Napoca"
+  },
+  {
+    "lng" : "26.10626",
+    "country" : "RO",
+    "lat" : "44.43225",
+    "name" : "Bucharest"
+  },
+  {
+    "lng" : "20.46513",
+    "country" : "RS",
+    "lat" : "44.80401",
+    "name" : "Belgrade"
+  },
+  {
+    "lng" : "30.31413",
+    "country" : "RU",
+    "lat" : "59.93863",
+    "name" : "Saint Petersburg"
+  },
+  {
+    "lng" : "37.61556",
+    "country" : "RU",
+    "lat" : "55.75222",
+    "name" : "Moscow"
+  },
+  {
+    "lng" : "46.72185",
+    "country" : "SA",
+    "lat" : "24.68773",
+    "name" : "Riyadh"
+  },
+  {
+    "lng" : "55.45501",
+    "country" : "SC",
+    "lat" : "-4.62001",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "32.5677",
+    "country" : "SD",
+    "lat" : "15.5834",
+    "name" : "Riyadh"
+  },
+  {
+    "lng" : "17.63889",
+    "country" : "SE",
+    "lat" : "59.85882",
+    "name" : "Uppsala"
+  },
+  {
+    "lng" : "18.06871",
+    "country" : "SE",
+    "lat" : "59.32938",
+    "name" : "Stockholm"
+  },
+  {
+    "lng" : "103.85007",
+    "country" : "SG",
+    "lat" : "1.28967",
+    "name" : "Singapore"
+  },
+  {
+    "lng" : "14.50513",
+    "country" : "SI",
+    "lat" : "46.05108",
+    "name" : "Ljubljana"
+  },
+  {
+    "lng" : "17.10674",
+    "country" : "SK",
+    "lat" : "48.14816",
+    "name" : "Bratislava"
+  },
+  {
+    "lng" : "-88.63333",
+    "country" : "SV",
+    "lat" : "13.95",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-89.18718",
+    "country" : "SV",
+    "lat" : "13.68935",
+    "name" : "San Salvador"
+  },
+  {
+    "lng" : "98.3981",
+    "country" : "TH",
+    "lat" : "7.89059",
+    "name" : "Phuket"
+  },
+  {
+    "lng" : "98.98468",
+    "country" : "TH",
+    "lat" : "18.79038",
+    "name" : "Chiang Mai"
+  },
+  {
+    "lng" : "100.50144",
+    "country" : "TH",
+    "lat" : "13.75398",
+    "name" : "Bangkok"
+  },
+  {
+    "lng" : "10.16579",
+    "country" : "TN",
+    "lat" : "36.81897",
+    "name" : "Tunis"
+  },
+  {
+    "lng" : "32.85427",
+    "country" : "TR",
+    "lat" : "39.91987",
+    "name" : "Ankara"
+  },
+  {
+    "lng" : "28.94966",
+    "country" : "TR",
+    "lat" : "41.01384",
+    "name" : "Istanbul"
+  },
+  {
+    "lng" : "121.53185",
+    "country" : "TW",
+    "lat" : "25.04776",
+    "name" : "Taipei"
+  },
+  {
+    "lng" : "39.26951",
+    "country" : "TZ",
+    "lat" : "-6.82349",
+    "name" : "Dar es Salaam"
+  },
+  {
+    "lng" : "24.02324",
+    "country" : "UA",
+    "lat" : "49.83826",
+    "name" : "Lviv"
+  },
+  {
+    "lng" : "-86.94721",
+    "country" : "US",
+    "lat" : "33.43428",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-86.80249",
+    "country" : "US",
+    "lat" : "33.52066",
+    "name" : "Birmingham"
+  },
+  {
+    "lng" : "-86.57749",
+    "country" : "US",
+    "lat" : "33.99093",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-87.67725",
+    "country" : "US",
+    "lat" : "34.79981",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-85.86382",
+    "country" : "US",
+    "lat" : "31.03296",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-85.7613",
+    "country" : "US",
+    "lat" : "33.81382",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-86.54443",
+    "country" : "US",
+    "lat" : "33.54816",
+    "name" : "Leeds"
+  },
+  {
+    "lng" : "-86.74833",
+    "country" : "US",
+    "lat" : "34.69926",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-85.83496",
+    "country" : "US",
+    "lat" : "33.61427",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-91.98376",
+    "country" : "US",
+    "lat" : "34.99842",
+    "name" : "Austin"
+  },
+  {
+    "lng" : "-94.03632",
+    "country" : "US",
+    "lat" : "35.29704",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-91.79763",
+    "country" : "US",
+    "lat" : "33.22818",
+    "name" : "Hamburg"
+  },
+  {
+    "lng" : "-92.11015",
+    "country" : "US",
+    "lat" : "34.8662",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-93.25296",
+    "country" : "US",
+    "lat" : "35.32897",
+    "name" : "London"
+  },
+  {
+    "lng" : "-90.16704",
+    "country" : "US",
+    "lat" : "35.88007",
+    "name" : "Manila"
+  },
+  {
+    "lng" : "-91.90848",
+    "country" : "US",
+    "lat" : "36.05951",
+    "name" : "Melbourne"
+  },
+  {
+    "lng" : "-93.84713",
+    "country" : "US",
+    "lat" : "33.94567",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-93.72992",
+    "country" : "US",
+    "lat" : "35.29203",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-91.55263",
+    "country" : "US",
+    "lat" : "34.50037",
+    "name" : "Stuttgart"
+  },
+  {
+    "lng" : "-75.74521",
+    "country" : "US",
+    "lat" : "39.60483",
+    "name" : "Glasgow"
+  },
+  {
+    "lng" : "-84.97702",
+    "country" : "US",
+    "lat" : "30.43247",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-81.98398",
+    "country" : "US",
+    "lat" : "26.96173",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-81.11506",
+    "country" : "US",
+    "lat" : "28.73972",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-84.41463",
+    "country" : "US",
+    "lat" : "30.62381",
+    "name" : "Havana"
+  },
+  {
+    "lng" : "-81.65565",
+    "country" : "US",
+    "lat" : "30.33218",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-83.41293",
+    "country" : "US",
+    "lat" : "30.46938",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-80.60811",
+    "country" : "US",
+    "lat" : "28.08363",
+    "name" : "Melbourne"
+  },
+  {
+    "lng" : "-82.56121",
+    "country" : "US",
+    "lat" : "27.53587",
+    "name" : "Memphis"
+  },
+  {
+    "lng" : "-80.19366",
+    "country" : "US",
+    "lat" : "25.77427",
+    "name" : "Miami"
+  },
+  {
+    "lng" : "-81.79596",
+    "country" : "US",
+    "lat" : "26.14234",
+    "name" : "Naples"
+  },
+  {
+    "lng" : "-81.37924",
+    "country" : "US",
+    "lat" : "28.53834",
+    "name" : "Orlando"
+  },
+  {
+    "lng" : "-82.27453",
+    "country" : "US",
+    "lat" : "28.33611",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-80.24144",
+    "country" : "US",
+    "lat" : "26.65868",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-83.37794",
+    "country" : "US",
+    "lat" : "33.96095",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-84.38798",
+    "country" : "US",
+    "lat" : "33.749",
+    "name" : "Atlanta"
+  },
+  {
+    "lng" : "-83.78989",
+    "country" : "US",
+    "lat" : "30.79186",
+    "name" : "Boston"
+  },
+  {
+    "lng" : "-84.20214",
+    "country" : "US",
+    "lat" : "30.87751",
+    "name" : "Cairo"
+  },
+  {
+    "lng" : "-83.76324",
+    "country" : "US",
+    "lat" : "34.59704",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-84.98771",
+    "country" : "US",
+    "lat" : "32.46098",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-84.84077",
+    "country" : "US",
+    "lat" : "33.92371",
+    "name" : "Dallas"
+  },
+  {
+    "lng" : "-82.90375",
+    "country" : "US",
+    "lat" : "32.54044",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-83.99769",
+    "country" : "US",
+    "lat" : "32.72431",
+    "name" : "Knoxville"
+  },
+  {
+    "lng" : "-82.41124",
+    "country" : "US",
+    "lat" : "33.00154",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-83.46794",
+    "country" : "US",
+    "lat" : "33.59568",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-84.61993",
+    "country" : "US",
+    "lat" : "32.85985",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-83.25015",
+    "country" : "US",
+    "lat" : "31.20742",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-83.86741",
+    "country" : "US",
+    "lat" : "33.619",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-85.16467",
+    "country" : "US",
+    "lat" : "34.25704",
+    "name" : "Rome"
+  },
+  {
+    "lng" : "-83.79545",
+    "country" : "US",
+    "lat" : "32.09156",
+    "name" : "Vienna"
+  },
+  {
+    "lng" : "-89.72399",
+    "country" : "US",
+    "lat" : "39.96088",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-90.14066",
+    "country" : "US",
+    "lat" : "39.03977",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-89.17646",
+    "country" : "US",
+    "lat" : "37.00533",
+    "name" : "Cairo"
+  },
+  {
+    "lng" : "-88.17615",
+    "country" : "US",
+    "lat" : "39.49615",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-90.22901",
+    "country" : "US",
+    "lat" : "39.73394",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-88.50255",
+    "country" : "US",
+    "lat" : "38.77227",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-90.15705",
+    "country" : "US",
+    "lat" : "38.68255",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-89.38064",
+    "country" : "US",
+    "lat" : "38.34366",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-87.69614",
+    "country" : "US",
+    "lat" : "39.61115",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-89.53176",
+    "country" : "US",
+    "lat" : "39.74949",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-88.89784",
+    "country" : "US",
+    "lat" : "37.41533",
+    "name" : "Vienna"
+  },
+  {
+    "lng" : "-85.80803",
+    "country" : "US",
+    "lat" : "38.75839",
+    "name" : "Austin"
+  },
+  {
+    "lng" : "-85.92138",
+    "country" : "US",
+    "lat" : "39.20144",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-85.96666",
+    "country" : "US",
+    "lat" : "39.35422",
+    "name" : "Edinburgh"
+  },
+  {
+    "lng" : "-85.71998",
+    "country" : "US",
+    "lat" : "39.39172",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-86.15804",
+    "country" : "US",
+    "lat" : "39.76838",
+    "name" : "Indianapolis"
+  },
+  {
+    "lng" : "-85.37996",
+    "country" : "US",
+    "lat" : "38.73589",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-85.13135",
+    "country" : "US",
+    "lat" : "39.12117",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-86.2511",
+    "country" : "US",
+    "lat" : "39.20727",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-84.89024",
+    "country" : "US",
+    "lat" : "39.82894",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-94.84412",
+    "country" : "US",
+    "lat" : "37.16923",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-94.62746",
+    "country" : "US",
+    "lat" : "39.11417",
+    "name" : "Kansas City"
+  },
+  {
+    "lng" : "-95.26775",
+    "country" : "US",
+    "lat" : "38.61557",
+    "name" : "Ottawa"
+  },
+  {
+    "lng" : "-97.16893",
+    "country" : "US",
+    "lat" : "37.27419",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-99.1476",
+    "country" : "US",
+    "lat" : "38.85279",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-97.37171",
+    "country" : "US",
+    "lat" : "37.2653",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-85.53302",
+    "country" : "US",
+    "lat" : "38.26674",
+    "name" : "Anchorage"
+  },
+  {
+    "lng" : "-85.61219",
+    "country" : "US",
+    "lat" : "36.98006",
+    "name" : "Edmonton"
+  },
+  {
+    "lng" : "-84.62661",
+    "country" : "US",
+    "lat" : "38.99895",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-85.91192",
+    "country" : "US",
+    "lat" : "36.99588",
+    "name" : "Glasgow"
+  },
+  {
+    "lng" : "-84.08326",
+    "country" : "US",
+    "lat" : "37.12898",
+    "name" : "London"
+  },
+  {
+    "lng" : "-85.75941",
+    "country" : "US",
+    "lat" : "38.25424",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-83.76186",
+    "country" : "US",
+    "lat" : "37.1537",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-84.25299",
+    "country" : "US",
+    "lat" : "38.2098",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-85.22107",
+    "country" : "US",
+    "lat" : "38.57451",
+    "name" : "Providence"
+  },
+  {
+    "lng" : "-87.76279",
+    "country" : "US",
+    "lat" : "37.39755",
+    "name" : "Providence"
+  },
+  {
+    "lng" : "-84.29465",
+    "country" : "US",
+    "lat" : "37.74786",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-84.90162",
+    "country" : "US",
+    "lat" : "38.7834",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-91.49317",
+    "country" : "US",
+    "lat" : "32.45764",
+    "name" : "Delhi"
+  },
+  {
+    "lng" : "-90.07507",
+    "country" : "US",
+    "lat" : "29.95465",
+    "name" : "New Orleans"
+  },
+  {
+    "lng" : "-76.61219",
+    "country" : "US",
+    "lat" : "39.29038",
+    "name" : "Baltimore"
+  },
+  {
+    "lng" : "-75.21769",
+    "country" : "US",
+    "lat" : "38.32262",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "-76.07883",
+    "country" : "US",
+    "lat" : "38.56317",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-76.88498",
+    "country" : "US",
+    "lat" : "39.66121",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-93.09241",
+    "country" : "US",
+    "lat" : "37.64393",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-89.35063",
+    "country" : "US",
+    "lat" : "36.92089",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-92.84658",
+    "country" : "US",
+    "lat" : "39.22725",
+    "name" : "Glasgow"
+  },
+  {
+    "lng" : "-91.95599",
+    "country" : "US",
+    "lat" : "37.32616",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-94.57857",
+    "country" : "US",
+    "lat" : "39.09973",
+    "name" : "Kansas City"
+  },
+  {
+    "lng" : "-94.03855",
+    "country" : "US",
+    "lat" : "39.64417",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-90.50929",
+    "country" : "US",
+    "lat" : "38.597",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-92.00128",
+    "country" : "US",
+    "lat" : "39.48087",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-93.97689",
+    "country" : "US",
+    "lat" : "39.27862",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-90.19789",
+    "country" : "US",
+    "lat" : "38.62727",
+    "name" : "St. Louis"
+  },
+  {
+    "lng" : "-91.94711",
+    "country" : "US",
+    "lat" : "38.18671",
+    "name" : "Vienna"
+  },
+  {
+    "lng" : "-93.38187",
+    "country" : "US",
+    "lat" : "38.24308",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-90.05676",
+    "country" : "US",
+    "lat" : "34.00678",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-90.72482",
+    "country" : "US",
+    "lat" : "33.744",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-88.42726",
+    "country" : "US",
+    "lat" : "33.49567",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-90.1312",
+    "country" : "US",
+    "lat" : "32.15348",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-88.99923",
+    "country" : "US",
+    "lat" : "33.89845",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-89.05506",
+    "country" : "US",
+    "lat" : "33.12374",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-90.11536",
+    "country" : "US",
+    "lat" : "32.46181",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-89.51925",
+    "country" : "US",
+    "lat" : "34.3665",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-89.11673",
+    "country" : "US",
+    "lat" : "32.77152",
+    "name" : "Philadelphia"
+  },
+  {
+    "lng" : "-89.52229",
+    "country" : "US",
+    "lat" : "32.03349",
+    "name" : "Raleigh"
+  },
+  {
+    "lng" : "-82.55402",
+    "country" : "US",
+    "lat" : "35.60095",
+    "name" : "Asheville"
+  },
+  {
+    "lng" : "-80.84313",
+    "country" : "US",
+    "lat" : "35.22709",
+    "name" : "Charlotte"
+  },
+  {
+    "lng" : "-82.19706",
+    "country" : "US",
+    "lat" : "35.25317",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-81.17619",
+    "country" : "US",
+    "lat" : "35.31653",
+    "name" : "Dallas"
+  },
+  {
+    "lng" : "-81.0298",
+    "country" : "US",
+    "lat" : "35.53125",
+    "name" : "Denver"
+  },
+  {
+    "lng" : "-77.58942",
+    "country" : "US",
+    "lat" : "36.32849",
+    "name" : "Halifax"
+  },
+  {
+    "lng" : "-77.43024",
+    "country" : "US",
+    "lat" : "34.75405",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-79.95949",
+    "country" : "US",
+    "lat" : "36.38542",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-77.96554",
+    "country" : "US",
+    "lat" : "35.9746",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-78.59083",
+    "country" : "US",
+    "lat" : "36.3107",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-78.63861",
+    "country" : "US",
+    "lat" : "35.7721",
+    "name" : "Raleigh"
+  },
+  {
+    "lng" : "-78.0911",
+    "country" : "US",
+    "lat" : "34.99933",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-74.92905",
+    "country" : "US",
+    "lat" : "39.79123",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "-82.10126",
+    "country" : "US",
+    "lat" : "39.32924",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-82.60072",
+    "country" : "US",
+    "lat" : "39.84534",
+    "name" : "Baltimore"
+  },
+  {
+    "lng" : "-84.51439",
+    "country" : "US",
+    "lat" : "39.12711",
+    "name" : "Cincinnati"
+  },
+  {
+    "lng" : "-82.99879",
+    "country" : "US",
+    "lat" : "39.96118",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-82.43349",
+    "country" : "US",
+    "lat" : "39.66201",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-82.91073",
+    "country" : "US",
+    "lat" : "39.47395",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-83.6352",
+    "country" : "US",
+    "lat" : "39.86089",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-83.44825",
+    "country" : "US",
+    "lat" : "39.88645",
+    "name" : "London"
+  },
+  {
+    "lng" : "-83.60936",
+    "country" : "US",
+    "lat" : "38.68813",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-84.74523",
+    "country" : "US",
+    "lat" : "39.507",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-99.6304",
+    "country" : "US",
+    "lat" : "36.83559",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-96.46584",
+    "country" : "US",
+    "lat" : "36.31032",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-96.71972",
+    "country" : "US",
+    "lat" : "33.99871",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-94.87746",
+    "country" : "US",
+    "lat" : "36.87451",
+    "name" : "Miami"
+  },
+  {
+    "lng" : "-97.51643",
+    "country" : "US",
+    "lat" : "35.46756",
+    "name" : "Oklahoma City"
+  },
+  {
+    "lng" : "-94.67245",
+    "country" : "US",
+    "lat" : "35.16732",
+    "name" : "Panama"
+  },
+  {
+    "lng" : "-96.68502",
+    "country" : "US",
+    "lat" : "35.48674",
+    "name" : "Prague"
+  },
+  {
+    "lng" : "-78.9578",
+    "country" : "US",
+    "lat" : "39.92064",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "-75.44047",
+    "country" : "US",
+    "lat" : "39.91733",
+    "name" : "Lima"
+  },
+  {
+    "lng" : "-75.97883",
+    "country" : "US",
+    "lat" : "39.78539",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-75.16362",
+    "country" : "US",
+    "lat" : "39.95238",
+    "name" : "Philadelphia"
+  },
+  {
+    "lng" : "-81.68343",
+    "country" : "US",
+    "lat" : "34.72569",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-79.93092",
+    "country" : "US",
+    "lat" : "32.77657",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-79.76256",
+    "country" : "US",
+    "lat" : "34.19543",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-84.59299",
+    "country" : "US",
+    "lat" : "35.44285",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-86.43916",
+    "country" : "US",
+    "lat" : "35.08009",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-89.72508",
+    "country" : "US",
+    "lat" : "35.48397",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-82.18874",
+    "country" : "US",
+    "lat" : "36.59511",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-87.33973",
+    "country" : "US",
+    "lat" : "36.17728",
+    "name" : "Charlotte"
+  },
+  {
+    "lng" : "-85.30968",
+    "country" : "US",
+    "lat" : "35.04563",
+    "name" : "Chattanooga"
+  },
+  {
+    "lng" : "-84.87661",
+    "country" : "US",
+    "lat" : "35.15952",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-88.70811",
+    "country" : "US",
+    "lat" : "36.29145",
+    "name" : "Dresden"
+  },
+  {
+    "lng" : "-84.50854",
+    "country" : "US",
+    "lat" : "35.88091",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-83.92074",
+    "country" : "US",
+    "lat" : "35.96064",
+    "name" : "Knoxville"
+  },
+  {
+    "lng" : "-84.04796",
+    "country" : "US",
+    "lat" : "35.82175",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-86.0886",
+    "country" : "US",
+    "lat" : "35.48174",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-90.04898",
+    "country" : "US",
+    "lat" : "35.14953",
+    "name" : "Memphis"
+  },
+  {
+    "lng" : "-88.75895",
+    "country" : "US",
+    "lat" : "35.91979",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-86.78444",
+    "country" : "US",
+    "lat" : "36.16589",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-88.32671",
+    "country" : "US",
+    "lat" : "36.302",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-95.85552",
+    "country" : "US",
+    "lat" : "32.20487",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-94.16435",
+    "country" : "US",
+    "lat" : "33.11374",
+    "name" : "Atlanta"
+  },
+  {
+    "lng" : "-97.74306",
+    "country" : "US",
+    "lat" : "30.26715",
+    "name" : "Austin"
+  },
+  {
+    "lng" : "-96.05802",
+    "country" : "US",
+    "lat" : "31.46379",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-98.70641",
+    "country" : "US",
+    "lat" : "28.86192",
+    "name" : "Charlotte"
+  },
+  {
+    "lng" : "-95.08549",
+    "country" : "US",
+    "lat" : "30.34132",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-96.53969",
+    "country" : "US",
+    "lat" : "29.70662",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-96.80667",
+    "country" : "US",
+    "lat" : "32.78306",
+    "name" : "Dallas"
+  },
+  {
+    "lng" : "-98.34199",
+    "country" : "US",
+    "lat" : "32.08514",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-97.79363",
+    "country" : "US",
+    "lat" : "30.8413",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-95.36327",
+    "country" : "US",
+    "lat" : "29.76328",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-95.2705",
+    "country" : "US",
+    "lat" : "31.96378",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-94.68021",
+    "country" : "US",
+    "lat" : "33.20318",
+    "name" : "Naples"
+  },
+  {
+    "lng" : "-95.55551",
+    "country" : "US",
+    "lat" : "33.66094",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-95.76078",
+    "country" : "US",
+    "lat" : "29.58218",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-98.49363",
+    "country" : "US",
+    "lat" : "29.42412",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-98.2389",
+    "country" : "US",
+    "lat" : "27.76391",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-98.15529",
+    "country" : "US",
+    "lat" : "26.18924",
+    "name" : "San Juan"
+  },
+  {
+    "lng" : "-97.0036",
+    "country" : "US",
+    "lat" : "28.80527",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-82.18847",
+    "country" : "US",
+    "lat" : "36.59649",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-80.68534",
+    "country" : "US",
+    "lat" : "37.10568",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-79.45031",
+    "country" : "US",
+    "lat" : "37.63402",
+    "name" : "Glasgow"
+  },
+  {
+    "lng" : "-78.92834",
+    "country" : "US",
+    "lat" : "36.76597",
+    "name" : "Halifax"
+  },
+  {
+    "lng" : "-78.2575",
+    "country" : "US",
+    "lat" : "38.38041",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-77.46026",
+    "country" : "US",
+    "lat" : "37.55376",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-78.22722",
+    "country" : "US",
+    "lat" : "36.99487",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-77.26526",
+    "country" : "US",
+    "lat" : "38.90122",
+    "name" : "Vienna"
+  },
+  {
+    "lng" : "-76.75801",
+    "country" : "US",
+    "lat" : "37.95874",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-81.9818",
+    "country" : "US",
+    "lat" : "38.61759",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-81.63262",
+    "country" : "US",
+    "lat" : "38.34982",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-81.81929",
+    "country" : "US",
+    "lat" : "38.06705",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-81.54846",
+    "country" : "US",
+    "lat" : "39.32702",
+    "name" : "Vienna"
+  },
+  {
+    "lng" : "-74.91822",
+    "country" : "US",
+    "lat" : "39.73428",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-86.97219",
+    "country" : "US",
+    "lat" : "34.80243",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-87.62093",
+    "country" : "US",
+    "lat" : "44.73611",
+    "name" : "Brussels"
+  },
+  {
+    "lng" : "-72.01174",
+    "country" : "US",
+    "lat" : "41.60399",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-72.59843",
+    "country" : "US",
+    "lat" : "41.27954",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-72.52148",
+    "country" : "US",
+    "lat" : "41.77593",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-73.11678",
+    "country" : "US",
+    "lat" : "41.43399",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-90.72347",
+    "country" : "US",
+    "lat" : "41.45642",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-92.3374",
+    "country" : "US",
+    "lat" : "42.67137",
+    "name" : "Denver"
+  },
+  {
+    "lng" : "-93.60911",
+    "country" : "US",
+    "lat" : "41.60054",
+    "name" : "Des Moines"
+  },
+  {
+    "lng" : "-95.65777",
+    "country" : "US",
+    "lat" : "40.60445",
+    "name" : "Hamburg"
+  },
+  {
+    "lng" : "-93.10937",
+    "country" : "US",
+    "lat" : "41.32083",
+    "name" : "Knoxville"
+  },
+  {
+    "lng" : "-91.38545",
+    "country" : "US",
+    "lat" : "41.92112",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-93.82328",
+    "country" : "US",
+    "lat" : "41.87665",
+    "name" : "Madrid"
+  },
+  {
+    "lng" : "-91.45543",
+    "country" : "US",
+    "lat" : "42.48415",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-89.23342",
+    "country" : "US",
+    "lat" : "40.25948",
+    "name" : "Atlanta"
+  },
+  {
+    "lng" : "-90.1929",
+    "country" : "US",
+    "lat" : "41.30365",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-87.65005",
+    "country" : "US",
+    "lat" : "41.85003",
+    "name" : "Chicago"
+  },
+  {
+    "lng" : "-88.30535",
+    "country" : "US",
+    "lat" : "41.88753",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-90.06095",
+    "country" : "US",
+    "lat" : "40.30004",
+    "name" : "Havana"
+  },
+  {
+    "lng" : "-88.75898",
+    "country" : "US",
+    "lat" : "42.09975",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-90.28485",
+    "country" : "US",
+    "lat" : "40.90837",
+    "name" : "Knoxville"
+  },
+  {
+    "lng" : "-90.57208",
+    "country" : "US",
+    "lat" : "41.45309",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-88.84258",
+    "country" : "US",
+    "lat" : "41.34559",
+    "name" : "Ottawa"
+  },
+  {
+    "lng" : "-87.63477",
+    "country" : "US",
+    "lat" : "41.61115",
+    "name" : "Phoenix"
+  },
+  {
+    "lng" : "-88.30593",
+    "country" : "US",
+    "lat" : "42.47585",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-89.36898",
+    "country" : "US",
+    "lat" : "40.36087",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-89.50259",
+    "country" : "US",
+    "lat" : "40.88309",
+    "name" : "Rome"
+  },
+  {
+    "lng" : "-91.4346",
+    "country" : "US",
+    "lat" : "40.35921",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-85.81749",
+    "country" : "US",
+    "lat" : "41.72144",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-84.95719",
+    "country" : "US",
+    "lat" : "40.59199",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-87.24779",
+    "country" : "US",
+    "lat" : "40.51976",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-86.21583",
+    "country" : "US",
+    "lat" : "41.06476",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-85.85305",
+    "country" : "US",
+    "lat" : "41.2381",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-71.63701",
+    "country" : "US",
+    "lat" : "42.3812",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "-71.05977",
+    "country" : "US",
+    "lat" : "42.35843",
+    "name" : "Boston"
+  },
+  {
+    "lng" : "-71.10561",
+    "country" : "US",
+    "lat" : "42.3751",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-70.86199",
+    "country" : "US",
+    "lat" : "41.99121",
+    "name" : "Halifax"
+  },
+  {
+    "lng" : "-70.72448",
+    "country" : "US",
+    "lat" : "41.99455",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-71.86479",
+    "country" : "US",
+    "lat" : "42.11676",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-73.36761",
+    "country" : "US",
+    "lat" : "42.37314",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-70.82004",
+    "country" : "US",
+    "lat" : "41.73177",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-69.00642",
+    "country" : "US",
+    "lat" : "44.42591",
+    "name" : "Belfast"
+  },
+  {
+    "lng" : "-69.83255",
+    "country" : "US",
+    "lat" : "44.44729",
+    "name" : "Belgrade"
+  },
+  {
+    "lng" : "-69.50921",
+    "country" : "US",
+    "lat" : "43.95758",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-69.04059",
+    "country" : "US",
+    "lat" : "45.08506",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-70.1195",
+    "country" : "US",
+    "lat" : "44.3034",
+    "name" : "Leeds"
+  },
+  {
+    "lng" : "-70.1045",
+    "country" : "US",
+    "lat" : "44.03146",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-69.87978",
+    "country" : "US",
+    "lat" : "44.79756",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-69.86033",
+    "country" : "US",
+    "lat" : "44.32451",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-70.49311",
+    "country" : "US",
+    "lat" : "44.13174",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-70.50062",
+    "country" : "US",
+    "lat" : "44.25979",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-69.79893",
+    "country" : "US",
+    "lat" : "44.0873",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-69.86922",
+    "country" : "US",
+    "lat" : "44.58506",
+    "name" : "Rome"
+  },
+  {
+    "lng" : "-85.23471",
+    "country" : "US",
+    "lat" : "42.08866",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-84.14389",
+    "country" : "US",
+    "lat" : "45.00473",
+    "name" : "Atlanta"
+  },
+  {
+    "lng" : "-83.21132",
+    "country" : "US",
+    "lat" : "42.5467",
+    "name" : "Birmingham"
+  },
+  {
+    "lng" : "-83.78022",
+    "country" : "US",
+    "lat" : "42.52948",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-84.83582",
+    "country" : "US",
+    "lat" : "42.56365",
+    "name" : "Charlotte"
+  },
+  {
+    "lng" : "-83.04575",
+    "country" : "US",
+    "lat" : "42.33143",
+    "name" : "Detroit"
+  },
+  {
+    "lng" : "-83.18965",
+    "country" : "US",
+    "lat" : "42.09504",
+    "name" : "Gibraltar"
+  },
+  {
+    "lng" : "-84.03772",
+    "country" : "US",
+    "lat" : "42.15032",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-82.76881",
+    "country" : "US",
+    "lat" : "42.89642",
+    "name" : "Memphis"
+  },
+  {
+    "lng" : "-83.68244",
+    "country" : "US",
+    "lat" : "42.08532",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-85.09305",
+    "country" : "US",
+    "lat" : "42.60281",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-83.26466",
+    "country" : "US",
+    "lat" : "42.82475",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-82.75576",
+    "country" : "US",
+    "lat" : "42.8092",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-83.13382",
+    "country" : "US",
+    "lat" : "42.68059",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-92.97464",
+    "country" : "US",
+    "lat" : "43.66663",
+    "name" : "Austin"
+  },
+  {
+    "lng" : "-93.87469",
+    "country" : "US",
+    "lat" : "45.17191",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-93.22439",
+    "country" : "US",
+    "lat" : "45.57274",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-93.78135",
+    "country" : "US",
+    "lat" : "44.77163",
+    "name" : "Cologne"
+  },
+  {
+    "lng" : "-96.19588",
+    "country" : "US",
+    "lat" : "45.00968",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-95.71701",
+    "country" : "US",
+    "lat" : "44.94803",
+    "name" : "Montevideo"
+  },
+  {
+    "lng" : "-94.51833",
+    "country" : "US",
+    "lat" : "45.45413",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-92.4699",
+    "country" : "US",
+    "lat" : "44.02163",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-93.66163",
+    "country" : "US",
+    "lat" : "44.85857",
+    "name" : "Victoria"
+  },
+  {
+    "lng" : "-92.17129",
+    "country" : "US",
+    "lat" : "40.45781",
+    "name" : "Memphis"
+  },
+  {
+    "lng" : "-93.12521",
+    "country" : "US",
+    "lat" : "40.20224",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-97.68121",
+    "country" : "US",
+    "lat" : "46.44163",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-97.36838",
+    "country" : "US",
+    "lat" : "41.42973",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-97.59588",
+    "country" : "US",
+    "lat" : "40.52695",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-96.16224",
+    "country" : "US",
+    "lat" : "40.99778",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-97.45505",
+    "country" : "US",
+    "lat" : "41.82834",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-95.94043",
+    "country" : "US",
+    "lat" : "41.25626",
+    "name" : "Omaha"
+  },
+  {
+    "lng" : "-71.18508",
+    "country" : "US",
+    "lat" : "44.46867",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "-71.73675",
+    "country" : "US",
+    "lat" : "43.59119",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-72.06258",
+    "country" : "US",
+    "lat" : "42.90758",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-71.05339",
+    "country" : "US",
+    "lat" : "42.93648",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-71.1484",
+    "country" : "US",
+    "lat" : "43.89924",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-71.45479",
+    "country" : "US",
+    "lat" : "42.99564",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-71.18508",
+    "country" : "US",
+    "lat" : "44.57339",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-72.27175",
+    "country" : "US",
+    "lat" : "42.75481",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-70.97562",
+    "country" : "US",
+    "lat" : "43.30453",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-74.02986",
+    "country" : "US",
+    "lat" : "40.87621",
+    "name" : "Bogota"
+  },
+  {
+    "lng" : "-74.72072",
+    "country" : "US",
+    "lat" : "40.07261",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-74.80544",
+    "country" : "US",
+    "lat" : "40.11955",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-74.57627",
+    "country" : "US",
+    "lat" : "41.15343",
+    "name" : "Hamburg"
+  },
+  {
+    "lng" : "-74.61349",
+    "country" : "US",
+    "lat" : "40.37538",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-74.4171",
+    "country" : "US",
+    "lat" : "40.75982",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-74.98962",
+    "country" : "US",
+    "lat" : "40.80315",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-74.18819",
+    "country" : "US",
+    "lat" : "42.93869",
+    "name" : "Amsterdam"
+  },
+  {
+    "lng" : "-73.80957",
+    "country" : "US",
+    "lat" : "42.26036",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-77.94223",
+    "country" : "US",
+    "lat" : "43.08534",
+    "name" : "Bergen"
+  },
+  {
+    "lng" : "-78.73753",
+    "country" : "US",
+    "lat" : "42.62895",
+    "name" : "Boston"
+  },
+  {
+    "lng" : "-77.55055",
+    "country" : "US",
+    "lat" : "43.14756",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-78.87837",
+    "country" : "US",
+    "lat" : "42.88645",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-73.99847",
+    "country" : "US",
+    "lat" : "42.29897",
+    "name" : "Cairo"
+  },
+  {
+    "lng" : "-73.38122",
+    "country" : "US",
+    "lat" : "43.02813",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-74.23737",
+    "country" : "US",
+    "lat" : "40.53677",
+    "name" : "Charleston"
+  },
+  {
+    "lng" : "-74.91599",
+    "country" : "US",
+    "lat" : "42.27814",
+    "name" : "Delhi"
+  },
+  {
+    "lng" : "-76.97774",
+    "country" : "US",
+    "lat" : "42.86896",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-78.82948",
+    "country" : "US",
+    "lat" : "42.71589",
+    "name" : "Hamburg"
+  },
+  {
+    "lng" : "-73.99736",
+    "country" : "US",
+    "lat" : "41.92704",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-77.61139",
+    "country" : "US",
+    "lat" : "42.90479",
+    "name" : "Lima"
+  },
+  {
+    "lng" : "-76.2177",
+    "country" : "US",
+    "lat" : "43.10646",
+    "name" : "Liverpool"
+  },
+  {
+    "lng" : "-77.23026",
+    "country" : "US",
+    "lat" : "42.96979",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-77.40249",
+    "country" : "US",
+    "lat" : "42.61535",
+    "name" : "Naples"
+  },
+  {
+    "lng" : "-75.59769",
+    "country" : "US",
+    "lat" : "42.44202",
+    "name" : "Oxford"
+  },
+  {
+    "lng" : "-74.19402",
+    "country" : "US",
+    "lat" : "43.01757",
+    "name" : "Perth"
+  },
+  {
+    "lng" : "-75.70882",
+    "country" : "US",
+    "lat" : "44.1545",
+    "name" : "Philadelphia"
+  },
+  {
+    "lng" : "-76.30076",
+    "country" : "US",
+    "lat" : "43.23118",
+    "name" : "Phoenix"
+  },
+  {
+    "lng" : "-77.61556",
+    "country" : "US",
+    "lat" : "43.15478",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-75.45573",
+    "country" : "US",
+    "lat" : "43.21285",
+    "name" : "Rome"
+  },
+  {
+    "lng" : "-73.97096",
+    "country" : "US",
+    "lat" : "42.78702",
+    "name" : "Rotterdam"
+  },
+  {
+    "lng" : "-78.13279",
+    "country" : "US",
+    "lat" : "42.74006",
+    "name" : "Warsaw"
+  },
+  {
+    "lng" : "-81.58846",
+    "country" : "US",
+    "lat" : "40.03118",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-81.69541",
+    "country" : "US",
+    "lat" : "41.4995",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-82.01069",
+    "country" : "US",
+    "lat" : "40.12146",
+    "name" : "Dresden"
+  },
+  {
+    "lng" : "-83.11408",
+    "country" : "US",
+    "lat" : "40.09923",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-80.94815",
+    "country" : "US",
+    "lat" : "41.80505",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-84.10523",
+    "country" : "US",
+    "lat" : "40.74255",
+    "name" : "Lima"
+  },
+  {
+    "lng" : "-80.76813",
+    "country" : "US",
+    "lat" : "40.772",
+    "name" : "Lisbon"
+  },
+  {
+    "lng" : "-81.25955",
+    "country" : "US",
+    "lat" : "40.83728",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-81.04982",
+    "country" : "US",
+    "lat" : "41.77116",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-81.56929",
+    "country" : "US",
+    "lat" : "40.937",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-82.60545",
+    "country" : "US",
+    "lat" : "41.29755",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-84.04717",
+    "country" : "US",
+    "lat" : "41.01922",
+    "name" : "Ottawa"
+  },
+  {
+    "lng" : "-81.86236",
+    "country" : "US",
+    "lat" : "41.01006",
+    "name" : "Seville"
+  },
+  {
+    "lng" : "-80.60091",
+    "country" : "US",
+    "lat" : "40.46423",
+    "name" : "Toronto"
+  },
+  {
+    "lng" : "-82.21794",
+    "country" : "US",
+    "lat" : "41.16894",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-76.518",
+    "country" : "US",
+    "lat" : "41.9573",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-75.27796",
+    "country" : "US",
+    "lat" : "40.78065",
+    "name" : "Belfast"
+  },
+  {
+    "lng" : "-74.85183",
+    "country" : "US",
+    "lat" : "40.10067",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-75.96325",
+    "country" : "US",
+    "lat" : "41.33619",
+    "name" : "Dallas"
+  },
+  {
+    "lng" : "-76.13717",
+    "country" : "US",
+    "lat" : "40.23315",
+    "name" : "Denver"
+  },
+  {
+    "lng" : "-75.20156",
+    "country" : "US",
+    "lat" : "40.37177",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-75.98188",
+    "country" : "US",
+    "lat" : "40.55565",
+    "name" : "Hamburg"
+  },
+  {
+    "lng" : "-80.21145",
+    "country" : "US",
+    "lat" : "40.24646",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-75.89686",
+    "country" : "US",
+    "lat" : "41.26175",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-76.7183",
+    "country" : "US",
+    "lat" : "40.06315",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-75.51852",
+    "country" : "US",
+    "lat" : "41.33675",
+    "name" : "Moscow"
+  },
+  {
+    "lng" : "-76.17216",
+    "country" : "US",
+    "lat" : "40.68731",
+    "name" : "Palo Alto"
+  },
+  {
+    "lng" : "-79.99589",
+    "country" : "US",
+    "lat" : "40.44062",
+    "name" : "Pittsburgh"
+  },
+  {
+    "lng" : "-80.28645",
+    "country" : "US",
+    "lat" : "40.70229",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-71.26616",
+    "country" : "US",
+    "lat" : "41.67705",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-71.52256",
+    "country" : "US",
+    "lat" : "41.48038",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-71.41283",
+    "country" : "US",
+    "lat" : "41.82399",
+    "name" : "Providence"
+  },
+  {
+    "lng" : "-97.11395",
+    "country" : "US",
+    "lat" : "44.00608",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-73.07901",
+    "country" : "US",
+    "lat" : "44.13339",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-73.26096",
+    "country" : "US",
+    "lat" : "44.30977",
+    "name" : "Charlotte"
+  },
+  {
+    "lng" : "-90.07402",
+    "country" : "US",
+    "lat" : "45.03302",
+    "name" : "Athens"
+  },
+  {
+    "lng" : "-88.94345",
+    "country" : "US",
+    "lat" : "43.96804",
+    "name" : "Berlin"
+  },
+  {
+    "lng" : "-88.04925",
+    "country" : "US",
+    "lat" : "42.55891",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-89.0165",
+    "country" : "US",
+    "lat" : "43.00361",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-87.74731",
+    "country" : "US",
+    "lat" : "43.91499",
+    "name" : "Cleveland"
+  },
+  {
+    "lng" : "-89.01539",
+    "country" : "US",
+    "lat" : "43.33805",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-88.2518",
+    "country" : "US",
+    "lat" : "45.92218",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-89.40123",
+    "country" : "US",
+    "lat" : "43.07305",
+    "name" : "Madison"
+  },
+  {
+    "lng" : "-89.04845",
+    "country" : "US",
+    "lat" : "43.69054",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-87.90647",
+    "country" : "US",
+    "lat" : "43.0389",
+    "name" : "Milwaukee"
+  },
+  {
+    "lng" : "-89.02484",
+    "country" : "US",
+    "lat" : "45.52274",
+    "name" : "Nashville"
+  },
+  {
+    "lng" : "-88.74927",
+    "country" : "US",
+    "lat" : "42.71473",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-88.22426",
+    "country" : "US",
+    "lat" : "42.74141",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-72.94927",
+    "country" : "US",
+    "lat" : "41.67176",
+    "name" : "Bristol"
+  },
+  {
+    "lng" : "-111.38734",
+    "country" : "US",
+    "lat" : "33.03145",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-110.86872",
+    "country" : "US",
+    "lat" : "33.39922",
+    "name" : "Miami"
+  },
+  {
+    "lng" : "-112.07404",
+    "country" : "US",
+    "lat" : "33.44838",
+    "name" : "Phoenix"
+  },
+  {
+    "lng" : "-122.39997",
+    "country" : "US",
+    "lat" : "37.68077",
+    "name" : "Brisbane"
+  },
+  {
+    "lng" : "-120.77854",
+    "country" : "US",
+    "lat" : "37.43216",
+    "name" : "Delhi"
+  },
+  {
+    "lng" : "-121.93579",
+    "country" : "US",
+    "lat" : "37.70215",
+    "name" : "Dublin"
+  },
+  {
+    "lng" : "-119.44318",
+    "country" : "US",
+    "lat" : "36.47606",
+    "name" : "London"
+  },
+  {
+    "lng" : "-118.24368",
+    "country" : "US",
+    "lat" : "34.05223",
+    "name" : "Los Angeles"
+  },
+  {
+    "lng" : "-122.84833",
+    "country" : "US",
+    "lat" : "39.12323",
+    "name" : "Nice"
+  },
+  {
+    "lng" : "-122.14302",
+    "country" : "US",
+    "lat" : "37.44188",
+    "name" : "Palo Alto"
+  },
+  {
+    "lng" : "-122.34775",
+    "country" : "US",
+    "lat" : "37.93576",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-117.16472",
+    "country" : "US",
+    "lat" : "32.71571",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-121.89496",
+    "country" : "US",
+    "lat" : "37.33939",
+    "name" : "San Jose"
+  },
+  {
+    "lng" : "-120.65962",
+    "country" : "US",
+    "lat" : "35.28275",
+    "name" : "San Luis Obispo"
+  },
+  {
+    "lng" : "-118.60953",
+    "country" : "US",
+    "lat" : "34.44361",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "-104.82053",
+    "country" : "US",
+    "lat" : "39.98526",
+    "name" : "Brighton"
+  },
+  {
+    "lng" : "-104.82136",
+    "country" : "US",
+    "lat" : "38.83388",
+    "name" : "Colorado Springs"
+  },
+  {
+    "lng" : "-104.9847",
+    "country" : "US",
+    "lat" : "39.73915",
+    "name" : "Denver"
+  },
+  {
+    "lng" : "-105.1186",
+    "country" : "US",
+    "lat" : "38.39028",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-105.13193",
+    "country" : "US",
+    "lat" : "39.97776",
+    "name" : "Louisville"
+  },
+  {
+    "lng" : "-106.65114",
+    "country" : "US",
+    "lat" : "35.08449",
+    "name" : "Albuquerque"
+  },
+  {
+    "lng" : "-107.64002",
+    "country" : "US",
+    "lat" : "31.8276",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-105.2239",
+    "country" : "US",
+    "lat" : "35.59393",
+    "name" : "Las Vegas"
+  },
+  {
+    "lng" : "-107.89089",
+    "country" : "US",
+    "lat" : "35.16976",
+    "name" : "Milan"
+  },
+  {
+    "lng" : "-106.7003",
+    "country" : "US",
+    "lat" : "34.7995",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "-115.13722",
+    "country" : "US",
+    "lat" : "36.17497",
+    "name" : "Las Vegas"
+  },
+  {
+    "lng" : "-100.53401",
+    "country" : "US",
+    "lat" : "34.72478",
+    "name" : "Memphis"
+  },
+  {
+    "lng" : "-100.63819",
+    "country" : "US",
+    "lat" : "35.69143",
+    "name" : "Miami"
+  },
+  {
+    "lng" : "-100.21373",
+    "country" : "US",
+    "lat" : "34.85617",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-110.73543",
+    "country" : "US",
+    "lat" : "39.54247",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-105.27055",
+    "country" : "US",
+    "lat" : "40.01499",
+    "name" : "Boulder"
+  },
+  {
+    "lng" : "-105.08442",
+    "country" : "US",
+    "lat" : "40.58526",
+    "name" : "Fort Collins"
+  },
+  {
+    "lng" : "-105.00859",
+    "country" : "US",
+    "lat" : "40.70387",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "-116.20345",
+    "country" : "US",
+    "lat" : "43.6135",
+    "name" : "Boise"
+  },
+  {
+    "lng" : "-117.00017",
+    "country" : "US",
+    "lat" : "46.73239",
+    "name" : "Moscow"
+  },
+  {
+    "lng" : "-111.40104",
+    "country" : "US",
+    "lat" : "42.22715",
+    "name" : "Paris"
+  },
+  {
+    "lng" : "-111.1769",
+    "country" : "US",
+    "lat" : "45.77604",
+    "name" : "Belgrade"
+  },
+  {
+    "lng" : "-112.12083",
+    "country" : "US",
+    "lat" : "46.23659",
+    "name" : "Boulder"
+  },
+  {
+    "lng" : "-111.03856",
+    "country" : "US",
+    "lat" : "45.67965",
+    "name" : "Bozeman"
+  },
+  {
+    "lng" : "-109.25211",
+    "country" : "US",
+    "lat" : "45.63661",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-106.63671",
+    "country" : "US",
+    "lat" : "48.19696",
+    "name" : "Glasgow"
+  },
+  {
+    "lng" : "-100.16569",
+    "country" : "US",
+    "lat" : "40.28195",
+    "name" : "Cambridge"
+  },
+  {
+    "lng" : "-100.16068",
+    "country" : "US",
+    "lat" : "40.92945",
+    "name" : "Gothenburg"
+  },
+  {
+    "lng" : "-123.31705",
+    "country" : "US",
+    "lat" : "44.91928",
+    "name" : "Dallas"
+  },
+  {
+    "lng" : "-123.08675",
+    "country" : "US",
+    "lat" : "44.05207",
+    "name" : "Eugene"
+  },
+  {
+    "lng" : "-124.09984",
+    "country" : "US",
+    "lat" : "43.98262",
+    "name" : "Florence"
+  },
+  {
+    "lng" : "-122.96699",
+    "country" : "US",
+    "lat" : "42.31346",
+    "name" : "Jacksonville"
+  },
+  {
+    "lng" : "-122.81809",
+    "country" : "US",
+    "lat" : "42.27541",
+    "name" : "Phoenix"
+  },
+  {
+    "lng" : "-103.54603",
+    "country" : "US",
+    "lat" : "45.58416",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-109.72265",
+    "country" : "US",
+    "lat" : "40.98801",
+    "name" : "Manila"
+  },
+  {
+    "lng" : "-109.4993",
+    "country" : "US",
+    "lat" : "40.42691",
+    "name" : "Naples"
+  },
+  {
+    "lng" : "-111.81717",
+    "country" : "US",
+    "lat" : "41.70632",
+    "name" : "Providence"
+  },
+  {
+    "lng" : "-111.81356",
+    "country" : "US",
+    "lat" : "41.92271",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "-111.89105",
+    "country" : "US",
+    "lat" : "40.76078",
+    "name" : "Salt Lake City"
+  },
+  {
+    "lng" : "-122.32429",
+    "country" : "US",
+    "lat" : "47.40177",
+    "name" : "Des Moines"
+  },
+  {
+    "lng" : "-122.40183",
+    "country" : "US",
+    "lat" : "48.74567",
+    "name" : "Geneva"
+  },
+  {
+    "lng" : "-122.49806",
+    "country" : "US",
+    "lat" : "47.7985",
+    "name" : "Kingston"
+  },
+  {
+    "lng" : "-122.54507",
+    "country" : "US",
+    "lat" : "47.55566",
+    "name" : "Manchester"
+  },
+  {
+    "lng" : "-123.09625",
+    "country" : "US",
+    "lat" : "46.82177",
+    "name" : "Rochester"
+  },
+  {
+    "lng" : "-122.33207",
+    "country" : "US",
+    "lat" : "47.60621",
+    "name" : "Seattle"
+  },
+  {
+    "lng" : "-122.66149",
+    "country" : "US",
+    "lat" : "45.63873",
+    "name" : "Vancouver"
+  },
+  {
+    "lng" : "-106.69894",
+    "country" : "US",
+    "lat" : "44.34831",
+    "name" : "Buffalo"
+  },
+  {
+    "lng" : "-157.85833",
+    "country" : "US",
+    "lat" : "21.30694",
+    "name" : "Honolulu"
+  },
+  {
+    "lng" : "-149.81806",
+    "country" : "US",
+    "lat" : "61.63028",
+    "name" : "Houston"
+  },
+  {
+    "lng" : "-149.90028",
+    "country" : "US",
+    "lat" : "61.21806",
+    "name" : "Anchorage"
+  },
+  {
+    "lng" : "-93.05015",
+    "country" : "US",
+    "lat" : "45.26522",
+    "name" : "Columbus"
+  },
+  {
+    "lng" : "-89.80843",
+    "country" : "US",
+    "lat" : "44.2206",
+    "name" : "Rome"
+  },
+  {
+    "lng" : "-56.08036",
+    "country" : "UY",
+    "lat" : "-34.4513",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-56.18816",
+    "country" : "UY",
+    "lat" : "-34.90328",
+    "name" : "Montevideo"
+  },
+  {
+    "lng" : "-56.2259",
+    "country" : "UY",
+    "lat" : "-34.76031",
+    "name" : "La Paz"
+  },
+  {
+    "lng" : "69.21627",
+    "country" : "UZ",
+    "lat" : "41.26465",
+    "name" : "Tashkent"
+  },
+  {
+    "lng" : "-68.00765",
+    "country" : "VE",
+    "lat" : "10.16202",
+    "name" : "Valencia"
+  },
+  {
+    "lng" : "-70.6948",
+    "country" : "VE",
+    "lat" : "8.86052",
+    "name" : "Santo Domingo"
+  },
+  {
+    "lng" : "-67.95363",
+    "country" : "VE",
+    "lat" : "10.26057",
+    "name" : "San Diego"
+  },
+  {
+    "lng" : "-63.72535",
+    "country" : "VE",
+    "lat" : "10.11914",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-68.43384",
+    "country" : "VE",
+    "lat" : "7.96378",
+    "name" : "San Antonio"
+  },
+  {
+    "lng" : "-68.63022",
+    "country" : "VE",
+    "lat" : "9.53724",
+    "name" : "Las Vegas"
+  },
+  {
+    "lng" : "-66.87919",
+    "country" : "VE",
+    "lat" : "10.48801",
+    "name" : "Caracas"
+  },
+  {
+    "lng" : "-64.68618",
+    "country" : "VE",
+    "lat" : "10.13625",
+    "name" : "Barcelona"
+  },
+  {
+    "lng" : "106.62965",
+    "country" : "VN",
+    "lat" : "10.82302",
+    "name" : "Ho Chi Minh City"
+  },
+  {
+    "lng" : "30.32166",
+    "country" : "ZA",
+    "lat" : "-27.65862",
+    "name" : "Utrecht"
+  },
+  {
+    "lng" : "30.27235",
+    "country" : "ZA",
+    "lat" : "-29.87196",
+    "name" : "Richmond"
+  },
+  {
+    "lng" : "28.04363",
+    "country" : "ZA",
+    "lat" : "-26.20227",
+    "name" : "Johannesburg"
+  },
+  {
+    "lng" : "30.03504",
+    "country" : "ZA",
+    "lat" : "-25.68991",
+    "name" : "Belfast"
+  },
+  {
+    "lng" : "26.29564",
+    "country" : "ZA",
+    "lat" : "-32.70747",
+    "name" : "Adelaide"
+  },
+  {
+    "lng" : "19.0112",
+    "country" : "ZA",
+    "lat" : "-33.63981",
+    "name" : "Wellington"
+  },
+  {
+    "lng" : "18.42322",
+    "country" : "ZA",
+    "lat" : "-33.92584",
+    "name" : "Cape Town"
+  }
+]
+
