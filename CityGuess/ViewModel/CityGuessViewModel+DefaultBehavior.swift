@@ -60,7 +60,7 @@ extension CityGuessViewModel {
         questions = resetQuestions()
     }
 
-    private func resetQuestions() -> [Question] {
+    func resetQuestions() -> [Question] {
         (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
     }
 
@@ -90,5 +90,9 @@ extension CityGuessViewModel {
         questions[currentCityIndex].state = isCorrect ? .correct : .incorrect
         currentCityIndex += 1
         isShowingAnimation = false
+    }
+
+    var gameProgress: CGFloat {
+        CGFloat(currentCityIndex) / CGFloat(numberOfRounds)
     }
 }

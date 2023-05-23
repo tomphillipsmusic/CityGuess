@@ -16,15 +16,11 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var isPlaying = false
     @Published var isCorrect = false
     @Published var priorAnswer = ""
-    @Published var numberOfRounds = 1
+    @Published var numberOfRounds = 5
     @Published var isShowingAnimation: Bool = false
     @Published var unlockProgress: CGFloat = 0
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
-
-    var isLocked: Bool {
-        unlockInterval >= Date().timeIntervalSince1970
-    }
 
     var cities: [TeleportCity] = []
     let cityService: CityService
@@ -39,10 +35,6 @@ class DailyChallengeViewModel: CityGuessViewModel {
     """
     let startGameButtonText: String = "Start Daily Challenge"
 
-    var unlockText: String {
-        "Daily Challenge will unlock in \(Date(timeIntervalSince1970: unlockInterval).formatted())"
-    }
-
     required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService
         self.cityFetcher = cityFetcher
@@ -51,11 +43,6 @@ class DailyChallengeViewModel: CityGuessViewModel {
             await fetchCities()
             await fetchCityImages()
         }
-
-        let unlockIntervalDate = Date(timeIntervalSince1970: unlockInterval)
-
-        let timeSinceAppWasPutIntoBackground = Date().timeIntervalSince(unlockIntervalDate)
-        unlockInterval += timeSinceAppWasPutIntoBackground
     }
 
     func fetchCityImages() async {
@@ -96,17 +83,30 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     func endGame() {
         isPlaying = false
-        questions = (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
+        questions = resetQuestions()
+        LocalNotificationService.shared.scheduleLocalNotification(
+            with: "Daily Challenge Mode Unlocked!",
+            scheduledIn: DateConstants.unlockInterval
+        )
+
         unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
-        LocalNotificationService.shared.scheduleLocalNotification(with: "Daily Challenge Mode Unlocked!", scheduledIn: 30)
+    }
+}
+
+extension DailyChallengeViewModel: Unlockable {
+    var unlockText: String {
+        "Daily Challenge will unlock in \(Date(timeIntervalSince1970: unlockInterval).formatted())"
+    }
+
+    var isLocked: Bool {
+        unlockInterval >= Date().timeIntervalSince1970
     }
 
     func calculateUnlockProgress() {
         let unlockDate = Date(timeIntervalSince1970: unlockInterval)
-        let startDate = unlockDate.addingTimeInterval(-30)
-
-         let duration = unlockDate.timeIntervalSince(startDate)
-         let elapsed = Date().timeIntervalSince(startDate)
-         unlockProgress = elapsed / duration
-     }
+        let startDate = unlockDate.addingTimeInterval(-DateConstants.unlockInterval)
+        let duration = unlockDate.timeIntervalSince(startDate)
+        let elapsed = Date().timeIntervalSince(startDate)
+        unlockProgress = elapsed / duration
+    }
 }

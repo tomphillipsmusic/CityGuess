@@ -14,7 +14,12 @@ struct LockView: View {
         Image("lock")
             .resizable()
             .frame(width: 50, height: 50)
-        ActivityRingView(progress: progress, gradientColors: [.red, .green], outlineColor: .gray.opacity(0.5), lineWidth: 10)
+        ActivityRingView(
+            progress: progress,
+            gradientColors: [.red, .green],
+            outlineColor: .gray.opacity(0.5),
+            lineWidth: 10
+        )
             .frame(width: 100, height: 100)
     }
 }

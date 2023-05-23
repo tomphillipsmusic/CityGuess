@@ -62,7 +62,6 @@ class TrainingViewModel: CityGuessViewModel {
         if let cities: [CityModel] = try? cityService.loadCities(),
            !cities.isEmpty {
             self.cities = cities
-            return
         } else if let cities = try? await cityFetcher.fetchCities() {
             self.cities = cities
             try? cityService.save(cities)

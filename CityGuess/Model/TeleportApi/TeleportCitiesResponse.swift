@@ -18,6 +18,7 @@ struct TeleportCitiesResponse: Codable {
 
     struct Links: Codable {
         let cities: [TeleportCity]
+
         enum CodingKeys: String, CodingKey {
             case cities = "ua:item"
         }

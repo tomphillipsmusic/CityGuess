@@ -9,7 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct CityGuessView<ViewModel: CityGuessViewModel>: View {
-    @ObservedObject var vm: ViewModel
+    @ObservedObject var viewModel: ViewModel
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
     @State private var autofillSuggestions = [ViewModel.CityModel]()
@@ -19,20 +19,20 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
         VStack {
 
             ZStack {
-                ZoomableImage(url: URL(string: vm.currentCityImage.url))
+                ZoomableImage(url: URL(string: viewModel.currentCityImage.url))
 
-                if vm.isShowingAnimation {
+                if viewModel.isShowingAnimation {
                     withAnimation(.easeIn(duration: 1)) {
-                        FloatingAnimationView(vm: vm)
+                        FloatingAnimationView(viewModel: viewModel)
                     }
                 }
             }
 
-            CityGuessTextField(text: $guess, isLoadingNextQuestion: $vm.isShowingAnimation)
+            CityGuessTextField(text: $guess, isLoadingNextQuestion: $viewModel.isShowingAnimation)
 
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 withAnimation(.linear(duration: 1.0)) {
-                    vm.submit(guess: cityName)
+                    viewModel.submit(guess: cityName)
                 }
 
                 self.guess = ""
@@ -44,7 +44,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
         }
         .onChange(of: guess) { guess in
             withAnimation {
-                autofillSuggestions = vm.autofillSuggestions(for: guess)
+                autofillSuggestions = viewModel.autofillSuggestions(for: guess)
             }
         }
 
@@ -52,14 +52,14 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
     var scoreLabel: some ToolbarContent {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Text(vm.scoreLabelText)
+                Text(viewModel.scoreLabelText)
                     .font(.title2)
             }
     }
 
     var roundCounterLabel: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
-            Text(vm.roundLabelText)
+            Text(viewModel.roundLabelText)
                 .font(.title3)
         }
     }
@@ -67,6 +67,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
 struct CityGuessView_Previews: PreviewProvider {
     static var previews: some View {
-        CityGuessView(vm: TrainingViewModel())
+        CityGuessView(viewModel: TrainingViewModel())
     }
 }

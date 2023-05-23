@@ -9,21 +9,21 @@ import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @EnvironmentObject var router: Router
-    @ObservedObject var vm: ViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
-            Text(vm.gameOverText)
+            Text(viewModel.gameOverText)
                 .font(.largeTitle)
                 .padding()
 
-            Text(vm.gameOverScoreText)
+            Text(viewModel.gameOverScoreText)
                 .font(.headline)
                 .padding()
 
-            Button(vm.tryAgainButtonText) {
+            Button(viewModel.tryAgainButtonText) {
                 withAnimation {
-                    vm.endGame()
+                    viewModel.endGame()
                     router.currentScreen = .menu
                 }
             }
@@ -36,6 +36,6 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
-        GameEndView(vm: TrainingViewModel())
+        GameEndView(viewModel: TrainingViewModel())
     }
 }

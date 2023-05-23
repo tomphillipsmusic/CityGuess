@@ -17,14 +17,16 @@ struct ActivityRingView: View {
     var body: some View {
 
         ZStack {
-
             Circle()
                 .stroke(outlineColor, lineWidth: lineWidth)
-
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(
-                    AngularGradient(colors: gradientColors, center: .center, startAngle: .degrees(0), endAngle: .degrees(360)
+                    AngularGradient(
+                        colors: gradientColors,
+                        center: .center,
+                        startAngle: .degrees(0),
+                        endAngle: .degrees(360)
                     ),
                     style: StrokeStyle(lineWidth: 5, lineCap: .round)
                 )

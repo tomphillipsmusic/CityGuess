@@ -9,11 +9,11 @@ import SwiftUI
 import CachedAsyncImage
 
 struct GameStartView<ViewModel: CityGuessViewModel>: View {
-    @ObservedObject var vm: ViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: vm.cityImages.randomElement()?.url ?? "")) { image in
+            AsyncImage(url: URL(string: viewModel.cityImages.randomElement()?.url ?? "")) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -24,33 +24,33 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             }
 
             VStack {
-                Text(vm.gameHeadline)
+                Text(viewModel.gameHeadline)
                     .font(.title)
                     .padding()
 
-                Text(vm.gameDescription)
+                Text(viewModel.gameDescription)
                     .font(.headline)
 
                 HStack {
                     Text("Number of Cities:")
 
-                    Picker("Number of Cities", selection: $vm.numberOfRounds) {
-                        ForEach(vm.roundOptions, id: \.self) {
+                    Picker("Number of Cities", selection: $viewModel.numberOfRounds) {
+                        ForEach(viewModel.roundOptions, id: \.self) {
                             Text("\($0)")
                                 .tag($0)
                         }
-                        .onChange(of: vm.numberOfRounds) { newValue in
+                        .onChange(of: viewModel.numberOfRounds) { newValue in
                             withAnimation(.easeInOut(duration: 0.5)) {
-                                vm.questions = Array(repeating: Question(text: ""), count: newValue)
+                                viewModel.questions = Array(repeating: Question(text: ""), count: newValue)
                             }
                         }
                     }
                 }
 
-                Button(vm.startGameButtonText) {
-                    vm.startGame(with: vm.numberOfRounds)
+                Button(viewModel.startGameButtonText) {
+                    viewModel.startGame(with: viewModel.numberOfRounds)
                 }
-                .disabled(vm.cityImages.isEmpty)
+                .disabled(viewModel.cityImages.isEmpty)
                 .padding()
             }
             .background(
@@ -63,6 +63,6 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-        GameStartView(vm: TrainingViewModel())
+        GameStartView(viewModel: TrainingViewModel())
     }
 }

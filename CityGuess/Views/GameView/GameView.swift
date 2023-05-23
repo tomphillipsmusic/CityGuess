@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct GameView<ViewModel: CityGuessViewModel>: View {
-    @ObservedObject var vm: ViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         NavigationStack {
             VStack {
-                ProgressBar(progress: CGFloat(vm.currentCityIndex) / CGFloat(vm.numberOfRounds), questions: vm.questions)
+                ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
                         .frame(height: 20)
                         .padding()
 
-                if !vm.isPlaying {
-                    GameStartView(vm: vm)
-                } else if vm.isGameOver {
-                    GameEndView(vm: vm)
+                if !viewModel.isPlaying {
+                    GameStartView(viewModel: viewModel)
+                } else if viewModel.isGameOver {
+                    GameEndView(viewModel: viewModel)
                 } else {
-                    CityGuessView(vm: vm)
+                    CityGuessView(viewModel: viewModel)
                 }
             }
-            .navigationTitle(vm.modeTitle)
+            .navigationTitle(viewModel.modeTitle)
             .navigationBarTitleDisplayMode(.inline)
         }
         .task {
-            await vm.fetchCityImages()
+            await viewModel.fetchCityImages()
         }
     }
 }
 
 struct TrainingView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(vm: TrainingViewModel())
+        GameView(viewModel: TrainingViewModel())
     }
 }

@@ -20,9 +20,9 @@ struct ContentView: View {
             case .menu:
                 mainMenu
             case .training:
-                GameView(vm: trainingViewModel)
+                GameView(viewModel: trainingViewModel)
             case .challenge:
-                GameView(vm: dailyChallengeViewModel)
+                GameView(viewModel: dailyChallengeViewModel)
             }
         }
         .environmentObject(router)

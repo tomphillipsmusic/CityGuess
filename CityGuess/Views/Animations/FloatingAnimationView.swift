@@ -8,23 +8,27 @@
 import SwiftUI
 
 struct FloatingAnimationView<ViewModel: CityGuessViewModel>: View {
-    @ObservedObject var vm: ViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         ZStack {
-            LottieView(animationType: vm.isCorrect ? .correct : .incorrect)
-            VerticalTextAnimationView(vm:
-                                        VerticalTextAnimationViewModel(text: vm.priorAnswer, isCorrect: vm.isCorrect) {
-                withAnimation {
-                    vm.animationCompleted()
-                }
-
-            })
+            LottieView(animationType: viewModel.isCorrect ? .correct : .incorrect)
+            VerticalTextAnimationView(viewModel:
+                VerticalTextAnimationViewModel(
+                    text: viewModel.priorAnswer,
+                    isCorrect: viewModel.isCorrect,
+                    completion: {
+                        withAnimation {
+                            viewModel.animationCompleted()
+                        }
+                    }
+                )
+            )
         }
     }
 }
 struct FloatingAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        FloatingAnimationView(vm: TrainingViewModel())
+        FloatingAnimationView(viewModel: TrainingViewModel())
     }
 }

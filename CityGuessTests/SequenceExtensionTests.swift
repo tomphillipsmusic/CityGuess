@@ -22,8 +22,7 @@ final class SequenceExtensionTests: XCTestCase {
         let input = [1, 1, 1, 2, 2, 2, 3, 3, 3]
 
         let expectedResult = [1, 2, 3]
-        let actualResult = input.filterUniqueItems({
-                _ in true
+        let actualResult = input.filterUniqueItems({ _ in true
             }, limit: 3)
 
         XCTAssertTrue(actualResult == expectedResult.sorted())
