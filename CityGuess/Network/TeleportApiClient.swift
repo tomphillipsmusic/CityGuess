@@ -43,4 +43,10 @@ actor TeleportApiClient: CityFetching {
         cities = decodedCities
         return cities
     }
+
+    func fetchCoordinateBox(for city: TeleportCity) async throws -> CoordinateBox {
+        let response: TeleportCityDetailsResponse = try await NetworkManager.shared.fetch(from: city.href)
+        return response.boundingBox.latlon
+    }
+
 }

@@ -47,7 +47,6 @@
 		3E9EC5C12A02A75E006E79E9 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EC5C02A02A75E006E79E9 /* MainMenuView.swift */; };
 		3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */; };
 		3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */; };
-		3EADE82D2A1D1959004ADEC2 /* citycoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EADE82C2A1D1959004ADEC2 /* citycoordinates.json */; };
 		3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175A29F84CF100A0B353 /* ProgressBar.swift */; };
 		3EBC175F29F851D800A0B353 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175E29F851D800A0B353 /* Question.swift */; };
 		3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC176029F86B3E00A0B353 /* skyscraper.json */; };
@@ -67,6 +66,15 @@
 		3EEF7F7929F2BEDC00EEBE9D /* incorrect.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */; };
 		3EEF7F7C29F2BF5600EEBE9D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3EEF7F7B29F2BF5600EEBE9D /* Lottie */; };
 		3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */; };
+		3EF5BF4B2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF4A2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift */; };
+		3EF5BF4F2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF4E2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift */; };
+		3EF5BF512A1FA499006B5DE8 /* ExploreCitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF502A1FA499006B5DE8 /* ExploreCitiesViewModel.swift */; };
+		3EF5BF532A1FAAB7006B5DE8 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF522A1FAAB7006B5DE8 /* Coordinate.swift */; };
+		3EF5BF552A1FAAF8006B5DE8 /* CityCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF542A1FAAF8006B5DE8 /* CityCoordinate.swift */; };
+		3EF5BF572A1FAB30006B5DE8 /* CoordinatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF562A1FAB30006B5DE8 /* CoordinatesService.swift */; };
+		3EF5BF592A1FAB61006B5DE8 /* CoordinateFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF582A1FAB61006B5DE8 /* CoordinateFetching.swift */; };
+		3EF5BF5D2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF5C2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift */; };
+		3EF5BF5F2A1FAC2F006B5DE8 /* CoordinateBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5BF5E2A1FAC2F006B5DE8 /* CoordinateBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +129,6 @@
 		3E9EC5C02A02A75E006E79E9 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlockable.swift; sourceTree = "<group>"; };
 		3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCitiesView.swift; sourceTree = "<group>"; };
-		3EADE82C2A1D1959004ADEC2 /* citycoordinates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = citycoordinates.json; sourceTree = "<group>"; };
 		3EBC175A29F84CF100A0B353 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		3EBC175E29F851D800A0B353 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3EBC176029F86B3E00A0B353 /* skyscraper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skyscraper.json; sourceTree = "<group>"; };
@@ -140,6 +147,15 @@
 		3EEF7F7629F2BE9D00EEBE9D /* correct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = correct.json; sourceTree = "<group>"; };
 		3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incorrect.json; sourceTree = "<group>"; };
 		3EEF7F7D29F2BF7600EEBE9D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		3EF5BF4A2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCoordinatesService.swift; sourceTree = "<group>"; };
+		3EF5BF4E2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesServiceTests.swift; sourceTree = "<group>"; };
+		3EF5BF502A1FA499006B5DE8 /* ExploreCitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCitiesViewModel.swift; sourceTree = "<group>"; };
+		3EF5BF522A1FAAB7006B5DE8 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		3EF5BF542A1FAAF8006B5DE8 /* CityCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCoordinate.swift; sourceTree = "<group>"; };
+		3EF5BF562A1FAB30006B5DE8 /* CoordinatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesService.swift; sourceTree = "<group>"; };
+		3EF5BF582A1FAB61006B5DE8 /* CoordinateFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateFetching.swift; sourceTree = "<group>"; };
+		3EF5BF5C2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCityDetailsResponse.swift; sourceTree = "<group>"; };
+		3EF5BF5E2A1FAC2F006B5DE8 /* CoordinateBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +187,9 @@
 				3E9C7D4629EDDCA30073CCE4 /* CityGuessViewModel.swift */,
 				3E25FC092A1C0B8C0040E50C /* City.swift */,
 				3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */,
+				3EF5BF522A1FAAB7006B5DE8 /* Coordinate.swift */,
+				3EF5BF562A1FAB30006B5DE8 /* CoordinatesService.swift */,
+				3EF5BF582A1FAB61006B5DE8 /* CoordinateFetching.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -178,10 +197,11 @@
 		3E0A438229E9817600A9D2BE /* TeleportApi */ = {
 			isa = PBXGroup;
 			children = (
-				3E0A438929E9AD0D00A9D2BE /* Reddit */,
 				3E0A438329E9818400A9D2BE /* TeleportCitiesResponse.swift */,
 				3E0A438529E981B100A9D2BE /* TeleportCity.swift */,
 				3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */,
+				3EF5BF5C2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift */,
+				3EF5BF5E2A1FAC2F006B5DE8 /* CoordinateBox.swift */,
 			);
 			path = TeleportApi;
 			sourceTree = "<group>";
@@ -218,6 +238,7 @@
 			children = (
 				3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */,
 				3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */,
+				3EF5BF4E2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift */,
 			);
 			path = CityGuessTests;
 			sourceTree = "<group>";
@@ -235,7 +256,6 @@
 		3E64AD9A29DEFD5300DCCF2E = {
 			isa = PBXGroup;
 			children = (
-				3EADE82C2A1D1959004ADEC2 /* citycoordinates.json */,
 				3E64ADA529DEFD5300DCCF2E /* CityGuess */,
 				3E2B498829F97DBF00260B88 /* CityGuessTests */,
 				3E64ADA429DEFD5300DCCF2E /* Products */,
@@ -294,11 +314,13 @@
 			isa = PBXGroup;
 			children = (
 				3E0A438229E9817600A9D2BE /* TeleportApi */,
+				3E0A438929E9AD0D00A9D2BE /* Reddit */,
 				3EEB998929E43C4700514F79 /* CityImage.swift */,
 				3E298FBA29F80C2D00A861F0 /* AnimationType.swift */,
 				3EBC175E29F851D800A0B353 /* Question.swift */,
 				3E2B497D29F86F9E00260B88 /* HapticsManager.swift */,
 				3E210FE32A0AEB71000FA523 /* Router.swift */,
+				3EF5BF542A1FAAF8006B5DE8 /* CityCoordinate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +341,7 @@
 				3EEB999A29E47CEB00514F79 /* LocalCityService.swift */,
 				3E0A437629E97B4F00A9D2BE /* JsonService.swift */,
 				3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */,
+				3EF5BF4A2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -330,6 +353,7 @@
 				3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */,
 				3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */,
 				3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */,
+				3EF5BF502A1FA499006B5DE8 /* ExploreCitiesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -478,7 +502,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EADE82D2A1D1959004ADEC2 /* citycoordinates.json in Resources */,
 				3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */,
 				3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */,
 				3EEB999229E4580600514F79 /* bigcities.json in Resources */,
@@ -519,6 +542,7 @@
 			files = (
 				3E5FF33029FAFCFA00851A11 /* SequenceExtensionTests.swift in Sources */,
 				3E2B498A29F97DBF00260B88 /* StringExtensionTests.swift in Sources */,
+				3EF5BF4F2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,22 +560,28 @@
 				3EC3688D29F302A600AE92D9 /* FloatingAnimationView.swift in Sources */,
 				3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */,
 				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
+				3EF5BF4B2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
 				3E210FE42A0AEB71000FA523 /* Router.swift in Sources */,
+				3EF5BF572A1FAB30006B5DE8 /* CoordinatesService.swift in Sources */,
 				3E9EC5C12A02A75E006E79E9 /* MainMenuView.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
 				3E9C7D4729EDDCA30073CCE4 /* CityGuessViewModel.swift in Sources */,
 				3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */,
 				3E25FC062A1BF01E0040E50C /* RingView.swift in Sources */,
 				3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */,
+				3EF5BF552A1FAAF8006B5DE8 /* CityCoordinate.swift in Sources */,
 				3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */,
 				3E25FC0A2A1C0B8C0040E50C /* City.swift in Sources */,
+				3EF5BF592A1FAB61006B5DE8 /* CoordinateFetching.swift in Sources */,
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
+				3EF5BF5D2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E2B498229F96F8B00260B88 /* String+Extension.swift in Sources */,
 				3E25FC0C2A1C0C0A0040E50C /* Constants.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
+				3EF5BF5F2A1FAC2F006B5DE8 /* CoordinateBox.swift in Sources */,
 				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
@@ -559,6 +589,7 @@
 				3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */,
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,
+				3EF5BF532A1FAAB7006B5DE8 /* Coordinate.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */,
 				3EEF7F7129EEEC8E00EEBE9D /* AutofillSuggestionsView.swift in Sources */,
 				3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */,
@@ -572,6 +603,7 @@
 				3EBC175F29F851D800A0B353 /* Question.swift in Sources */,
 				3E0A437229E84E1500A9D2BE /* TeleportApiClient.swift in Sources */,
 				3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */,
+				3EF5BF512A1FA499006B5DE8 /* ExploreCitiesViewModel.swift in Sources */,
 				3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */,
 				3E25FC102A1C0E450040E50C /* LockView.swift in Sources */,
 			);
