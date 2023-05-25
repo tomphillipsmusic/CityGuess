@@ -11,6 +11,6 @@ class Router: ObservableObject {
     @Published var currentScreen: Screen = .menu
 
     enum Screen {
-        case menu, training, challenge
+        case menu, training, challenge, explore
     }
 }
