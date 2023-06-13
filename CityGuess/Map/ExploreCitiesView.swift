@@ -14,11 +14,7 @@ struct ExploreCitiesView: View {
 
     var body: some View {
         NavigationStack {
-            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.coordinates) { coordinate in
-                MapAnnotation(coordinate: coordinate.clLocationCoordinate2D) {
-                    Text(coordinate.name)
-                }
-            }
+            CityMapView(cityCoordinates: viewModel.coordinates)
             .navigationTitle("Explore")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -26,9 +22,6 @@ struct ExploreCitiesView: View {
                         currentScreen = .menu
                     }
                 }
-            }
-            .task {
-                await viewModel.fetchCoordinates()
             }
         }
     }

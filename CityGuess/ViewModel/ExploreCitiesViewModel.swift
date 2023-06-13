@@ -7,11 +7,11 @@
 
 import MapKit
 
+@MainActor
 class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetching>: ObservableObject
     where Service.CityModel == CityFetcher.CityModel {
 
     @Published var coordinates: [Service.CityCoordinateModel] = []
-    @Published var region = MKCoordinateRegion()
 
     let citiesClient: CityFetcher
     let coordinatesService: Service
@@ -19,15 +19,26 @@ class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetch
     init(citiesClient: CityFetcher = TeleportApiClient(), coordinatesService: Service = TeleportCoordinatesService()) {
         self.citiesClient = citiesClient
         self.coordinatesService = coordinatesService
+
+        Task {
+            await fetchCoordinates()
+        }
     }
 
-    @MainActor
     func fetchCoordinates() async {
         do {
-            let cities = try await citiesClient.fetchCities()
+            let cities = try await fetchCities()
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)
         } catch {
             print(error)
         }
+    }
+
+    private func fetchCities() async throws -> [Service.CityModel] {
+        if let savedCities: [Service.CityModel] = try? LocalCityService().loadCities() {
+            return savedCities
+        }
+
+        return try await citiesClient.fetchCities()
     }
 }

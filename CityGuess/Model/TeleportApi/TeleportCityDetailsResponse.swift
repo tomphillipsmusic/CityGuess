@@ -13,7 +13,7 @@ struct TeleportCityDetailsResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case boundingBox = "bounding_box"
     }
-    
+
     struct BoundingBox: Codable {
         let latlon: CoordinateBox
     }
