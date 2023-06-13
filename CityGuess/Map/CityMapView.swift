@@ -18,10 +18,15 @@ struct CityMapView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
+        mapView.delegate = context.coordinator
         return mapView
     }
 
     func updateUIView(_ mapView: MKMapView, context: Context) {
         mapView.addAnnotations(annotations)
+    }
+
+    func makeCoordinator() -> CityMapViewCoordinator {
+        CityMapViewCoordinator(cityMapView: self)
     }
 }
