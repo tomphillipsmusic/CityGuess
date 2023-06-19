@@ -14,6 +14,14 @@ class CityGuessGameHistoryManager: ObservableObject {
 
     static let cityGuessHistoryFilename = "city-guess-history"
 
+    var totalCitiesSeen: Int {
+        guessHistory.values.filter { $0.guessStatus != .notSeen }.count
+    }
+
+    var citiesGuessedCorrectly: Int {
+        guessHistory.values.filter { $0.guessStatus == .right }.count
+    }
+
     init() {
         if let savedHistory = try? loadHistory() {
             guessHistory = savedHistory
