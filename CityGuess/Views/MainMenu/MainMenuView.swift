@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
+    @StateObject var gameHistory = CityGuessGameHistory()
     @StateObject private var router = Router()
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -28,6 +29,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(router)
+        .environmentObject(gameHistory)
     }
 
     var mainMenu: some View {

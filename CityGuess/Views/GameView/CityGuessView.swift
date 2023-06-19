@@ -9,6 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct CityGuessView<ViewModel: CityGuessViewModel>: View {
+    @EnvironmentObject var gameHistory: CityGuessGameHistory
     @ObservedObject var viewModel: ViewModel
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
@@ -33,6 +34,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 withAnimation(.linear(duration: 1.0)) {
                     viewModel.submit(guess: cityName)
+                    gameHistory.updateHistory(forCityNamed: cityName, with: viewModel.isCorrect ? .right : .wrong)
                 }
 
                 self.guess = ""

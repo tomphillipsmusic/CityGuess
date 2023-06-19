@@ -249,6 +249,15 @@
 			path = CityGuessTests;
 			sourceTree = "<group>";
 		};
+		3E46E3FB2A38E2B300ED3646 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5BF542A1FAAF8006B5DE8 /* CityCoordinate.swift */,
+				3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		3E5FF33129FFFC8F00851A11 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +330,7 @@
 		3EEB999529E467C200514F79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3E46E3FB2A38E2B300ED3646 /* Map */,
 				3E0A438229E9817600A9D2BE /* TeleportApi */,
 				3E0A438929E9AD0D00A9D2BE /* Reddit */,
 				3EEB998929E43C4700514F79 /* CityImage.swift */,
@@ -328,8 +338,6 @@
 				3EBC175E29F851D800A0B353 /* Question.swift */,
 				3E2B497D29F86F9E00260B88 /* HapticsManager.swift */,
 				3E210FE32A0AEB71000FA523 /* Router.swift */,
-				3EF5BF542A1FAAF8006B5DE8 /* CityCoordinate.swift */,
-				3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

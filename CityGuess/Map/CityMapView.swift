@@ -12,8 +12,9 @@ struct CityMapView: UIViewRepresentable {
     var locationManager = CLLocationManager()
     let annotations: [CityMapAnnotation]
 
-    init(cityCoordinates: [CityCoordinate]) {
-        annotations = cityCoordinates.map { CityMapAnnotation(cityCoordinate: $0) }
+    init(cityCoordinates: [CityCoordinate], guessHistory: [String: CityGuessHistory]) {
+        annotations = cityCoordinates.filter { guessHistory[$0.name] != nil }.map { CityMapAnnotation(cityCoordinate: $0, status: guessHistory[$0.name]?.guessStatus ?? .notSeen)
+        }
     }
 
     func makeUIView(context: Context) -> MKMapView {

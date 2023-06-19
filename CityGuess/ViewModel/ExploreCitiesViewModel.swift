@@ -42,3 +42,39 @@ class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetch
         return try await citiesClient.fetchCities()
     }
 }
+
+import SwiftUI
+
+enum CityGuessStatus: Codable {
+    case wrong, right, notSeen
+
+    var color: Color {
+        switch self {
+        case .wrong:
+            return .red
+        case .right:
+            return .green
+        case .notSeen:
+            return .gray
+        }
+    }
+}
+
+struct CityGuessHistory: Identifiable, Codable {
+    let id = UUID()
+    let name: String
+    var guessStatus: CityGuessStatus = .notSeen
+}
+
+class CityGuessGameHistory: ObservableObject {
+    @Published var guessHistory: [String: CityGuessHistory] = [:]
+
+    func updateHistory(forCityNamed cityName: String, with status: CityGuessStatus) {
+        if guessHistory[cityName] != nil {
+            guessHistory[cityName]?.guessStatus = status
+        } else {
+            guessHistory[cityName] = CityGuessHistory(name: cityName)
+            guessHistory[cityName]?.guessStatus = status
+        }
+    }
+}

@@ -9,12 +9,13 @@ import SwiftUI
 import MapKit
 
 struct ExploreCitiesView: View {
+    @EnvironmentObject var guessHistory: CityGuessGameHistory
     @StateObject var viewModel = ExploreCitiesViewModel()
     @Binding var currentScreen: Router.Screen
 
     var body: some View {
         NavigationStack {
-            CityMapView(cityCoordinates: viewModel.coordinates)
+            CityMapView(cityCoordinates: viewModel.coordinates, guessHistory: guessHistory.guessHistory)
             .navigationTitle("Explore")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

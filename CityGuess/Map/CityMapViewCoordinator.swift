@@ -15,11 +15,15 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "city-annotation")
-        annotationView.image = UIImage(systemName: "building.2.fill")
-        annotationView.backgroundColor = .green
-        annotationView.canShowCallout = true
-        return annotationView
+        if let annotation = annotation as? CityMapAnnotation {
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "city-annotation")
+            annotationView.image = UIImage(systemName: "building.2.fill")
+            annotationView.backgroundColor = annotation.status == .right ? .green : annotation.status == .wrong ? .red : .gray
+            annotationView.canShowCallout = true
+            return annotationView
+        }
+
+        return nil
     }
 
 }
