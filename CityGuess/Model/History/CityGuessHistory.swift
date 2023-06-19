@@ -11,4 +11,6 @@ struct CityGuessHistory: Identifiable, Codable {
     var id = UUID()
     let name: String
     var guessStatus: CityGuessStatus = .notSeen
+    var timesSeen = 0
+    var timesGuessedCorrectly = 0
 }

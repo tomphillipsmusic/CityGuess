@@ -18,7 +18,7 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
         if let annotation = annotation as? CityMapAnnotation {
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "city-annotation")
             annotationView.image = UIImage(systemName: "building.2.fill")
-            annotationView.backgroundColor = annotation.status == .right ? .green : annotation.status == .wrong ? .red : .gray
+            annotationView.backgroundColor = annotation.history.guessStatus == .right ? .green : annotation.history.guessStatus == .wrong ? .red : .gray
             annotationView.canShowCallout = true
             return annotationView
         }

@@ -22,12 +22,19 @@ class CityGuessGameHistoryManager: ObservableObject {
 
     func updateHistory(forCityNamed cityName: String, with status: CityGuessStatus) {
         if guessHistory[cityName] != nil {
-            guessHistory[cityName]?.guessStatus = status
+
+            // Make sure that cities that have been guessed right before stay right
+            if guessHistory[cityName]?.guessStatus != .right {
+                guessHistory[cityName]?.guessStatus = status
+            } else {
+                guessHistory[cityName]?.timesGuessedCorrectly += 1
+            }
         } else {
             guessHistory[cityName] = CityGuessHistory(name: cityName)
             guessHistory[cityName]?.guessStatus = status
         }
 
+        guessHistory[cityName]?.timesSeen += 1
         saveHistory()
     }
 

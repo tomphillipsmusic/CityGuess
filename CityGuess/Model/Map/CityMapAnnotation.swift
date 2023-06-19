@@ -16,11 +16,13 @@ extension CityCoordinate {
 class CityMapAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     let title: String?
-    let status: CityGuessStatus
+    let subtitle: String?
+    let history: CityGuessHistory
 
-    init(cityCoordinate: CityCoordinate, status: CityGuessStatus) {
+    init(cityCoordinate: CityCoordinate, history: CityGuessHistory) {
         self.coordinate = cityCoordinate.clLocationCoordinate2D
         self.title = cityCoordinate.name
-        self.status = status
+        self.history = history
+        self.subtitle = "Successfully guessed \(history.timesGuessedCorrectly) / \(history.timesSeen) times"
     }
 }
