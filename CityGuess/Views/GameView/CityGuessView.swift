@@ -9,7 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct CityGuessView<ViewModel: CityGuessViewModel>: View {
-    @EnvironmentObject var gameHistory: CityGuessGameHistory
+    @EnvironmentObject var gameHistory: CityGuessGameHistoryManager
     @ObservedObject var viewModel: ViewModel
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0

@@ -38,6 +38,9 @@
 		3E46E3F42A3895B500ED3646 /* CityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F32A3895B500ED3646 /* CityMapView.swift */; };
 		3E46E3F62A38A6D900ED3646 /* CityMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */; };
 		3E46E3F82A38C27400ED3646 /* CityMapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */; };
+		3E46E3FE2A40D18200ED3646 /* CityGuessHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3FD2A40D18200ED3646 /* CityGuessHistory.swift */; };
+		3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */; };
+		3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */; };
 		3E5FF33029FAFCFA00851A11 /* SequenceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* GameView.swift */; };
@@ -122,6 +125,9 @@
 		3E46E3F32A3895B500ED3646 /* CityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapView.swift; sourceTree = "<group>"; };
 		3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapAnnotation.swift; sourceTree = "<group>"; };
 		3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewCoordinator.swift; sourceTree = "<group>"; };
+		3E46E3FD2A40D18200ED3646 /* CityGuessHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessHistory.swift; sourceTree = "<group>"; };
+		3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessGameHistoryManager.swift; sourceTree = "<group>"; };
+		3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessStatus.swift; sourceTree = "<group>"; };
 		3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensionTests.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
@@ -258,6 +264,16 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		3E46E3FC2A40D17A00ED3646 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				3E46E3FD2A40D18200ED3646 /* CityGuessHistory.swift */,
+				3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */,
+				3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		3E5FF33129FFFC8F00851A11 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +346,7 @@
 		3EEB999529E467C200514F79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3E46E3FC2A40D17A00ED3646 /* History */,
 				3E46E3FB2A38E2B300ED3646 /* Map */,
 				3E0A438229E9817600A9D2BE /* TeleportApi */,
 				3E0A438929E9AD0D00A9D2BE /* Reddit */,
@@ -595,9 +612,11 @@
 				3EF5BF592A1FAB61006B5DE8 /* CoordinateFetching.swift in Sources */,
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
+				3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */,
 				3EF5BF5D2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E2B498229F96F8B00260B88 /* String+Extension.swift in Sources */,
+				3E46E3FE2A40D18200ED3646 /* CityGuessHistory.swift in Sources */,
 				3E25FC0C2A1C0C0A0040E50C /* Constants.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
 				3EF5BF5F2A1FAC2F006B5DE8 /* CoordinateBox.swift in Sources */,
@@ -605,6 +624,7 @@
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
 				3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */,
+				3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */,
 				3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */,
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,

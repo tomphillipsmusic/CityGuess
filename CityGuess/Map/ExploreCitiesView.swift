@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ExploreCitiesView: View {
-    @EnvironmentObject var guessHistory: CityGuessGameHistory
+    @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
     @StateObject var viewModel = ExploreCitiesViewModel()
     @Binding var currentScreen: Router.Screen
 
