@@ -7,7 +7,7 @@
 
 import Foundation
 
-actor TeleportCoordinatesService: CoordinatesService {
+class TeleportCoordinatesService: CoordinatesService {
     let coordinatesFile = "coordinates.json"
 
     let client = TeleportApiClient()
@@ -43,11 +43,11 @@ actor TeleportCoordinatesService: CoordinatesService {
         return CityCoordinate(name: name, latitude: latitude, longitude: longitude)
     }
 
-    nonisolated func save(_ coordinates: [CityCoordinate]) {
+    func save(_ coordinates: [CityCoordinate]) {
         fileHandler.write(coordinates, to: coordinatesFile)
     }
 
-    nonisolated func loadCoordinates() throws -> [CityCoordinate] {
+    func loadCoordinates() throws -> [CityCoordinate] {
         try fileHandler.read(from: coordinatesFile)
     }
 }

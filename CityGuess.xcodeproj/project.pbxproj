@@ -41,6 +41,7 @@
 		3E46E3FE2A40D18200ED3646 /* CityGuessHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3FD2A40D18200ED3646 /* CityGuessHistory.swift */; };
 		3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */; };
 		3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */; };
+		3E46E4042A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */; };
 		3E5FF33029FAFCFA00851A11 /* SequenceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* GameView.swift */; };
@@ -128,6 +129,7 @@
 		3E46E3FD2A40D18200ED3646 /* CityGuessHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessHistory.swift; sourceTree = "<group>"; };
 		3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessGameHistoryManager.swift; sourceTree = "<group>"; };
 		3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessStatus.swift; sourceTree = "<group>"; };
+		3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessGameHistoryManagerTests.swift; sourceTree = "<group>"; };
 		3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensionTests.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */,
 				3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */,
 				3EF5BF4E2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift */,
+				3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */,
 			);
 			path = CityGuessTests;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				3E5FF33029FAFCFA00851A11 /* SequenceExtensionTests.swift in Sources */,
 				3E2B498A29F97DBF00260B88 /* StringExtensionTests.swift in Sources */,
 				3EF5BF4F2A1E7E28006B5DE8 /* CoordinatesServiceTests.swift in Sources */,
+				3E46E4042A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

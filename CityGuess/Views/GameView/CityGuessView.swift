@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CachedAsyncImage
 
 struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @EnvironmentObject var gameHistory: CityGuessGameHistoryManager

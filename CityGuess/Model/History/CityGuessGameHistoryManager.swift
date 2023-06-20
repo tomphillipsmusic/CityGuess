@@ -11,6 +11,7 @@ typealias CityGuessHistoryDictionary = [String: CityGuessHistory]
 
 class CityGuessGameHistoryManager: ObservableObject {
     @Published var guessHistory: CityGuessHistoryDictionary = [:]
+    let historyService: ReadWrite
 
     static let cityGuessHistoryFilename = "city-guess-history"
 
@@ -22,7 +23,9 @@ class CityGuessGameHistoryManager: ObservableObject {
         guessHistory.values.filter { $0.guessStatus == .right }.count
     }
 
-    init() {
+    init(historyService: ReadWrite = JsonService()) {
+        self.historyService = historyService
+
         if let savedHistory = try? loadHistory() {
             guessHistory = savedHistory
         }
@@ -47,10 +50,10 @@ class CityGuessGameHistoryManager: ObservableObject {
     }
 
     func saveHistory() {
-        JsonService().write(guessHistory, to: Self.cityGuessHistoryFilename)
+        historyService.write(guessHistory, to: Self.cityGuessHistoryFilename)
     }
 
     func loadHistory() throws -> CityGuessHistoryDictionary {
-        try JsonService().read(from: Self.cityGuessHistoryFilename)
+        try historyService.read(from: Self.cityGuessHistoryFilename)
     }
 }
