@@ -14,3 +14,13 @@ struct CityGuessHistory: Identifiable, Codable {
     var timesSeen = 0
     var timesGuessedCorrectly = 0
 }
+
+#if DEBUG
+extension CityGuessHistory {
+    static let testData = [
+        "New Detroit": CityGuessHistory(name: "New Detroit", guessStatus: .right),
+        "New York": CityGuessHistory(name: "New York", guessStatus: .right),
+        "New Orleans": CityGuessHistory(name: "New Orleans", guessStatus: .wrong)
+    ]
+}
+#endif
