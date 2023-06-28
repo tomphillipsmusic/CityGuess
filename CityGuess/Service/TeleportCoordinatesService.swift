@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TeleportCoordinatesService: CoordinatesService {
+class TeleportCoordinatesService: CoordinatesService {
     let coordinatesFile = "coordinates.json"
 
     let client = TeleportApiClient()
@@ -16,8 +16,7 @@ struct TeleportCoordinatesService: CoordinatesService {
     func fetchCoordinates(for cities: [TeleportCity]) async throws -> [CityCoordinate] {
         var coordinates: [CityCoordinate] = []
 
-        if let savedCoordinates = try? loadCoordinates(),
-            savedCoordinates.count != cities.count {
+        if let savedCoordinates = try? loadCoordinates() {
             coordinates = savedCoordinates
         } else {
             for city in cities {

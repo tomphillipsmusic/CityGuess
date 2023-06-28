@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
+    @StateObject var gameHistory = CityGuessGameHistoryManager()
+    @StateObject var exploreCitiesViewModel = ExploreCitiesViewModel()
     @StateObject private var router = Router()
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -28,6 +30,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(router)
+        .environmentObject(gameHistory)
     }
 
     var mainMenu: some View {
@@ -91,6 +94,7 @@ struct ContentView: View {
         MainMenuButton("Explore Cities") {
             router.currentScreen = .explore
         }
+        .disabled(gameHistory.guessHistory.isEmpty)
     }
 }
 

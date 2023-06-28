@@ -19,3 +19,9 @@ extension CityCoordinate {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
+
+extension CityCoordinate: Equatable {
+    static func == (lhs: CityCoordinate, rhs: CityCoordinate) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+}

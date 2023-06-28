@@ -9,15 +9,27 @@ import SwiftUI
 import MapKit
 
 struct ExploreCitiesView: View {
+    @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
     @StateObject var viewModel = ExploreCitiesViewModel()
     @Binding var currentScreen: Router.Screen
 
     var body: some View {
         NavigationStack {
-            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.coordinates) { coordinate in
-                MapAnnotation(coordinate: coordinate.clLocationCoordinate2D) {
-                    Text(coordinate.name)
+            VStack {
+                CityMapView(cityCoordinates: viewModel.coordinates, guessHistory: guessHistory.guessHistory)
+
+                if viewModel.coordinates.count > 0 {
+                    Gauge(value: Double(guessHistory.totalCitiesSeen), in: 0.0...Double(viewModel.coordinates.count)) {
+                        Text("Total Cities Seen: \(guessHistory.totalCitiesSeen) / \(viewModel.coordinates.count)")
+                    }
+                    .padding()
+
+                    Gauge(value: Double(guessHistory.citiesGuessedCorrectly), in: 0.0...Double(viewModel.coordinates.count)) {
+                        Text("Cities Guessed Correctly: \(guessHistory.citiesGuessedCorrectly) / \(viewModel.coordinates.count)")
+                    }
+                    .padding()
                 }
+
             }
             .navigationTitle("Explore")
             .toolbar {
@@ -27,9 +39,6 @@ struct ExploreCitiesView: View {
                     }
                 }
             }
-            .task {
-                await viewModel.fetchCoordinates()
-            }
         }
     }
 }
@@ -37,5 +46,6 @@ struct ExploreCitiesView: View {
 struct ExploreCitiesView_Previews: PreviewProvider {
     static var previews: some View {
         ExploreCitiesView(currentScreen: .constant(.explore))
+            .environmentObject(CityGuessGameHistoryManager())
     }
 }
