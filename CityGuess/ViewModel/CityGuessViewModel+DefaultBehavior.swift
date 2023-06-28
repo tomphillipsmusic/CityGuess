@@ -38,7 +38,9 @@ extension CityGuessViewModel {
     }
 
     var gameOverScoreText: String {
-        "You guessed a total of \(score) cities correctly!"
+        let cities = score == 1 ? "city" : "cities"
+
+        return "You guessed a total of \(score) \(cities) correctly!"
     }
 
     var tryAgainButtonText: String {
