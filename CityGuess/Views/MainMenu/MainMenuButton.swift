@@ -17,8 +17,15 @@ struct MainMenuButton: View {
     }
 
     var body: some View {
-        Button(labelText) {
+        Button {
             action()
+        } label: {
+            Text(labelText)
+                .font(.title2)
+                .scaledToFit()
+                .minimumScaleFactor(0.01)
+                .lineLimit(1)
+                .frame(maxWidth: .infinity)
         }
         .buttonStyle(.bordered)
         .padding()

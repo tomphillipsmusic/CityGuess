@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CachedAsyncImage
 
 struct GameStartView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
