@@ -14,9 +14,9 @@ struct ContentView: View {
     @StateObject var gameHistory = CityGuessGameHistoryManager()
     @StateObject var exploreCitiesViewModel = ExploreCitiesViewModel()
     @StateObject private var router = Router()
-    
+
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+
     var body: some View {
         NavigationStack(path: $router.path) {
             mainMenu
@@ -34,22 +34,21 @@ struct ContentView: View {
         .environmentObject(router)
         .environmentObject(gameHistory)
     }
-    
+
     var mainMenu: some View {
-        //        NavigationStack {
         ZStack {
             menuBackgroud
-            
+
             VStack {
                 dailyChallengeButton
-                
+
                 if dailyChallengeViewModel.isLocked {
                     Text(dailyChallengeViewModel.unlockText)
                 }
-                
+
                 trainingButton
                 exploreButton
-                
+
                 Spacer().frame(height: UIScreen.main.bounds.height * 0.4)
             }
         }
@@ -62,9 +61,8 @@ struct ContentView: View {
             LocalNotificationService.shared.requestNotificationPermission()
         }
         .navigationTitle("City Guess")
-        //        }
     }
-    
+
     var menuBackgroud: some View {
         Image("city-skyline-background")
             .resizable()
@@ -75,7 +73,7 @@ struct ContentView: View {
                     .blur(radius: 0.1)
             }
     }
-    
+
     var dailyChallengeButton: some View {
         ZStack {
             MainMenuButton("Daily Challenge") {
@@ -83,20 +81,20 @@ struct ContentView: View {
             }
             .disabled(dailyChallengeViewModel.isLocked)
             .opacity(dailyChallengeViewModel.isLocked ? 0.8 : 1.0)
-            
+
             if dailyChallengeViewModel.isLocked {
                 LockView(progress: dailyChallengeViewModel.unlockProgress)
             }
-            
+
         }
     }
-    
+
     var trainingButton: some View {
         MainMenuButton("Training") {
             router.path.append(Router.Screen.training)
         }
     }
-    
+
     var exploreButton: some View {
         MainMenuButton("Explore Cities") {
             router.path.append(Router.Screen.explore)

@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct ExploreCitiesView: View {
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
     @StateObject var viewModel = ExploreCitiesViewModel()
 
@@ -31,8 +30,6 @@ struct ExploreCitiesView: View {
 
             }
             .navigationTitle("Explore")
-
-        
     }
 }
 

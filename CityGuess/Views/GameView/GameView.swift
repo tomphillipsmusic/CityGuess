@@ -9,13 +9,13 @@ import SwiftUI
 
 struct GameView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
-    
+
     var body: some View {
         VStack {
             ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
                 .frame(height: 20)
                 .padding()
-            
+
             if !viewModel.isPlaying {
                 GameStartView(viewModel: viewModel)
             } else if viewModel.isGameOver {
