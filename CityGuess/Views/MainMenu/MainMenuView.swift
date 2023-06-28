@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("firstTime") var isShowingInfoSheet = true
     @Environment(\.colorScheme) var colorScheme
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
@@ -29,6 +30,17 @@ struct ContentView: View {
                     case .explore:
                         ExploreCitiesView()
                     }
+                }
+                .toolbar {
+                    Button {
+                        isShowingInfoSheet = true
+                    } label: {
+                        Image(systemName: "questionmark.app")
+                    }
+
+                }
+                .sheet(isPresented: $isShowingInfoSheet) {
+                    OnboardingView(firstTime: $isShowingInfoSheet)
                 }
         }
         .environmentObject(router)
