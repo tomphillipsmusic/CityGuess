@@ -11,23 +11,21 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
-                        .frame(height: 20)
-                        .padding()
+        VStack {
+            ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
+                .frame(height: 20)
+                .padding()
 
-                if !viewModel.isPlaying {
-                    GameStartView(viewModel: viewModel)
-                } else if viewModel.isGameOver {
-                    GameEndView(viewModel: viewModel)
-                } else {
-                    CityGuessView(viewModel: viewModel)
-                }
+            if !viewModel.isPlaying {
+                GameStartView(viewModel: viewModel)
+            } else if viewModel.isGameOver {
+                GameEndView(viewModel: viewModel)
+            } else {
+                CityGuessView(viewModel: viewModel)
             }
-            .navigationTitle(viewModel.modeTitle)
-            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationTitle(viewModel.modeTitle)
+        .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.fetchCityImages()
         }

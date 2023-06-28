@@ -5,12 +5,12 @@
 //  Created by Tom Phillips on 5/9/23.
 //
 
-import Foundation
+import SwiftUI
 
 class Router: ObservableObject {
-    @Published var currentScreen: Screen = .menu
+    @Published var path = NavigationPath()
 
     enum Screen {
-        case menu, training, challenge, explore
+        case training, challenge, explore
     }
 }
