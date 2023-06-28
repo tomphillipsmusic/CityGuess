@@ -21,7 +21,6 @@
 		3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438529E981B100A9D2BE /* TeleportCity.swift */; };
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
-		3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -184,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */,
 				3EEF7F7C29F2BF5600EEBE9D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,7 +475,6 @@
 			);
 			name = CityGuess;
 			packageProductDependencies = (
-				3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */,
 				3EEF7F7B29F2BF5600EEBE9D /* Lottie */,
 			);
 			productName = CityGuess;
@@ -932,11 +929,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3E0A439029E9E3E700A9D2BE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
-			productName = CachedAsyncImage;
-		};
 		3EEF7F7B29F2BF5600EEBE9D /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3EEF7F7A29F2BF5600EEBE9D /* XCRemoteSwiftPackageReference "lottie-ios" */;
