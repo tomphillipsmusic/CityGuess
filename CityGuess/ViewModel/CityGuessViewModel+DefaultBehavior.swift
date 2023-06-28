@@ -43,8 +43,8 @@ extension CityGuessViewModel {
         return "You guessed a total of \(score) \(cities) correctly!"
     }
 
-    var tryAgainButtonText: String {
-        "Try Again"
+    var gameEndText: String {
+        "Return to Menu"
     }
 
     func startGame(with numberOfRounds: Int) {

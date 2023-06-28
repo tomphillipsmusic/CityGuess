@@ -41,7 +41,7 @@ protocol GameMode: ViewModel {
 
     var gameOverText: String { get }
     var gameOverScoreText: String { get }
-    var tryAgainButtonText: String { get }
+    var gameEndText: String { get }
 }
 
 @MainActor
