@@ -39,6 +39,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
                 self.guess = ""
             }
         }
+        .navigationBarBackButtonHidden()
         .toolbar {
             scoreLabel
             roundCounterLabel

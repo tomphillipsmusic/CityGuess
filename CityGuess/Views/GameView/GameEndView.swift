@@ -24,13 +24,14 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             Button(viewModel.gameEndText) {
                 withAnimation {
                     viewModel.endGame()
-                    router.currentScreen = .menu
+                    router.path.removeLast()
                 }
             }
             .padding()
 
             LottieView(animationType: .skyscraper)
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
