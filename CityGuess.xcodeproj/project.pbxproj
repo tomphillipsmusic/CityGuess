@@ -21,7 +21,6 @@
 		3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438529E981B100A9D2BE /* TeleportCity.swift */; };
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
-		3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -48,6 +47,7 @@
 		3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */; };
 		3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */; };
 		3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */; };
+		3E9B321B2A4C7FC100973E2A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9B321A2A4C7FC100973E2A /* View+Extension.swift */; };
 		3E9C7D4729EDDCA30073CCE4 /* CityGuessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4629EDDCA30073CCE4 /* CityGuessViewModel.swift */; };
 		3E9C7D4929EDDD1D0073CCE4 /* CityGuessViewModel+DefaultBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4829EDDD1D0073CCE4 /* CityGuessViewModel+DefaultBehavior.swift */; };
 		3E9C7D4B29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */; };
@@ -137,6 +137,7 @@
 		3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E64ADAD29DEFD5400DCCF2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E64ADB429DEFD5F00DCCF2E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3E9B321A2A4C7FC100973E2A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		3E9C7D4629EDDCA30073CCE4 /* CityGuessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessViewModel.swift; sourceTree = "<group>"; };
 		3E9C7D4829EDDD1D0073CCE4 /* CityGuessViewModel+DefaultBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityGuessViewModel+DefaultBehavior.swift"; sourceTree = "<group>"; };
 		3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeViewModel.swift; sourceTree = "<group>"; };
@@ -184,7 +185,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0A439229E9E3E700A9D2BE /* CachedAsyncImage in Frameworks */,
 				3EEF7F7C29F2BF5600EEBE9D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +401,7 @@
 				3EEB999729E4697200514F79 /* Bundle+Extension.swift */,
 				3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */,
 				3E2B498129F96F8B00260B88 /* String+Extension.swift */,
+				3E9B321A2A4C7FC100973E2A /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,7 +478,6 @@
 			);
 			name = CityGuess;
 			packageProductDependencies = (
-				3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */,
 				3EEF7F7B29F2BF5600EEBE9D /* Lottie */,
 			);
 			productName = CityGuess;
@@ -649,6 +649,7 @@
 				3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */,
 				3EF5BF512A1FA499006B5DE8 /* ExploreCitiesViewModel.swift in Sources */,
 				3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */,
+				3E9B321B2A4C7FC100973E2A /* View+Extension.swift in Sources */,
 				3E25FC102A1C0E450040E50C /* LockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,8 +829,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -857,8 +858,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -932,11 +933,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3E0A439129E9E3E700A9D2BE /* CachedAsyncImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3E0A439029E9E3E700A9D2BE /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
-			productName = CachedAsyncImage;
-		};
 		3EEF7F7B29F2BF5600EEBE9D /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3EEF7F7A29F2BF5600EEBE9D /* XCRemoteSwiftPackageReference "lottie-ios" */;

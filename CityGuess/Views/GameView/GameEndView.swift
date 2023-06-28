@@ -21,7 +21,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 .font(.headline)
                 .padding()
 
-            Button(viewModel.tryAgainButtonText) {
+            Button(viewModel.gameEndText) {
                 withAnimation {
                     viewModel.endGame()
                     router.currentScreen = .menu

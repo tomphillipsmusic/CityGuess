@@ -15,11 +15,10 @@ struct CityGuessTextField: View {
     var body: some View {
         TextField("Guess", text: $text)
             .keyboardType(.alphabet)
-            .disableAutocorrection(true)
-            .padding()
-            .border(.ultraThickMaterial, width: 2)
-            .padding()
             .focused($textFieldFocused)
+            .disableAutocorrection(true)
+            .textFieldStyle(.roundedBorder)
+            .padding()
             .onAppear {
                 textFieldFocused = true
             }

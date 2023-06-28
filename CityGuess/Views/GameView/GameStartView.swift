@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CachedAsyncImage
 
 struct GameStartView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
@@ -57,6 +56,8 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 .background
                     .opacity(0.9)
             )
+            .cornerRadius(5)
+            .shadow(radius: 0.2)
         }
     }
 }

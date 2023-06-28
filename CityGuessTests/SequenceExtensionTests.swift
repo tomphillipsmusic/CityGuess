@@ -25,7 +25,7 @@ final class SequenceExtensionTests: XCTestCase {
         let actualResult = input.filterUniqueItems({ _ in true
             }, limit: 3)
 
-        XCTAssertTrue(actualResult == expectedResult.sorted())
+        XCTAssertTrue(actualResult.sorted() == expectedResult.sorted())
     }
 
     func testFilteringEmptyArrayReturnsEmptyArray() {
