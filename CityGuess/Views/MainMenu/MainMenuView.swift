@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
     @StateObject var gameHistory = CityGuessGameHistoryManager()
@@ -64,9 +65,15 @@ struct ContentView: View {
     }
 
     var menuBackgroud: some View {
+
         Image("city-skyline-background")
             .resizable()
             .scaledToFill()
+            .if(colorScheme == .dark) { view in
+                view.colorInvert()
+                    .opacity(0.8)
+                    .blur(radius: 0.1)
+            }
     }
 
     var dailyChallengeButton: some View {
