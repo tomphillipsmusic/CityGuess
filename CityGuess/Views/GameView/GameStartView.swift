@@ -57,6 +57,8 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 .background
                     .opacity(0.9)
             )
+            .cornerRadius(5)
+            .shadow(radius: 0.2)
         }
     }
 }

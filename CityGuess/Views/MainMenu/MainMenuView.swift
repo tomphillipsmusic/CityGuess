@@ -65,7 +65,6 @@ struct ContentView: View {
     }
 
     var menuBackgroud: some View {
-
         Image("city-skyline-background")
             .resizable()
             .scaledToFill()
