@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @EnvironmentObject var router: Router
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
-            Text(viewModel.gameOverText)
-                .font(.largeTitle)
-                .padding()
+            VStack {
+                Text(viewModel.gameOverText)
+                    .font(.largeTitle)
+                    .padding()
 
-            Text(viewModel.gameOverScoreText)
-                .font(.headline)
-                .padding()
+                Text(viewModel.gameOverScoreText)
+                    .font(.headline)
+                    .padding()
+            }
+
+            if dynamicTypeSize < .accessibility5 {
+                LottieView(animationType: .skyscraper)
+            }
 
             Button(viewModel.gameEndText) {
                 withAnimation {
@@ -28,11 +35,9 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 }
             }
             .padding()
-
-            LottieView(animationType: .skyscraper)
         }
-        .largeTextScrollView()
         .navigationBarBackButtonHidden()
+        .onAppear(perform: UIApplication.shared.endEditing)
     }
 }
 

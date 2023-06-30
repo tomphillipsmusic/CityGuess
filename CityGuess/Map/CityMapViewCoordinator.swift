@@ -21,7 +21,7 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
             annotationView.backgroundColor = backgroundColor(for: annotation.history.guessStatus)
             annotationView.canShowCallout = true
 
-            var calloutDetailLabel = UILabel()
+            let calloutDetailLabel = UILabel()
             calloutDetailLabel.text = annotation.subtitle
             calloutDetailLabel.adjustsFontForContentSizeCategory = false
             annotationView.detailCalloutAccessoryView = calloutDetailLabel
