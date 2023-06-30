@@ -31,6 +31,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
             LottieView(animationType: .skyscraper)
         }
+        .largeTextScrollView()
         .navigationBarBackButtonHidden()
     }
 }

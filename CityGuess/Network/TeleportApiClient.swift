@@ -26,7 +26,8 @@ actor TeleportApiClient: CityFetching {
         var cityImages: [CityImage] = []
 
         for city in cities {
-            let imageResponse: TeleportImageResponse = try await NetworkManager.shared.fetch(from: city.href + Endpoint.images)
+            let cityUrlString = city.href + Endpoint.images
+            let imageResponse: TeleportImageResponse = try await NetworkManager.shared.fetch(from: cityUrlString)
 
             if let photo = imageResponse.photos.first {
                 cityImages.append(CityImage(title: city.name, url: photo.image.mobile))

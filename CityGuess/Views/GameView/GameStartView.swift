@@ -52,6 +52,8 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 .disabled(viewModel.cityImages.isEmpty)
                 .padding()
             }
+            .padding()
+            .largeTextScrollView(whenBiggerThan: .accessibilityLarge)
             .background(
                 .background
                     .opacity(0.9)
