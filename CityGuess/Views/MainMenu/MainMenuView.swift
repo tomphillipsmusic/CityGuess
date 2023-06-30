@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("firstTime") var isShowingInfoSheet = true
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
     @StateObject var gameHistory = CityGuessGameHistoryManager()
@@ -49,7 +50,9 @@ struct ContentView: View {
 
     var mainMenu: some View {
         ZStack {
-            menuBackgroud
+            if dynamicTypeSize < .accessibility1 {
+                menuBackgroud
+            }
 
             VStack {
                 dailyChallengeButton
