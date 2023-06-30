@@ -33,16 +33,20 @@ class CityGuessGameHistoryManager: ObservableObject {
 
     func updateHistory(forCityNamed cityName: String, with status: CityGuessStatus) {
         if guessHistory[cityName] != nil {
+            let hasAlreadyBeenGuessedCorrectly = guessHistory[cityName]?.guessStatus == .right
 
             // Make sure that cities that have been guessed right before stay right
-            if guessHistory[cityName]?.guessStatus != .right {
+            if !hasAlreadyBeenGuessedCorrectly {
                 guessHistory[cityName]?.guessStatus = status
-            } else {
-                guessHistory[cityName]?.timesGuessedCorrectly += 1
             }
+
         } else {
             guessHistory[cityName] = CityGuessHistory(name: cityName)
             guessHistory[cityName]?.guessStatus = status
+        }
+
+        if status == .right {
+            guessHistory[cityName]?.timesGuessedCorrectly += 1
         }
 
         guessHistory[cityName]?.timesSeen += 1
