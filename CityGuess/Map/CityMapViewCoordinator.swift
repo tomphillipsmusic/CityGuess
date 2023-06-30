@@ -20,8 +20,13 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
             annotationView.image = UIImage(systemName: "building.2.fill")
             annotationView.backgroundColor = backgroundColor(for: annotation.history.guessStatus)
             annotationView.canShowCallout = true
+
+            var calloutDetailLabel = UILabel()
+            calloutDetailLabel.text = annotation.subtitle
+            calloutDetailLabel.adjustsFontForContentSizeCategory = false
+            annotationView.detailCalloutAccessoryView = calloutDetailLabel
             return annotationView
-        }
+    }
 
         return nil
     }
