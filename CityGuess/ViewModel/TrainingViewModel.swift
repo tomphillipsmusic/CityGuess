@@ -56,7 +56,7 @@ class TrainingViewModel: CityGuessViewModel {
 
             print("City images count: " + "\(cityImages.count)")
         } catch {
-            errorMessage = "Error fetching city images. Please try again later."
+            errorMessage = "Error loading city images. Please try again later."
             isShowingError = true
         }
     }
@@ -72,7 +72,7 @@ class TrainingViewModel: CityGuessViewModel {
                 try? cityService.save(cities)
             }
         } catch {
-            errorMessage = "Error fetching city data. Please try again later."
+            errorMessage = "Error loading city data. Please try again later."
             isShowingError = true
         }
     }

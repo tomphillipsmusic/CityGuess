@@ -53,19 +53,27 @@ class DailyChallengeViewModel: CityGuessViewModel {
             self.cityImages = filterValid(cityImages)
             print("City images count: " + "\(cityImages.count)")
         } catch {
-            print(error)
+            errorMessage = "Error loading city images. Please try again later."
+            isShowingError = true
         }
     }
 
     func fetchCities() async {
-        if let cities: [CityModel] = try? cityService.loadCities(),
-           !cities.isEmpty {
-            self.cities = cities
-            return
-        } else if let cities = try? await cityFetcher.fetchCities() {
-            self.cities = cities
-            try? cityService.save(cities)
+        do {
+            if let cities: [CityModel] = try? cityService.loadCities(),
+               !cities.isEmpty {
+                self.cities = cities
+                return
+            } else {
+                let cities = try await cityFetcher.fetchCities()
+                self.cities = cities
+                try? cityService.save(cities)
+            }
+        } catch {
+            errorMessage = "Error loading city data. Please try again later."
+            isShowingError = true
         }
+
     }
 
     private func filterValid(_ cityImages: [CityImage]) -> [CityImage] {
@@ -91,7 +99,10 @@ class DailyChallengeViewModel: CityGuessViewModel {
             scheduledIn: DateConstants.unlockInterval
         )
 
-        unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
+        // Only lock this mode if the game was fully completed
+        if isGameOver {
+            unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
+        }
     }
 }
 
