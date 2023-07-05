@@ -19,6 +19,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var numberOfRounds = 5
     @Published var isShowingAnimation: Bool = false
     @Published var unlockProgress: CGFloat = 0
+    @Published var errorMessage: String = "Error"
+    @Published var isShowingError: Bool = false
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 

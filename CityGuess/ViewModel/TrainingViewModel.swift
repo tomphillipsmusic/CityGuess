@@ -20,6 +20,8 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var priorAnswer = ""
     @Published var numberOfRounds = defaultNumberOfRounds
     @Published var isShowingAnimation: Bool = false
+    @Published var errorMessage: String = "Error"
+    @Published var isShowingError: Bool = false
 
     var cities: [TeleportCity] = []
     let cityService: CityService
@@ -54,17 +56,24 @@ class TrainingViewModel: CityGuessViewModel {
 
             print("City images count: " + "\(cityImages.count)")
         } catch {
-            print(error)
+            errorMessage = "Error fetching city images. Please try again later."
+            isShowingError = true
         }
     }
 
     func fetchCities() async {
-        if let cities: [CityModel] = try? cityService.loadCities(),
-           !cities.isEmpty {
-            self.cities = cities
-        } else if let cities = try? await cityFetcher.fetchCities() {
-            self.cities = cities
-            try? cityService.save(cities)
+        do {
+            if let cities: [CityModel] = try? cityService.loadCities(),
+               !cities.isEmpty {
+                self.cities = cities
+            } else {
+                let cities = try await cityFetcher.fetchCities()
+                self.cities = cities
+                try? cityService.save(cities)
+            }
+        } catch {
+            errorMessage = "Error fetching city data. Please try again later."
+            isShowingError = true
         }
     }
 }

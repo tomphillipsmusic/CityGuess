@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView<ViewModel: CityGuessViewModel>: View {
     @EnvironmentObject var router: Router
     @ObservedObject var viewModel: ViewModel
-
+    
     var body: some View {
         VStack {
             ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
@@ -29,6 +29,9 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.fetchCityImages()
+        }
+        .alert(viewModel.errorMessage, isPresented: $viewModel.isShowingError) {
+            Button("OK", role: .cancel) { }
         }
     }
 
