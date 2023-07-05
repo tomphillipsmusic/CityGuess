@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameView<ViewModel: CityGuessViewModel>: View {
+    @EnvironmentObject var router: Router
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
@@ -21,13 +22,39 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
             } else if viewModel.isGameOver {
                 GameEndView(viewModel: viewModel)
             } else {
-                CityGuessView(viewModel: viewModel)
+                loadGameView
             }
         }
         .navigationTitle(viewModel.modeTitle)
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.fetchCityImages()
+        }
+    }
+
+    var loadGameView: some View {
+        AsyncImage(url: URL(string: viewModel.currentCityImage.url)) { phase in
+            switch phase {
+            case .success(let image):
+                CityGuessView(viewModel: viewModel, image: image)
+            case .empty:
+                loadingView
+            case .failure(let error):
+                GameErrorView(error: error, confirmationMessage: "Return Home") {
+                    router.path.removeLast()
+                    viewModel.endGame()
+                }
+            @unknown default:
+                Text("Unknown error has occured")
+            }
+        }
+    }
+
+    var loadingView: some View {
+        VStack {
+            Spacer()
+            ProgressView()
+            Spacer()
         }
     }
 }
