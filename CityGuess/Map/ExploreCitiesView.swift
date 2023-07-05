@@ -12,22 +12,38 @@ struct ExploreCitiesView: View {
     @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
     @StateObject var viewModel = ExploreCitiesViewModel()
 
+    var totalCitiesLabelText: String {
+        "Total Cities Seen: \(guessHistory.totalCitiesSeen) / \(viewModel.coordinates.count)"
+    }
+
+    var citiesGuessedCorrectlyText: String {
+        "Cities Guessed Correctly: \(guessHistory.citiesGuessedCorrectly) / \(viewModel.coordinates.count)"
+    }
+
     var body: some View {
             VStack {
                 CityMapView(cityCoordinates: viewModel.coordinates, guessHistory: guessHistory.guessHistory)
 
-                if viewModel.coordinates.count > 0 {
-                    Gauge(value: Double(guessHistory.totalCitiesSeen), in: 0.0...Double(viewModel.coordinates.count)) {
-                        Text("Total Cities Seen: \(guessHistory.totalCitiesSeen) / \(viewModel.coordinates.count)")
-                    }
-                    .padding()
+                Group {
+                    if viewModel.coordinates.count > 0 {
+                        Gauge(
+                            value: Double(guessHistory.totalCitiesSeen),
+                            in: 0.0...Double(viewModel.coordinates.count)
+                        ) {
+                            Text(totalCitiesLabelText)
+                        }
+                        .padding()
 
-                    Gauge(value: Double(guessHistory.citiesGuessedCorrectly), in: 0.0...Double(viewModel.coordinates.count)) {
-                        Text("Cities Guessed Correctly: \(guessHistory.citiesGuessedCorrectly) / \(viewModel.coordinates.count)")
+                        Gauge(
+                            value: Double(guessHistory.citiesGuessedCorrectly),
+                            in: 0.0...Double(viewModel.coordinates.count)
+                        ) {
+                            Text(citiesGuessedCorrectlyText)
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
-
+                .largeTextScrollView()
             }
             .navigationTitle("Explore")
     }

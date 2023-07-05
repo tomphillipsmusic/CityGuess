@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+// swiftlint:disable all
 @propertyWrapper
 public struct PublishedAppStorage<Value> {
 

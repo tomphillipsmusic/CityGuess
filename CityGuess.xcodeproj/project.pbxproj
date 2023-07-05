@@ -21,6 +21,7 @@
 		3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438529E981B100A9D2BE /* TeleportCity.swift */; };
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
+		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -41,6 +42,8 @@
 		3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */; };
 		3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */; };
 		3E46E4042A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */; };
+		3E46F9C62A4CC4C200EA67ED /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46F9C52A4CC4C200EA67ED /* OnboardingView.swift */; };
+		3E46F9C82A4CC4DB00EA67ED /* OnboardingDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46F9C72A4CC4DB00EA67ED /* OnboardingDetailRow.swift */; };
 		3E5FF33029FAFCFA00851A11 /* SequenceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* GameView.swift */; };
@@ -109,6 +112,7 @@
 		3E0A438529E981B100A9D2BE /* TeleportCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCity.swift; sourceTree = "<group>"; };
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
+		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
 		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E210FE32A0AEB71000FA523 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		3E46E3FF2A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessGameHistoryManager.swift; sourceTree = "<group>"; };
 		3E46E4012A40D23600ED3646 /* CityGuessStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessStatus.swift; sourceTree = "<group>"; };
 		3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessGameHistoryManagerTests.swift; sourceTree = "<group>"; };
+		3E46F9C52A4CC4C200EA67ED /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3E46F9C72A4CC4DB00EA67ED /* OnboardingDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDetailRow.swift; sourceTree = "<group>"; };
 		3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensionTests.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
@@ -277,6 +283,15 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		3E46F9C42A4CC4A500EA67ED /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3E46F9C52A4CC4C200EA67ED /* OnboardingView.swift */,
+				3E46F9C72A4CC4DB00EA67ED /* OnboardingDetailRow.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		3E5FF33129FFFC8F00851A11 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +417,7 @@
 				3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */,
 				3E2B498129F96F8B00260B88 /* String+Extension.swift */,
 				3E9B321A2A4C7FC100973E2A /* View+Extension.swift */,
+				3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +425,7 @@
 		3EEB99A029E4909D00514F79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E46F9C42A4CC4A500EA67ED /* Onboarding */,
 				3E25FC072A1C0B2C0040E50C /* MainMenu */,
 				3E5FF33129FFFC8F00851A11 /* Animations */,
 				3EEF7F7329EF03BA00EEBE9D /* GameView */,
@@ -596,11 +613,13 @@
 				3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
 				3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */,
+				3E46F9C82A4CC4DB00EA67ED /* OnboardingDetailRow.swift in Sources */,
 				3EC3688D29F302A600AE92D9 /* FloatingAnimationView.swift in Sources */,
 				3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */,
 				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
 				3EF5BF4B2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift in Sources */,
 				3E46E3F82A38C27400ED3646 /* CityMapViewCoordinator.swift in Sources */,
+				3E46F9C62A4CC4C200EA67ED /* OnboardingView.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
 				3E210FE42A0AEB71000FA523 /* Router.swift in Sources */,
 				3EF5BF572A1FAB30006B5DE8 /* CoordinatesService.swift in Sources */,
@@ -609,6 +628,7 @@
 				3E9C7D4729EDDCA30073CCE4 /* CityGuessViewModel.swift in Sources */,
 				3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */,
 				3E25FC062A1BF01E0040E50C /* RingView.swift in Sources */,
+				3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */,
 				3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */,
 				3EF5BF552A1FAAF8006B5DE8 /* CityCoordinate.swift in Sources */,
 				3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */,
@@ -829,6 +849,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -858,6 +879,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

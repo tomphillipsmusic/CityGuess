@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("firstTime") var isShowingInfoSheet = true
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
     @StateObject var gameHistory = CityGuessGameHistoryManager()
@@ -30,6 +32,17 @@ struct ContentView: View {
                         ExploreCitiesView()
                     }
                 }
+                .toolbar {
+                    Button {
+                        isShowingInfoSheet = true
+                    } label: {
+                        Image(systemName: "questionmark.app")
+                    }
+
+                }
+                .sheet(isPresented: $isShowingInfoSheet) {
+                    OnboardingView(firstTime: $isShowingInfoSheet)
+                }
         }
         .environmentObject(router)
         .environmentObject(gameHistory)
@@ -37,7 +50,9 @@ struct ContentView: View {
 
     var mainMenu: some View {
         ZStack {
-            menuBackgroud
+            if dynamicTypeSize < .accessibility1 {
+                menuBackgroud
+            }
 
             VStack {
                 dailyChallengeButton

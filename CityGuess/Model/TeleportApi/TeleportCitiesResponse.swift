@@ -19,6 +19,7 @@ struct TeleportCitiesResponse: Codable {
     struct Links: Codable {
         let cities: [TeleportCity]
 
+        // swiftlint:disable nesting
         enum CodingKeys: String, CodingKey {
             case cities = "ua:item"
         }
