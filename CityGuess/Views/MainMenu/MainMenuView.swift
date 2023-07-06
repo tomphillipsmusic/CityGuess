@@ -90,10 +90,10 @@ struct ContentView: View {
             .opacity(dailyChallengeViewModel.isLocked ? 0.8 : 1.0)
 
             if dailyChallengeViewModel.isLocked {
-                LockView(progress: dailyChallengeViewModel.unlockProgress)
-                    .if(colorScheme == .dark) { view in
-                        view.colorInvert()
-                    }
+                LockView(
+                    progress: dailyChallengeViewModel.unlockProgress,
+                    unlockHint: dailyChallengeViewModel.unlockText
+                )
             }
 
         }

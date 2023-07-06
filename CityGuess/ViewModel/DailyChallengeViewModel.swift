@@ -112,8 +112,13 @@ class DailyChallengeViewModel: CityGuessViewModel {
 }
 
 extension DailyChallengeViewModel: Unlockable {
+
     var unlockText: String {
-        "Daily Challenge will unlock in \(Date(timeIntervalSince1970: unlockInterval).formatted())"
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        let formattedDate = dateFormatter.string(from: Date(timeIntervalSince1970: unlockInterval))
+
+        return "Daily Challenge will unlock at \(formattedDate)"
     }
 
     var isLocked: Bool {
