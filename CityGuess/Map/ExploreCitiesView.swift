@@ -48,12 +48,7 @@ struct ExploreCitiesView: View {
             }
             .navigationTitle("Explore")
             .toolbar {
-                Button {
-                    isShowingInfoSheet = true
-                } label: {
-                    Image(systemName: "questionmark.app")
-                }
-
+                OnboardingToolbarButton(isShowingInfoSheet: $isShowingInfoSheet)
             }
             .alert(viewModel.errorMessage, isPresented: $viewModel.isShowingError) {
                 Button("Close", role: .cancel) {}

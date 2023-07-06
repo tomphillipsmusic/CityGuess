@@ -33,12 +33,7 @@ struct ContentView: View {
                     }
                 }
                 .toolbar {
-                    Button {
-                        isShowingInfoSheet = true
-                    } label: {
-                        Image(systemName: "questionmark.app")
-                    }
-
+                  OnboardingToolbarButton(isShowingInfoSheet: $isShowingInfoSheet)
                 }
                 .sheet(isPresented: $isShowingInfoSheet) {
                     OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .cityGuessOnboarding)
