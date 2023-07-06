@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("firstTime") var isShowingInfoSheet = true
+    @AppStorage("firstTimeOpeningApp") var isShowingInfoSheet = true
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @StateObject var trainingViewModel = TrainingViewModel()

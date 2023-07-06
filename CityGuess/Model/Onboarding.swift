@@ -44,4 +44,24 @@ extension Onboarding {
                             color: .green
                         )
                     ], closeButtonLabel: "Start Guessing!")
+
+    static let exploreCitiesOnboarding = Onboarding(title: "Explore Cities", description: """
+
+                    """, image: Image(systemName: "map.fill"), details: [
+                        Detail(
+                            symbol: "globe",
+                            text: "As you see cities in the game, their icons will appear on the map",
+                            color: .green
+                        ),
+                        Detail(
+                            symbol: "building",
+                            text: "Tap an icon to see how many times you have guessed that city correctly",
+                            color: .green
+                        ),
+                        Detail(
+                            symbol: "medal",
+                            text: "Track your progress as you try to guess every city correctly!",
+                            color: .green
+                        )
+                    ], closeButtonLabel: "Start Exploring!")
 }
