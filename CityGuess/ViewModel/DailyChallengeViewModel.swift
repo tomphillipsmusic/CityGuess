@@ -94,15 +94,20 @@ class DailyChallengeViewModel: CityGuessViewModel {
     func endGame() {
         isPlaying = false
         questions = resetQuestions()
+
+        // Only lock this mode if the game was fully completed
+        if isGameOver {
+            scheduleNotification()
+            unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
+        }
+    }
+
+    private func scheduleNotification() {
+        LocalNotificationService.shared.requestNotificationPermission()
         LocalNotificationService.shared.scheduleLocalNotification(
             with: "Daily Challenge Mode Unlocked!",
             scheduledIn: DateConstants.unlockInterval
         )
-
-        // Only lock this mode if the game was fully completed
-        if isGameOver {
-            unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
-        }
     }
 }
 

@@ -56,11 +56,6 @@ struct ContentView: View {
 
             VStack {
                 dailyChallengeButton
-
-                if dailyChallengeViewModel.isLocked {
-                    Text(dailyChallengeViewModel.unlockText)
-                }
-
                 trainingButton
                 exploreButton
 
@@ -72,9 +67,6 @@ struct ContentView: View {
                 dailyChallengeViewModel.calculateUnlockProgress()
             }
         })
-        .onAppear {
-            LocalNotificationService.shared.requestNotificationPermission()
-        }
         .navigationTitle("City Guess")
     }
 
@@ -99,6 +91,9 @@ struct ContentView: View {
 
             if dailyChallengeViewModel.isLocked {
                 LockView(progress: dailyChallengeViewModel.unlockProgress)
+                    .if(colorScheme == .dark) { view in
+                        view.colorInvert()
+                    }
             }
 
         }
