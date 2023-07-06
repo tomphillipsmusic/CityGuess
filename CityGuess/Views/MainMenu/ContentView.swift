@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("firstTime") var isShowingInfoSheet = true
+    @AppStorage("firstTimeOpeningApp") var isShowingInfoSheet = true
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @StateObject var trainingViewModel = TrainingViewModel()
@@ -33,15 +33,10 @@ struct ContentView: View {
                     }
                 }
                 .toolbar {
-                    Button {
-                        isShowingInfoSheet = true
-                    } label: {
-                        Image(systemName: "questionmark.app")
-                    }
-
+                  OnboardingToolbarButton(isShowingInfoSheet: $isShowingInfoSheet)
                 }
                 .sheet(isPresented: $isShowingInfoSheet) {
-                    OnboardingView(firstTime: $isShowingInfoSheet)
+                    OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .cityGuessOnboarding)
                 }
         }
         .environmentObject(router)

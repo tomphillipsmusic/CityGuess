@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ExploreCitiesView: View {
+    @AppStorage("firstTimeOpeningExploreCities") var isShowingInfoSheet = true
     @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
     @StateObject var viewModel = ExploreCitiesViewModel()
 
@@ -46,6 +47,9 @@ struct ExploreCitiesView: View {
                 .largeTextScrollView()
             }
             .navigationTitle("Explore")
+            .toolbar {
+                OnboardingToolbarButton(isShowingInfoSheet: $isShowingInfoSheet)
+            }
             .alert(viewModel.errorMessage, isPresented: $viewModel.isShowingError) {
                 Button("Close", role: .cancel) {}
                 Button("Try Again") {
@@ -53,6 +57,9 @@ struct ExploreCitiesView: View {
                         await viewModel.fetchCoordinates()
                     }
                 }
+            }
+            .sheet(isPresented: $isShowingInfoSheet) {
+                OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
     }
 }
