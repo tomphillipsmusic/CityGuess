@@ -77,7 +77,7 @@ extension ContentView {
             if isLocked {
                 LockView(
                     progress: 0.0,
-                    unlockHint: "This feature unlocks once you have played at least one game of City Guess"
+                    unlockHint: exploreCitiesViewModel.unlockText
                 )
             }
         }

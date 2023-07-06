@@ -18,6 +18,8 @@ class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetch
     let citiesClient: CityFetcher
     let coordinatesService: Service
 
+    let unlockText = "This feature unlocks once you have played at least one game of City Guess"
+
     init(citiesClient: CityFetcher = TeleportApiClient(), coordinatesService: Service = TeleportCoordinatesService()) {
         self.citiesClient = citiesClient
         self.coordinatesService = coordinatesService
