@@ -41,7 +41,7 @@ struct ContentView: View {
 
                 }
                 .sheet(isPresented: $isShowingInfoSheet) {
-                    OnboardingView(firstTime: $isShowingInfoSheet)
+                    OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .cityGuessOnboarding)
                 }
         }
         .environmentObject(router)
