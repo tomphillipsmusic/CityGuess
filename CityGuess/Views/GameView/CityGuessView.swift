@@ -13,13 +13,18 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
     @State private var autofillSuggestions = [ViewModel.CityModel]()
+    let image: Image
 
     var body: some View {
 
         VStack {
 
             ZStack {
-                ZoomableImage(url: URL(string: viewModel.currentCityImage.url))
+                ZoomableScrollView {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                }
 
                 if viewModel.isShowingAnimation {
                     withAnimation(.easeIn(duration: 1)) {
@@ -69,6 +74,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
 struct CityGuessView_Previews: PreviewProvider {
     static var previews: some View {
-        CityGuessView(viewModel: TrainingViewModel())
+        CityGuessView(viewModel: TrainingViewModel(), image: Image(systemName: "building"))
     }
 }

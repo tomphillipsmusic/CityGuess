@@ -11,7 +11,7 @@ protocol ViewModel: ObservableObject {}
 typealias CityGuessGame = GameLogic & GameMode & AnimatedGame
 
 @MainActor
-protocol CityGuessViewModel: ViewModel, CityGuessGame {
+protocol CityGuessViewModel: ViewModel, CityGuessGame, ErrorAlertable {
     associatedtype CityModel: City
     associatedtype CityFetcher: CityFetching
 
@@ -66,4 +66,10 @@ protocol GameLogic: ViewModel {
 protocol AnimatedGame: ViewModel {
     var isShowingAnimation: Bool { get set }
     func animationCompleted()
+}
+
+@MainActor
+protocol ErrorAlertable: ViewModel {
+    var errorMessage: String { get set }
+    var isShowingError: Bool { get set }
 }

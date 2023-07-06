@@ -46,6 +46,14 @@ struct ExploreCitiesView: View {
                 .largeTextScrollView()
             }
             .navigationTitle("Explore")
+            .alert(viewModel.errorMessage, isPresented: $viewModel.isShowingError) {
+                Button("Close", role: .cancel) {}
+                Button("Try Again") {
+                    Task {
+                        await viewModel.fetchCoordinates()
+                    }
+                }
+            }
     }
 }
 
