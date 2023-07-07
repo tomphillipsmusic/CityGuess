@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    @Environment(\.accessibilityReduceMotion) var reduceMotionEnabled
     @EnvironmentObject var router: Router
     @ObservedObject var viewModel: ViewModel
 
@@ -24,7 +25,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                     .padding()
             }
 
-            if dynamicTypeSize < .accessibility5 {
+            if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
                 LottieView(animationType: .skyscraper)
             }
 
