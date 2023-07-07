@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VerticalTextAnimationView: View {
     @StateObject var viewModel: VerticalTextAnimationViewModel
+    @Environment(\.accessibilityReduceMotion) var isMotionReduced
 
     var body: some View {
         Text(viewModel.text)
@@ -16,12 +17,14 @@ struct VerticalTextAnimationView: View {
             .background(RoundedRectangle(cornerRadius: 10.0).foregroundColor(Color("Background")))
             .font(.largeTitle)
             .opacity(viewModel.opacity)
-            .offset(y: viewModel.offset)
-            .animation(.easeInOut(duration: 1.5), value: viewModel.offset)
-            .animation(.easeInOut(duration: 1.5), value: viewModel.isAnimating)
-
             .onAppear {
                 viewModel.beginAnimation()
+            }
+            .if(!isMotionReduced) { view in
+                view
+                    .offset(y: viewModel.offset)
+                    .animation(.easeInOut(duration: 1.5), value: viewModel.offset)
+                    .animation(.easeInOut(duration: 1.5), value: viewModel.isAnimating)
             }
     }
 }

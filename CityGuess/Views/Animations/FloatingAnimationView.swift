@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct FloatingAnimationView<ViewModel: CityGuessViewModel>: View {
+    @Environment(\.accessibilityReduceMotion) var isMotionReduced
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         ZStack {
-            LottieView(animationType: viewModel.isCorrect ? .correct : .incorrect)
+            if !isMotionReduced {
+                LottieView(animationType: viewModel.isCorrect ? .correct : .incorrect)
+            }
+
             VerticalTextAnimationView(viewModel:
                 VerticalTextAnimationViewModel(
                     text: viewModel.priorAnswer,

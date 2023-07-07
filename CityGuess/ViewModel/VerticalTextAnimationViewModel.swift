@@ -8,7 +8,6 @@
 import SwiftUI
 
 class VerticalTextAnimationViewModel: ViewModel {
-
     @Published var animationLength: TimeInterval = 1.5
     @Published var isAnimating = true
     @Published var offset: CGFloat = 0
@@ -28,7 +27,7 @@ class VerticalTextAnimationViewModel: ViewModel {
         isAnimating = true
         offset = animation.initialOffset
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + animation.length / 2) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + animation.length) { [weak self] in
             guard let self else { return }
             self.offset = self.animation.endingOffset
             self.opacity = 0
