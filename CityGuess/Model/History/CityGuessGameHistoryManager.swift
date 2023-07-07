@@ -36,7 +36,7 @@ class CityGuessGameHistoryManager: ObservableObject {
     var newCitiesGuessedCorrectlyLabel: String {
         "New cities guessed correctly this round: \(newCitiesGuessedCorrectly)"
     }
-    
+
     var totalCitiesSeenLabelText: String {
         "Total Cities Seen: \(totalCitiesSeen) / \(totalNumberOfCities)"
     }

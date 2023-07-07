@@ -25,7 +25,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                     .padding()
 
                 Text(viewModel.gameOverScoreText)
-                    .font(.headline)
+                    .font(.title2)
                     .padding()
 
                 Text(historyManager.newCitiesGuessedCorrectlyLabel)
@@ -61,6 +61,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             }
             .padding()
         }
+        .largeTextScrollView()
         .navigationBarBackButtonHidden()
         .onAppear {
             UIApplication.shared.endEditing()
@@ -81,5 +82,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
         GameEndView(viewModel: TrainingViewModel())
+            .environmentObject(Router())
+            .environmentObject(CityGuessGameHistoryManager())
     }
 }

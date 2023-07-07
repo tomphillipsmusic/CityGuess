@@ -12,6 +12,13 @@ struct ProgressGauge: View {
     let totalNumber: Int
     let label: String
 
+    var tintColor: Color {
+        isComplete ? .green : .blue
+    }
+    var isComplete: Bool {
+        numberCompleted >= totalNumber
+    }
+
     var body: some View {
         Gauge(
             value: Double(numberCompleted),
@@ -19,6 +26,7 @@ struct ProgressGauge: View {
         ) {
             Text(label)
         }
+        .tint(tintColor)
         .padding()
     }
 }
