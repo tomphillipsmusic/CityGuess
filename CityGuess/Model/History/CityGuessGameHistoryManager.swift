@@ -10,7 +10,10 @@ import Foundation
 typealias CityGuessHistoryDictionary = [String: CityGuessHistory]
 
 class CityGuessGameHistoryManager: ObservableObject {
-    @Published var guessHistory: CityGuessHistoryDictionary = [:]
+    @Published private(set) var guessHistory: CityGuessHistoryDictionary = [:]
+    @Published private(set) var newCitiesSeen = 0
+    @Published private(set) var newCitiesGuessedCorrectly = 0
+
     let historyService: ReadWrite
 
     static let cityGuessHistoryFilename = "city-guess-history"
@@ -21,6 +24,14 @@ class CityGuessGameHistoryManager: ObservableObject {
 
     var citiesGuessedCorrectly: Int {
         guessHistory.values.filter { $0.guessStatus == .right }.count
+    }
+
+    var newCitiesSeenLabel: String {
+        "New Cities seen this round: \(newCitiesSeen)"
+    }
+
+    var newCitiesGuessedCorrectlyLabel: String {
+        "New cities guessed correctly this round: \(newCitiesGuessedCorrectly)"
     }
 
     init(historyService: ReadWrite = JsonService()) {
@@ -43,6 +54,7 @@ class CityGuessGameHistoryManager: ObservableObject {
         } else {
             guessHistory[cityName] = CityGuessHistory(name: cityName)
             guessHistory[cityName]?.guessStatus = status
+            updateRoundHistory(guessStatus: status)
         }
 
         if status == .right {
@@ -51,6 +63,19 @@ class CityGuessGameHistoryManager: ObservableObject {
 
         guessHistory[cityName]?.timesSeen += 1
         saveHistory()
+    }
+
+    func resetRoundHistory() {
+        newCitiesSeen = 0
+        newCitiesGuessedCorrectly = 0
+    }
+
+    private func updateRoundHistory(guessStatus: CityGuessStatus) {
+        if guessStatus == .right {
+            newCitiesGuessedCorrectly += 1
+        }
+
+        newCitiesSeen += 1
     }
 
     func saveHistory() {

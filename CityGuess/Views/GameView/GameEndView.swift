@@ -10,6 +10,7 @@ import SwiftUI
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) var reduceMotionEnabled
+    @EnvironmentObject var historyManager: CityGuessGameHistoryManager
     @EnvironmentObject var router: Router
     @ObservedObject var viewModel: ViewModel
 
@@ -21,6 +22,14 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                     .padding()
 
                 Text(viewModel.gameOverScoreText)
+                    .font(.headline)
+                    .padding()
+
+                Text(historyManager.newCitiesGuessedCorrectlyLabel)
+                    .font(.headline)
+                    .padding()
+
+                Text(historyManager.newCitiesSeenLabel)
                     .font(.headline)
                     .padding()
             }

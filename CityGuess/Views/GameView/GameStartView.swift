@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameStartView<ViewModel: CityGuessViewModel>: View {
+    @EnvironmentObject var historyManager: CityGuessGameHistoryManager
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
@@ -48,6 +49,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
 
                 Button(viewModel.startGameButtonText) {
                     viewModel.startGame(with: viewModel.numberOfRounds)
+                    historyManager.resetRoundHistory()
                 }
                 .disabled(viewModel.cityImages.isEmpty)
                 .padding()
