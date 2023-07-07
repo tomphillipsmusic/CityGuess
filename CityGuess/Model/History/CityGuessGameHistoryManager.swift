@@ -5,14 +5,17 @@
 //  Created by Tom Phillips on 6/19/23.
 //
 
-import Foundation
+import SwiftUI
 
 typealias CityGuessHistoryDictionary = [String: CityGuessHistory]
 
 class CityGuessGameHistoryManager: ObservableObject {
+    @AppStorage("totalNumberOfCities") var totalNumberOfCities: Int = 0
     @Published private(set) var guessHistory: CityGuessHistoryDictionary = [:]
     @Published private(set) var newCitiesSeen = 0
     @Published private(set) var newCitiesGuessedCorrectly = 0
+    @Published var roundStartTotalCitiesSeen = 0
+    @Published var roundStartTotalCitiesGuessedCorrectly = 0
 
     let historyService: ReadWrite
 
@@ -32,6 +35,14 @@ class CityGuessGameHistoryManager: ObservableObject {
 
     var newCitiesGuessedCorrectlyLabel: String {
         "New cities guessed correctly this round: \(newCitiesGuessedCorrectly)"
+    }
+    
+    var totalCitiesSeenLabelText: String {
+        "Total Cities Seen: \(totalCitiesSeen) / \(totalNumberOfCities)"
+    }
+
+    var totalCitiesGuessedCorrectlyText: String {
+        "Cities Guessed Correctly: \(citiesGuessedCorrectly) / \(totalNumberOfCities)"
     }
 
     init(historyService: ReadWrite = JsonService()) {
@@ -65,9 +76,12 @@ class CityGuessGameHistoryManager: ObservableObject {
         saveHistory()
     }
 
-    func resetRoundHistory() {
+    func resetRoundHistory(withTotalNumberOfCities totalCitiesSeen: Int) {
         newCitiesSeen = 0
         newCitiesGuessedCorrectly = 0
+        roundStartTotalCitiesSeen = totalCitiesSeen
+        roundStartTotalCitiesGuessedCorrectly = citiesGuessedCorrectly
+        self.totalNumberOfCities = totalCitiesSeen
     }
 
     private func updateRoundHistory(guessStatus: CityGuessStatus) {

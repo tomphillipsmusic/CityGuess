@@ -49,7 +49,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
 
                 Button(viewModel.startGameButtonText) {
                     viewModel.startGame(with: viewModel.numberOfRounds)
-                    historyManager.resetRoundHistory()
+                    historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
                 }
                 .disabled(viewModel.cityImages.isEmpty)
                 .padding()
