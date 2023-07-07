@@ -21,11 +21,11 @@ struct VerticalTextAnimationView: View {
                 print(viewModel.text.count)
                 viewModel.beginAnimation()
             }
+            .if(viewModel.canOffset) { view in
+                view.offset(y: viewModel.offset)
+            }
             .if(!isMotionReduced) { view in
                 view
-                    .if(viewModel.canOffset) { view in
-                        view.offset(y: viewModel.offset)
-                    }
                     .animation(.easeInOut(duration: 1.5), value: viewModel.offset)
                     .animation(.easeInOut(duration: 1.5), value: viewModel.isAnimating)
             }
