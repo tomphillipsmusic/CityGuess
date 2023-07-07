@@ -18,11 +18,14 @@ struct VerticalTextAnimationView: View {
             .font(.largeTitle)
             .opacity(viewModel.opacity)
             .onAppear {
+                print(viewModel.text.count)
                 viewModel.beginAnimation()
             }
             .if(!isMotionReduced) { view in
                 view
-                    .offset(y: viewModel.offset)
+                    .if(viewModel.canOffset) { view in
+                        view.offset(y: viewModel.offset)
+                    }
                     .animation(.easeInOut(duration: 1.5), value: viewModel.offset)
                     .animation(.easeInOut(duration: 1.5), value: viewModel.isAnimating)
             }

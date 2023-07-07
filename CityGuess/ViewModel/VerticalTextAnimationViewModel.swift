@@ -16,6 +16,11 @@ class VerticalTextAnimationViewModel: ViewModel {
     let text: String
     let animation: AnimationType
     let completion: () -> Void
+    let maximumCharacters = 47
+
+    var canOffset: Bool {
+        text.count <= maximumCharacters
+    }
 
     init(text: String, isCorrect: Bool, completion: @escaping () -> Void) {
         self.text = text
