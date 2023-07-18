@@ -103,6 +103,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
     }
 
     private func scheduleNotification() {
+        LocalNotificationService.shared.removeDeliveredNotifications()
         LocalNotificationService.shared.requestNotificationPermission()
         LocalNotificationService.shared.scheduleLocalNotification(
             with: "Daily Challenge Mode Unlocked!",
