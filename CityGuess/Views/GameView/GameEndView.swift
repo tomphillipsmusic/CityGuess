@@ -38,7 +38,13 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             .padding()
         }
         .navigationBarBackButtonHidden()
-        .onAppear(perform: UIApplication.shared.endEditing)
+        .onAppear {
+            UIApplication.shared.endEditing()
+
+            if let viewModel = viewModel as? DailyChallengeViewModel {
+                viewModel.scheduleNotification()
+            }
+        }
     }
 }
 
