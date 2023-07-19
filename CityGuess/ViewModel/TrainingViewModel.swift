@@ -53,8 +53,6 @@ class TrainingViewModel: CityGuessViewModel {
                 cityImages = try await cityFetcher.fetchCityImages().shuffled()
                 cityService.save(cityImages)
             }
-
-            print("City images count: " + "\(cityImages.count)")
         } catch {
             errorMessage = "Error loading city images. Please try again later."
             isShowingError = true
