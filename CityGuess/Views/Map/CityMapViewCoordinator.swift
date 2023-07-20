@@ -46,9 +46,10 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
         annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl
     ) {
-        guard let cityAnnotation = view.annotation as? CityMapAnnotation,
-        let cityName = cityAnnotation.title else { return }
-        mapViewController.selectedCityUrl = URL(string: "https://en.m.wikipedia.org/wiki/\(cityName)")
+        guard let cityAnnotation = view.annotation as? CityMapAnnotation else { return
+        }
+
+        mapViewController.selectedCityUrl = cityAnnotation.url
     }
 
     private func backgroundColor(for guessStatus: CityGuessStatus) -> UIColor {

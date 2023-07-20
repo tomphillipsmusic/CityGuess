@@ -12,6 +12,11 @@ class CityMapAnnotation: NSObject, MKAnnotation {
     let title: String?
     let subtitle: String?
     let history: CityGuessHistory
+    
+    var url: URL? {
+        guard let title else { return nil }
+        return URL(string: "https://en.m.wikipedia.org/wiki/\(title)")
+    }
 
     init(cityCoordinate: CityCoordinate, history: CityGuessHistory) {
         self.coordinate = cityCoordinate.clLocationCoordinate2D
