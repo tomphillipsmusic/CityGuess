@@ -53,7 +53,7 @@ struct ExploreCitiesView: View {
                 OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
             .sheet(item: $viewModel.learnMoreUrl) { url in
-                WebView(request: URLRequest(url: url))
+                LearnMoreView(request: URLRequest(url: url))
             }
     }
 }

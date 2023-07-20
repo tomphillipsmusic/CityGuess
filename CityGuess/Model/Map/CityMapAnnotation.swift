@@ -14,7 +14,12 @@ class CityMapAnnotation: NSObject, MKAnnotation {
     let history: CityGuessHistory
     
     var url: URL? {
-        guard let title else { return nil }
+        guard var title else { return nil }
+        
+        if title.contains(" ") {
+            title = title.replacingOccurrences(of: " ", with: "_")
+        }
+        
         return URL(string: "https://en.m.wikipedia.org/wiki/\(title)")
     }
 

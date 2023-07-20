@@ -13,15 +13,46 @@ extension URL: Identifiable {
 }
 
 struct WebView: UIViewRepresentable {
-
+    @State private var previousUrl: URL?
+    
     let request: URLRequest
+    @State private var webView: WKWebView?
 
-    func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
+    init(request: URLRequest) {
+        _webView = State(initialValue: WKWebView()
+        )
+        self.request = request
     }
 
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.load(request)
+    func makeUIView(context: Context) -> WKWebView {
+        return webView ?? WKWebView()
+    }
+
+    func updateUIView(_ webView: WKWebView, context: Context) {
+        if request.url != previousUrl {
+            webView.load(request)
+            DispatchQueue.main.async { previousUrl = request.url
+            }
+        }
+    }
+
+    func goBack() {
+        if let webView {
+            webView.goBack()
+        }
+       // webView?.goBack()
+    }
+
+    func goForward() {
+        webView?.goForward()
+    }
+    
+    var canGoBack: Bool {
+        webView?.canGoBack ?? false
+    }
+    
+    var canGoForward: Bool {
+        webView?.canGoForward ?? false
     }
 }
 
