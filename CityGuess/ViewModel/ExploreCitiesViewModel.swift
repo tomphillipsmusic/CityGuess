@@ -14,6 +14,7 @@ class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetch
     @Published var coordinates: [Service.CityCoordinateModel] = []
     @Published var isShowingError = false
     @Published var errorMessage = "Error"
+    @Published var learnMoreUrl: URL?
 
     let citiesClient: CityFetcher
     let coordinatesService: Service

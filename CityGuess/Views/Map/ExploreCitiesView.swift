@@ -12,14 +12,13 @@ struct ExploreCitiesView: View {
     @AppStorage("firstTimeOpeningExploreCities") var isShowingInfoSheet = true
     @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
     @StateObject var viewModel = ExploreCitiesViewModel()
-    @State private var learnMoreUrl: URL?
 
     var body: some View {
             VStack {
                 CityMapView(
                     cityCoordinates: viewModel.coordinates,
                     guessHistory: guessHistory.guessHistory,
-                    selectedCityUrl: $learnMoreUrl
+                    selectedCityUrl: $viewModel.learnMoreUrl
                 )
 
                 Group {
@@ -53,7 +52,7 @@ struct ExploreCitiesView: View {
             .sheet(isPresented: $isShowingInfoSheet) {
                 OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
-            .sheet(item: $learnMoreUrl) { url in
+            .sheet(item: $viewModel.learnMoreUrl) { url in
                 WebView(request: URLRequest(url: url))
             }
     }
