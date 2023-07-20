@@ -6,9 +6,8 @@
 //
 
 import MapKit
-import WebKit
 
-class CityMapViewCoordinator: NSObject, MKMapViewDelegate, WKUIDelegate {
+class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
     var mapViewController: CityMapView
     var cityName: String?
 
@@ -50,13 +49,6 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate, WKUIDelegate {
         guard let cityAnnotation = view.annotation as? CityMapAnnotation,
         let cityName = cityAnnotation.title else { return }
         mapViewController.selectedCityUrl = URL(string: "https://en.m.wikipedia.org/wiki/\(cityName)")
-    }
-
-    @objc private func loadLearnMore() {
-        if let cityName {
-            mapViewController.selectedCityUrl = URL(string: "https://en.m.wikipedia.org/wiki/\(cityName)")
-        }
-
     }
 
     private func backgroundColor(for guessStatus: CityGuessStatus) -> UIColor {
