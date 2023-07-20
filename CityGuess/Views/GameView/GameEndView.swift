@@ -65,11 +65,11 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             UIApplication.shared.endEditing()
-            
+
             if let viewModel = viewModel as? DailyChallengeViewModel {
                 viewModel.scheduleNotification()
             }
-          
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 withAnimation {
                     hasUpdatedGauges = true

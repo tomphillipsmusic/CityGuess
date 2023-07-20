@@ -34,7 +34,6 @@
 		3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B497D29F86F9E00260B88 /* HapticsManager.swift */; };
 		3E2B498229F96F8B00260B88 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B498129F96F8B00260B88 /* String+Extension.swift */; };
 		3E2B498A29F97DBF00260B88 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */; };
-		3E31A6DE2A6723C600F4F52A /* LearnMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E31A6DD2A6723C600F4F52A /* LearnMoreButton.swift */; };
 		3E39A29D2A57431900C9B72B /* ContentView+MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A29C2A57431900C9B72B /* ContentView+MainMenu.swift */; };
 		3E39A29F2A575CB300C9B72B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A29E2A575CB300C9B72B /* Onboarding.swift */; };
 		3E39A2A12A57604D00C9B72B /* OnboardingToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A02A57604D00C9B72B /* OnboardingToolbarButton.swift */; };
@@ -132,7 +131,6 @@
 		3E2B498129F96F8B00260B88 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3E2B498729F97DBF00260B88 /* CityGuessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityGuessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2B498929F97DBF00260B88 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
-		3E31A6DD2A6723C600F4F52A /* LearnMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreButton.swift; sourceTree = "<group>"; };
 		3E39A29C2A57431900C9B72B /* ContentView+MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+MainMenu.swift"; sourceTree = "<group>"; };
 		3E39A29E2A575CB300C9B72B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		3E39A2A02A57604D00C9B72B /* OnboardingToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbarButton.swift; sourceTree = "<group>"; };
@@ -380,7 +378,6 @@
 				3E46E3F32A3895B500ED3646 /* CityMapView.swift */,
 				3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */,
 				3E39A2A52A58A3B600C9B72B /* Webview.swift */,
-				3E31A6DD2A6723C600F4F52A /* LearnMoreButton.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -656,7 +653,6 @@
 				3E9EC5C12A02A75E006E79E9 /* ContentView.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
 				3E39A29F2A575CB300C9B72B /* Onboarding.swift in Sources */,
-				3E31A6DE2A6723C600F4F52A /* LearnMoreButton.swift in Sources */,
 				3E9C7D4729EDDCA30073CCE4 /* CityGuessViewModel.swift in Sources */,
 				3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */,
 				3E25FC062A1BF01E0040E50C /* RingView.swift in Sources */,

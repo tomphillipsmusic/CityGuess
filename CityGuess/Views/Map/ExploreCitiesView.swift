@@ -16,7 +16,11 @@ struct ExploreCitiesView: View {
 
     var body: some View {
             VStack {
-                CityMapView(cityCoordinates: viewModel.coordinates, guessHistory: guessHistory.guessHistory, selectedCityUrl: $learnMoreUrl)
+                CityMapView(
+                    cityCoordinates: viewModel.coordinates,
+                    guessHistory: guessHistory.guessHistory,
+                    selectedCityUrl: $learnMoreUrl
+                )
 
                 Group {
                     if viewModel.coordinates.count > 0 {
