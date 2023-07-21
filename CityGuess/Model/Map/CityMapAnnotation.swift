@@ -13,6 +13,16 @@ class CityMapAnnotation: NSObject, MKAnnotation {
     let subtitle: String?
     let history: CityGuessHistory
 
+    var url: URL? {
+        guard var title else { return nil }
+
+        if title.contains(" ") {
+            title = title.replacingOccurrences(of: " ", with: "_")
+        }
+
+        return URL(string: "https://en.m.wikipedia.org/wiki/\(title)")
+    }
+
     init(cityCoordinate: CityCoordinate, history: CityGuessHistory) {
         self.coordinate = cityCoordinate.clLocationCoordinate2D
         self.title = cityCoordinate.name

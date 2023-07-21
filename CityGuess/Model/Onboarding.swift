@@ -44,7 +44,7 @@ extension Onboarding {
                 ),
                 Detail(
                     symbol: "globe",
-                    text: "Unlock all of the cities on the world map and track your progress as you play",
+                    text: "Unlock all of the cities on the world map and track your progress",
                     color: .green
                 )
         ],
