@@ -52,8 +52,8 @@ struct ExploreCitiesView: View {
             .sheet(isPresented: $isShowingInfoSheet) {
                 OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
-            .sheet(item: $viewModel.learnMoreUrl) { url in
-                LearnMoreView(request: URLRequest(url: url))
+            .fullScreenCover(item: $viewModel.learnMoreUrl) { url in
+                SafariWebView(url: url)
             }
     }
 }

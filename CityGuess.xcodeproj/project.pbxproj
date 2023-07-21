@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */; };
-		3E093C562A69C3A800C7D28B /* LearnMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093C552A69C3A800C7D28B /* LearnMoreView.swift */; };
-		3E093C582A69D00900C7D28B /* WebViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093C572A69D00900C7D28B /* WebViewTest.swift */; };
+		3E093C5A2A6AB5F200C7D28B /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093C592A6AB5F200C7D28B /* SafariWebView.swift */; };
+		3E093C5C2A6AB76700C7D28B /* URL+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093C5B2A6AB76700C7D28B /* URL+Identifiable.swift */; };
 		3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */; };
 		3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A436D29E5DE9C00A9D2BE /* testcities.json */; };
 		3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */; };
@@ -40,7 +40,6 @@
 		3E39A29F2A575CB300C9B72B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A29E2A575CB300C9B72B /* Onboarding.swift */; };
 		3E39A2A12A57604D00C9B72B /* OnboardingToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A02A57604D00C9B72B /* OnboardingToolbarButton.swift */; };
 		3E39A2A32A588CEF00C9B72B /* ProgressGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A22A588CEF00C9B72B /* ProgressGauge.swift */; };
-		3E39A2A62A58A3B600C9B72B /* Webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A52A58A3B600C9B72B /* Webview.swift */; };
 		3E46E3F42A3895B500ED3646 /* CityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F32A3895B500ED3646 /* CityMapView.swift */; };
 		3E46E3F62A38A6D900ED3646 /* CityMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */; };
 		3E46E3F82A38C27400ED3646 /* CityMapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */; };
@@ -106,8 +105,8 @@
 
 /* Begin PBXFileReference section */
 		3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
-		3E093C552A69C3A800C7D28B /* LearnMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreView.swift; sourceTree = "<group>"; };
-		3E093C572A69D00900C7D28B /* WebViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTest.swift; sourceTree = "<group>"; };
+		3E093C592A6AB5F200C7D28B /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
+		3E093C5B2A6AB76700C7D28B /* URL+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Identifiable.swift"; sourceTree = "<group>"; };
 		3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		3E0A436D29E5DE9C00A9D2BE /* testcities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testcities.json; sourceTree = "<group>"; };
 		3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImagesResponse.swift; sourceTree = "<group>"; };
@@ -139,7 +138,6 @@
 		3E39A29E2A575CB300C9B72B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		3E39A2A02A57604D00C9B72B /* OnboardingToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbarButton.swift; sourceTree = "<group>"; };
 		3E39A2A22A588CEF00C9B72B /* ProgressGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressGauge.swift; sourceTree = "<group>"; };
-		3E39A2A52A58A3B600C9B72B /* Webview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webview.swift; sourceTree = "<group>"; };
 		3E46E3F32A3895B500ED3646 /* CityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapView.swift; sourceTree = "<group>"; };
 		3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapAnnotation.swift; sourceTree = "<group>"; };
 		3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewCoordinator.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 		3E64AD9A29DEFD5300DCCF2E = {
 			isa = PBXGroup;
 			children = (
-				3E093C572A69D00900C7D28B /* WebViewTest.swift */,
 				3E64ADA529DEFD5300DCCF2E /* CityGuess */,
 				3E2B498829F97DBF00260B88 /* CityGuessTests */,
 				3E64ADA429DEFD5300DCCF2E /* Products */,
@@ -382,8 +379,7 @@
 				3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */,
 				3E46E3F32A3895B500ED3646 /* CityMapView.swift */,
 				3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */,
-				3E39A2A52A58A3B600C9B72B /* Webview.swift */,
-				3E093C552A69C3A800C7D28B /* LearnMoreView.swift */,
+				3E093C592A6AB5F200C7D28B /* SafariWebView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -446,6 +442,7 @@
 				3E2B498129F96F8B00260B88 /* String+Extension.swift */,
 				3E9B321A2A4C7FC100973E2A /* View+Extension.swift */,
 				3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */,
+				3E093C5B2A6AB76700C7D28B /* URL+Identifiable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -648,15 +645,16 @@
 				3EC3688D29F302A600AE92D9 /* FloatingAnimationView.swift in Sources */,
 				3ED91B3F2A55C5F1006D25D0 /* GameErrorView.swift in Sources */,
 				3E39A2A12A57604D00C9B72B /* OnboardingToolbarButton.swift in Sources */,
-				3E093C562A69C3A800C7D28B /* LearnMoreView.swift in Sources */,
 				3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */,
 				3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */,
 				3EF5BF4B2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift in Sources */,
 				3E46E3F82A38C27400ED3646 /* CityMapViewCoordinator.swift in Sources */,
 				3E46F9C62A4CC4C200EA67ED /* OnboardingView.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
+				3E093C5A2A6AB5F200C7D28B /* SafariWebView.swift in Sources */,
 				3E210FE42A0AEB71000FA523 /* Router.swift in Sources */,
 				3EF5BF572A1FAB30006B5DE8 /* CoordinatesService.swift in Sources */,
+				3E093C5C2A6AB76700C7D28B /* URL+Identifiable.swift in Sources */,
 				3E9EC5C12A02A75E006E79E9 /* ContentView.swift in Sources */,
 				3E64ADB529DEFD5F00DCCF2E /* NetworkManager.swift in Sources */,
 				3E39A29F2A575CB300C9B72B /* Onboarding.swift in Sources */,
@@ -681,7 +679,6 @@
 				3EF5BF5F2A1FAC2F006B5DE8 /* CoordinateBox.swift in Sources */,
 				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
-				3E39A2A62A58A3B600C9B72B /* Webview.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
 				3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */,
 				3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */,
@@ -703,7 +700,6 @@
 				3E0A437229E84E1500A9D2BE /* TeleportApiClient.swift in Sources */,
 				3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */,
 				3EF5BF512A1FA499006B5DE8 /* ExploreCitiesViewModel.swift in Sources */,
-				3E093C582A69D00900C7D28B /* WebViewTest.swift in Sources */,
 				3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */,
 				3E9B321B2A4C7FC100973E2A /* View+Extension.swift in Sources */,
 				3E25FC102A1C0E450040E50C /* LockView.swift in Sources */,
