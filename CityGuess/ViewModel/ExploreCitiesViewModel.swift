@@ -40,6 +40,7 @@ where Service.CityModel == CityFetcher.CityModel {
             ),
                 let genericCoordinates = defaultCoordinates as? [Service.CityCoordinateModel] {
                     coordinates = genericCoordinates
+                    coordinatesService.save(coordinates)
             }
 
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)

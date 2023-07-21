@@ -214,6 +214,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E093C632A6B20CD00C7D28B /* InitialJsonData */ = {
+			isa = PBXGroup;
+			children = (
+				3E093C5F2A6ACD4A00C7D28B /* InitialCityCoordinates.json */,
+				3E093C5D2A6ACCA300C7D28B /* InitialCities.json */,
+				3E093C612A6ACDAC00C7D28B /* InitialCityImages.json */,
+			);
+			path = InitialJsonData;
+			sourceTree = "<group>";
+		};
 		3E0A437829E97DBC00A9D2BE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
-				3E093C5D2A6ACCA300C7D28B /* InitialCities.json */,
 				3EEB999529E467C200514F79 /* Model */,
 				3EEB99A029E4909D00514F79 /* Views */,
 				3EEB999C29E47E3600514F79 /* ViewModel */,
@@ -361,11 +370,10 @@
 				3EEB999F29E4906300514F79 /* Extensions */,
 				3E210FE02A09805B000FA523 /* PropertyWrappers */,
 				3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */,
+				3E093C632A6B20CD00C7D28B /* InitialJsonData */,
 				3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */,
 				3E64ADAC29DEFD5400DCCF2E /* Preview Content */,
 				3E25FC0B2A1C0C0A0040E50C /* Constants.swift */,
-				3E093C5F2A6ACD4A00C7D28B /* InitialCityCoordinates.json */,
-				3E093C612A6ACDAC00C7D28B /* InitialCityImages.json */,
 			);
 			path = CityGuess;
 			sourceTree = "<group>";

@@ -52,6 +52,7 @@ class TrainingViewModel: CityGuessViewModel {
             } else {
                 if let defaultImages = try? Bundle.main.decode([CityImage].self, from: "InitialCityImages.json") {
                     cityImages = defaultImages
+                    cityService.save(cityImages)
                 }
                 cityImages = try await cityFetcher.fetchCityImages().shuffled()
                 cityService.save(cityImages)
@@ -70,6 +71,7 @@ class TrainingViewModel: CityGuessViewModel {
             } else {
                 if let defaultImages = try? Bundle.main.decode([TeleportCity].self, from: "InitialCities.json") {
                     cities = defaultImages
+                    try? cityService.save(cities)
                 }
                 let cities = try await cityFetcher.fetchCities()
                 self.cities = cities
