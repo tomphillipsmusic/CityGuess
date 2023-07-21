@@ -13,7 +13,7 @@ struct OnboardingToolbarButton: View {
         Button {
             isShowingInfoSheet = true
         } label: {
-            Image(systemName: "questionmark.app")
+            Image(systemName: "questionmark.circle.fill")
         }
     }
 }

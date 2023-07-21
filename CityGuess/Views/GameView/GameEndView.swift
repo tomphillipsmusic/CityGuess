@@ -25,7 +25,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                     .padding()
 
                 Text(viewModel.gameOverScoreText)
-                    .font(.title2)
+                    .font(.title3)
                     .padding()
 
                 Text(historyManager.newCitiesGuessedCorrectlyLabel)
