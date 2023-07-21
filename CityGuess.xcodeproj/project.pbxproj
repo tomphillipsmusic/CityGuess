@@ -10,6 +10,9 @@
 		3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */; };
 		3E093C5A2A6AB5F200C7D28B /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093C592A6AB5F200C7D28B /* SafariWebView.swift */; };
 		3E093C5C2A6AB76700C7D28B /* URL+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093C5B2A6AB76700C7D28B /* URL+Identifiable.swift */; };
+		3E093C5E2A6ACCA300C7D28B /* InitialCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E093C5D2A6ACCA300C7D28B /* InitialCities.json */; };
+		3E093C602A6ACD4A00C7D28B /* InitialCityCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E093C5F2A6ACD4A00C7D28B /* InitialCityCoordinates.json */; };
+		3E093C622A6ACDAC00C7D28B /* InitialCityImages.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E093C612A6ACDAC00C7D28B /* InitialCityImages.json */; };
 		3E0A436C29E5A55900A9D2BE /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */; };
 		3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A436D29E5DE9C00A9D2BE /* testcities.json */; };
 		3E0A437029E5E2B100A9D2BE /* CityImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */; };
@@ -70,7 +73,6 @@
 		3ED91B3F2A55C5F1006D25D0 /* GameErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED91B3E2A55C5F1006D25D0 /* GameErrorView.swift */; };
 		3EEB998A29E43C4700514F79 /* CityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998929E43C4700514F79 /* CityImage.swift */; };
 		3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB998B29E43C6000514F79 /* RedditClient.swift */; };
-		3EEB999229E4580600514F79 /* bigcities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB999129E4580600514F79 /* bigcities.json */; };
 		3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999729E4697200514F79 /* Bundle+Extension.swift */; };
 		3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999A29E47CEB00514F79 /* LocalCityService.swift */; };
 		3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */; };
@@ -107,6 +109,9 @@
 		3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		3E093C592A6AB5F200C7D28B /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		3E093C5B2A6AB76700C7D28B /* URL+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Identifiable.swift"; sourceTree = "<group>"; };
+		3E093C5D2A6ACCA300C7D28B /* InitialCities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InitialCities.json; sourceTree = "<group>"; };
+		3E093C5F2A6ACD4A00C7D28B /* InitialCityCoordinates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InitialCityCoordinates.json; sourceTree = "<group>"; };
+		3E093C612A6ACDAC00C7D28B /* InitialCityImages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InitialCityImages.json; sourceTree = "<group>"; };
 		3E0A436B29E5A55900A9D2BE /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		3E0A436D29E5DE9C00A9D2BE /* testcities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testcities.json; sourceTree = "<group>"; };
 		3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImagesResponse.swift; sourceTree = "<group>"; };
@@ -169,7 +174,6 @@
 		3ED91B3E2A55C5F1006D25D0 /* GameErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorView.swift; sourceTree = "<group>"; };
 		3EEB998929E43C4700514F79 /* CityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImage.swift; sourceTree = "<group>"; };
 		3EEB998B29E43C6000514F79 /* RedditClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditClient.swift; sourceTree = "<group>"; };
-		3EEB999129E4580600514F79 /* bigcities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bigcities.json; sourceTree = "<group>"; };
 		3EEB999729E4697200514F79 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		3EEB999A29E47CEB00514F79 /* LocalCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCityService.swift; sourceTree = "<group>"; };
 		3EEB999D29E47E4400514F79 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */,
+				3E093C5D2A6ACCA300C7D28B /* InitialCities.json */,
 				3EEB999529E467C200514F79 /* Model */,
 				3EEB99A029E4909D00514F79 /* Views */,
 				3EEB999C29E47E3600514F79 /* ViewModel */,
@@ -356,10 +361,11 @@
 				3EEB999F29E4906300514F79 /* Extensions */,
 				3E210FE02A09805B000FA523 /* PropertyWrappers */,
 				3EEF7F7529F2BE8B00EEBE9D /* LottieFiles */,
-				3EEB999129E4580600514F79 /* bigcities.json */,
 				3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */,
 				3E64ADAC29DEFD5400DCCF2E /* Preview Content */,
 				3E25FC0B2A1C0C0A0040E50C /* Constants.swift */,
+				3E093C5F2A6ACD4A00C7D28B /* InitialCityCoordinates.json */,
+				3E093C612A6ACDAC00C7D28B /* InitialCityImages.json */,
 			);
 			path = CityGuess;
 			sourceTree = "<group>";
@@ -584,11 +590,13 @@
 			files = (
 				3E0A436E29E5DE9C00A9D2BE /* testcities.json in Resources */,
 				3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */,
-				3EEB999229E4580600514F79 /* bigcities.json in Resources */,
 				3EEF7F7929F2BEDC00EEBE9D /* incorrect.json in Resources */,
 				3E64ADAE29DEFD5400DCCF2E /* Preview Assets.xcassets in Resources */,
 				3EEF7F7729F2BE9D00EEBE9D /* correct.json in Resources */,
 				3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */,
+				3E093C602A6ACD4A00C7D28B /* InitialCityCoordinates.json in Resources */,
+				3E093C5E2A6ACCA300C7D28B /* InitialCities.json in Resources */,
+				3E093C622A6ACDAC00C7D28B /* InitialCityImages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

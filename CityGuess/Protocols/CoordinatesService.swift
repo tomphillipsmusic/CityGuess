@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CoordinatesService: CoordinateFetching {
-    associatedtype CityCoordinateModel = City & Coordinate
+    associatedtype CityCoordinateModel = City & Coordinate & Codable
 
     func save(_ coordinates: [CityCoordinateModel])
     func loadCoordinates() throws -> [CityCoordinateModel]

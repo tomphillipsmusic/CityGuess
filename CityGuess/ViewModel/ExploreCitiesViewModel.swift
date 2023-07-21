@@ -9,7 +9,7 @@ import MapKit
 
 @MainActor
 class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetching>: ViewModel, ErrorAlertable
-    where Service.CityModel == CityFetcher.CityModel {
+where Service.CityModel == CityFetcher.CityModel {
 
     @Published var coordinates: [Service.CityCoordinateModel] = []
     @Published var isShowingError = false
@@ -33,6 +33,15 @@ class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetch
     func fetchCoordinates() async {
         do {
             let cities = try await fetchCities()
+
+            if let defaultCoordinates = try? Bundle.main.decode(
+                [CityCoordinate].self,
+                from: "InitialCityCoordinates.json"
+            ),
+                let genericCoordinates = defaultCoordinates as? [Service.CityCoordinateModel] {
+                    coordinates = genericCoordinates
+            }
+
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)
         } catch {
             isShowingError = true
