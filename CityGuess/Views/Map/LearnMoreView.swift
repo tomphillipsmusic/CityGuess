@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct LearnMoreView: View {
-    let cityImage: CityImage
-    @State private var cityScores = [CityScore]()
-
-    var url: URL? {
-        URL(string: cityImage.url)
-    }
+    @StateObject var viewModel: LearnMoreViewModel
 
     var body: some View {
-        VStack {
-            Text(cityImage.title)
+        ScrollView {
+            Text(viewModel.city.name)
                 .font(.largeTitle)
-            AsyncImage(url: url) { phase in
+
+            Text(viewModel.guessHistory.label)
+                .font(.title2)
+
+            AsyncImage(url: viewModel.imageUrl) { phase in
                 switch phase {
                 case .success(let image):
                     image
@@ -35,24 +34,24 @@ struct LearnMoreView: View {
                     Text("Unknown error has occured")
                 }
             }
-            
-            Text("Categores: \(cityScores.count)")
+
+            Link("Learn More", destination: viewModel.learnMoreUrl!)
+                .disabled(viewModel.learnMoreUrl != nil)
+
+            ForEach(viewModel.cityScores, id: \.name) { score in
+                ProgressGauge(numberCompleted: Int(score.scoreOutOf10), totalNumber: 10, label: score.name)
+                    .padding()
+            }
+
         }
         .task {
-            do {
-                cityScores = try await TeleportApiClient().fetchScores(for: TeleportCity(href: "https://api.teleport.org/api/urban_areas/slug:detroit/", name: "Detroit"))
-            } catch {
-                print(error)
-            }
-            
-        
+            await viewModel.fetchScores()
         }
-        
     }
 }
 
 struct LearnMoreView_Previews: PreviewProvider {
     static var previews: some View {
-        LearnMoreView(cityImage: CityImage(title: "Detroit", url: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"))
+        LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: CityGuessHistory(name: "Detrpot", urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")))
     }
 }

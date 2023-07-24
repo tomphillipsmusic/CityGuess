@@ -38,7 +38,10 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 withAnimation(.linear(duration: 1.0)) {
                     viewModel.submit(guess: cityName)
-                    gameHistory.updateHistory(forCityNamed: cityName, with: viewModel.isCorrect ? .right : .wrong)
+
+                    if let cityImage = viewModel.cityImages.first(where: {$0.title == cityName}) {
+                        gameHistory.updateHistory(forCityImage: cityImage, with: viewModel.isCorrect ? .right : .wrong)
+                    }
                 }
 
                 self.guess = ""

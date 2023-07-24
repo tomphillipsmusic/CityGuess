@@ -53,7 +53,9 @@ class CityGuessGameHistoryManager: ObservableObject {
         }
     }
 
-    func updateHistory(forCityNamed cityName: String, with status: CityGuessStatus) {
+    func updateHistory(forCityImage cityImage: CityImage, with status: CityGuessStatus) {
+        let cityName = cityImage.title
+
         if guessHistory[cityName] != nil {
             let hasAlreadyBeenGuessedCorrectly = guessHistory[cityName]?.guessStatus == .right
 
@@ -63,7 +65,7 @@ class CityGuessGameHistoryManager: ObservableObject {
             }
 
         } else {
-            guessHistory[cityName] = CityGuessHistory(name: cityName)
+            guessHistory[cityName] = CityGuessHistory(name: cityName, urlString: cityImage.url)
             guessHistory[cityName]?.guessStatus = status
             updateRoundHistory(guessStatus: status)
         }

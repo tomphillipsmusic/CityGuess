@@ -49,7 +49,7 @@ class CityMapViewCoordinator: NSObject, MKMapViewDelegate {
         guard let cityAnnotation = view.annotation as? CityMapAnnotation else { return
         }
 
-        mapViewController.selectedCityUrl = cityAnnotation.url
+        mapViewController.selectedCityHistory = cityAnnotation.history
     }
 
     private func backgroundColor(for guessStatus: CityGuessStatus) -> UIColor {

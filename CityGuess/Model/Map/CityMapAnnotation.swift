@@ -27,6 +27,6 @@ class CityMapAnnotation: NSObject, MKAnnotation {
         self.coordinate = cityCoordinate.clLocationCoordinate2D
         self.title = cityCoordinate.name
         self.history = history
-        self.subtitle = "Successfully guessed \(history.timesGuessedCorrectly) / \(history.timesSeen) times"
+        self.subtitle = history.label
     }
 }

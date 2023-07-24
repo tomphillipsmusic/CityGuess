@@ -14,7 +14,7 @@ where Service.CityModel == CityFetcher.CityModel {
     @Published var coordinates: [Service.CityCoordinateModel] = []
     @Published var isShowingError = false
     @Published var errorMessage = "Error"
-    @Published var learnMoreUrl: URL?
+    @Published var selectedCity: CityGuessHistory?
 
     let citiesClient: CityFetcher
     let coordinatesService: Service

@@ -18,7 +18,7 @@ struct ExploreCitiesView: View {
                 CityMapView(
                     cityCoordinates: viewModel.coordinates,
                     guessHistory: guessHistory.guessHistory,
-                    selectedCityUrl: $viewModel.learnMoreUrl
+                    selectedCityHistory: $viewModel.selectedCity
                 )
 
                 Group {
@@ -52,8 +52,8 @@ struct ExploreCitiesView: View {
             .sheet(isPresented: $isShowingInfoSheet) {
                 OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
-            .fullScreenCover(item: $viewModel.learnMoreUrl) { url in
-                SafariWebView(url: url)
+            .fullScreenCover(item: $viewModel.selectedCity) { selectedCity in
+                LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: selectedCity))
             }
     }
 }
