@@ -14,6 +14,7 @@ actor TeleportApiClient: CityFetching {
     enum Endpoint {
         static let urbanAreas = "urban_areas"
         static let images = "images"
+        static let scores = "scores"
     }
 
     private let baseUrl = "https://api.teleport.org/api/"
@@ -50,4 +51,29 @@ actor TeleportApiClient: CityFetching {
         return response.boundingBox.latlon
     }
 
+    func fetchScores(for city: TeleportCity) async throws -> [CityScore] {
+        let url = "\(city.href)\(Endpoint.scores)"
+        let response: TeleportCityScoresResponse = try await NetworkManager.shared.fetch(from: url)
+        return response.categories
+    }
+}
+
+struct TeleportCityScoresResponse: Codable {
+    let categories: [CityScore]
+}
+
+struct CityScore: Codable {
+    let name: String
+    let scoreOutOf10: Double
+
+    init(from decoder: Decoder) throws {
+        let container: KeyedDecodingContainer<CityScore.CodingKeys> = try decoder.container(keyedBy: CityScore.CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: CityScore.CodingKeys.name)
+        self.scoreOutOf10 = try container.decode(Double.self, forKey: CityScore.CodingKeys.scoreOutOf10)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case scoreOutOf10 = "score_out_of_10"
+    }
 }
