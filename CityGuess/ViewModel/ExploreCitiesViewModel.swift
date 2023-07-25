@@ -29,6 +29,15 @@ where Service.CityModel == CityFetcher.CityModel {
             await fetchCoordinates()
         }
     }
+    
+    init(city: Service.CityModel, citiesClient: CityFetcher = TeleportApiClient(), coordinatesService: Service = TeleportCoordinatesService()) {
+        self.citiesClient = citiesClient
+        self.coordinatesService = coordinatesService
+
+        Task {
+            await try? fetchCoordinates(for: city)
+        }
+    }
 
     func fetchCoordinates() async {
         do {
@@ -44,6 +53,27 @@ where Service.CityModel == CityFetcher.CityModel {
             }
 
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)
+        } catch {
+            isShowingError = true
+            errorMessage = "There was an error loading city data. Please try again later."
+        }
+    }
+    
+    func fetchCoordinates(for city: Service.CityModel) async throws {
+        do {
+//            if let defaultCoordinates = try? Bundle.main.decode(
+//                [CityCoordinate].self,
+//                from: "InitialCityCoordinates.json"
+//            ),
+//                let genericCoordinates = defaultCoordinates as? [Service.CityCoordinateModel] {
+//                coordinatesService.save(coordinates)
+//
+//            } else {
+                let cityCoordinates = try await coordinatesService.fetchCoordinates(for: city)
+                coordinates = [cityCoordinates]
+            print(coordinates)
+//            }
+            
         } catch {
             isShowingError = true
             errorMessage = "There was an error loading city data. Please try again later."

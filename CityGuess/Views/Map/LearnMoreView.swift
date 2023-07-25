@@ -6,17 +6,53 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LearnMoreView: View {
     @StateObject var viewModel: LearnMoreViewModel
+    @StateObject var exploreCityViewModel: ExploreCitiesViewModel<TeleportCoordinatesService, TeleportApiClient>
+    @State private var degrees: Double = 0
+    @State private var coordinateRegion = MKCoordinateRegion()
+    
+    init(viewModel: LearnMoreViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        _exploreCityViewModel = StateObject(wrappedValue: ExploreCitiesViewModel(city: viewModel.city, citiesClient: TeleportApiClient(), coordinatesService: TeleportCoordinatesService()))
+    }
 
     var body: some View {
-        ScrollView {
+        VStack {
             heading
-            cityImage
-            learnMoreButton
-            Divider()
-            CityScoresView(cityScores: viewModel.cityScores)
+        
+            Group {
+                if degrees == 0 {
+                    cityImage
+                } else {
+                   // Map(coordinateRegion: $coordinateRegion)
+                    
+                    CityMapView(
+                        cityCoordinates: exploreCityViewModel.coordinates,
+                        guessHistory: [viewModel.cityName: viewModel.guessHistory],
+                        selectedCityHistory: $exploreCityViewModel.selectedCity
+                    )
+                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                    .cornerRadius(20)
+                    .padding()
+                }
+                
+            }
+            .rotation3DEffect(.degrees(degrees), axis: (x: 0, y: 1, z: 0))
+            .onTapGesture {
+                withAnimation {
+                    degrees = degrees == 0 ? 180 : 0
+                }
+            }
+            
+            ScrollView {
+                
+                learnMoreButton
+                Divider()
+                CityScoresView(cityScores: viewModel.cityScores)
+            }
         }
         .task {
             await viewModel.fetchScores()
