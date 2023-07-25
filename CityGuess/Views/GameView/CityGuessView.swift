@@ -18,7 +18,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var body: some View {
 
         VStack {
-
             ZStack {
                 ZoomableScrollView {
                     image
@@ -39,9 +38,16 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
                 withAnimation(.linear(duration: 1.0)) {
                     viewModel.submit(guess: cityName)
 
-                    if let cityImage = viewModel.cityImages.first(where: {$0.title == cityName}) {
-                        gameHistory.updateHistory(forCityImage: cityImage, with: viewModel.isCorrect ? .right : .wrong)
+                    let imageToUpdate: CityImage
+                    
+                    if viewModel.isCorrect {
+                        imageToUpdate = CityImage(title: cityName, url: viewModel.currentCityImage.url)
+                    } else {
+                        let correctCityName = viewModel.cities.first(where: { viewModel.currentCityImage.title.caseInsensitiveContains($0.name)})?.name
+                        imageToUpdate = CityImage(title: correctCityName ?? "", url: viewModel.currentCityImage.url)
                     }
+                    
+                    gameHistory.updateHistory(forImage: imageToUpdate, with: viewModel.isCorrect ? .right : .wrong)
                 }
 
                 self.guess = ""

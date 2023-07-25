@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CityGuessHistory: Identifiable, Codable {
+struct CityGuessHistory: Identifiable, Codable, Hashable {
     var id = UUID()
     let name: String
     var guessStatus: CityGuessStatus = .notSeen

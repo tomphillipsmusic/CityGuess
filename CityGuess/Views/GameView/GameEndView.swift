@@ -52,6 +52,15 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
                 LottieView(animationType: .skyscraper)
             }
+            
+            NavigationLink("Learn More") {
+                TabView {
+                    ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
+                        LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: guessHistory))
+                    }
+                }
+                .tabViewStyle(.page)
+            }
 
             Button(viewModel.gameEndText) {
                 withAnimation {
