@@ -5,7 +5,7 @@
 //  Created by Tom Phillips on 7/24/23.
 //
 
-import Foundation
+import SwiftUI
 
 class LearnMoreViewModel: ViewModel {
     @Published var cityScores: [CityScore] = []
@@ -19,6 +19,10 @@ class LearnMoreViewModel: ViewModel {
 
     var guessHistoryLabel: String {
         guessHistory.label
+    }
+
+    var guessHistoryLabelColor: Color {
+        guessHistory.guessStatus.color
     }
 
     var imageUrl: URL? {

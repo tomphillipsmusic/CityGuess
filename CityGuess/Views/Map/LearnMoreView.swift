@@ -15,6 +15,7 @@ struct LearnMoreView: View {
             heading
             cityImage
             learnMoreButton
+            Divider()
             CityScoresView(cityScores: viewModel.cityScores)
         }
         .task {
@@ -26,9 +27,7 @@ struct LearnMoreView: View {
         Group {
             Text(viewModel.cityName)
                 .font(.largeTitle)
-
-            Text(viewModel.guessHistoryLabel)
-                .font(.title2)
+                .foregroundColor(viewModel.guessHistoryLabelColor)
         }
     }
 

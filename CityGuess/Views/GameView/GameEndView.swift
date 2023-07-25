@@ -19,56 +19,16 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var body: some View {
         VStack {
-            VStack {
-                Text(viewModel.gameOverText)
-                    .font(.largeTitle)
-                    .padding()
-
-                Text(viewModel.gameOverScoreText)
-                    .font(.title3)
-                    .padding()
-
-                Text(historyManager.newCitiesGuessedCorrectlyLabel)
-                    .font(.headline)
-                    .padding()
-
-                ProgressGauge(
-                    numberCompleted: hasUpdatedGauges ? historyManager.citiesGuessedCorrectly : historyManager.roundStartTotalCitiesGuessedCorrectly,
-                    totalNumber: historyManager.totalNumberOfCities,
-                    label: hasUpdatedGauges ? historyManager.totalCitiesGuessedCorrectlyText : ""
-                )
-
-                Text(historyManager.newCitiesSeenLabel)
-                    .font(.headline)
-                    .padding()
-
-                ProgressGauge(
-                    numberCompleted: hasUpdatedGauges ? historyManager.totalCitiesSeen : historyManager.roundStartTotalCitiesGuessedCorrectly,
-                    totalNumber: historyManager.totalNumberOfCities,
-                    label: hasUpdatedGauges ? historyManager.totalCitiesSeenLabelText : ""
-                )
-            }
+            header
+            Divider()
+            progressGauges
 
             if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
                 LottieView(animationType: .skyscraper)
             }
 
-            NavigationLink("Learn More") {
-                TabView {
-                    ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
-                        LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: guessHistory))
-                    }
-                }
-                .tabViewStyle(.page)
-            }
-
-            Button(viewModel.gameEndText) {
-                withAnimation {
-                    viewModel.endGame()
-                    router.path.removeLast()
-                }
-            }
-            .padding()
+            reviewCitiesButton
+            endGameButton
         }
         .largeTextScrollView()
         .navigationBarBackButtonHidden()
@@ -85,6 +45,64 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 }
             }
         }
+    }
+
+    var header: some View {
+        VStack {
+            Text(viewModel.gameOverText)
+                .font(.largeTitle)
+                .padding()
+
+            Text(viewModel.gameOverScoreText)
+                .font(.title3)
+                .padding()
+        }
+    }
+
+    var progressGauges: some View {
+        VStack {
+            Text(historyManager.newCitiesGuessedCorrectlyLabel)
+                .font(.headline)
+                .padding()
+
+            ProgressGauge(
+                numberCompleted: hasUpdatedGauges ? historyManager.citiesGuessedCorrectly : historyManager.roundStartTotalCitiesGuessedCorrectly,
+                totalNumber: historyManager.totalNumberOfCities,
+                label: hasUpdatedGauges ? historyManager.totalCitiesGuessedCorrectlyText : ""
+            )
+
+            Text(historyManager.newCitiesSeenLabel)
+                .font(.headline)
+                .padding()
+
+            ProgressGauge(
+                numberCompleted: hasUpdatedGauges ? historyManager.totalCitiesSeen : historyManager.roundStartTotalCitiesGuessedCorrectly,
+                totalNumber: historyManager.totalNumberOfCities,
+                label: hasUpdatedGauges ? historyManager.totalCitiesSeenLabelText : ""
+            )
+        }
+    }
+
+    var reviewCitiesButton: some View {
+        NavigationLink("Review Cities") {
+            TabView {
+                ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
+                    LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: guessHistory))
+                }
+            }
+            .tabViewStyle(.page)
+        }
+        .disabled(historyManager.roundHistory.isEmpty)
+    }
+
+    var endGameButton: some View {
+        Button(viewModel.gameEndText) {
+            withAnimation {
+                viewModel.endGame()
+                router.path.removeLast()
+            }
+        }
+        .padding()
     }
 }
 
