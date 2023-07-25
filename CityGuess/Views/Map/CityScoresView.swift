@@ -23,13 +23,12 @@ struct CityScoresView: View {
                 .font(.title2)
                 .padding()
 
-            if dynamicTypeSize > .xLarge {
-                scoreGauges
-            } else {
-                LazyVGrid(columns: gridItems) {
-                    scoreGauges
+            scoreGauges
+                .if(dynamicTypeSize <= .xLarge) { scoreGauges in
+                    LazyVGrid(columns: gridItems) {
+                        scoreGauges
+                    }
                 }
-            }
         }
     }
 

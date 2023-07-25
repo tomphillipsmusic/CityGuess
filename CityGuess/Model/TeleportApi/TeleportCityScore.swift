@@ -30,6 +30,9 @@ struct CityScore: Codable {
 
 #if DEBUG
 extension CityScore {
-    static let testData = Array(repeating: CityScore(name: "Weather", scoreOutOf10: Double(Int.random(in: 0...10))), count: 10)
+    static let testData = Array(repeating: CityScore(
+        name: "Weather",
+        scoreOutOf10: Double(Int.random(in: 0...10)
+    )), count: 10)
 }
 #endif
