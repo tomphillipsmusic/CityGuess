@@ -52,8 +52,9 @@ struct ExploreCitiesView: View {
             .sheet(isPresented: $isShowingInfoSheet) {
                 OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
-            .fullScreenCover(item: $viewModel.selectedCity) { selectedCity in
+            .sheet(item: $viewModel.selectedCity) { selectedCity in
                 LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: selectedCity))
+                    .dismissable()
             }
     }
 }

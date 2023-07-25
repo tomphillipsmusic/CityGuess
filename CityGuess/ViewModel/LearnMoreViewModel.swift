@@ -13,6 +13,14 @@ class LearnMoreViewModel: ViewModel {
     let city: TeleportCity
     let guessHistory: CityGuessHistory
 
+    var cityName: String {
+        city.name
+    }
+
+    var guessHistoryLabel: String {
+        guessHistory.label
+    }
+
     var imageUrl: URL? {
         URL(string: guessHistory.urlString)
     }
@@ -33,7 +41,9 @@ class LearnMoreViewModel: ViewModel {
 
     func fetchScores() async {
         if let fetchedScores = try? await TeleportApiClient().fetchScores(for: city) {
-            cityScores = fetchedScores
+            DispatchQueue.main.async {
+                self.cityScores = fetchedScores
+            }
         }
     }
 }
