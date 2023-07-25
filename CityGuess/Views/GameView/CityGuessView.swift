@@ -37,17 +37,9 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 withAnimation(.linear(duration: 1.0)) {
                     viewModel.submit(guess: cityName)
-
-                    let imageToUpdate: CityImage
-                    
-                    if viewModel.isCorrect {
-                        imageToUpdate = CityImage(title: cityName, url: viewModel.currentCityImage.url)
-                    } else {
-                        let correctCityName = viewModel.cities.first(where: { viewModel.currentCityImage.title.caseInsensitiveContains($0.name)})?.name
-                        imageToUpdate = CityImage(title: correctCityName ?? "", url: viewModel.currentCityImage.url)
+                    if let formattedImage = formatImageForHistoryStorage(ofCityNamed: cityName) {
+                        gameHistory.updateHistory(forImage: formattedImage, with: viewModel.isCorrect ? .right : .wrong)
                     }
-                    
-                    gameHistory.updateHistory(forImage: imageToUpdate, with: viewModel.isCorrect ? .right : .wrong)
                 }
 
                 self.guess = ""
@@ -78,6 +70,25 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             Text(viewModel.roundLabelText)
                 .font(.title3)
         }
+    }
+
+    func formatImageForHistoryStorage(ofCityNamed cityName: String) -> CityImage? {
+        let image: CityImage
+
+        // Replaces image name with name of the city since the city name is the key of the history dictionary
+        if viewModel.isCorrect {
+            image = CityImage(title: cityName, url: viewModel.currentCityImage.url)
+        } else {
+
+            if let correctCityName = viewModel.cities.first(where: { city in viewModel.currentCityImage.title.caseInsensitiveContains(city.name)
+            })?.name {
+                image = CityImage(title: correctCityName, url: viewModel.currentCityImage.url)
+            } else {
+                return nil
+            }
+        }
+
+        return image
     }
 }
 
