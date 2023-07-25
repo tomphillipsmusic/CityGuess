@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct CityMapView: UIViewRepresentable {
-    @Binding var selectedCityHistory: 
+    @Binding var selectedCityHistory: CityGuessHistory?
     var locationManager = CLLocationManager()
     let annotations: [CityMapAnnotation]
 
