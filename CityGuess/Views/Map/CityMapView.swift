@@ -9,12 +9,15 @@ import SwiftUI
 import MapKit
 
 struct CityMapView: UIViewRepresentable {
-    @Binding var selectedCityHistory: CityGuessHistory?
+    @Binding var selectedCityHistory: 
     var locationManager = CLLocationManager()
     let annotations: [CityMapAnnotation]
 
-    init(cityCoordinates: [CityCoordinate], guessHistory: [String: CityGuessHistory], selectedCityHistory: Binding<CityGuessHistory?>) {
-
+    init(
+        cityCoordinates: [CityCoordinate],
+        guessHistory: [String: CityGuessHistory],
+        selectedCityHistory: Binding<CityGuessHistory?>
+    ) {
         annotations = cityCoordinates.filter { guessHistory[$0.name] != nil }.compactMap {
             if guessHistory[$0.name] != nil {
                 return CityMapAnnotation(cityCoordinate: $0, history: guessHistory[$0.name]!)

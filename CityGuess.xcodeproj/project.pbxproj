@@ -44,6 +44,7 @@
 		3E39A2A12A57604D00C9B72B /* OnboardingToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A02A57604D00C9B72B /* OnboardingToolbarButton.swift */; };
 		3E39A2A32A588CEF00C9B72B /* ProgressGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A22A588CEF00C9B72B /* ProgressGauge.swift */; };
 		3E43DD2E2A701E5000F85C69 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43DD2D2A701E5000F85C69 /* View+If.swift */; };
+		3E43DD312A7022E900F85C69 /* CityScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43DD302A7022E900F85C69 /* CityScoresView.swift */; };
 		3E46E3F42A3895B500ED3646 /* CityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F32A3895B500ED3646 /* CityMapView.swift */; };
 		3E46E3F62A38A6D900ED3646 /* CityMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */; };
 		3E46E3F82A38C27400ED3646 /* CityMapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */; };
@@ -150,6 +151,7 @@
 		3E39A2A02A57604D00C9B72B /* OnboardingToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbarButton.swift; sourceTree = "<group>"; };
 		3E39A2A22A588CEF00C9B72B /* ProgressGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressGauge.swift; sourceTree = "<group>"; };
 		3E43DD2D2A701E5000F85C69 /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
+		3E43DD302A7022E900F85C69 /* CityScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityScoresView.swift; sourceTree = "<group>"; };
 		3E46E3F32A3895B500ED3646 /* CityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapView.swift; sourceTree = "<group>"; };
 		3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapAnnotation.swift; sourceTree = "<group>"; };
 		3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewCoordinator.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */,
 				3E093C592A6AB5F200C7D28B /* SafariWebView.swift */,
 				3E5973CA2A6EC2BA00C43CB6 /* LearnMoreView.swift */,
+				3E43DD302A7022E900F85C69 /* CityScoresView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
 				3E25FC0E2A1C0D850040E50C /* MainMenuButton.swift in Sources */,
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
+				3E43DD312A7022E900F85C69 /* CityScoresView.swift in Sources */,
 				3E39A2A32A588CEF00C9B72B /* ProgressGauge.swift in Sources */,
 				3E46E3F62A38A6D900ED3646 /* CityMapAnnotation.swift in Sources */,
 				3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */,

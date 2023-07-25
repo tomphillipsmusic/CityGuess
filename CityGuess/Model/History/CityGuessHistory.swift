@@ -23,9 +23,19 @@ struct CityGuessHistory: Identifiable, Codable {
 #if DEBUG
 extension CityGuessHistory {
     static let testData = [
-        "New Detroit": CityGuessHistory(name: "New Detroit", guessStatus: .right, urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"),
-        "New York": CityGuessHistory(name: "New York", guessStatus: .right, urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"),
-        "New Orleans": CityGuessHistory(name: "New Orleans", guessStatus: .wrong, urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
+        "New Detroit": CityGuessHistory(
+            name: "New Detroit",
+            guessStatus: .right,
+            urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"
+        ),
+        "New York": CityGuessHistory(
+            name: "New York",
+            guessStatus: .right,
+            urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"),
+        "New Orleans": CityGuessHistory(
+            name: "New Orleans",
+            guessStatus: .wrong,
+            urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
     ]
 }
 #endif

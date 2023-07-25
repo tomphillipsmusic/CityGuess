@@ -15,7 +15,7 @@ struct LearnMoreView: View {
             heading
             cityImage
             learnMoreButton
-            cityStats
+            CityScoresView(cityScores: viewModel.cityScores)
         }
         .task {
             await viewModel.fetchScores()
@@ -52,28 +52,19 @@ struct LearnMoreView: View {
     }
 
     var learnMoreButton: some View {
-        Link("Learn More", destination: viewModel.learnMoreUrl!)
-            .disabled(viewModel.learnMoreUrl == nil)
-            .padding()
-    }
-
-    var cityStats: some View {
-        VStack {
-            Text("Stats")
-                .font(.title2)
+        Link(destination: viewModel.learnMoreUrl!) {
+            Text("Learn More")
+                .font(.title)
+                .disabled(viewModel.learnMoreUrl == nil)
                 .padding()
-            ForEach(viewModel.cityScores, id: \.name) { score in
-                ProgressGauge(numberCompleted: Int(score.scoreOutOf10), totalNumber: 10, label: score.name)
-                    .padding()
-            }
         }
     }
 }
 
 struct LearnMoreView_Previews: PreviewProvider {
     static var previews: some View {
-        LearnMoreView(viewModel: LearnMoreViewModel( guessHistory: CityGuessHistory (
-                    name: "Detrpot",
+        LearnMoreView(viewModel: LearnMoreViewModel( guessHistory: CityGuessHistory(
+                    name: "Detroit",
                     urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
                 )
         )

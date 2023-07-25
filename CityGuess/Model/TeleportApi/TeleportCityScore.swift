@@ -12,9 +12,14 @@ struct CityScore: Codable {
     let scoreOutOf10: Double
 
     init(from decoder: Decoder) throws {
-        let container: KeyedDecodingContainer<CityScore.CodingKeys> = try decoder.container(keyedBy: CityScore.CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: CityScore.CodingKeys.name)
-        self.scoreOutOf10 = try container.decode(Double.self, forKey: CityScore.CodingKeys.scoreOutOf10)
+        let container: KeyedDecodingContainer<CodingKeys> = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: CodingKeys.name)
+        self.scoreOutOf10 = try container.decode(Double.self, forKey: CodingKeys.scoreOutOf10)
+    }
+
+    init(name: String, scoreOutOf10: Double) {
+        self.name = name
+        self.scoreOutOf10 = scoreOutOf10
     }
 
     enum CodingKeys: String, CodingKey {
@@ -22,3 +27,9 @@ struct CityScore: Codable {
         case scoreOutOf10 = "score_out_of_10"
     }
 }
+
+#if DEBUG
+extension CityScore {
+    static let testData = Array(repeating: CityScore(name: "Weather", scoreOutOf10: Double(Int.random(in: 0...10))), count: 10)
+}
+#endif
