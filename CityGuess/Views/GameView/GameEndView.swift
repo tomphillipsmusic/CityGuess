@@ -87,7 +87,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         NavigationLink("Review Cities") {
             TabView {
                 ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
-                    LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: guessHistory))
+                    CityDetailView(viewModel: CityDetailViewModel(guessHistory: guessHistory))
                 }
             }
             .tabViewStyle(.page)

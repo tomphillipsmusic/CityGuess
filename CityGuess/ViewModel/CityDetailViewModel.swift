@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class LearnMoreViewModel: ViewModel {
+class CityDetailViewModel: ViewModel {
     @Published var cityScores: [CityScore] = []
 
     let city: TeleportCity

@@ -45,6 +45,7 @@
 		3E39A2A32A588CEF00C9B72B /* ProgressGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39A2A22A588CEF00C9B72B /* ProgressGauge.swift */; };
 		3E43DD2E2A701E5000F85C69 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43DD2D2A701E5000F85C69 /* View+If.swift */; };
 		3E43DD312A7022E900F85C69 /* CityScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43DD302A7022E900F85C69 /* CityScoresView.swift */; };
+		3E43DD332A71776400F85C69 /* FlippableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43DD322A71776400F85C69 /* FlippableContent.swift */; };
 		3E46E3F42A3895B500ED3646 /* CityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F32A3895B500ED3646 /* CityMapView.swift */; };
 		3E46E3F62A38A6D900ED3646 /* CityMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */; };
 		3E46E3F82A38C27400ED3646 /* CityMapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */; };
@@ -54,8 +55,8 @@
 		3E46E4042A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */; };
 		3E46F9C62A4CC4C200EA67ED /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46F9C52A4CC4C200EA67ED /* OnboardingView.swift */; };
 		3E46F9C82A4CC4DB00EA67ED /* OnboardingDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46F9C72A4CC4DB00EA67ED /* OnboardingDetailRow.swift */; };
-		3E5973CB2A6EC2BA00C43CB6 /* LearnMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5973CA2A6EC2BA00C43CB6 /* LearnMoreView.swift */; };
-		3E5973CD2A6ECEB000C43CB6 /* LearnMoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5973CC2A6ECEB000C43CB6 /* LearnMoreViewModel.swift */; };
+		3E5973CB2A6EC2BA00C43CB6 /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5973CA2A6EC2BA00C43CB6 /* CityDetailView.swift */; };
+		3E5973CD2A6ECEB000C43CB6 /* CityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5973CC2A6ECEB000C43CB6 /* CityDetailViewModel.swift */; };
 		3E5FF33029FAFCFA00851A11 /* SequenceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */; };
 		3E64ADA729DEFD5300DCCF2E /* CityGuessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */; };
 		3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64ADA829DEFD5300DCCF2E /* GameView.swift */; };
@@ -152,6 +153,7 @@
 		3E39A2A22A588CEF00C9B72B /* ProgressGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressGauge.swift; sourceTree = "<group>"; };
 		3E43DD2D2A701E5000F85C69 /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
 		3E43DD302A7022E900F85C69 /* CityScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityScoresView.swift; sourceTree = "<group>"; };
+		3E43DD322A71776400F85C69 /* FlippableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableContent.swift; sourceTree = "<group>"; };
 		3E46E3F32A3895B500ED3646 /* CityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapView.swift; sourceTree = "<group>"; };
 		3E46E3F52A38A6D900ED3646 /* CityMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapAnnotation.swift; sourceTree = "<group>"; };
 		3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewCoordinator.swift; sourceTree = "<group>"; };
@@ -161,8 +163,8 @@
 		3E46E4032A42170E00ED3646 /* CityGuessGameHistoryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessGameHistoryManagerTests.swift; sourceTree = "<group>"; };
 		3E46F9C52A4CC4C200EA67ED /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3E46F9C72A4CC4DB00EA67ED /* OnboardingDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDetailRow.swift; sourceTree = "<group>"; };
-		3E5973CA2A6EC2BA00C43CB6 /* LearnMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreView.swift; sourceTree = "<group>"; };
-		3E5973CC2A6ECEB000C43CB6 /* LearnMoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreViewModel.swift; sourceTree = "<group>"; };
+		3E5973CA2A6EC2BA00C43CB6 /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailView.swift; sourceTree = "<group>"; };
+		3E5973CC2A6ECEB000C43CB6 /* CityDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewModel.swift; sourceTree = "<group>"; };
 		3E5FF32F29FAFCFA00851A11 /* SequenceExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensionTests.swift; sourceTree = "<group>"; };
 		3E64ADA329DEFD5300DCCF2E /* CityGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E64ADA629DEFD5300DCCF2E /* CityGuessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuessApp.swift; sourceTree = "<group>"; };
@@ -420,7 +422,7 @@
 				3E46E3F32A3895B500ED3646 /* CityMapView.swift */,
 				3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */,
 				3E093C592A6AB5F200C7D28B /* SafariWebView.swift */,
-				3E5973CA2A6EC2BA00C43CB6 /* LearnMoreView.swift */,
+				3E5973CA2A6EC2BA00C43CB6 /* CityDetailView.swift */,
 				3E43DD302A7022E900F85C69 /* CityScoresView.swift */,
 			);
 			path = Map;
@@ -472,7 +474,7 @@
 				3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */,
 				3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */,
 				3EF5BF502A1FA499006B5DE8 /* ExploreCitiesViewModel.swift */,
-				3E5973CC2A6ECEB000C43CB6 /* LearnMoreViewModel.swift */,
+				3E5973CC2A6ECEB000C43CB6 /* CityDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -514,6 +516,7 @@
 				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
 				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
 				3ED91B3E2A55C5F1006D25D0 /* GameErrorView.swift */,
+				3E43DD322A71776400F85C69 /* FlippableContent.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
 				3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */,
+				3E43DD332A71776400F85C69 /* FlippableContent.swift in Sources */,
 				3EDE43E52A6F05B3009B4E59 /* TeleportCityScore.swift in Sources */,
 				3E46F9C82A4CC4DB00EA67ED /* OnboardingDetailRow.swift in Sources */,
 				3EC3688D29F302A600AE92D9 /* FloatingAnimationView.swift in Sources */,
@@ -715,7 +719,7 @@
 				3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */,
 				3E25FC0A2A1C0B8C0040E50C /* City.swift in Sources */,
 				3EF5BF592A1FAB61006B5DE8 /* CoordinateFetching.swift in Sources */,
-				3E5973CD2A6ECEB000C43CB6 /* LearnMoreViewModel.swift in Sources */,
+				3E5973CD2A6ECEB000C43CB6 /* CityDetailViewModel.swift in Sources */,
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
 				3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */,
@@ -735,7 +739,7 @@
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,
 				3EF5BF532A1FAAB7006B5DE8 /* Coordinate.swift in Sources */,
-				3E5973CB2A6EC2BA00C43CB6 /* LearnMoreView.swift in Sources */,
+				3E5973CB2A6EC2BA00C43CB6 /* CityDetailView.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */,
 				3EEF7F7129EEEC8E00EEBE9D /* AutofillSuggestionsView.swift in Sources */,
 				3E46E3F42A3895B500ED3646 /* CityMapView.swift in Sources */,

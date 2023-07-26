@@ -37,29 +37,20 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
         Task {
             try? await fetchCoordinates(for: city)
         }
-//
-//        if let defaultCoordinates = try? Bundle.main.decode(
-//            [Service.CityCoordinateModel].self,
-//                        from: "InitialCityCoordinates.json"
-//        ) {
-//
-//        }
-
     }
 
     func fetchCoordinates() async {
         do {
             let cities = try await fetchCities()
-
+            
             if let defaultCoordinates = try? Bundle.main.decode(
-                [CityCoordinate].self,
+                [Service.CityCoordinateModel].self,
                 from: "InitialCityCoordinates.json"
-            ),
-                let genericCoordinates = defaultCoordinates as? [Service.CityCoordinateModel] {
-                    coordinates = genericCoordinates
-                    coordinatesService.save(coordinates)
+            ) {
+                coordinates = defaultCoordinates
+                coordinatesService.save(coordinates)
             }
-
+            
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)
         } catch {
             isShowingError = true

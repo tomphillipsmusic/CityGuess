@@ -53,7 +53,7 @@ struct ExploreCitiesView: View {
                 OnboardingView(firstTime: $isShowingInfoSheet, onboarding: .exploreCitiesOnboarding)
             }
             .sheet(item: $viewModel.selectedCity) { selectedCity in
-                LearnMoreView(viewModel: LearnMoreViewModel(guessHistory: selectedCity))
+                CityDetailView(viewModel: CityDetailViewModel(guessHistory: selectedCity))
                     .dismissable()
             }
     }
