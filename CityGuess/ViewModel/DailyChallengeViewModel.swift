@@ -22,6 +22,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
 
+    var roundOptions: [Int] = [5, 10]
+
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 
     var cities: [TeleportCity] = []
