@@ -12,6 +12,7 @@ typealias CityGuessHistoryDictionary = [String: CityGuessHistory]
 class CityGuessGameHistoryManager: ObservableObject {
     @AppStorage("totalNumberOfCities") var totalNumberOfCities: Int = 0
     @Published private(set) var guessHistory: CityGuessHistoryDictionary = [:]
+    @Published var roundHistory = CityGuessHistoryDictionary()
     @Published private(set) var newCitiesSeen = 0
     @Published private(set) var newCitiesGuessedCorrectly = 0
     @Published var roundStartTotalCitiesSeen = 0
@@ -53,7 +54,10 @@ class CityGuessGameHistoryManager: ObservableObject {
         }
     }
 
-    func updateHistory(forCityNamed cityName: String, with status: CityGuessStatus) {
+    func updateHistory(forImage cityImage: CityImage, with status: CityGuessStatus) {
+        let cityName = cityImage.title
+        roundHistory[cityName] = CityGuessHistory(name: cityName, guessStatus: status, urlString: cityImage.url)
+
         if guessHistory[cityName] != nil {
             let hasAlreadyBeenGuessedCorrectly = guessHistory[cityName]?.guessStatus == .right
 
@@ -63,7 +67,7 @@ class CityGuessGameHistoryManager: ObservableObject {
             }
 
         } else {
-            guessHistory[cityName] = CityGuessHistory(name: cityName)
+            guessHistory[cityName] = CityGuessHistory(name: cityName, urlString: cityImage.url)
             guessHistory[cityName]?.guessStatus = status
             updateRoundHistory(guessStatus: status)
         }
@@ -79,6 +83,7 @@ class CityGuessGameHistoryManager: ObservableObject {
     func resetRoundHistory(withTotalNumberOfCities totalCitiesSeen: Int) {
         newCitiesSeen = 0
         newCitiesGuessedCorrectly = 0
+        roundHistory = [:]
         roundStartTotalCitiesSeen = totalCitiesSeen
         roundStartTotalCitiesGuessedCorrectly = citiesGuessedCorrectly
         self.totalNumberOfCities = totalCitiesSeen

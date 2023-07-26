@@ -9,12 +9,12 @@ import MapKit
 
 @MainActor
 class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetching>: ViewModel, ErrorAlertable
-where Service.CityModel == CityFetcher.CityModel {
+where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: Decodable {
 
     @Published var coordinates: [Service.CityCoordinateModel] = []
     @Published var isShowingError = false
     @Published var errorMessage = "Error"
-    @Published var learnMoreUrl: URL?
+    @Published var selectedCity: CityGuessHistory?
 
     let citiesClient: CityFetcher
     let coordinatesService: Service
@@ -30,20 +30,41 @@ where Service.CityModel == CityFetcher.CityModel {
         }
     }
 
+    init(city: Service.CityModel,
+         citiesClient: CityFetcher = TeleportApiClient(),
+         coordinatesService: Service = TeleportCoordinatesService()
+    ) {
+        self.citiesClient = citiesClient
+        self.coordinatesService = coordinatesService
+
+        Task {
+            try? await fetchCoordinates(for: city)
+        }
+    }
+
     func fetchCoordinates() async {
         do {
             let cities = try await fetchCities()
 
             if let defaultCoordinates = try? Bundle.main.decode(
-                [CityCoordinate].self,
+                [Service.CityCoordinateModel].self,
                 from: "InitialCityCoordinates.json"
-            ),
-                let genericCoordinates = defaultCoordinates as? [Service.CityCoordinateModel] {
-                    coordinates = genericCoordinates
-                    coordinatesService.save(coordinates)
+            ) {
+                coordinates = defaultCoordinates
+                coordinatesService.save(coordinates)
             }
 
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)
+        } catch {
+            isShowingError = true
+            errorMessage = "There was an error loading city data. Please try again later."
+        }
+    }
+
+    func fetchCoordinates(for city: Service.CityModel) async throws {
+        do {
+            let cityCoordinates = try await coordinatesService.fetchCoordinates(for: city)
+            coordinates = [cityCoordinates]
         } catch {
             isShowingError = true
             errorMessage = "There was an error loading city data. Please try again later."

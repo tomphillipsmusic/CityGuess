@@ -31,5 +31,5 @@ struct LocalCityService: CityService {
 
     func save<T: City>(_ cities: [T]) throws where T: City, T: Encodable {
         fileHandler.write(cities, to: Self.citiesFile)
-    }    
+    }
 }

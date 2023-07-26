@@ -20,15 +20,20 @@ class TeleportCoordinatesService: CoordinatesService {
             coordinates = savedCoordinates
         } else {
             for city in cities {
-                let coordinateBox = try await client.fetchCoordinateBox(for: city)
-                let coordinate = calculateCoordinates(from: coordinateBox, named: city.name)
-                coordinates.append(coordinate)
+                if let cityCoordinates = try? await fetchCoordinates(for: city) {
+                    coordinates.append(cityCoordinates)
+                }
             }
 
             save(coordinates)
         }
 
         return coordinates
+    }
+
+    func fetchCoordinates(for city: TeleportCity) async throws -> CityCoordinate {
+        let coordinateBox = try await client.fetchCoordinateBox(for: city)
+        return calculateCoordinates(from: coordinateBox, named: city.name)
     }
 
     func calculateCoordinates(

@@ -18,7 +18,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var body: some View {
 
         VStack {
-
             ZStack {
                 ZoomableScrollView {
                     image
@@ -38,7 +37,9 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
                 withAnimation(.linear(duration: 1.0)) {
                     viewModel.submit(guess: cityName)
-                    gameHistory.updateHistory(forCityNamed: cityName, with: viewModel.isCorrect ? .right : .wrong)
+                    if let formattedImage = formatImageForHistoryStorage(ofCityNamed: cityName) {
+                        gameHistory.updateHistory(forImage: formattedImage, with: viewModel.isCorrect ? .right : .wrong)
+                    }
                 }
 
                 self.guess = ""
@@ -69,6 +70,26 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             Text(viewModel.roundLabelText)
                 .font(.title3)
         }
+    }
+
+    func formatImageForHistoryStorage(ofCityNamed cityName: String) -> CityImage? {
+        let image: CityImage
+
+        // Replaces image name with name of the city since the city name is the key of the history dictionary
+        if viewModel.isCorrect {
+            image = CityImage(title: cityName, url: viewModel.currentCityImage.url)
+        } else {
+
+            if let correctCityName = viewModel.cities.first(where: { city in
+                viewModel.currentCityImage.title.caseInsensitiveContains(city.name)
+            })?.name {
+                image = CityImage(title: correctCityName, url: viewModel.currentCityImage.url)
+            } else {
+                return nil
+            }
+        }
+
+        return image
     }
 }
 

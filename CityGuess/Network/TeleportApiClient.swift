@@ -14,6 +14,7 @@ actor TeleportApiClient: CityFetching {
     enum Endpoint {
         static let urbanAreas = "urban_areas"
         static let images = "images"
+        static let scores = "scores"
     }
 
     private let baseUrl = "https://api.teleport.org/api/"
@@ -50,4 +51,9 @@ actor TeleportApiClient: CityFetching {
         return response.boundingBox.latlon
     }
 
+    func fetchScores(for city: TeleportCity) async throws -> [CityScore] {
+        let url = "\(city.href)\(Endpoint.scores)"
+        let response: TeleportCityScoresResponse = try await NetworkManager.shared.fetch(from: url)
+        return response.categories
+    }
 }
