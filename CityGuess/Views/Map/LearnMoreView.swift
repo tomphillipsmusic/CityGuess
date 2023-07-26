@@ -13,7 +13,7 @@ struct LearnMoreView: View {
     @StateObject var exploreCityViewModel: ExploreCitiesViewModel<TeleportCoordinatesService, TeleportApiClient>
     @State private var degrees: Double = 0
     @State private var coordinateRegion = MKCoordinateRegion()
-    
+
     init(viewModel: LearnMoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
         _exploreCityViewModel = StateObject(wrappedValue: ExploreCitiesViewModel(city: viewModel.city, citiesClient: TeleportApiClient(), coordinatesService: TeleportCoordinatesService()))
@@ -22,32 +22,36 @@ struct LearnMoreView: View {
     var body: some View {
         VStack {
             heading
-        
-            Group {
-                if degrees == 0 {
-                    cityImage
-                } else {
-                    CityMapView(
-                        cityCoordinates: exploreCityViewModel.coordinates,
-                        guessHistory: [viewModel.cityName: viewModel.guessHistory],
-                        selectedCityHistory: $exploreCityViewModel.selectedCity
-                    )
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .cornerRadius(20)
-                    .padding()
+
+            GeometryReader { geo in
+                Group {
+                    if degrees == 0 {
+                        cityImage
+                    } else {
+                        CityMapView(
+                            cityCoordinates: exploreCityViewModel.coordinates,
+                            guessHistory: [viewModel.cityName: viewModel.guessHistory],
+                            selectedCityHistory: $exploreCityViewModel.selectedCity
+                        )
+                        .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                        .cornerRadius(20)
+                        .padding()
+                    }
+
                 }
-                
-            }
-            .rotation3DEffect(.degrees(degrees), axis: (x: 0, y: 1, z: 0))
-            .onTapGesture {
-                withAnimation {
-                    degrees = degrees == 0 ? 180 : 0
+                .rotation3DEffect(.degrees(degrees), axis: (x: 0, y: 1, z: 0))
+                .frame(width: geo.size.width, height: geo.size.height)
+                .onTapGesture {
+                    withAnimation {
+                        degrees = degrees == 0 ? 180 : 0
+                    }
+
                 }
             }
-            
+
             learnMoreButton
             Divider()
-            
+
             ScrollView {
                 CityScoresView(cityScores: viewModel.cityScores)
             }
@@ -98,9 +102,9 @@ struct LearnMoreView: View {
 struct LearnMoreView_Previews: PreviewProvider {
     static var previews: some View {
         LearnMoreView(viewModel: LearnMoreViewModel( guessHistory: CityGuessHistory(
-                    name: "Detroit",
-                    urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
-                )
+            name: "Detroit",
+            urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
+        )
         )
     }
 }
