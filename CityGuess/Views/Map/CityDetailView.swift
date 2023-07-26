@@ -14,7 +14,11 @@ struct CityDetailView: View {
 
     init(viewModel: CityDetailViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        _exploreCityViewModel = StateObject(wrappedValue: ExploreCitiesViewModel(city: viewModel.city, citiesClient: TeleportApiClient(), coordinatesService: TeleportCoordinatesService()))
+        _exploreCityViewModel = StateObject(wrappedValue: ExploreCitiesViewModel(
+            city: viewModel.city,
+            citiesClient: TeleportApiClient(),
+            coordinatesService: TeleportCoordinatesService()
+        ))
     }
 
     var body: some View {

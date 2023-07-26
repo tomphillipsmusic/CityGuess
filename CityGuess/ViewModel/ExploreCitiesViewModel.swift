@@ -30,7 +30,10 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
         }
     }
 
-    init(city: Service.CityModel, citiesClient: CityFetcher = TeleportApiClient(), coordinatesService: Service = TeleportCoordinatesService()) {
+    init(city: Service.CityModel,
+         citiesClient: CityFetcher = TeleportApiClient(),
+         coordinatesService: Service = TeleportCoordinatesService()
+    ) {
         self.citiesClient = citiesClient
         self.coordinatesService = coordinatesService
 
@@ -42,7 +45,7 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
     func fetchCoordinates() async {
         do {
             let cities = try await fetchCities()
-            
+
             if let defaultCoordinates = try? Bundle.main.decode(
                 [Service.CityCoordinateModel].self,
                 from: "InitialCityCoordinates.json"
@@ -50,7 +53,7 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
                 coordinates = defaultCoordinates
                 coordinatesService.save(coordinates)
             }
-            
+
             coordinates = try await coordinatesService.fetchCoordinates(for: cities)
         } catch {
             isShowingError = true

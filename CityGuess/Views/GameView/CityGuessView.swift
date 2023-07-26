@@ -80,7 +80,8 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             image = CityImage(title: cityName, url: viewModel.currentCityImage.url)
         } else {
 
-            if let correctCityName = viewModel.cities.first(where: { city in viewModel.currentCityImage.title.caseInsensitiveContains(city.name)
+            if let correctCityName = viewModel.cities.first(where: { city in
+                viewModel.currentCityImage.title.caseInsensitiveContains(city.name)
             })?.name {
                 image = CityImage(title: correctCityName, url: viewModel.currentCityImage.url)
             } else {
