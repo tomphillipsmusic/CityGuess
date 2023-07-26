@@ -32,11 +32,30 @@ struct CityMapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
+        
+        if annotations.count == 1 {
+            configureSingleCity(mapView)
+        }
+        
+        
         return mapView
     }
 
     func updateUIView(_ mapView: MKMapView, context: Context) {
         mapView.addAnnotations(annotations)
+        
+        if annotations.count == 1 {
+            configureSingleCity(mapView)
+        }
+    }
+    
+    private func configureSingleCity(_ mapView: MKMapView) {
+        if let firstAnnotation = annotations.first {
+            var coordinateSpan = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
+            mapView.region = MKCoordinateRegion(center: firstAnnotation.coordinate, span: coordinateSpan)
+            mapView.isScrollEnabled = false
+            mapView.isZoomEnabled = false
+        }
     }
 
     func makeCoordinator() -> CityMapViewCoordinator {

@@ -9,7 +9,7 @@ import MapKit
 
 @MainActor
 class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetching>: ViewModel, ErrorAlertable
-where Service.CityModel == CityFetcher.CityModel {
+where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: Decodable {
 
     @Published var coordinates: [Service.CityCoordinateModel] = []
     @Published var isShowingError = false
@@ -35,8 +35,16 @@ where Service.CityModel == CityFetcher.CityModel {
         self.coordinatesService = coordinatesService
 
         Task {
-            await try? fetchCoordinates(for: city)
+            try? await fetchCoordinates(for: city)
         }
+//
+//        if let defaultCoordinates = try? Bundle.main.decode(
+//            [Service.CityCoordinateModel].self,
+//                        from: "InitialCityCoordinates.json"
+//        ) {
+//
+//        }
+            
     }
 
     func fetchCoordinates() async {
@@ -61,19 +69,8 @@ where Service.CityModel == CityFetcher.CityModel {
     
     func fetchCoordinates(for city: Service.CityModel) async throws {
         do {
-//            if let defaultCoordinates = try? Bundle.main.decode(
-//                [CityCoordinate].self,
-//                from: "InitialCityCoordinates.json"
-//            ),
-//                let genericCoordinates = defaultCoordinates as? [Service.CityCoordinateModel] {
-//                coordinatesService.save(coordinates)
-//
-//            } else {
-                let cityCoordinates = try await coordinatesService.fetchCoordinates(for: city)
-                coordinates = [cityCoordinates]
-            print(coordinates)
-//            }
-            
+            let cityCoordinates = try await coordinatesService.fetchCoordinates(for: city)
+            coordinates = [cityCoordinates]
         } catch {
             isShowingError = true
             errorMessage = "There was an error loading city data. Please try again later."

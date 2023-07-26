@@ -27,8 +27,6 @@ struct LearnMoreView: View {
                 if degrees == 0 {
                     cityImage
                 } else {
-                   // Map(coordinateRegion: $coordinateRegion)
-                    
                     CityMapView(
                         cityCoordinates: exploreCityViewModel.coordinates,
                         guessHistory: [viewModel.cityName: viewModel.guessHistory],
@@ -47,10 +45,10 @@ struct LearnMoreView: View {
                 }
             }
             
+            learnMoreButton
+            Divider()
+            
             ScrollView {
-                
-                learnMoreButton
-                Divider()
                 CityScoresView(cityScores: viewModel.cityScores)
             }
         }
@@ -80,6 +78,7 @@ struct LearnMoreView: View {
                 ProgressView()
             case .failure:
                 Image(systemName: "building.2")
+                    .foregroundColor(viewModel.guessHistoryLabelColor)
             @unknown default:
                 Text("Unknown error has occured")
             }
