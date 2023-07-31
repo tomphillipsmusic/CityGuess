@@ -61,7 +61,6 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var scoreLabel: some ToolbarContent {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Text(viewModel.scoreLabelText)
-                    .font(.title2)
             }
     }
 
@@ -95,6 +94,10 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
 struct CityGuessView_Previews: PreviewProvider {
     static var previews: some View {
-        CityGuessView(viewModel: TrainingViewModel(), image: Image(systemName: "building"))
+        NavigationStack {
+            CityGuessView(viewModel: TrainingViewModel(), image: Image(systemName: "building"))
+                .navigationTitle("Training")
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
