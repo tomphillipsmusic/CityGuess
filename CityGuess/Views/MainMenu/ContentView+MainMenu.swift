@@ -10,9 +10,7 @@ import SwiftUI
 extension ContentView {
     var mainMenu: some View {
         ZStack {
-            if dynamicTypeSize < .accessibility1 {
-                menuBackgroud
-            }
+            menuBackgroud
 
             VStack {
                 dailyChallengeButton
