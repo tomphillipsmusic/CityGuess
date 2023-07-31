@@ -24,7 +24,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             progressGauges
 
             if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
-                LottieView(animationType: .skyscraper)
+                LottieView(animationType: .skyscraper, removeWhenFinished: false)
             }
 
             reviewCitiesButton

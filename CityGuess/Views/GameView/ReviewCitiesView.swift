@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReviewCitiesView: View {
     @EnvironmentObject var historyManager: CityGuessGameHistoryManager
-    
+
     var body: some View {
             TabView {
                 ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
