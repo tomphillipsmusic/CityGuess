@@ -26,9 +26,8 @@ extension Onboarding {
     static let cityGuessOnboarding = Onboarding(
         title: "Welcome to City Guess!",
         description: """
-                     A fun game to test how well you can recognize photos of cities from all
-                     over the world! Can you correctly guess all of the cities and become a
-                     true city guesser?
+                    A fun game to test how well you can recognize photos of cities from all over the world!
+                    Can you correctly guess all of the cities and become a true city guesser?
                     """,
         image: Image("cityguess-logo"),
         details: [
