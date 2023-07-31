@@ -85,18 +85,9 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var reviewCitiesButton: some View {
         NavigationLink("Review Cities") {
-            TabView {
-                ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
-                    CityDetailView(viewModel: CityDetailViewModel(guessHistory: guessHistory))
-                }
-            }
-            .tabViewStyle(.page)
+            ReviewCitiesView()
         }
         .disabled(historyManager.roundHistory.isEmpty)
-        .onAppear {
-            UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.label
-            UIPageControl.appearance().pageIndicatorTintColor = UIColor.secondaryLabel
-        }
     }
 
     var endGameButton: some View {
