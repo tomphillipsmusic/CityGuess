@@ -71,7 +71,7 @@
 		3E9C7D4B29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */; };
 		3E9EC5C12A02A75E006E79E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EC5C02A02A75E006E79E9 /* ContentView.swift */; };
 		3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */; };
-		3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */; };
+		3EADE8292A1CF9C0004ADEC2 /* ProgressMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8282A1CF9C0004ADEC2 /* ProgressMapView.swift */; };
 		3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175A29F84CF100A0B353 /* ProgressBar.swift */; };
 		3EBC175F29F851D800A0B353 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175E29F851D800A0B353 /* Question.swift */; };
 		3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC176029F86B3E00A0B353 /* skyscraper.json */; };
@@ -182,7 +182,7 @@
 		3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeViewModel.swift; sourceTree = "<group>"; };
 		3E9EC5C02A02A75E006E79E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlockable.swift; sourceTree = "<group>"; };
-		3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCitiesView.swift; sourceTree = "<group>"; };
+		3EADE8282A1CF9C0004ADEC2 /* ProgressMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressMapView.swift; sourceTree = "<group>"; };
 		3EBC175A29F84CF100A0B353 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		3EBC175E29F851D800A0B353 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3EBC176029F86B3E00A0B353 /* skyscraper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skyscraper.json; sourceTree = "<group>"; };
@@ -420,17 +420,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3EADE8272A1CF999004ADEC2 /* Map */ = {
+		3EADE8272A1CF999004ADEC2 /* ProgressMap */ = {
 			isa = PBXGroup;
 			children = (
-				3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */,
+				3EADE8282A1CF9C0004ADEC2 /* ProgressMapView.swift */,
 				3E46E3F32A3895B500ED3646 /* CityMapView.swift */,
 				3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */,
 				3E093C592A6AB5F200C7D28B /* SafariWebView.swift */,
 				3E5973CA2A6EC2BA00C43CB6 /* CityDetailView.swift */,
 				3E43DD302A7022E900F85C69 /* CityScoresView.swift */,
 			);
-			path = Map;
+			path = ProgressMap;
 			sourceTree = "<group>";
 		};
 		3EEB999529E467C200514F79 /* Model */ = {
@@ -503,7 +503,7 @@
 				3E46F9C42A4CC4A500EA67ED /* Onboarding */,
 				3E25FC072A1C0B2C0040E50C /* MainMenu */,
 				3EEF7F7329EF03BA00EEBE9D /* GameView */,
-				3EADE8272A1CF999004ADEC2 /* Map */,
+				3EADE8272A1CF999004ADEC2 /* ProgressMap */,
 				3E39A2A42A589D5200C9B72B /* Progress */,
 				3E5FF33129FFFC8F00851A11 /* Animations */,
 			);
@@ -741,7 +741,7 @@
 				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
-				3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */,
+				3EADE8292A1CF9C0004ADEC2 /* ProgressMapView.swift in Sources */,
 				3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */,
 				3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */,
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,

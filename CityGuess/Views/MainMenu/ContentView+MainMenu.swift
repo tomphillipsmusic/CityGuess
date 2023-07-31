@@ -66,7 +66,7 @@ extension ContentView {
         let isLocked = gameHistory.guessHistory.isEmpty
 
         return ZStack {
-            MainMenuButton("Explore Cities") {
+            MainMenuButton("Progress Map") {
                 router.path.append(Router.Screen.explore)
             }
             .disabled(isLocked)

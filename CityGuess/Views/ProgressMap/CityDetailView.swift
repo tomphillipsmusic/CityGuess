@@ -10,11 +10,11 @@ import MapKit
 
 struct CityDetailView: View {
     @StateObject var viewModel: CityDetailViewModel
-    @StateObject var exploreCityViewModel: ExploreCitiesViewModel<TeleportCoordinatesService, TeleportApiClient>
+    @StateObject var exploreCityViewModel: ProgressMapViewModel<TeleportCoordinatesService, TeleportApiClient>
 
     init(viewModel: CityDetailViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        _exploreCityViewModel = StateObject(wrappedValue: ExploreCitiesViewModel(
+        _exploreCityViewModel = StateObject(wrappedValue: ProgressMapViewModel(
             city: viewModel.city,
             citiesClient: TeleportApiClient(),
             coordinatesService: TeleportCoordinatesService()

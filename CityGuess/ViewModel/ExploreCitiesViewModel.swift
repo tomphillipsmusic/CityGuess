@@ -8,7 +8,7 @@
 import MapKit
 
 @MainActor
-class ExploreCitiesViewModel<Service: CoordinatesService, CityFetcher: CityFetching>: ViewModel, ErrorAlertable
+class ProgressMapViewModel<Service: CoordinatesService, CityFetcher: CityFetching>: ViewModel, ErrorAlertable
 where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: Decodable {
 
     @Published var coordinates: [Service.CityCoordinateModel] = []
