@@ -28,8 +28,10 @@ struct CityDetailView: View {
             learnMoreButton
             Divider()
 
-            ScrollView {
-                CityScoresView(cityScores: viewModel.cityScores)
+            if viewModel.shouldDisplayCityStats {
+                ScrollView {
+                    CityScoresView(cityScores: viewModel.cityScores)
+                }
             }
         }
         .task {

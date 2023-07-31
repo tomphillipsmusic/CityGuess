@@ -37,6 +37,10 @@ class CityDetailViewModel: ViewModel {
 
         return URL(string: "https://en.m.wikipedia.org/wiki/\(cityName)")
     }
+    
+    var shouldDisplayCityStats: Bool {
+        !cityScores.isEmpty
+    }
 
     init(guessHistory: CityGuessHistory) {
         self.city = TeleportCity(name: guessHistory.name)
