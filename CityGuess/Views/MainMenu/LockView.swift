@@ -30,26 +30,10 @@ struct LockView: View {
             isPopoverShowing = true
         }
         .popover(isPresented: $isPopoverShowing) {
-            unlockMessageView
+            DismissableMessage(message: unlockHint)
         }
         .if(colorScheme == .dark) { view in
             view.colorInvert()
-        }
-    }
-
-    var unlockMessageView: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Button("Close") {
-                    isPopoverShowing = false
-                }
-                .padding()
-            }
-
-            Spacer()
-            Text(unlockHint)
-            Spacer()
         }
     }
 }

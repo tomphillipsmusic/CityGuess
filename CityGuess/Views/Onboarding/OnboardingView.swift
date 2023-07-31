@@ -46,6 +46,7 @@ struct OnboardingView: View {
             }
         }
         .largeTextScrollView()
+        .dismissable()
     }
 }
 
