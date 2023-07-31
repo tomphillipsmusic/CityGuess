@@ -45,6 +45,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                             }
                         }
                     }
+                    .disabled(viewModel.roundOptions.count <= 1)
                 }
 
                 Button(viewModel.startGameButtonText) {

@@ -13,7 +13,7 @@ struct ProgressGauge: View {
     let label: String
 
     var tintColor: Color {
-        isComplete ? .yellow : .green
+        isComplete ? .mint : .green
     }
     var isComplete: Bool {
         numberCompleted >= totalNumber
