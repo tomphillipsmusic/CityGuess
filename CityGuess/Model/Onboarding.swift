@@ -30,7 +30,7 @@ extension Onboarding {
                      over the world! Can you correctly guess all of the cities and become a
                      true city guesser?
                     """,
-        image: Image(systemName: "building.2"),
+        image: Image("cityguess-logo"),
         details: [
                 Detail(
                     symbol: "medal",
