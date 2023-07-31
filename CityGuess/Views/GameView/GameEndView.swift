@@ -93,6 +93,10 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             .tabViewStyle(.page)
         }
         .disabled(historyManager.roundHistory.isEmpty)
+        .onAppear {
+            UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.label
+            UIPageControl.appearance().pageIndicatorTintColor = UIColor.secondaryLabel
+        }
     }
 
     var endGameButton: some View {
