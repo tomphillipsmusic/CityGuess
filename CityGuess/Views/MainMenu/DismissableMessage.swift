@@ -25,7 +25,7 @@ struct DismissableMessage: View {
             VStack {
                 Spacer()
                 Text(message)
-                   // .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.center)
                     .padding()
                 Spacer()
             }
@@ -36,8 +36,7 @@ struct DismissableMessage: View {
                 .background
                     .opacity(0.9)
             )
-            .cornerRadius(5)
-            .shadow(radius: 0.2)
+
             .background(Image("city-skyline-background"))
         }
         .onDisappear(perform: onDismiss)
