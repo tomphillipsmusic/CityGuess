@@ -22,14 +22,15 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
 
-    var roundOptions: [Int] = [5, 10]
+    var roundOptions: [Int] {
+        [filterValid(cityImages).count]
+    }
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 
     var cities: [TeleportCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
-    let roundLength = 10
 
     let modeTitle: String = "Daily Challenge"
     let gameHeadline: String = "Do you have what it takes to take on the Daily Challenge?"
@@ -59,7 +60,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
         do {
             let cityImages = try await cityFetcher.fetchCityImages().shuffled()
             self.cityImages = filterValid(cityImages)
-            print("City images count: " + "\(cityImages.count)")
+            numberOfRounds = roundOptions[0]
+            questions = resetQuestions()
         } catch {
             errorMessage = "Error loading city images. Please try again later."
             isShowingError = true
