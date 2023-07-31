@@ -33,10 +33,9 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     let modeTitle: String = "Daily Challenge"
     let gameHeadline: String = "Do you have what it takes to take on the Daily Challenge?"
-    let gameDescription: String = """
-        Check in once a day to see some of the latest and greatest city photos from
-        around the world. How many can you guess??
-    """
+    let gameDescription: String = "Check in once a day to see some of the latest"
+        + " and greatest city photos from around the world. How many can you guess??"
+
     let startGameButtonText: String = "Start Daily Challenge"
 
     let notificationDescription: String = """
