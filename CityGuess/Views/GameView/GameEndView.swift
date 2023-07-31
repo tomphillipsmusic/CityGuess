@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
+    @AppStorage("firstTimeCompletingDailyChallange") var firstTimeCompletingDailyChallenge = true
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) var reduceMotionEnabled
     @EnvironmentObject var historyManager: CityGuessGameHistoryManager
@@ -36,12 +37,22 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             UIApplication.shared.endEditing()
 
             if let viewModel = viewModel as? DailyChallengeViewModel {
-                viewModel.scheduleNotification()
+                if !firstTimeCompletingDailyChallenge {
+                    viewModel.scheduleNotification()
+                }
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 withAnimation {
                     hasUpdatedGauges = true
+                }
+            }
+        }
+        .sheet(isPresented: $firstTimeCompletingDailyChallenge) {
+            if let viewModel = viewModel as? DailyChallengeViewModel {
+                DismissableMessage(message: viewModel.notificationDescription) {
+                    viewModel.scheduleNotification()
+                    firstTimeCompletingDailyChallenge = false
                 }
             }
         }

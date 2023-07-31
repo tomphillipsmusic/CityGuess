@@ -39,6 +39,13 @@ class DailyChallengeViewModel: CityGuessViewModel {
     """
     let startGameButtonText: String = "Start Daily Challenge"
 
+    let notificationDescription: String = """
+        Congratulations on completing your first Daily Challenge!\n\n
+        - The next challenge will unlock in 24 hours\n\n
+        - You can opt in to notifications to get a reminder when the next challenge unlocks\n\n
+        - You can adjust notification settings anytime under your device settings
+    """
+
     required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService
         self.cityFetcher = cityFetcher

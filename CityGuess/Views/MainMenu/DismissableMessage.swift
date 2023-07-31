@@ -9,15 +9,38 @@ import SwiftUI
 
 struct DismissableMessage: View {
     let message: String
+    var onDismiss: () -> Void = {}
+
+    init(message: String) {
+        self.message = message
+    }
+
+    init(message: String, onDismiss: @escaping () -> Void) {
+        self.message = message
+        self.onDismiss = onDismiss
+    }
 
     var body: some View {
         VStack {
-            Spacer()
-            Text(message)
-                .padding()
-            Spacer()
+            VStack {
+                Spacer()
+                Text(message)
+                   // .multilineTextAlignment(.center)
+                    .padding()
+                Spacer()
+            }
+            .largeTextScrollView()
+            .dismissable()
+            .padding()
+            .background(
+                .background
+                    .opacity(0.9)
+            )
+            .cornerRadius(5)
+            .shadow(radius: 0.2)
+            .background(Image("city-skyline-background"))
         }
-        .dismissable()
+        .onDisappear(perform: onDismiss)
     }
 }
 
@@ -25,7 +48,7 @@ struct DismissableMessage_Previews: PreviewProvider {
     static var previews: some View {
         Text("First screen")
             .sheet(isPresented: .constant(true)) {
-                DismissableMessage(message: "Hello")
+                DismissableMessage(message: DailyChallengeViewModel().notificationDescription)
             }
     }
 }
