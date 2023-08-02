@@ -107,3 +107,15 @@ class CityGuessGameHistoryManager: ObservableObject {
         try historyService.read(from: Self.cityGuessHistoryFilename)
     }
 }
+
+#if DEBUG
+extension CityGuessGameHistoryManager {
+    func update(_ key: String, with value: CityGuessHistory) {
+        guessHistory[key] = value
+    }
+
+    func update(_ history: CityGuessHistoryDictionary) {
+        guessHistory = history
+    }
+}
+#endif
