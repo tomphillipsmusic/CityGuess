@@ -35,6 +35,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             UIApplication.shared.endEditing()
+            historyManager.saveHistory()
 
             if let viewModel = viewModel as? DailyChallengeViewModel {
                 if !firstTimeCompletingDailyChallenge {
