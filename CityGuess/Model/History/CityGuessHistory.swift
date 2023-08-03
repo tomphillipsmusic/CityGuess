@@ -25,7 +25,7 @@ extension CityGuessHistory {
     static let testData = [
         "New Detroit": CityGuessHistory(
             name: "New Detroit",
-            guessStatus: .right,
+            guessStatus: .wrong,
             urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"
         ),
         "New York": CityGuessHistory(
