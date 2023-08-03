@@ -11,6 +11,7 @@ import Lottie
 struct LottieView: UIViewRepresentable {
 
     var animationType: AnimationType
+    var removeWhenFinished: Bool = true
 
     func makeUIView(context: Context) -> some UIView {
         let view = UIView(frame: .zero)
@@ -22,7 +23,9 @@ struct LottieView: UIViewRepresentable {
         animationView.animationSpeed *= animationType.speedMultiplier
 
         animationView.play { _ in
-            animationView.removeFromSuperview()
+            if removeWhenFinished {
+                animationView.removeFromSuperview()
+            }
         }
 
         animationView.translatesAutoresizingMaskIntoConstraints = false

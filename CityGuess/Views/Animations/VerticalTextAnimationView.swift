@@ -18,7 +18,6 @@ struct VerticalTextAnimationView: View {
             .font(.largeTitle)
             .opacity(viewModel.opacity)
             .onAppear {
-                print(viewModel.text.count)
                 viewModel.beginAnimation()
             }
             .if(viewModel.canOffset) { view in

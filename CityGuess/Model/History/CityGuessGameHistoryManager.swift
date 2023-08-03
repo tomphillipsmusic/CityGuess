@@ -12,6 +12,7 @@ typealias CityGuessHistoryDictionary = [String: CityGuessHistory]
 class CityGuessGameHistoryManager: ObservableObject {
     @AppStorage("totalNumberOfCities") var totalNumberOfCities: Int = 0
     @Published private(set) var guessHistory: CityGuessHistoryDictionary = [:]
+    @Published var tempGuessHistory: CityGuessHistoryDictionary = [:]
     @Published var roundHistory = CityGuessHistoryDictionary()
     @Published private(set) var newCitiesSeen = 0
     @Published private(set) var newCitiesGuessedCorrectly = 0
@@ -55,35 +56,36 @@ class CityGuessGameHistoryManager: ObservableObject {
     }
 
     func updateHistory(forImage cityImage: CityImage, with status: CityGuessStatus) {
+
         let cityName = cityImage.title
         roundHistory[cityName] = CityGuessHistory(name: cityName, guessStatus: status, urlString: cityImage.url)
 
-        if guessHistory[cityName] != nil {
-            let hasAlreadyBeenGuessedCorrectly = guessHistory[cityName]?.guessStatus == .right
+        if tempGuessHistory[cityName] != nil {
+            let hasAlreadyBeenGuessedCorrectly = tempGuessHistory[cityName]?.guessStatus == .right
 
             // Make sure that cities that have been guessed right before stay right
             if !hasAlreadyBeenGuessedCorrectly {
-                guessHistory[cityName]?.guessStatus = status
+                tempGuessHistory[cityName]?.guessStatus = status
             }
 
         } else {
-            guessHistory[cityName] = CityGuessHistory(name: cityName, urlString: cityImage.url)
-            guessHistory[cityName]?.guessStatus = status
+            tempGuessHistory[cityName] = CityGuessHistory(name: cityName, urlString: cityImage.url)
+            tempGuessHistory[cityName]?.guessStatus = status
             updateRoundHistory(guessStatus: status)
         }
 
         if status == .right {
-            guessHistory[cityName]?.timesGuessedCorrectly += 1
+            tempGuessHistory[cityName]?.timesGuessedCorrectly += 1
         }
 
-        guessHistory[cityName]?.timesSeen += 1
-        saveHistory()
+        tempGuessHistory[cityName]?.timesSeen += 1
     }
 
     func resetRoundHistory(withTotalNumberOfCities totalCitiesSeen: Int) {
         newCitiesSeen = 0
         newCitiesGuessedCorrectly = 0
         roundHistory = [:]
+        tempGuessHistory = guessHistory
         roundStartTotalCitiesSeen = totalCitiesSeen
         roundStartTotalCitiesGuessedCorrectly = citiesGuessedCorrectly
         self.totalNumberOfCities = totalCitiesSeen
@@ -98,6 +100,7 @@ class CityGuessGameHistoryManager: ObservableObject {
     }
 
     func saveHistory() {
+        guessHistory = tempGuessHistory
         historyService.write(guessHistory, to: Self.cityGuessHistoryFilename)
     }
 
@@ -105,3 +108,15 @@ class CityGuessGameHistoryManager: ObservableObject {
         try historyService.read(from: Self.cityGuessHistoryFilename)
     }
 }
+
+#if DEBUG
+extension CityGuessGameHistoryManager {
+    func update(_ key: String, with value: CityGuessHistory) {
+        guessHistory[key] = value
+    }
+
+    func update(_ history: CityGuessHistoryDictionary) {
+        guessHistory = history
+    }
+}
+#endif

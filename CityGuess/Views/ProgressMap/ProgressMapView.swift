@@ -8,10 +8,10 @@
 import SwiftUI
 import MapKit
 
-struct ExploreCitiesView: View {
+struct ProgressMapView: View {
     @AppStorage("firstTimeOpeningExploreCities") var isShowingInfoSheet = true
     @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
-    @StateObject var viewModel = ExploreCitiesViewModel()
+    @StateObject var viewModel = ProgressMapViewModel()
 
     var body: some View {
             VStack {
@@ -37,7 +37,7 @@ struct ExploreCitiesView: View {
                 }
                 .largeTextScrollView()
             }
-            .navigationTitle("Explore")
+            .navigationTitle("Progress Map")
             .toolbar {
                 OnboardingToolbarButton(isShowingInfoSheet: $isShowingInfoSheet)
             }
@@ -61,7 +61,7 @@ struct ExploreCitiesView: View {
 
 struct ExploreCitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreCitiesView()
+        ProgressMapView()
             .environmentObject(CityGuessGameHistoryManager())
     }
 }

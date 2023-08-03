@@ -10,9 +10,7 @@ import SwiftUI
 extension ContentView {
     var mainMenu: some View {
         ZStack {
-            if dynamicTypeSize < .accessibility1 {
-                menuBackgroud
-            }
+            menuBackgroud
 
             VStack {
                 dailyChallengeButton
@@ -68,7 +66,7 @@ extension ContentView {
         let isLocked = gameHistory.guessHistory.isEmpty
 
         return ZStack {
-            MainMenuButton("Explore Cities") {
+            MainMenuButton("Progress Map") {
                 router.path.append(Router.Screen.explore)
             }
             .disabled(isLocked)

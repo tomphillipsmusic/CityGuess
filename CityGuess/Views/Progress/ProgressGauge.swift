@@ -13,7 +13,7 @@ struct ProgressGauge: View {
     let label: String
 
     var tintColor: Color {
-        isComplete ? .green : .blue
+        isComplete ? .mint : .green
     }
     var isComplete: Bool {
         numberCompleted >= totalNumber
@@ -36,6 +36,9 @@ struct ProgressGauge: View {
 
 struct ProgressGauge_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressGauge(numberCompleted: 50, totalNumber: 100, label: "50 / 100 Completed")
+        VStack {
+            ProgressGauge(numberCompleted: 50, totalNumber: 100, label: "50 / 100 Completed")
+            ProgressGauge(numberCompleted: 100, totalNumber: 100, label: "50 / 100 Completed")
+        }
     }
 }

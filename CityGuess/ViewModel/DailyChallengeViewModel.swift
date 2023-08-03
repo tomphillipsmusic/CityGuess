@@ -22,20 +22,29 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
 
+    var roundOptions: [Int] {
+        [filterValid(cityImages).count]
+    }
+
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 
     var cities: [TeleportCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
-    let roundLength = 10
 
     let modeTitle: String = "Daily Challenge"
     let gameHeadline: String = "Do you have what it takes to take on the Daily Challenge?"
-    let gameDescription: String = """
-        Check in once a day to see some of the latest and greatest city photos from
-        around the world. How many can you guess??
-    """
+    let gameDescription: String = "Check in once a day to see some of the latest"
+        + " and greatest city photos from around the world. How many can you guess??"
+
     let startGameButtonText: String = "Start Daily Challenge"
+
+    let notificationDescription: String = """
+        Congratulations on completing your first Daily Challenge!\n\n
+        - The next challenge will unlock in 24 hours\n\n
+        - You can opt in to notifications to get a reminder when the next challenge unlocks\n\n
+        - You can adjust notification settings anytime under your device settings
+    """
 
     required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService
@@ -51,7 +60,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
         do {
             let cityImages = try await cityFetcher.fetchCityImages().shuffled()
             self.cityImages = filterValid(cityImages)
-            print("City images count: " + "\(cityImages.count)")
+            numberOfRounds = roundOptions[0]
+            questions = resetQuestions()
         } catch {
             errorMessage = "Error loading city images. Please try again later."
             isShowingError = true

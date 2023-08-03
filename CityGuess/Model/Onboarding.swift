@@ -26,11 +26,10 @@ extension Onboarding {
     static let cityGuessOnboarding = Onboarding(
         title: "Welcome to City Guess!",
         description: """
-                     A fun game to test how well you can recognize photos of cities from all
-                     over the world! Can you correctly guess all of the cities and become a
-                     true city guesser?
+                    A fun game to test how well you can recognize photos of cities from all over the world!
+                    Can you correctly guess all of the cities and become a true city guesser?
                     """,
-        image: Image(systemName: "building.2"),
+        image: Image("cityguess-logo"),
         details: [
                 Detail(
                     symbol: "medal",
@@ -51,10 +50,15 @@ extension Onboarding {
         closeButtonLabel: "Start Guessing!")
 
     static let exploreCitiesOnboarding = Onboarding(
-        title: "Explore Cities",
+        title: "Progress Map",
         description: "",
         image: Image(systemName: "map.fill"),
         details: [
+                Detail(
+                    symbol: "medal",
+                    text: "Track your progress as you try to guess every city correctly!",
+                    color: .green
+                ),
                 Detail(
                     symbol: "globe",
                     text: "As you see cities in the game, their icons will appear on the map",
@@ -62,12 +66,7 @@ extension Onboarding {
                 ),
                 Detail(
                     symbol: "building",
-                    text: "Tap an icon to see how many times you have guessed that city correctly",
-                    color: .green
-                ),
-                Detail(
-                    symbol: "medal",
-                    text: "Track your progress as you try to guess every city correctly!",
+                    text: "Tap an icon to see how many times you have guessed that city correctly and to learn more",
                     color: .green
                 )
         ],

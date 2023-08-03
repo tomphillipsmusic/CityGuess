@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameEndView<ViewModel: CityGuessViewModel>: View {
+    @AppStorage("firstTimeCompletingDailyChallange") var firstTimeCompletingDailyChallenge = true
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) var reduceMotionEnabled
     @EnvironmentObject var historyManager: CityGuessGameHistoryManager
@@ -24,7 +25,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             progressGauges
 
             if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
-                LottieView(animationType: .skyscraper)
+                LottieView(animationType: .skyscraper, removeWhenFinished: false)
             }
 
             reviewCitiesButton
@@ -34,9 +35,12 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             UIApplication.shared.endEditing()
+            historyManager.saveHistory()
 
             if let viewModel = viewModel as? DailyChallengeViewModel {
-                viewModel.scheduleNotification()
+                if !firstTimeCompletingDailyChallenge {
+                    viewModel.scheduleNotification()
+                }
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -45,6 +49,17 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 }
             }
         }
+        .if(viewModel is DailyChallengeViewModel, transform: { view in
+            view
+                .sheet(isPresented: $firstTimeCompletingDailyChallenge) {
+                    if let viewModel = viewModel as? DailyChallengeViewModel {
+                        DismissableMessage(message: viewModel.notificationDescription) {
+                            viewModel.scheduleNotification()
+                            firstTimeCompletingDailyChallenge = false
+                        }
+                    }
+                }
+        })
     }
 
     var header: some View {
@@ -85,12 +100,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var reviewCitiesButton: some View {
         NavigationLink("Review Cities") {
-            TabView {
-                ForEach(historyManager.roundHistory.map { $0.value }, id: \.self) { guessHistory in
-                    CityDetailView(viewModel: CityDetailViewModel(guessHistory: guessHistory))
-                }
-            }
-            .tabViewStyle(.page)
+            ReviewCitiesView()
         }
         .disabled(historyManager.roundHistory.isEmpty)
     }

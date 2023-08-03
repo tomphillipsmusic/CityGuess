@@ -14,7 +14,7 @@ struct ContentView: View {
     @StateObject var trainingViewModel = TrainingViewModel()
     @StateObject var dailyChallengeViewModel = DailyChallengeViewModel()
     @StateObject var gameHistory = CityGuessGameHistoryManager()
-    @StateObject var exploreCitiesViewModel = ExploreCitiesViewModel()
+    @StateObject var exploreCitiesViewModel = ProgressMapViewModel()
     @StateObject var router = Router()
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -29,7 +29,7 @@ struct ContentView: View {
                     case .challenge:
                         GameView(viewModel: dailyChallengeViewModel)
                     case .explore:
-                        ExploreCitiesView()
+                        ProgressMapView()
                     }
                 }
                 .toolbar {

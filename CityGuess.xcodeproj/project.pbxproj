@@ -25,6 +25,8 @@
 		3E0A438629E981B100A9D2BE /* TeleportCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438529E981B100A9D2BE /* TeleportCity.swift */; };
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
+		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
+		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
@@ -69,7 +71,7 @@
 		3E9C7D4B29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */; };
 		3E9EC5C12A02A75E006E79E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EC5C02A02A75E006E79E9 /* ContentView.swift */; };
 		3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */; };
-		3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */; };
+		3EADE8292A1CF9C0004ADEC2 /* ProgressMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADE8282A1CF9C0004ADEC2 /* ProgressMapView.swift */; };
 		3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175A29F84CF100A0B353 /* ProgressBar.swift */; };
 		3EBC175F29F851D800A0B353 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBC175E29F851D800A0B353 /* Question.swift */; };
 		3EBC176129F86B3E00A0B353 /* skyscraper.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EBC176029F86B3E00A0B353 /* skyscraper.json */; };
@@ -132,6 +134,8 @@
 		3E0A438529E981B100A9D2BE /* TeleportCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportCity.swift; sourceTree = "<group>"; };
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
+		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
+		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
 		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E210FE32A0AEB71000FA523 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -178,7 +182,7 @@
 		3E9C7D4A29EDDD6A0073CCE4 /* DailyChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeViewModel.swift; sourceTree = "<group>"; };
 		3E9EC5C02A02A75E006E79E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlockable.swift; sourceTree = "<group>"; };
-		3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCitiesView.swift; sourceTree = "<group>"; };
+		3EADE8282A1CF9C0004ADEC2 /* ProgressMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressMapView.swift; sourceTree = "<group>"; };
 		3EBC175A29F84CF100A0B353 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		3EBC175E29F851D800A0B353 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3EBC176029F86B3E00A0B353 /* skyscraper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skyscraper.json; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 				3E25FC052A1BF01E0040E50C /* RingView.swift */,
 				3E25FC0D2A1C0D850040E50C /* MainMenuButton.swift */,
 				3E25FC0F2A1C0E450040E50C /* LockView.swift */,
+				3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -415,17 +420,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3EADE8272A1CF999004ADEC2 /* Map */ = {
+		3EADE8272A1CF999004ADEC2 /* ProgressMap */ = {
 			isa = PBXGroup;
 			children = (
-				3EADE8282A1CF9C0004ADEC2 /* ExploreCitiesView.swift */,
+				3EADE8282A1CF9C0004ADEC2 /* ProgressMapView.swift */,
 				3E46E3F32A3895B500ED3646 /* CityMapView.swift */,
 				3E46E3F72A38C27400ED3646 /* CityMapViewCoordinator.swift */,
 				3E093C592A6AB5F200C7D28B /* SafariWebView.swift */,
 				3E5973CA2A6EC2BA00C43CB6 /* CityDetailView.swift */,
 				3E43DD302A7022E900F85C69 /* CityScoresView.swift */,
 			);
-			path = Map;
+			path = ProgressMap;
 			sourceTree = "<group>";
 		};
 		3EEB999529E467C200514F79 /* Model */ = {
@@ -498,7 +503,7 @@
 				3E46F9C42A4CC4A500EA67ED /* Onboarding */,
 				3E25FC072A1C0B2C0040E50C /* MainMenu */,
 				3EEF7F7329EF03BA00EEBE9D /* GameView */,
-				3EADE8272A1CF999004ADEC2 /* Map */,
+				3EADE8272A1CF999004ADEC2 /* ProgressMap */,
 				3E39A2A42A589D5200C9B72B /* Progress */,
 				3E5FF33129FFFC8F00851A11 /* Animations */,
 			);
@@ -517,6 +522,7 @@
 				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
 				3ED91B3E2A55C5F1006D25D0 /* GameErrorView.swift */,
 				3E43DD322A71776400F85C69 /* FlippableContent.swift */,
+				3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -681,6 +687,7 @@
 			files = (
 				3E39A29D2A57431900C9B72B /* ContentView+MainMenu.swift in Sources */,
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
+				3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */,
 				3E25FC0E2A1C0D850040E50C /* MainMenuButton.swift in Sources */,
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
 				3E43DD312A7022E900F85C69 /* CityScoresView.swift in Sources */,
@@ -721,6 +728,7 @@
 				3EF5BF592A1FAB61006B5DE8 /* CoordinateFetching.swift in Sources */,
 				3E5973CD2A6ECEB000C43CB6 /* CityDetailViewModel.swift in Sources */,
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
+				3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
 				3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */,
 				3EF5BF5D2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift in Sources */,
@@ -733,7 +741,7 @@
 				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
 				3EEF7F7E29F2BF7600EEBE9D /* LottieView.swift in Sources */,
 				3E0A437C29E97EB500A9D2BE /* CityService.swift in Sources */,
-				3EADE8292A1CF9C0004ADEC2 /* ExploreCitiesView.swift in Sources */,
+				3EADE8292A1CF9C0004ADEC2 /* ProgressMapView.swift in Sources */,
 				3E46E4002A40D1BE00ED3646 /* CityGuessGameHistoryManager.swift in Sources */,
 				3EADE8262A1CE78E004ADEC2 /* Unlockable.swift in Sources */,
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
@@ -930,7 +938,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"CityGuess/Preview Content\"";
 				DEVELOPMENT_TEAM = PU4JAM9L7Q;
 				ENABLE_PREVIEWS = YES;
@@ -962,7 +970,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"CityGuess/Preview Content\"";
 				DEVELOPMENT_TEAM = PU4JAM9L7Q;
 				ENABLE_PREVIEWS = YES;
