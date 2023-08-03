@@ -49,14 +49,17 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 }
             }
         }
-        .sheet(isPresented: $firstTimeCompletingDailyChallenge) {
-            if let viewModel = viewModel as? DailyChallengeViewModel {
-                DismissableMessage(message: viewModel.notificationDescription) {
-                    viewModel.scheduleNotification()
-                    firstTimeCompletingDailyChallenge = false
+        .if(viewModel is DailyChallengeViewModel, transform: { view in
+            view
+                .sheet(isPresented: $firstTimeCompletingDailyChallenge) {
+                    if let viewModel = viewModel as? DailyChallengeViewModel {
+                        DismissableMessage(message: viewModel.notificationDescription) {
+                            viewModel.scheduleNotification()
+                            firstTimeCompletingDailyChallenge = false
+                        }
+                    }
                 }
-            }
-        }
+        })
     }
 
     var header: some View {
