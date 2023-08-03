@@ -16,7 +16,7 @@ class MockGameHistoryService: ReadWrite {
             return gameHistory
         }
 
-        throw HttpError.unableToComplete
+        throw MockHistoryError.couldNotRead
     }
 
     func write<T>(_ data: T, to filename: String) where T: Encodable {
@@ -32,6 +32,7 @@ class MockGameHistoryService: ReadWrite {
 
 final class CityGuessGameHistoryManagerTests: XCTestCase {
     let mockCityImage = CityImage(title: "New Detroit", url: "www.newdetroit.com/picture.png")
+    let mockHistory = CityGuessHistory(name: "New Detroit", urlString: "www.updatedimage.com")
     var historyManager = CityGuessGameHistoryManager(historyService: MockGameHistoryService())
     
     var mockCityName: String { mockCityImage.title }
@@ -49,6 +50,7 @@ final class CityGuessGameHistoryManagerTests: XCTestCase {
         let mockService = MockGameHistoryService()
         historyManager = CityGuessGameHistoryManager(historyService: mockService)
         historyManager.updateHistory(forImage: mockCityImage, with: .right)
+        historyManager.saveHistory()
 
         // Act
         historyManager = CityGuessGameHistoryManager(historyService: mockService)
@@ -57,26 +59,28 @@ final class CityGuessGameHistoryManagerTests: XCTestCase {
         XCTAssertTrue(historyManager.guessHistory[mockCityName] != nil)
     }
 
-    func testThatUpdatingHistoryWithCorrectQuestionStateCorrectlyUpdatesHistory() {
+    func testThatUpdatingHistoryWithCorrectQuestionStateCorrectlyUpdatesTemporaryHistory() {
         // Arrange
-        let mockHistory = CityGuessHistory(name: mockCityName, urlString: "www.updatedimage.com")
         historyManager.update(mockCityName, with: mockHistory)
 
         // Act
         historyManager.updateHistory(forImage: mockCityImage, with: .right)
-
+        
         // Assert
-        let actualStatus = historyManager.guessHistory[mockCityName]?.guessStatus
+        let actualStatus = historyManager.tempGuessHistory[mockCityName]?.guessStatus
         XCTAssertEqual(actualStatus, .right)
     }
 
     func testThatUpdatingPreviouslyCorrectHistoryWithIncorrectAnswerStllShowsCorrect() {
         // Arrange
-        let mockHistory = CityGuessHistory(name: mockCityName, guessStatus: .right, urlString: "www.updatedhistory.com")
-        historyManager.update(mockCityName, with: mockHistory)
+        historyManager.resetRoundHistory(withTotalNumberOfCities: historyManager.totalCitiesSeen)
+        historyManager.updateHistory(forImage: mockCityImage, with: .right)
+        historyManager.saveHistory()
 
         // Act
+        historyManager.resetRoundHistory(withTotalNumberOfCities: historyManager.totalNumberOfCities)
         historyManager.updateHistory(forImage: mockCityImage, with: .wrong)
+        historyManager.saveHistory()
 
         // Assert
         let actualStatus = historyManager.guessHistory[mockCityName]?.guessStatus
@@ -86,9 +90,9 @@ final class CityGuessGameHistoryManagerTests: XCTestCase {
     func testThatSaveHistoryMakesHistoryDataPersist() {
         // Arrange
         let mockService = MockGameHistoryService()
-        let mockHistory = CityGuessHistory(name: mockCityName, urlString: "www.updatedhistory.com")
         historyManager = CityGuessGameHistoryManager(historyService: mockService)
-        historyManager.update(mockCityName, with: mockHistory)
+        historyManager.resetRoundHistory(withTotalNumberOfCities: historyManager.totalNumberOfCities)
+        historyManager.updateHistory(forImage: mockCityImage, with: .right)
         // Act
         historyManager.saveHistory()
         historyManager = CityGuessGameHistoryManager(historyService: mockService)
@@ -101,7 +105,6 @@ final class CityGuessGameHistoryManagerTests: XCTestCase {
     func testThatLoadHistoryReturnsPersistedHistory() {
         // Arrange
         let mockService = MockGameHistoryService()
-        let mockHistory = CityGuessHistory(name: mockCityName, urlString: "www.updatedhistory.com")
         historyManager = CityGuessGameHistoryManager(historyService: mockService)
         historyManager.update(mockCityName, with: mockHistory)
         historyManager.saveHistory()
@@ -137,5 +140,32 @@ final class CityGuessGameHistoryManagerTests: XCTestCase {
         // Assert
         let expectedCitiesSeen = CityGuessHistory.testData.filter { $0.value.guessStatus == .right }.count
         XCTAssertEqual(totalCitiesSeen, expectedCitiesSeen)
+    }
+    
+    func testThatGuessHistoryIsNotChangedAfterUpdateHistoryHasRun() {
+        // Arrange
+        historyManager.update(CityGuessHistory.testData)
+
+        // Act
+        historyManager.updateHistory(forImage: mockCityImage, with: .right)
+
+        // Assert
+        let temporaryGuessHistory = historyManager.tempGuessHistory
+        let actualGuessHistory = historyManager.guessHistory
+        XCTAssertNotEqual(temporaryGuessHistory, actualGuessHistory)
+    }
+    
+    func testThatGuessHistoryIsChangedAfterUpdateHistoryHasRunAndThenHistoryIsSaved() {
+        // Arrange
+        historyManager.update(CityGuessHistory.testData)
+
+        // Act
+        historyManager.updateHistory(forImage: mockCityImage, with: .right)
+        historyManager.saveHistory()
+
+        // Assert
+        let temporaryGuessHistory = historyManager.tempGuessHistory
+        let actualGuessHistory = historyManager.guessHistory
+        XCTAssertEqual(temporaryGuessHistory, actualGuessHistory)
     }
 }

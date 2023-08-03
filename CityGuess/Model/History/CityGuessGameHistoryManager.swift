@@ -56,7 +56,7 @@ class CityGuessGameHistoryManager: ObservableObject {
     }
 
     func updateHistory(forImage cityImage: CityImage, with status: CityGuessStatus) {
-        tempGuessHistory = guessHistory
+
         let cityName = cityImage.title
         roundHistory[cityName] = CityGuessHistory(name: cityName, guessStatus: status, urlString: cityImage.url)
 
@@ -85,6 +85,7 @@ class CityGuessGameHistoryManager: ObservableObject {
         newCitiesSeen = 0
         newCitiesGuessedCorrectly = 0
         roundHistory = [:]
+        tempGuessHistory = guessHistory
         roundStartTotalCitiesSeen = totalCitiesSeen
         roundStartTotalCitiesGuessedCorrectly = citiesGuessedCorrectly
         self.totalNumberOfCities = totalCitiesSeen
