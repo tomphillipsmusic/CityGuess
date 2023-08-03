@@ -31,6 +31,7 @@
 		3E1BE1642A7C44BA0075AC1C /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1632A7C44BA0075AC1C /* Continent.swift */; };
 		3E1BE1662A7C44CE0075AC1C /* TeleportContinentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */; };
 		3E1BE1682A7C44EC0075AC1C /* ContinentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */; };
+		3E1BE16D2A7C45890075AC1C /* ContinentFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -143,6 +144,7 @@
 		3E1BE1632A7C44BA0075AC1C /* Continent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
 		3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleportContinentService.swift; sourceTree = "<group>"; };
 		3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinentsService.swift; sourceTree = "<group>"; };
+		3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentFetching.swift; sourceTree = "<group>"; };
 		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E210FE32A0AEB71000FA523 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
@@ -253,16 +255,12 @@
 		3E0A437829E97DBC00A9D2BE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */,
+				3E1BE16B2A7C456B0075AC1C /* Continents */,
+				3E1BE16A2A7C45590075AC1C /* Coordinates */,
+				3E1BE1692A7C45460075AC1C /* City */,
 				3E0A437929E97DFB00A9D2BE /* ReadWrite.swift */,
-				3E0A437B29E97EB500A9D2BE /* CityService.swift */,
-				3E0A437F29E97EE100A9D2BE /* CityFetching.swift */,
 				3E9C7D4629EDDCA30073CCE4 /* CityGuessViewModel.swift */,
-				3E25FC092A1C0B8C0040E50C /* City.swift */,
 				3EADE8252A1CE78E004ADEC2 /* Unlockable.swift */,
-				3EF5BF522A1FAAB7006B5DE8 /* Coordinate.swift */,
-				3EF5BF562A1FAB30006B5DE8 /* CoordinatesService.swift */,
-				3EF5BF582A1FAB61006B5DE8 /* CoordinateFetching.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -287,6 +285,35 @@
 				3E0A436F29E5E2B100A9D2BE /* CityImagesResponse.swift */,
 			);
 			path = Reddit;
+			sourceTree = "<group>";
+		};
+		3E1BE1692A7C45460075AC1C /* City */ = {
+			isa = PBXGroup;
+			children = (
+				3E0A437B29E97EB500A9D2BE /* CityService.swift */,
+				3E0A437F29E97EE100A9D2BE /* CityFetching.swift */,
+				3E25FC092A1C0B8C0040E50C /* City.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		3E1BE16A2A7C45590075AC1C /* Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5BF522A1FAAB7006B5DE8 /* Coordinate.swift */,
+				3EF5BF562A1FAB30006B5DE8 /* CoordinatesService.swift */,
+				3EF5BF582A1FAB61006B5DE8 /* CoordinateFetching.swift */,
+			);
+			path = Coordinates;
+			sourceTree = "<group>";
+		};
+		3E1BE16B2A7C456B0075AC1C /* Continents */ = {
+			isa = PBXGroup;
+			children = (
+				3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */,
+				3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */,
+			);
+			path = Continents;
 			sourceTree = "<group>";
 		};
 		3E210FE02A09805B000FA523 /* PropertyWrappers */ = {
@@ -704,6 +731,7 @@
 				3E46E3F62A38A6D900ED3646 /* CityMapAnnotation.swift in Sources */,
 				3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */,
 				3E298FBB29F80C2D00A861F0 /* AnimationType.swift in Sources */,
+				3E1BE16D2A7C45890075AC1C /* ContinentFetching.swift in Sources */,
 				3EEB99A429E4923100514F79 /* CityGuessView.swift in Sources */,
 				3E065B6429EEE6AD0057A250 /* ZoomableScrollView.swift in Sources */,
 				3E43DD332A71776400F85C69 /* FlippableContent.swift in Sources */,
