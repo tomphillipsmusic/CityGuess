@@ -28,6 +28,9 @@
 		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
 		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
+		3E1BE1642A7C44BA0075AC1C /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1632A7C44BA0075AC1C /* Continent.swift */; };
+		3E1BE1662A7C44CE0075AC1C /* TeleportContinentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */; };
+		3E1BE1682A7C44EC0075AC1C /* ContinentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -137,6 +140,9 @@
 		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
 		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
+		3E1BE1632A7C44BA0075AC1C /* Continent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleportContinentService.swift; sourceTree = "<group>"; };
+		3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinentsService.swift; sourceTree = "<group>"; };
 		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E210FE32A0AEB71000FA523 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		3E0A437829E97DBC00A9D2BE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */,
 				3E0A437929E97DFB00A9D2BE /* ReadWrite.swift */,
 				3E0A437B29E97EB500A9D2BE /* CityService.swift */,
 				3E0A437F29E97EE100A9D2BE /* CityFetching.swift */,
@@ -446,6 +453,7 @@
 				3E2B497D29F86F9E00260B88 /* HapticsManager.swift */,
 				3E210FE32A0AEB71000FA523 /* Router.swift */,
 				3E39A29E2A575CB300C9B72B /* Onboarding.swift */,
+				3E1BE1632A7C44BA0075AC1C /* Continent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +471,7 @@
 		3EEB999929E47CDD00514F79 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */,
 				3EEB999A29E47CEB00514F79 /* LocalCityService.swift */,
 				3E0A437629E97B4F00A9D2BE /* JsonService.swift */,
 				3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */,
@@ -730,6 +739,7 @@
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
+				3E1BE1642A7C44BA0075AC1C /* Continent.swift in Sources */,
 				3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */,
 				3EF5BF5D2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
@@ -747,6 +757,7 @@
 				3EBC175B29F84CF100A0B353 /* ProgressBar.swift in Sources */,
 				3E0A438029E97EE100A9D2BE /* CityFetching.swift in Sources */,
 				3EF5BF532A1FAAB7006B5DE8 /* Coordinate.swift in Sources */,
+				3E1BE1662A7C44CE0075AC1C /* TeleportContinentService.swift in Sources */,
 				3E5973CB2A6EC2BA00C43CB6 /* CityDetailView.swift in Sources */,
 				3E64ADA929DEFD5300DCCF2E /* GameView.swift in Sources */,
 				3EEF7F7129EEEC8E00EEBE9D /* AutofillSuggestionsView.swift in Sources */,
@@ -760,6 +771,7 @@
 				3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */,
 				3E43DD2E2A701E5000F85C69 /* View+If.swift in Sources */,
 				3EC3688F29F3032B00AE92D9 /* VerticalTextAnimationView.swift in Sources */,
+				3E1BE1682A7C44EC0075AC1C /* ContinentsService.swift in Sources */,
 				3EBC175F29F851D800A0B353 /* Question.swift in Sources */,
 				3E0A437229E84E1500A9D2BE /* TeleportApiClient.swift in Sources */,
 				3E2B497E29F86F9E00260B88 /* HapticsManager.swift in Sources */,
