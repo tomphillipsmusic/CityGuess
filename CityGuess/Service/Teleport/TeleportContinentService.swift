@@ -7,8 +7,9 @@
 
 import Foundation
 
+typealias TeleportContinent = Continent<TeleportCity>
+
 class TeleportContinentService: ContinentsService {
-    typealias TeleportContinent = Continent<TeleportCity>
 
     let coordinatesFile = "continents.json"
 
@@ -21,7 +22,7 @@ class TeleportContinentService: ContinentsService {
         if let savedContinents = try? loadContinents() {
             continents = savedContinents
         } else {
-            // continents = client.fetchContinents()
+             continents = try await client.fetchContinents()
 
             save(continents)
         }

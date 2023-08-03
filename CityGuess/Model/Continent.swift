@@ -7,7 +7,15 @@
 
 import Foundation
 
-struct Continent<CityModel: City>: Codable {
+struct Continent<CityModel: City> {
     let name: String
-    let cities: [CityModel]
+    var cities: [CityModel] = []
+}
+
+extension Continent: Codable {
+    init(from decoder: Decoder) throws {
+        let container: KeyedDecodingContainer<Continent<CityModel>.CodingKeys> = try decoder.container(keyedBy: Continent<CityModel>.CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: Continent<CityModel>.CodingKeys.name)
+        self.cities = []
+    }
 }

@@ -316,6 +316,15 @@
 			path = Continents;
 			sourceTree = "<group>";
 		};
+		3E1BE16E2A7C46190075AC1C /* Teleport */ = {
+			isa = PBXGroup;
+			children = (
+				3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */,
+				3EF5BF4A2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift */,
+			);
+			path = Teleport;
+			sourceTree = "<group>";
+		};
 		3E210FE02A09805B000FA523 /* PropertyWrappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,11 +507,10 @@
 		3EEB999929E47CDD00514F79 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */,
+				3E1BE16E2A7C46190075AC1C /* Teleport */,
 				3EEB999A29E47CEB00514F79 /* LocalCityService.swift */,
 				3E0A437629E97B4F00A9D2BE /* JsonService.swift */,
 				3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */,
-				3EF5BF4A2A1D5A48006B5DE8 /* TeleportCoordinatesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";

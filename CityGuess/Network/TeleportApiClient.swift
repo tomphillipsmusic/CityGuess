@@ -15,6 +15,7 @@ actor TeleportApiClient: CityFetching {
         static let urbanAreas = "urban_areas"
         static let images = "images"
         static let scores = "scores"
+        static let continents = "continents"
     }
 
     private let baseUrl = "https://api.teleport.org/api/"
@@ -55,5 +56,36 @@ actor TeleportApiClient: CityFetching {
         let url = "\(city.href)\(Endpoint.scores)"
         let response: TeleportCityScoresResponse = try await NetworkManager.shared.fetch(from: url)
         return response.categories
+    }
+}
+
+extension TeleportApiClient: ContinentFetching {
+    func fetchContinents() async throws -> [TeleportContinent] {
+        let url = "\(baseUrl)\(Endpoint.continents)"
+        let response: TeleportContinentsResponse = try await NetworkManager.shared.fetch(from: url)
+        return response.links.continents
+    }
+
+    func fetchCities(for continent: Continent<TeleportCity>) async throws -> [TeleportCity] {
+        []
+    }
+
+    typealias CityModel = TeleportCity
+
+}
+
+struct TeleportContinentsResponse: Codable {
+    let links: Items
+
+    enum CodingKeys: String, CodingKey {
+        case links = "_links"
+    }
+
+    struct Items: Codable {
+        let continents: [TeleportContinent]
+
+        enum CodingKeys: String, CodingKey {
+            case continents = "continent:items"
+        }
     }
 }
