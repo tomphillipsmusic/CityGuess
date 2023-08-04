@@ -9,7 +9,7 @@ import Foundation
 
 protocol Continent {
     associatedtype CityModel: City
-    
+
     var name: String { get }
     var cities: [CityModel] { get set }
 }

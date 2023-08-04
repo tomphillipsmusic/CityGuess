@@ -67,25 +67,13 @@ extension TeleportApiClient: ContinentFetching {
     }
 
     func fetchCities(for continent: TeleportContinent) async throws -> [TeleportCity] {
-        []
+        let url = "\(continent.href)\(Endpoint.urbanAreas)"
+        let response: TeleportContinentsResponse.CitiesResponse = try await NetworkManager.shared.fetch(from: url)
+        let decodedCities = response.links.cities
+        cities = decodedCities
+        return cities
     }
 
     typealias CityModel = TeleportCity
 
-}
-
-struct TeleportContinentsResponse: Codable {
-    let links: Items
-
-    enum CodingKeys: String, CodingKey {
-        case links = "_links"
-    }
-
-    struct Items: Codable {
-        let continents: [TeleportContinent]
-
-        enum CodingKeys: String, CodingKey {
-            case continents = "continent:items"
-        }
-    }
 }

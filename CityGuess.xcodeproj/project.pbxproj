@@ -33,6 +33,7 @@
 		3E1BE1682A7C44EC0075AC1C /* ContinentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */; };
 		3E1BE16D2A7C45890075AC1C /* ContinentFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */; };
 		3E1BE1702A7C4A510075AC1C /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE16F2A7C4A510075AC1C /* Continent.swift */; };
+		3E1BE1742A7D371F0075AC1C /* TeleportContinentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1732A7D371F0075AC1C /* TeleportContinentsResponse.swift */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -147,6 +148,7 @@
 		3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinentsService.swift; sourceTree = "<group>"; };
 		3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentFetching.swift; sourceTree = "<group>"; };
 		3E1BE16F2A7C4A510075AC1C /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		3E1BE1732A7D371F0075AC1C /* TeleportContinentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportContinentsResponse.swift; sourceTree = "<group>"; };
 		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E210FE32A0AEB71000FA523 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				3EDE43E22A6F0592009B4E59 /* TeleportCityScoresResponse.swift */,
 				3EDE43E42A6F05B3009B4E59 /* TeleportCityScore.swift */,
 				3E1BE1632A7C44BA0075AC1C /* TeleportContinent.swift */,
+				3E1BE1732A7D371F0075AC1C /* TeleportContinentsResponse.swift */,
 			);
 			path = TeleportApi;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				3EEB999829E4697200514F79 /* Bundle+Extension.swift in Sources */,
 				3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */,
 				3E25FC0E2A1C0D850040E50C /* MainMenuButton.swift in Sources */,
+				3E1BE1742A7D371F0075AC1C /* TeleportContinentsResponse.swift in Sources */,
 				3E0A437A29E97DFB00A9D2BE /* ReadWrite.swift in Sources */,
 				3E43DD312A7022E900F85C69 /* CityScoresView.swift in Sources */,
 				3E39A2A32A588CEF00C9B72B /* ProgressGauge.swift in Sources */,

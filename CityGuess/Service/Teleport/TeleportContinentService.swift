@@ -12,7 +12,7 @@ class TeleportContinentService: ContinentsService {
     typealias ContinentModel = TeleportContinent
 
     let coordinatesFile = "continents.json"
-    
+
     let client = TeleportApiClient()
     let fileHandler = JsonService()
 
@@ -23,6 +23,11 @@ class TeleportContinentService: ContinentsService {
             continents = savedContinents
         } else {
              continents = try await client.fetchContinents()
+
+            continents = try await continents.asyncMap { continent in
+                let cities = try await client.fetchCities(for: continent)
+                return TeleportContinent(name: continent.name, href: continent.href, cities: cities)
+            }
 
             save(continents)
         }
