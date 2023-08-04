@@ -9,7 +9,8 @@ import Foundation
 
 protocol ContinentFetching {
     associatedtype CityModel: City
+    associatedtype ContinentModel: Continent where ContinentModel.CityModel == CityModel
 
-    func fetchContinents() async throws -> [Continent<CityModel>]
-    func fetchCities(for continent: Continent<CityModel>) async throws -> [CityModel]
+    func fetchContinents() async throws -> [ContinentModel]
+    func fetchCities(for continent: ContinentModel) async throws -> [CityModel]
 }

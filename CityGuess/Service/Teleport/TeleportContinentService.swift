@@ -7,12 +7,12 @@
 
 import Foundation
 
-typealias TeleportContinent = Continent<TeleportCity>
-
 class TeleportContinentService: ContinentsService {
+    typealias CityModel = TeleportCity
+    typealias ContinentModel = TeleportContinent
 
     let coordinatesFile = "continents.json"
-
+    
     let client = TeleportApiClient()
     let fileHandler = JsonService()
 

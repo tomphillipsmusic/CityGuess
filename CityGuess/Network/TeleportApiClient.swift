@@ -66,7 +66,7 @@ extension TeleportApiClient: ContinentFetching {
         return response.links.continents
     }
 
-    func fetchCities(for continent: Continent<TeleportCity>) async throws -> [TeleportCity] {
+    func fetchCities(for continent: TeleportContinent) async throws -> [TeleportCity] {
         []
     }
 

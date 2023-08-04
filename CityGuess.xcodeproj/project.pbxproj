@@ -28,10 +28,11 @@
 		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
 		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
-		3E1BE1642A7C44BA0075AC1C /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1632A7C44BA0075AC1C /* Continent.swift */; };
+		3E1BE1642A7C44BA0075AC1C /* TeleportContinent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1632A7C44BA0075AC1C /* TeleportContinent.swift */; };
 		3E1BE1662A7C44CE0075AC1C /* TeleportContinentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */; };
 		3E1BE1682A7C44EC0075AC1C /* ContinentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */; };
 		3E1BE16D2A7C45890075AC1C /* ContinentFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */; };
+		3E1BE1702A7C4A510075AC1C /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BE16F2A7C4A510075AC1C /* Continent.swift */; };
 		3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */; };
 		3E210FE42A0AEB71000FA523 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE32A0AEB71000FA523 /* Router.swift */; };
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
@@ -141,10 +142,11 @@
 		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
 		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
-		3E1BE1632A7C44BA0075AC1C /* Continent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		3E1BE1632A7C44BA0075AC1C /* TeleportContinent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleportContinent.swift; sourceTree = "<group>"; };
 		3E1BE1652A7C44CE0075AC1C /* TeleportContinentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleportContinentService.swift; sourceTree = "<group>"; };
 		3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinentsService.swift; sourceTree = "<group>"; };
 		3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentFetching.swift; sourceTree = "<group>"; };
+		3E1BE16F2A7C4A510075AC1C /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
 		3E210FE12A09806E000FA523 /* PublishedAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedAppStorage.swift; sourceTree = "<group>"; };
 		3E210FE32A0AEB71000FA523 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				3EF5BF5E2A1FAC2F006B5DE8 /* CoordinateBox.swift */,
 				3EDE43E22A6F0592009B4E59 /* TeleportCityScoresResponse.swift */,
 				3EDE43E42A6F05B3009B4E59 /* TeleportCityScore.swift */,
+				3E1BE1632A7C44BA0075AC1C /* TeleportContinent.swift */,
 			);
 			path = TeleportApi;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			children = (
 				3E1BE1672A7C44EC0075AC1C /* ContinentsService.swift */,
 				3E1BE16C2A7C45890075AC1C /* ContinentFetching.swift */,
+				3E1BE16F2A7C4A510075AC1C /* Continent.swift */,
 			);
 			path = Continents;
 			sourceTree = "<group>";
@@ -489,7 +493,6 @@
 				3E2B497D29F86F9E00260B88 /* HapticsManager.swift */,
 				3E210FE32A0AEB71000FA523 /* Router.swift */,
 				3E39A29E2A575CB300C9B72B /* Onboarding.swift */,
-				3E1BE1632A7C44BA0075AC1C /* Continent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -775,7 +778,7 @@
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,
-				3E1BE1642A7C44BA0075AC1C /* Continent.swift in Sources */,
+				3E1BE1642A7C44BA0075AC1C /* TeleportContinent.swift in Sources */,
 				3E46E4022A40D23600ED3646 /* CityGuessStatus.swift in Sources */,
 				3EF5BF5D2A1FABF9006B5DE8 /* TeleportCityDetailsResponse.swift in Sources */,
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
@@ -815,6 +818,7 @@
 				3EEB999B29E47CEB00514F79 /* LocalCityService.swift in Sources */,
 				3E9B321B2A4C7FC100973E2A /* View+LargeTextScrollView.swift in Sources */,
 				3E25FC102A1C0E450040E50C /* LockView.swift in Sources */,
+				3E1BE1702A7C4A510075AC1C /* Continent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
