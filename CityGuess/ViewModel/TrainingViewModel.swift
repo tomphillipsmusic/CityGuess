@@ -23,9 +23,10 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
 
-    var cities: [TeleportCity] = []
+    var cities: [CGCity] = []
     let cityService: CityService
     let cityFetcher: TeleportApiClient
+    
 
     let modeTitle: String = "Training"
     let gameHeadline: String = "Do you have what it takes to be a true City Guesser?"
@@ -63,16 +64,18 @@ class TrainingViewModel: CityGuessViewModel {
 
     func fetchCities() async {
         do {
-            if let cities: [CityModel] = try? cityService.loadCities(),
+            if let cities: [CGCity] = try? cityService.loadCities(),
                !cities.isEmpty {
                 self.cities = cities
             } else {
-                if let defaultImages = try? Bundle.main.decode([TeleportCity].self, from: "InitialCities.json") {
-                    cities = defaultImages
-                    try? cityService.save(cities)
-                }
-                let cities = try await cityFetcher.fetchCities()
+//                if let defaultImages = try? Bundle.main.decode([CGCity].self, from: "InitialCities.json") {
+//                    cities = defaultImages
+//                    try? cityService.save(cities)
+//                }
+                let cities: [CGCity] = try await cityFetcher.fetchCities()
                 self.cities = cities
+                
+                cities.forEach { print("Printing CGCITY: \($0)")}
                 try? cityService.save(cities)
             }
         } catch {
