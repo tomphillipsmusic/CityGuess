@@ -12,7 +12,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
-    @State private var autofillSuggestions = [ViewModel.CityModel]()
+    @State private var autofillSuggestions = [CGCity]()
     @State private var isShowingExitAlert = false
     let image: Image
 
@@ -35,11 +35,12 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
             CityGuessTextField(text: $guess, isLoadingNextQuestion: $viewModel.isShowingAnimation)
 
-            AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
+            AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { city in
                 withAnimation(.linear(duration: 1.0)) {
-                    viewModel.submit(guess: cityName)
-                    if let formattedImage = formatImageForHistoryStorage(ofCityNamed: cityName) {
-                        gameHistory.updateHistory(forImage: formattedImage, with: viewModel.isCorrect ? .right : .wrong)
+                    viewModel.submit(guess: city.name)
+                    if let formattedImage = formatImageForHistoryStorage(ofCityNamed: city.name) {
+                        gameHistory.updateHistory(forImage: formattedImage, with: city.continent.rawValue, and: viewModel.isCorrect ? .right : .wrong)
+
                     }
                 }
 

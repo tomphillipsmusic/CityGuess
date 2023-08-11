@@ -23,6 +23,7 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
     @Published var selectedContinent: CGCity.Continent = .all
+    @Published var filteredCityImages: [CityImage] = []
 
     var cities: [CGCity] = []
     let cityService: CityService
@@ -33,8 +34,6 @@ class TrainingViewModel: CityGuessViewModel {
     let gameDescription: String = "Take a spin through our images of famous cities from around the world"
         + "and do your best to guess the name of the city!"
     let startGameButtonText: String = "Start Training"
-
-    var filteredCityImages: [CityImage] = []
 
     var roundOptions: [Int] {
         var roundOptions: [Int] = []
@@ -63,6 +62,7 @@ class TrainingViewModel: CityGuessViewModel {
         Task {
             await fetchCities()
             await fetchCityImages()
+            filteredCityImages = cityImages
         }
     }
 
@@ -105,7 +105,7 @@ class TrainingViewModel: CityGuessViewModel {
             isShowingError = true
         }
     }
-    
+
     func filterCityImages() {
         if selectedContinent == .all {
             filteredCityImages = cityImages
@@ -119,5 +119,9 @@ class TrainingViewModel: CityGuessViewModel {
         }
 
         filteredCityImages = filteredImages
+
+        if filteredImages.count >= defaultNumberOfRounds {
+            numberOfRounds = roundOptions[0]
+        }
     }
 }

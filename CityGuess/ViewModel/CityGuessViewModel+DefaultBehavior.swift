@@ -82,7 +82,7 @@ extension CityGuessViewModel {
         isShowingAnimation = true
     }
 
-    func autofillSuggestions(for guess: String) -> [CityModel] {
+    func autofillSuggestions(for guess: String) -> [CGCity] {
         guard !guess.isEmpty else { return [] }
         let numberOfSuggestions = 8
         return cities.filterUniqueItems({ $0.name.caseInsensitiveStarts(with: guess) }, limit: numberOfSuggestions)

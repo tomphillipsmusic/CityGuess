@@ -34,7 +34,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             )
             .cornerRadius(5)
             .shadow(radius: 0.2)
-            .animation(.linear, value: viewModel.selectedContinent)
+            .animation(.default, value: viewModel.selectedContinent)
         }
     }
 

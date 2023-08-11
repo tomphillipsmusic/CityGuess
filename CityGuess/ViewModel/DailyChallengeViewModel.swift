@@ -31,7 +31,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 
-    var cities: [TeleportCity] = []
+    var cities: [CGCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
 
@@ -73,7 +73,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     func fetchCities() async {
         do {
-            if let cities: [CityModel] = try? cityService.loadCities(),
+            if let cities: [CGCity] = try? cityService.loadCities(),
                !cities.isEmpty {
                 self.cities = cities
                 return

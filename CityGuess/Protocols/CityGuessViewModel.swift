@@ -12,13 +12,12 @@ typealias CityGuessGame = GameLogic & GameMode & AnimatedGame
 
 @MainActor
 protocol CityGuessViewModel: ViewModel, CityGuessGame, ErrorAlertable {
-    associatedtype CityModel: City
     associatedtype CityFetcher: CityFetching
 
     var cityImages: [CityImage] { get set }
     var currentCityIndex: Int { get set }
     var currentCityImage: CityImage { get }
-    var cities: [CityModel] { get set }
+    var cities: [CGCity] { get set }
     var cityService: CityService { get }
     var cityFetcher: CityFetcher { get }
 
@@ -27,7 +26,7 @@ protocol CityGuessViewModel: ViewModel, CityGuessGame, ErrorAlertable {
 
     func fetchCityImages() async
     func fetchCities() async
-    func autofillSuggestions(for guess: String) -> [CityModel]
+    func autofillSuggestions(for guess: String) -> [CGCity]
 
     init(cityService: CityService, cityFetcher: CityFetcher)
 }

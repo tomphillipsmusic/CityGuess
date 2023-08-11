@@ -16,9 +16,7 @@ struct GameConfigurationPickers<ViewModel: CityGuessViewModel>: View {
                 continentPicker
             }
 
-            if viewModel.roundOptions.count > 1 {
-                roundOptionsPicker
-            }
+            roundOptionsPicker
         }
     }
     var roundOptionsPicker: some View {
@@ -53,7 +51,7 @@ struct GameConfigurationPickers<ViewModel: CityGuessViewModel>: View {
             .onChange(of: viewModel.selectedContinent) { _ in
                 if let viewModel = viewModel as? TrainingViewModel {
                     viewModel.filterCityImages()
-                     viewModel.numberOfRounds = viewModel.roundOptions[0]
+
                 }
             }
         }
