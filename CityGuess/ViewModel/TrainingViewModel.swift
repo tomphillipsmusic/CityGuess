@@ -108,7 +108,7 @@ class TrainingViewModel: CityGuessViewModel {
 
     func filterCityImages() {
         if selectedContinent == .all {
-            filteredCityImages = cityImages
+            filteredCityImages = cityImages.shuffled()
         }
 
         let filteredImages = cityImages.filter { image in
@@ -118,10 +118,21 @@ class TrainingViewModel: CityGuessViewModel {
             return city?.continent == selectedContinent ? true : false
         }
 
-        filteredCityImages = filteredImages
+        filteredCityImages = filteredImages.shuffled()
 
         if filteredImages.count >= defaultNumberOfRounds {
             numberOfRounds = roundOptions[0]
         }
+    }
+    
+    func startGame(with numberOfRounds: Int) {
+        self.numberOfRounds = numberOfRounds
+        isPlaying = true
+        score = 0
+        cityImages.shuffle()
+        filteredCityImages.shuffle()
+        priorAnswer = ""
+        currentCityIndex = 0
+        questions = resetQuestions()
     }
 }
