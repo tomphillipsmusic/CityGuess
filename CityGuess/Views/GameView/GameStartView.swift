@@ -23,16 +23,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 Text(viewModel.gameDescription)
                     .font(.headline)
 
-                VStack(alignment: .leading) {
-                    if viewModel is TrainingViewModel {
-                        continentPicker
-                    }
-
-                    if viewModel.roundOptions.count > 1 {
-                        roundOptionsPicker
-                    }
-                }
-
+                GameConfigurationPickers(viewModel: viewModel)
                 gameStartButton
             }
             .padding()
@@ -56,41 +47,6 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 .opacity(0.8)
         } placeholder: {
             Color.secondary
-        }
-    }
-
-    var roundOptionsPicker: some View {
-        HStack {
-            Text("Number of Cities:")
-            Spacer()
-            Picker("Number of Cities", selection: $viewModel.numberOfRounds) {
-                ForEach(viewModel.roundOptions, id: \.self) {
-                    Text("\($0)")
-                        .tag($0)
-                }
-                .onChange(of: viewModel.numberOfRounds) { newValue in
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        viewModel.questions = Array(repeating: Question(text: ""), count: newValue)
-                    }
-                }
-            }
-            .disabled(viewModel.roundOptions.count <= 1)
-        }
-    }
-
-    var continentPicker: some View {
-        HStack {
-            Text("Continent:")
-            Spacer()
-            Picker("Continent", selection: $viewModel.selectedContinent) {
-                ForEach(CGCity.Continent.allCases, id: \.self) { continent in
-                    Text(continent.rawValue)
-                        .tag(continent)
-                }
-            }
-            .onChange(of: viewModel.selectedContinent) { _ in
-                 viewModel.numberOfRounds = viewModel.roundOptions[0]
-            }
         }
     }
 

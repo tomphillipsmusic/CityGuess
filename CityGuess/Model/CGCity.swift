@@ -18,7 +18,6 @@ struct CGCity: City, Identifiable, Codable {
         case oceania = "Oceania"
         case southAmerica = "South America"
         case africa = "Africa"
-        case antarctica = "Antarctica"
         case asia = "Asia"
         case europe = "Europe"
         case northAmerica = "North America"

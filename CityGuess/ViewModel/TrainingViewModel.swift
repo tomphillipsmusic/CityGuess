@@ -34,20 +34,7 @@ class TrainingViewModel: CityGuessViewModel {
         + "and do your best to guess the name of the city!"
     let startGameButtonText: String = "Start Training"
 
-    var filteredCityImages: [CityImage] {
-        if selectedContinent == .all {
-            return cityImages
-        }
-
-        let filteredImages = cityImages.filter { image in
-
-            let city = cities.first { $0.name == image.title }
-
-            return city?.continent == selectedContinent ? true : false
-        }
-
-        return filteredImages
-    }
+    var filteredCityImages: [CityImage] = []
 
     var roundOptions: [Int] {
         var roundOptions: [Int] = []
@@ -117,5 +104,20 @@ class TrainingViewModel: CityGuessViewModel {
             errorMessage = "Error loading city data. Please try again later."
             isShowingError = true
         }
+    }
+    
+    func filterCityImages() {
+        if selectedContinent == .all {
+            filteredCityImages = cityImages
+        }
+
+        let filteredImages = cityImages.filter { image in
+
+            let city = cities.first { $0.name == image.title }
+
+            return city?.continent == selectedContinent ? true : false
+        }
+
+        filteredCityImages = filteredImages
     }
 }
