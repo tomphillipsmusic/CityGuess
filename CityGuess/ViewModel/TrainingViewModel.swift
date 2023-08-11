@@ -22,17 +22,32 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var isShowingAnimation: Bool = false
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
+    @Published var selectedContinent: CGCity.Continent = .all
 
     var cities: [CGCity] = []
     let cityService: CityService
     let cityFetcher: TeleportApiClient
-    
 
     let modeTitle: String = "Training"
     let gameHeadline: String = "Do you have what it takes to be a true City Guesser?"
     let gameDescription: String = "Take a spin through our images of famous cities from around the world"
         + "and do your best to guess the name of the city!"
     let startGameButtonText: String = "Start Training"
+
+    var filteredCityImages: [CityImage] {
+        if selectedContinent == .all {
+            return cityImages
+        }
+
+        let filteredImages = cityImages.filter { image in
+
+            let city = cities.first { $0.name == image.title }
+
+            return city?.continent == selectedContinent ? true : false
+        }
+
+        return filteredImages
+    }
 
     required init(cityService: CityService = LocalCityService(), cityFetcher: TeleportApiClient = TeleportApiClient()) {
         self.cityService = cityService
@@ -49,10 +64,10 @@ class TrainingViewModel: CityGuessViewModel {
             if let cityImages = try? cityService.loadImages() {
                 self.cityImages = cityImages.shuffled()
             } else {
-                if let defaultImages = try? Bundle.main.decode([CityImage].self, from: "InitialCityImages.json") {
-                    cityImages = defaultImages
-                    cityService.save(cityImages)
-                }
+//                if let defaultImages = try? Bundle.main.decode([CityImage].self, from: "InitialCityImages.json") {
+//                    cityImages = defaultImages
+//                    cityService.save(cityImages)
+//                }
                 cityImages = try await cityFetcher.fetchCityImages().shuffled()
                 cityService.save(cityImages)
             }
@@ -74,7 +89,7 @@ class TrainingViewModel: CityGuessViewModel {
 //                }
                 let cities: [CGCity] = try await cityFetcher.fetchCities()
                 self.cities = cities
-                
+
                 cities.forEach { print("Printing CGCITY: \($0)")}
                 try? cityService.save(cities)
             }

@@ -24,6 +24,16 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                     .font(.headline)
 
                 roundOptionsPicker
+
+                if viewModel is TrainingViewModel {
+                    Picker("Continent", selection: $viewModel.selectedContinent) {
+                        ForEach(CGCity.Continent.allCases, id: \.self) { continent in
+                            Text(continent.rawValue)
+                                .tag(continent as CGCity.Continent?)
+                        }
+                    }
+                }
+
                 gameStartButton
             }
             .padding()

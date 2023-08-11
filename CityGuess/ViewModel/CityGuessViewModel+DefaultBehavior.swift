@@ -22,7 +22,7 @@ extension CityGuessViewModel {
     }
 
     var currentCityImage: CityImage {
-        cityImages[currentCityIndex]
+        filteredCityImages[currentCityIndex]
     }
 
     var scoreLabelText: String {
@@ -63,11 +63,11 @@ extension CityGuessViewModel {
     }
 
     func resetQuestions() -> [Question] {
-        (0..<numberOfRounds).map { Question(text: cityImages[$0].title) }
+        (0..<numberOfRounds).map { Question(text: filteredCityImages[$0].title) }
     }
 
     func submit(guess: String) {
-        let title = cityImages[currentCityIndex].title
+        let title = currentCityImage.title
 
         if title.caseInsensitiveContains(guess) {
             isCorrect = true

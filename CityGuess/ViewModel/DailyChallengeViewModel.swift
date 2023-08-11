@@ -21,10 +21,13 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var unlockProgress: CGFloat = 0
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
+    @Published var selectedContinent: CGCity.Continent = .all
 
     var roundOptions: [Int] {
         [filterValid(cityImages).count]
     }
+
+    var filteredCityImages: [CityImage] { cityImages }
 
     @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
 

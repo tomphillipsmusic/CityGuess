@@ -46,24 +46,23 @@ actor TeleportApiClient: CityFetching {
         cities = decodedCities
         return cities
     }
-    
+
     func fetchCities() async throws -> [CGCity] {
         let continents = try await fetchContinents()
-        
+
         var cgCities: [CGCity] = []
 
-        
         for continent in continents {
-            
+
             let cities = try await fetchCities(for: continent)
-            
+
             for city in cities {
                 if let city = CGCity(name: city.name, href: city.href, continent: continent) {
                     cgCities.append(city)
                 }
             }
         }
-        
+
         return cgCities
     }
 
@@ -90,8 +89,7 @@ extension TeleportApiClient: ContinentFetching {
         let url = "\(continent.href)\(Endpoint.urbanAreas)"
         let response: TeleportContinentsResponse.CitiesResponse = try await NetworkManager.shared.fetch(from: url)
         let decodedCities = response.links.cities
-        cities = decodedCities
-        return cities
+        return decodedCities
     }
 
     typealias CityModel = TeleportCity
