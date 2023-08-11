@@ -23,14 +23,13 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 Text(viewModel.gameDescription)
                     .font(.headline)
 
-                roundOptionsPicker
+                VStack(alignment: .leading) {
+                    if viewModel is TrainingViewModel {
+                        continentPicker
+                    }
 
-                if viewModel is TrainingViewModel {
-                    Picker("Continent", selection: $viewModel.selectedContinent) {
-                        ForEach(CGCity.Continent.allCases, id: \.self) { continent in
-                            Text(continent.rawValue)
-                                .tag(continent as CGCity.Continent?)
-                        }
+                    if viewModel.roundOptions.count > 1 {
+                        roundOptionsPicker
                     }
                 }
 
@@ -44,6 +43,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             )
             .cornerRadius(5)
             .shadow(radius: 0.2)
+            .animation(.linear, value: viewModel.selectedContinent)
         }
     }
 
@@ -62,7 +62,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
     var roundOptionsPicker: some View {
         HStack {
             Text("Number of Cities:")
-
+            Spacer()
             Picker("Number of Cities", selection: $viewModel.numberOfRounds) {
                 ForEach(viewModel.roundOptions, id: \.self) {
                     Text("\($0)")
@@ -78,12 +78,28 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
         }
     }
 
+    var continentPicker: some View {
+        HStack {
+            Text("Continent:")
+            Spacer()
+            Picker("Continent", selection: $viewModel.selectedContinent) {
+                ForEach(CGCity.Continent.allCases, id: \.self) { continent in
+                    Text(continent.rawValue)
+                        .tag(continent)
+                }
+            }
+            .onChange(of: viewModel.selectedContinent) { _ in
+                 viewModel.numberOfRounds = viewModel.roundOptions[0]
+            }
+        }
+    }
+
     var gameStartButton: some View {
         Button(viewModel.startGameButtonText) {
             viewModel.startGame(with: viewModel.numberOfRounds)
             historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
         }
-        .disabled(viewModel.cityImages.isEmpty)
+        .disabled(viewModel.filteredCityImages.isEmpty)
         .padding()
     }
 }

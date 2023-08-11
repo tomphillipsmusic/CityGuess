@@ -49,6 +49,26 @@ class TrainingViewModel: CityGuessViewModel {
         return filteredImages
     }
 
+    var roundOptions: [Int] {
+        var roundOptions: [Int] = []
+
+        let imageCount = filteredCityImages.count
+
+        if imageCount >= 5 {
+            roundOptions.append(5)
+        }
+
+        if imageCount >= 10 {
+            roundOptions.append(10)
+        }
+
+        if imageCount >= 25 {
+            roundOptions.append(25)
+        }
+
+        return roundOptions
+    }
+
     required init(cityService: CityService = LocalCityService(), cityFetcher: TeleportApiClient = TeleportApiClient()) {
         self.cityService = cityService
         self.cityFetcher = cityFetcher
@@ -64,10 +84,10 @@ class TrainingViewModel: CityGuessViewModel {
             if let cityImages = try? cityService.loadImages() {
                 self.cityImages = cityImages.shuffled()
             } else {
-//                if let defaultImages = try? Bundle.main.decode([CityImage].self, from: "InitialCityImages.json") {
-//                    cityImages = defaultImages
-//                    cityService.save(cityImages)
-//                }
+                if let defaultImages = try? Bundle.main.decode([CityImage].self, from: "InitialCityImages.json") {
+                    cityImages = defaultImages
+                    cityService.save(cityImages)
+                }
                 cityImages = try await cityFetcher.fetchCityImages().shuffled()
                 cityService.save(cityImages)
             }
@@ -83,10 +103,10 @@ class TrainingViewModel: CityGuessViewModel {
                !cities.isEmpty {
                 self.cities = cities
             } else {
-//                if let defaultImages = try? Bundle.main.decode([CGCity].self, from: "InitialCities.json") {
-//                    cities = defaultImages
-//                    try? cityService.save(cities)
-//                }
+                if let defaultImages = try? Bundle.main.decode([CGCity].self, from: "InitialCities.json") {
+                    cities = defaultImages
+                    try? cityService.save(cities)
+                }
                 let cities: [CGCity] = try await cityFetcher.fetchCities()
                 self.cities = cities
 
