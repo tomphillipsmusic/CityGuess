@@ -21,7 +21,7 @@ protocol CityGuessViewModel: ViewModel, CityGuessGame, ErrorAlertable {
     var cityService: CityService { get }
     var cityFetcher: CityFetcher { get }
 
-    var selectedContinent: CGCity.Continent { get set }
+    var selectedContinent: CGContinent { get set }
     var filteredCityImages: [CityImage] { get }
 
     func fetchCityImages() async

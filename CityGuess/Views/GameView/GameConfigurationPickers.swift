@@ -43,7 +43,7 @@ struct GameConfigurationPickers<ViewModel: CityGuessViewModel>: View {
             Text("Continent:")
             Spacer()
             Picker("Continent", selection: $viewModel.selectedContinent) {
-                ForEach(CGCity.Continent.allCases, id: \.self) { continent in
+                ForEach(CGContinent.allCases, id: \.self) { continent in
                     Text(continent.rawValue)
                         .tag(continent)
                 }

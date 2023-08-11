@@ -21,7 +21,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var unlockProgress: CGFloat = 0
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
-    @Published var selectedContinent: CGCity.Continent = .all
+    @Published var selectedContinent: CGContinent = .all
 
     var roundOptions: [Int] {
         [filterValid(cityImages).count]

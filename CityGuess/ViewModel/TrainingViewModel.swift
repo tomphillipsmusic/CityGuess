@@ -22,7 +22,7 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var isShowingAnimation: Bool = false
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
-    @Published var selectedContinent: CGCity.Continent = .all
+    @Published var selectedContinent: CGContinent = .all
     @Published var filteredCityImages: [CityImage] = []
 
     var cities: [CGCity] = []

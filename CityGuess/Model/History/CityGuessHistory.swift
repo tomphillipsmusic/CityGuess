@@ -10,7 +10,7 @@ import Foundation
 struct CityGuessHistory: Identifiable, Codable, Hashable {
     var id = UUID()
     let name: String
-    let continent: CGCity.Continent
+    let continent: CGContinent
     var guessStatus: CityGuessStatus = .notSeen
     var timesSeen = 0
     var timesGuessedCorrectly = 0
