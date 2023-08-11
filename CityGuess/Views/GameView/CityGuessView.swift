@@ -39,8 +39,11 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
                 withAnimation(.linear(duration: 1.0)) {
                     viewModel.submit(guess: city.name)
                     if let formattedImage = formatImageForHistoryStorage(ofCityNamed: city.name) {
-                        gameHistory.updateHistory(forImage: formattedImage, with: city.continent.rawValue, and: viewModel.isCorrect ? .right : .wrong)
-
+                        gameHistory.updateHistory(
+                            forImage: formattedImage,
+                            with: city.continent,
+                            and: viewModel.isCorrect ? .right : .wrong
+                        )
                     }
                 }
 

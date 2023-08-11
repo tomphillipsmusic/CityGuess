@@ -12,15 +12,6 @@ struct CityGuessApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .task {
-                    do {
-                        let continents = try await TeleportContinentService().fetchContinents()
-                        print(continents)
-                    } catch {
-                        print(error)
-                    }
-
-                }
         }
     }
 }

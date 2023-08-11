@@ -10,7 +10,7 @@ import Foundation
 struct CityGuessHistory: Identifiable, Codable, Hashable {
     var id = UUID()
     let name: String
-    let continent: String
+    let continent: CGCity.Continent
     var guessStatus: CityGuessStatus = .notSeen
     var timesSeen = 0
     var timesGuessedCorrectly = 0
@@ -26,18 +26,18 @@ extension CityGuessHistory {
     static let testData = [
         "New Detroit": CityGuessHistory(
             name: "New Detroit",
-            continent: "North America",
+            continent: .northAmerica,
             guessStatus: .wrong,
             urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"
         ),
         "New York": CityGuessHistory(
             name: "New York",
-            continent: "North America",
+            continent: .northAmerica,
             guessStatus: .right,
             urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg"),
         "New Orleans": CityGuessHistory(
             name: "New Orleans",
-            continent: "North America",
+            continent: .northAmerica,
             guessStatus: .wrong,
             urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
     ]

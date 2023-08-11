@@ -55,7 +55,7 @@ class CityGuessGameHistoryManager: ObservableObject {
         }
     }
 
-    func updateHistory(forImage cityImage: CityImage, with continent: String, and status: CityGuessStatus) {
+    func updateHistory(forImage cityImage: CityImage, with continent: CGCity.Continent, and status: CityGuessStatus) {
 
         let cityName = cityImage.title
         roundHistory[cityName] = CityGuessHistory(name: cityName, continent: continent, guessStatus: status, urlString: cityImage.url)

@@ -46,7 +46,7 @@ struct CityDetailView: View {
                 .foregroundColor(viewModel.guessHistoryLabelColor)
                 .padding()
 
-            Text(viewModel.guessHistory.continent)
+            Text(viewModel.guessHistory.continent.rawValue)
                 .font(.title2)
         }
     }
@@ -102,7 +102,7 @@ struct LearnMoreView_Previews: PreviewProvider {
     static var previews: some View {
         CityDetailView(viewModel: CityDetailViewModel( guessHistory: CityGuessHistory(
             name: "Detroit",
-            continent: "North America", urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
+            continent: .northAmerica, urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
         )
         )
     }
