@@ -76,39 +76,52 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var progressGauges: some View {
         VStack {
-            if viewModel.selectedContinent != .all {
-                let totalNumberCitiesInContinent = viewModel.cities.filter { $0.continent == viewModel.selectedContinent }.count
-                let totalNumberGuessedCorrectlyInContinent = historyManager.tempGuessHistory.filter { $0.value.continent == viewModel.selectedContinent && $0.value.guessStatus == .right}.count
-                
-                Text("\(viewModel.selectedContinent.rawValue) Cities Guessed Correctly: \(totalNumberGuessedCorrectlyInContinent) / \(totalNumberCitiesInContinent)")
-
-                ProgressGauge(
-                    numberCompleted: totalNumberGuessedCorrectlyInContinent,
-                    totalNumber: totalNumberCitiesInContinent,
-                    label: viewModel.selectedContinent.rawValue
-                )
-
-            } else {
-                Text(historyManager.newCitiesGuessedCorrectlyLabel)
-                    .font(.headline)
-                    .padding()
-
-                ProgressGauge(
-                    numberCompleted: hasUpdatedGauges ? historyManager.citiesGuessedCorrectly : historyManager.roundStartTotalCitiesGuessedCorrectly,
-                    totalNumber: historyManager.totalNumberOfCities,
-                    label: hasUpdatedGauges ? historyManager.totalCitiesGuessedCorrectlyText : ""
-                )
-            }
-
-            Text(historyManager.newCitiesSeenLabel)
+            Text("\(viewModel.selectedContinent.rawValue) Cities Guessed Correctly")
                 .font(.headline)
                 .padding()
 
+            let totalNumberOfCities = viewModel.totalNumberOfCities(in: viewModel.selectedContinent)
+            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: viewModel.selectedContinent)
             ProgressGauge(
-                numberCompleted: hasUpdatedGauges ? historyManager.totalCitiesSeen : historyManager.roundStartTotalCitiesGuessedCorrectly,
-                totalNumber: historyManager.totalNumberOfCities,
-                label: hasUpdatedGauges ? historyManager.totalCitiesSeenLabelText : ""
+                numberCompleted: totalNumberOfCitiesGuessedCorrectly,
+                totalNumber: totalNumberOfCities,
+                label: "\(totalNumberOfCitiesGuessedCorrectly)/\(totalNumberOfCities)"
             )
+//            if viewModel.selectedContinent != .all {
+//                let totalNumberCitiesInContinent = viewModel.cities.filter { $0.continent == viewModel.selectedContinent }.count
+//                let totalNumberGuessedCorrectlyInContinent = historyManager.tempGuessHistory.filter { $0.value.continent == viewModel.selectedContinent && $0.value.guessStatus == .right}.count
+//
+//                Text("\(viewModel.selectedContinent.rawValue) Cities Guessed Correctly: \(totalNumberGuessedCorrectlyInContinent) / \(totalNumberCitiesInContinent)")
+//                    .font(.headline)
+//                    .padding()
+//
+//                ProgressGauge(
+//                    numberCompleted: totalNumberGuessedCorrectlyInContinent,
+//                    totalNumber: totalNumberCitiesInContinent,
+//                    label: viewModel.selectedContinent.rawValue
+//                )
+//
+//            } else {
+//                Text(historyManager.newCitiesGuessedCorrectlyLabel)
+//                    .font(.headline)
+//                    .padding()
+//
+//                ProgressGauge(
+//                    numberCompleted: hasUpdatedGauges ? historyManager.citiesGuessedCorrectly : historyManager.roundStartTotalCitiesGuessedCorrectly,
+//                    totalNumber: historyManager.totalNumberOfCities,
+//                    label: hasUpdatedGauges ? historyManager.totalCitiesGuessedCorrectlyText : ""
+//                )
+//            }
+//
+//            Text(historyManager.newCitiesSeenLabel)
+//                .font(.headline)
+//                .padding()
+//
+//            ProgressGauge(
+//                numberCompleted: hasUpdatedGauges ? historyManager.totalCitiesSeen : historyManager.roundStartTotalCitiesGuessedCorrectly,
+//                totalNumber: historyManager.totalNumberOfCities,
+//                label: hasUpdatedGauges ? historyManager.totalCitiesSeenLabelText : ""
+//            )
         }
     }
 

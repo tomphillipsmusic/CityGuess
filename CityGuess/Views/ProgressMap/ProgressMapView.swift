@@ -10,29 +10,46 @@ import MapKit
 
 struct ProgressMapView: View {
     @AppStorage("firstTimeOpeningExploreCities") var isShowingInfoSheet = true
-    @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
+    @EnvironmentObject var historyManager: CityGuessGameHistoryManager
     @StateObject var viewModel = ProgressMapViewModel()
 
     var body: some View {
             VStack {
                 CityMapView(
                     cityCoordinates: viewModel.coordinates,
-                    guessHistory: guessHistory.guessHistory,
+                    guessHistory: historyManager.guessHistory,
                     selectedCityHistory: $viewModel.selectedCity
                 )
 
-                Group {
+                ScrollView {
                     if viewModel.coordinates.count > 0 {
                         ProgressGauge(
-                            numberCompleted: guessHistory.totalCitiesSeen,
-                            totalNumber: guessHistory.totalNumberOfCities,
-                            label: guessHistory.totalCitiesSeenLabelText
+                            numberCompleted: historyManager.totalCitiesSeen,
+                            totalNumber: historyManager.totalNumberOfCities,
+                            label: historyManager.totalCitiesSeenLabelText
                         )
                         ProgressGauge(
-                            numberCompleted: guessHistory.citiesGuessedCorrectly,
-                            totalNumber: guessHistory.totalNumberOfCities,
-                            label: guessHistory.totalCitiesGuessedCorrectlyText
+                            numberCompleted: historyManager.citiesGuessedCorrectly,
+                            totalNumber: historyManager.totalNumberOfCities,
+                            label: historyManager.totalCitiesGuessedCorrectlyText
                         )
+
+                        ForEach(CGContinent.allCases, id: \.self) { continent in
+                            let totalNumberOfCities = viewModel.totalNumberOfCities(in: continent)
+                            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: continent)
+
+                            if totalNumberOfCities > 0 {
+                                Text("\(continent.rawValue) Cities Guessed Correctly")
+                                    .font(.headline)
+                                    .padding()
+
+                                ProgressGauge(
+                                    numberCompleted: totalNumberOfCitiesGuessedCorrectly,
+                                    totalNumber: totalNumberOfCities,
+                                    label: "\(totalNumberOfCitiesGuessedCorrectly)/\(totalNumberOfCities)"
+                                )
+                            }
+                        }
                     }
                 }
                 .largeTextScrollView()

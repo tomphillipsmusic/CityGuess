@@ -18,6 +18,7 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
 
     let citiesClient: CityFetcher
     let coordinatesService: Service
+    var cities: [CGCity] = []
 
     let unlockText = "This feature unlocks once you have played at least one game of City Guess"
 
@@ -45,6 +46,7 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
     func fetchCoordinates() async {
         do {
             let cities = try await fetchCities()
+            self.cities = try await TeleportApiClient().fetchCities()
 
             if let defaultCoordinates = try? Bundle.main.decode(
                 [Service.CityCoordinateModel].self,
@@ -77,5 +79,13 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
         }
 
         return try await citiesClient.fetchCities()
+    }
+
+    func totalNumberOfCities(in continent: CGContinent) -> Int {
+        if continent == .all {
+            return cities.count
+        } else {
+            return cities.filter { $0.continent == continent }.count
+        }
     }
 }

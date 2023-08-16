@@ -97,4 +97,12 @@ extension CityGuessViewModel {
     var gameProgress: CGFloat {
         CGFloat(currentCityIndex) / CGFloat(numberOfRounds)
     }
+
+    func totalNumberOfCities(in continent: CGContinent) -> Int {
+        if continent == .all {
+            return cities.count
+        } else {
+            return cities.filter { $0.continent == continent }.count
+        }
+    }
 }

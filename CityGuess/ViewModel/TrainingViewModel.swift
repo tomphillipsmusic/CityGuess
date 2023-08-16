@@ -124,7 +124,7 @@ class TrainingViewModel: CityGuessViewModel {
             numberOfRounds = roundOptions[0]
         }
     }
-    
+
     func startGame(with numberOfRounds: Int) {
         self.numberOfRounds = numberOfRounds
         isPlaying = true

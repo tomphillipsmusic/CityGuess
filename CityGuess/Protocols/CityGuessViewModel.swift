@@ -24,6 +24,8 @@ protocol CityGuessViewModel: ViewModel, CityGuessGame, ErrorAlertable {
     var selectedContinent: CGContinent { get set }
     var filteredCityImages: [CityImage] { get }
 
+    func totalNumberOfCities(in continent: CGContinent) -> Int
+
     func fetchCityImages() async
     func fetchCities() async
     func autofillSuggestions(for guess: String) -> [CGCity]

@@ -117,6 +117,15 @@ class CityGuessGameHistoryManager: ObservableObject {
     func loadHistory() throws -> CityGuessHistoryDictionary {
         try historyService.read(from: Self.cityGuessHistoryFilename)
     }
+
+    func totalNumberOfCitiesGuessedCorrectly(in continent: CGContinent) -> Int {
+        let guessHistory = tempGuessHistory.isEmpty ? guessHistory : tempGuessHistory
+        if continent == .all {
+            return guessHistory.filter { $0.value.guessStatus == .right }.count
+        } else {
+            return guessHistory.filter { $0.value.continent == continent && $0.value.guessStatus == .right }.count
+        }
+    }
 }
 
 #if DEBUG
