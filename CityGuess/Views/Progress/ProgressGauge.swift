@@ -25,6 +25,7 @@ struct ProgressGauge: View {
             in: 0.0...Double(totalNumber)
         ) {
             Text(label)
+                .bold()
                 .scaledToFit()
                 .minimumScaleFactor(0.1)
                 .lineLimit(1)

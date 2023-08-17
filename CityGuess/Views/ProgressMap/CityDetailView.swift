@@ -59,7 +59,8 @@ struct CityDetailView: View {
                 CityMapView(
                     cityCoordinates: exploreCityViewModel.coordinates,
                     guessHistory: [viewModel.cityName: viewModel.guessHistory],
-                    selectedCityHistory: $exploreCityViewModel.selectedCity
+                    selectedCityHistory: $exploreCityViewModel.selectedCity,
+                    region: .constant(MKCoordinateRegion())
                 )
                 .cornerRadius(20)
                 .padding()

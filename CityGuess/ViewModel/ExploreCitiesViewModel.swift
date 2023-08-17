@@ -15,6 +15,7 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
     @Published var isShowingError = false
     @Published var errorMessage = "Error"
     @Published var selectedCity: CityGuessHistory?
+    @Published var region = MKCoordinateRegion(center: CGContinent.northAmerica.geographicCenter, span: MKCoordinateSpan(latitudeDelta: CLLocationDegrees(), longitudeDelta: CLLocationDegrees()))
 
     let citiesClient: CityFetcher
     let coordinatesService: Service
@@ -87,5 +88,9 @@ where Service.CityModel == CityFetcher.CityModel, Service.CityCoordinateModel: D
         } else {
             return cities.filter { $0.continent == continent }.count
         }
+    }
+    
+    func updateRegion(for continent: CGContinent) {
+        region = MKCoordinateRegion(center: continent.geographicCenter, span: MKCoordinateSpan())
     }
 }

@@ -10,13 +10,15 @@ import MapKit
 
 struct CityMapView: UIViewRepresentable {
     @Binding var selectedCityHistory: CityGuessHistory?
+    @Binding var region: MKCoordinateRegion
     var locationManager = CLLocationManager()
     let annotations: [CityMapAnnotation]
 
     init(
         cityCoordinates: [CityCoordinate],
         guessHistory: [String: CityGuessHistory],
-        selectedCityHistory: Binding<CityGuessHistory?>
+        selectedCityHistory: Binding<CityGuessHistory?>,
+        region: Binding<MKCoordinateRegion>
     ) {
         annotations = cityCoordinates.filter { guessHistory[$0.name] != nil }.compactMap {
             if guessHistory[$0.name] != nil {
@@ -25,13 +27,15 @@ struct CityMapView: UIViewRepresentable {
 
             return nil
         }
-
+        
         _selectedCityHistory = selectedCityHistory
+        _region = region
     }
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
+        mapView.region = region
 
         if annotations.count == 1 {
             configureSingleCity(mapView)
@@ -42,7 +46,8 @@ struct CityMapView: UIViewRepresentable {
 
     func updateUIView(_ mapView: MKMapView, context: Context) {
         mapView.addAnnotations(annotations)
-
+        mapView.region = region
+        
         if annotations.count == 1 {
             configureSingleCity(mapView)
         }

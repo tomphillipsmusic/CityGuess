@@ -18,7 +18,8 @@ struct ProgressMapView: View {
                 CityMapView(
                     cityCoordinates: viewModel.coordinates,
                     guessHistory: historyManager.guessHistory,
-                    selectedCityHistory: $viewModel.selectedCity
+                    selectedCityHistory: $viewModel.selectedCity,
+                    region: $viewModel.region
                 )
 
                 ScrollView {
@@ -28,26 +29,20 @@ struct ProgressMapView: View {
                             totalNumber: historyManager.totalNumberOfCities,
                             label: historyManager.totalCitiesSeenLabelText
                         )
-                        ProgressGauge(
-                            numberCompleted: historyManager.citiesGuessedCorrectly,
-                            totalNumber: historyManager.totalNumberOfCities,
-                            label: historyManager.totalCitiesGuessedCorrectlyText
-                        )
 
                         ForEach(CGContinent.allCases, id: \.self) { continent in
                             let totalNumberOfCities = viewModel.totalNumberOfCities(in: continent)
                             let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: continent)
 
                             if totalNumberOfCities > 0 {
-                                Text("\(continent.rawValue) Cities Guessed Correctly")
-                                    .font(.headline)
-                                    .padding()
-
                                 ProgressGauge(
                                     numberCompleted: totalNumberOfCitiesGuessedCorrectly,
                                     totalNumber: totalNumberOfCities,
-                                    label: "\(totalNumberOfCitiesGuessedCorrectly)/\(totalNumberOfCities)"
+                                    label: "\(continent.rawValue) Cities Guessed Correctly \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
                                 )
+                                .onTapGesture {
+                                    viewModel.updateRegion(for: continent)
+                                }
                             }
                         }
                     }
