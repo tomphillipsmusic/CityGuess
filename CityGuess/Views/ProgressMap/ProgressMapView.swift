@@ -19,7 +19,7 @@ struct ProgressMapView: View {
                     cityCoordinates: viewModel.coordinates,
                     guessHistory: historyManager.guessHistory,
                     selectedCityHistory: $viewModel.selectedCity,
-                    region: $viewModel.region
+                    selectedContinent: $viewModel.selectedContinent
                 )
 
                 ScrollView {
@@ -41,7 +41,8 @@ struct ProgressMapView: View {
                                     label: "\(continent.rawValue) Cities Guessed Correctly \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
                                 )
                                 .onTapGesture {
-                                    viewModel.updateRegion(for: continent)
+                                    viewModel.selectedContinent = continent
+                                    print("SelectedContinent: \(viewModel.selectedContinent)")
                                 }
                             }
                         }

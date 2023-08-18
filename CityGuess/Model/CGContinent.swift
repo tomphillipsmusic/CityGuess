@@ -18,27 +18,24 @@ enum CGContinent: String, Codable, CaseIterable {
 }
 
 import MapKit
-// Get geographic coordinate centers for each continent so tapping the progress bar moves the map to that continent on the map
+
 extension CGContinent {
     var geographicCenter: CLLocationCoordinate2D {
         switch self {
         case .all:
-            CLLocationCoordinate2D(latitude: 0, longitude: 0)
+            return CLLocationCoordinate2D(latitude: 0, longitude: 0)
         case .oceania:
-            CLLocationCoordinate2D(latitude: 0, longitude: 0)
+            return CLLocationCoordinate2D(latitude: -22.7359, longitude: 140.0188)
         case .southAmerica:
-            CLLocationCoordinate2D(latitude: 0, longitude: 0)
+            return CLLocationCoordinate2D(latitude: -8.7832, longitude: -55.4915)
         case .africa:
-            CLLocationCoordinate2D(latitude: 0, longitude: 0)
+            return CLLocationCoordinate2D(latitude: -8.7832, longitude: 34.5085)
         case .asia:
-            CLLocationCoordinate2D(latitude: 0, longitude: 0)
+            return CLLocationCoordinate2D(latitude: 34.0479, longitude: 100.6197)
         case .europe:
-            CLLocationCoordinate2D(latitude: 0, longitude: 0)
+            return CLLocationCoordinate2D(latitude: 54.5260, longitude: 15.2551)
         case .northAmerica:
-            CLLocationCoordinate2D(latitude: 48, longitude: -10)
-           // 48°10′N 100°10′W
+            return CLLocationCoordinate2D(latitude: 54.5260, longitude: -105.2551)
         }
-        
-        return CLLocationCoordinate2D(latitude: 48, longitude: -10)
     }
 }

@@ -10,7 +10,8 @@ import MapKit
 
 struct CityMapView: UIViewRepresentable {
     @Binding var selectedCityHistory: CityGuessHistory?
-    @Binding var region: MKCoordinateRegion
+    @Binding var selectedContinent: CGContinent?
+
     var locationManager = CLLocationManager()
     let annotations: [CityMapAnnotation]
 
@@ -18,7 +19,7 @@ struct CityMapView: UIViewRepresentable {
         cityCoordinates: [CityCoordinate],
         guessHistory: [String: CityGuessHistory],
         selectedCityHistory: Binding<CityGuessHistory?>,
-        region: Binding<MKCoordinateRegion>
+        selectedContinent: Binding<CGContinent?>
     ) {
         annotations = cityCoordinates.filter { guessHistory[$0.name] != nil }.compactMap {
             if guessHistory[$0.name] != nil {
@@ -27,15 +28,14 @@ struct CityMapView: UIViewRepresentable {
 
             return nil
         }
-        
+
         _selectedCityHistory = selectedCityHistory
-        _region = region
+        _selectedContinent = selectedContinent
     }
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-        mapView.region = region
 
         if annotations.count == 1 {
             configureSingleCity(mapView)
@@ -46,10 +46,26 @@ struct CityMapView: UIViewRepresentable {
 
     func updateUIView(_ mapView: MKMapView, context: Context) {
         mapView.addAnnotations(annotations)
-        mapView.region = region
-        
+
+        if let selectedContinent {
+            resetCameraTo(selectedContinent, on: mapView)
+        }
+
         if annotations.count == 1 {
             configureSingleCity(mapView)
+        }
+    }
+
+    private func resetCameraTo(_ selectedContinent: CGContinent, on mapView: MKMapView) {
+        let camera = MKMapCamera(
+            lookingAtCenter: selectedContinent.geographicCenter,
+            fromEyeCoordinate: selectedContinent.geographicCenter,
+            eyeAltitude: 1_000_000_000
+        )
+
+        DispatchQueue.main.async {
+            mapView.setCamera(camera, animated: true)
+            self.selectedContinent = nil
         }
     }
 
