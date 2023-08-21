@@ -62,7 +62,6 @@ class TrainingViewModel: CityGuessViewModel {
         Task {
             await fetchCities()
             await fetchCityImages()
-            filteredCityImages = cityImages
         }
     }
 
@@ -78,6 +77,8 @@ class TrainingViewModel: CityGuessViewModel {
                 cityImages = try await cityFetcher.fetchCityImages().shuffled()
                 cityService.save(cityImages)
             }
+
+            filterCityImages()
         } catch {
             errorMessage = "Error loading city images. Please try again later."
             isShowingError = true
@@ -90,16 +91,18 @@ class TrainingViewModel: CityGuessViewModel {
                !cities.isEmpty {
                 self.cities = cities
             } else {
-                if let defaultImages = try? Bundle.main.decode([CGCity].self, from: "InitialCities.json") {
-                    cities = defaultImages
+                if let defaultCities = try? Bundle.main.decode([CGCity].self, from: "InitialCities.json") {
+                    cities = defaultCities
                     try? cityService.save(cities)
                 }
+
                 let cities: [CGCity] = try await cityFetcher.fetchCities()
                 self.cities = cities
 
                 cities.forEach { print("Printing CGCITY: \($0)")}
                 try? cityService.save(cities)
             }
+
         } catch {
             errorMessage = "Error loading city data. Please try again later."
             isShowingError = true
@@ -109,19 +112,20 @@ class TrainingViewModel: CityGuessViewModel {
     func filterCityImages() {
         if selectedContinent == .all {
             filteredCityImages = cityImages.shuffled()
+        } else {
+            filteredCityImages = filterCities(by: selectedContinent).shuffled()
         }
 
-        let filteredImages = cityImages.filter { image in
-
-            let city = cities.first { $0.name == image.title }
-
-            return city?.continent == selectedContinent ? true : false
-        }
-
-        filteredCityImages = filteredImages.shuffled()
-
-        if filteredImages.count >= defaultNumberOfRounds {
+        if filteredCityImages.count >= defaultNumberOfRounds {
             numberOfRounds = roundOptions[0]
+        }
+
+    }
+
+    private func filterCities(by continent: CGContinent) -> [CityImage] {
+        cityImages.filter { image in
+            let city = cities.first { $0.name == image.title }
+            return city?.continent == continent ? true : false
         }
     }
 

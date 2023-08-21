@@ -51,7 +51,6 @@ struct GameConfigurationPickers<ViewModel: CityGuessViewModel>: View {
             .onChange(of: viewModel.selectedContinent) { _ in
                 if let viewModel = viewModel as? TrainingViewModel {
                     viewModel.filterCityImages()
-
                 }
             }
         }
