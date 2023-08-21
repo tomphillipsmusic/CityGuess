@@ -29,6 +29,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             }
 
             reviewCitiesButton
+            checkProgressButton
             endGameButton
         }
         .largeTextScrollView()
@@ -76,24 +77,16 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var progressGauges: some View {
         VStack {
-            Text(historyManager.newCitiesGuessedCorrectlyLabel)
+            Text(viewModel.selectedContinent.progressGaugeLabel)
                 .font(.headline)
                 .padding()
 
+            let totalNumberOfCities = viewModel.totalNumberOfCities(in: viewModel.selectedContinent)
+            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: viewModel.selectedContinent)
             ProgressGauge(
-                numberCompleted: hasUpdatedGauges ? historyManager.citiesGuessedCorrectly : historyManager.roundStartTotalCitiesGuessedCorrectly,
-                totalNumber: historyManager.totalNumberOfCities,
-                label: hasUpdatedGauges ? historyManager.totalCitiesGuessedCorrectlyText : ""
-            )
-
-            Text(historyManager.newCitiesSeenLabel)
-                .font(.headline)
-                .padding()
-
-            ProgressGauge(
-                numberCompleted: hasUpdatedGauges ? historyManager.totalCitiesSeen : historyManager.roundStartTotalCitiesGuessedCorrectly,
-                totalNumber: historyManager.totalNumberOfCities,
-                label: hasUpdatedGauges ? historyManager.totalCitiesSeenLabelText : ""
+                numberCompleted: totalNumberOfCitiesGuessedCorrectly,
+                totalNumber: totalNumberOfCities,
+                label: "\(totalNumberOfCitiesGuessedCorrectly)/\(totalNumberOfCities)"
             )
         }
     }
@@ -102,7 +95,17 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         NavigationLink("Review Cities") {
             ReviewCitiesView()
         }
+        .padding()
         .disabled(historyManager.roundHistory.isEmpty)
+    }
+
+    var checkProgressButton: some View {
+        Button("Check Progress") {
+            viewModel.endGame()
+            router.path.removeAll()
+            router.path.append(Router.Screen.progressMap)
+        }
+        .padding()
     }
 
     var endGameButton: some View {

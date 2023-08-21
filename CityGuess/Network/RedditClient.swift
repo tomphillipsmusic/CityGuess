@@ -8,7 +8,7 @@
 import Foundation
 
 class RedditClient: CityFetching {
-    typealias CityModel = TeleportCity
+    typealias CityModel = CGCity
 
     private let baseUrl = "https://www.reddit.com/r/cityporn/"
     private let count = 100
@@ -18,7 +18,7 @@ class RedditClient: CityFetching {
     }
 
     // TODO: Find a cleaner of doing this. Using TeleportAPI Client here to guarantee smaller list of cities.
-    func fetchCities() async throws -> [TeleportCity] {
+    func fetchCities() async throws -> [CGCity] {
         try await TeleportApiClient().fetchCities()
     }
 

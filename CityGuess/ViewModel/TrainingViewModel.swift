@@ -22,8 +22,10 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var isShowingAnimation: Bool = false
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
+    @Published var selectedContinent: CGContinent = .all
+    @Published var filteredCityImages: [CityImage] = []
 
-    var cities: [TeleportCity] = []
+    var cities: [CGCity] = []
     let cityService: CityService
     let cityFetcher: TeleportApiClient
 
@@ -32,6 +34,26 @@ class TrainingViewModel: CityGuessViewModel {
     let gameDescription: String = "Take a spin through our images of famous cities from around the world"
         + "and do your best to guess the name of the city!"
     let startGameButtonText: String = "Start Training"
+
+    var roundOptions: [Int] {
+        var roundOptions: [Int] = []
+
+        let imageCount = filteredCityImages.count
+
+        if imageCount >= 5 {
+            roundOptions.append(5)
+        }
+
+        if imageCount >= 10 {
+            roundOptions.append(10)
+        }
+
+        if imageCount >= 25 {
+            roundOptions.append(25)
+        }
+
+        return roundOptions
+    }
 
     required init(cityService: CityService = LocalCityService(), cityFetcher: TeleportApiClient = TeleportApiClient()) {
         self.cityService = cityService
@@ -55,6 +77,8 @@ class TrainingViewModel: CityGuessViewModel {
                 cityImages = try await cityFetcher.fetchCityImages().shuffled()
                 cityService.save(cityImages)
             }
+
+            filterCityImages()
         } catch {
             errorMessage = "Error loading city images. Please try again later."
             isShowingError = true
@@ -63,21 +87,56 @@ class TrainingViewModel: CityGuessViewModel {
 
     func fetchCities() async {
         do {
-            if let cities: [CityModel] = try? cityService.loadCities(),
+            if let cities: [CGCity] = try? cityService.loadCities(),
                !cities.isEmpty {
                 self.cities = cities
             } else {
-                if let defaultImages = try? Bundle.main.decode([TeleportCity].self, from: "InitialCities.json") {
-                    cities = defaultImages
+                if let defaultCities = try? Bundle.main.decode([CGCity].self, from: "InitialCities.json") {
+                    cities = defaultCities
                     try? cityService.save(cities)
                 }
-                let cities = try await cityFetcher.fetchCities()
+
+                let cities: [CGCity] = try await cityFetcher.fetchCities()
                 self.cities = cities
+
+                cities.forEach { print("Printing CGCITY: \($0)")}
                 try? cityService.save(cities)
             }
+
         } catch {
             errorMessage = "Error loading city data. Please try again later."
             isShowingError = true
         }
+    }
+
+    func filterCityImages() {
+        if selectedContinent == .all {
+            filteredCityImages = cityImages.shuffled()
+        } else {
+            filteredCityImages = filterCities(by: selectedContinent).shuffled()
+        }
+
+        if filteredCityImages.count >= defaultNumberOfRounds {
+            numberOfRounds = roundOptions[0]
+        }
+
+    }
+
+    private func filterCities(by continent: CGContinent) -> [CityImage] {
+        cityImages.filter { image in
+            let city = cities.first { $0.name == image.title }
+            return city?.continent == continent ? true : false
+        }
+    }
+
+    func startGame(with numberOfRounds: Int) {
+        self.numberOfRounds = numberOfRounds
+        isPlaying = true
+        score = 0
+        cityImages.shuffle()
+        filteredCityImages.shuffle()
+        priorAnswer = ""
+        currentCityIndex = 0
+        questions = resetQuestions()
     }
 }

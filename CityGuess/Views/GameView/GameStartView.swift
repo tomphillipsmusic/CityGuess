@@ -23,7 +23,10 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 Text(viewModel.gameDescription)
                     .font(.headline)
 
-                roundOptionsPicker
+                if viewModel is TrainingViewModel {
+                    GameConfigurationPickers(viewModel: viewModel)
+                }
+
                 gameStartButton
             }
             .padding()
@@ -34,6 +37,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             )
             .cornerRadius(5)
             .shadow(radius: 0.2)
+            .animation(.default, value: viewModel.selectedContinent)
         }
     }
 
@@ -49,32 +53,23 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
         }
     }
 
-    var roundOptionsPicker: some View {
-        HStack {
-            Text("Number of Cities:")
-
-            Picker("Number of Cities", selection: $viewModel.numberOfRounds) {
-                ForEach(viewModel.roundOptions, id: \.self) {
-                    Text("\($0)")
-                        .tag($0)
-                }
-                .onChange(of: viewModel.numberOfRounds) { newValue in
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        viewModel.questions = Array(repeating: Question(text: ""), count: newValue)
-                    }
-                }
-            }
-            .disabled(viewModel.roundOptions.count <= 1)
-        }
-    }
-
     var gameStartButton: some View {
-        Button(viewModel.startGameButtonText) {
-            viewModel.startGame(with: viewModel.numberOfRounds)
-            historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
+        HStack {
+            Spacer()
+            Button(viewModel.startGameButtonText) {
+                viewModel.startGame(with: viewModel.numberOfRounds)
+                historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
+            }
+            .disabled(viewModel.filteredCityImages.isEmpty)
+            .padding()
+
+            if viewModel.filteredCityImages.isEmpty {
+                ProgressView()
+            }
+
+            Spacer()
         }
-        .disabled(viewModel.cityImages.isEmpty)
-        .padding()
+
     }
 }
 

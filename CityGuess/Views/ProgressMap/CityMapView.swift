@@ -10,13 +10,16 @@ import MapKit
 
 struct CityMapView: UIViewRepresentable {
     @Binding var selectedCityHistory: CityGuessHistory?
+    @Binding var selectedContinent: CGContinent?
+
     var locationManager = CLLocationManager()
     let annotations: [CityMapAnnotation]
 
     init(
         cityCoordinates: [CityCoordinate],
         guessHistory: [String: CityGuessHistory],
-        selectedCityHistory: Binding<CityGuessHistory?>
+        selectedCityHistory: Binding<CityGuessHistory?>,
+        selectedContinent: Binding<CGContinent?>
     ) {
         annotations = cityCoordinates.filter { guessHistory[$0.name] != nil }.compactMap {
             if guessHistory[$0.name] != nil {
@@ -27,6 +30,7 @@ struct CityMapView: UIViewRepresentable {
         }
 
         _selectedCityHistory = selectedCityHistory
+        _selectedContinent = selectedContinent
     }
 
     func makeUIView(context: Context) -> MKMapView {
@@ -43,8 +47,25 @@ struct CityMapView: UIViewRepresentable {
     func updateUIView(_ mapView: MKMapView, context: Context) {
         mapView.addAnnotations(annotations)
 
+        if let selectedContinent {
+            resetCameraTo(selectedContinent, on: mapView)
+        }
+
         if annotations.count == 1 {
             configureSingleCity(mapView)
+        }
+    }
+
+    private func resetCameraTo(_ selectedContinent: CGContinent, on mapView: MKMapView) {
+        let camera = MKMapCamera(
+            lookingAtCenter: selectedContinent.geographicCenter,
+            fromEyeCoordinate: selectedContinent.geographicCenter,
+            eyeAltitude: 1_000_000_000
+        )
+
+        DispatchQueue.main.async {
+            mapView.setCamera(camera, animated: true)
+            self.selectedContinent = nil
         }
     }
 

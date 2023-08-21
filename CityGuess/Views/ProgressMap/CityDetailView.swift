@@ -44,6 +44,10 @@ struct CityDetailView: View {
             Text(viewModel.cityName)
                 .font(.largeTitle)
                 .foregroundColor(viewModel.guessHistoryLabelColor)
+                .padding()
+
+            Text(viewModel.guessHistory.continent.rawValue)
+                .font(.title2)
         }
     }
 
@@ -55,7 +59,8 @@ struct CityDetailView: View {
                 CityMapView(
                     cityCoordinates: exploreCityViewModel.coordinates,
                     guessHistory: [viewModel.cityName: viewModel.guessHistory],
-                    selectedCityHistory: $exploreCityViewModel.selectedCity
+                    selectedCityHistory: $exploreCityViewModel.selectedCity,
+                    selectedContinent: .constant(nil)
                 )
                 .cornerRadius(20)
                 .padding()
@@ -96,10 +101,10 @@ struct CityDetailView: View {
 
 struct LearnMoreView_Previews: PreviewProvider {
     static var previews: some View {
-        CityDetailView(viewModel: CityDetailViewModel( guessHistory: CityGuessHistory(
+        CityDetailView(viewModel: CityDetailViewModel(guessHistory: CityGuessHistory(
             name: "Detroit",
+            continent: .northAmerica,
             urlString: "https://d13k13wj6adfdf.cloudfront.net/urban_areas/detroit-e0a9dfeff2.jpg")
         )
-        )
-    }
+    )}
 }

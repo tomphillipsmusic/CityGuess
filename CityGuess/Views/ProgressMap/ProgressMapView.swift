@@ -10,29 +10,44 @@ import MapKit
 
 struct ProgressMapView: View {
     @AppStorage("firstTimeOpeningExploreCities") var isShowingInfoSheet = true
-    @EnvironmentObject var guessHistory: CityGuessGameHistoryManager
+    @EnvironmentObject var historyManager: CityGuessGameHistoryManager
     @StateObject var viewModel = ProgressMapViewModel()
 
     var body: some View {
             VStack {
                 CityMapView(
                     cityCoordinates: viewModel.coordinates,
-                    guessHistory: guessHistory.guessHistory,
-                    selectedCityHistory: $viewModel.selectedCity
+                    guessHistory: historyManager.guessHistory,
+                    selectedCityHistory: $viewModel.selectedCity,
+                    selectedContinent: $viewModel.selectedContinent
                 )
 
-                Group {
+                ScrollView {
                     if viewModel.coordinates.count > 0 {
                         ProgressGauge(
-                            numberCompleted: guessHistory.totalCitiesSeen,
-                            totalNumber: guessHistory.totalNumberOfCities,
-                            label: guessHistory.totalCitiesSeenLabelText
+                            numberCompleted: historyManager.totalCitiesSeen,
+                            totalNumber: historyManager.totalNumberOfCities,
+                            label: historyManager.totalCitiesSeenLabelText
                         )
-                        ProgressGauge(
-                            numberCompleted: guessHistory.citiesGuessedCorrectly,
-                            totalNumber: guessHistory.totalNumberOfCities,
-                            label: guessHistory.totalCitiesGuessedCorrectlyText
-                        )
+
+                        ForEach(CGContinent.allCases, id: \.self) { continent in
+                            let totalNumberOfCities = viewModel.totalNumberOfCities(in: continent)
+                            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: continent)
+
+                            if totalNumberOfCities > 0 {
+                                ProgressGauge(
+                                    numberCompleted: totalNumberOfCitiesGuessedCorrectly,
+                                    totalNumber: totalNumberOfCities,
+                                    label: "\(continent.progressGaugeLabel) \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
+                                )
+                                .onTapGesture {
+                                    viewModel.selectedContinent = continent
+                                }
+                            }
+                        }
+                    } else {
+                        ProgressView()
+                            .padding()
                     }
                 }
                 .largeTextScrollView()

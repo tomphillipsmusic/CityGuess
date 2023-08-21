@@ -55,10 +55,15 @@ class CityGuessGameHistoryManager: ObservableObject {
         }
     }
 
-    func updateHistory(forImage cityImage: CityImage, with status: CityGuessStatus) {
+    func updateHistory(forImage cityImage: CityImage, with continent: CGContinent, and status: CityGuessStatus) {
 
         let cityName = cityImage.title
-        roundHistory[cityName] = CityGuessHistory(name: cityName, guessStatus: status, urlString: cityImage.url)
+        roundHistory[cityName] = CityGuessHistory(
+            name: cityName,
+            continent: continent,
+            guessStatus: status,
+            urlString: cityImage.url
+        )
 
         if tempGuessHistory[cityName] != nil {
             let hasAlreadyBeenGuessedCorrectly = tempGuessHistory[cityName]?.guessStatus == .right
@@ -69,7 +74,12 @@ class CityGuessGameHistoryManager: ObservableObject {
             }
 
         } else {
-            tempGuessHistory[cityName] = CityGuessHistory(name: cityName, urlString: cityImage.url)
+            tempGuessHistory[cityName] = CityGuessHistory(
+                name: cityName,
+                continent: continent,
+                urlString: cityImage.url
+            )
+
             tempGuessHistory[cityName]?.guessStatus = status
             updateRoundHistory(guessStatus: status)
         }
@@ -106,6 +116,15 @@ class CityGuessGameHistoryManager: ObservableObject {
 
     func loadHistory() throws -> CityGuessHistoryDictionary {
         try historyService.read(from: Self.cityGuessHistoryFilename)
+    }
+
+    func totalNumberOfCitiesGuessedCorrectly(in continent: CGContinent) -> Int {
+        let guessHistory = tempGuessHistory.isEmpty ? guessHistory : tempGuessHistory
+        if continent == .all {
+            return guessHistory.filter { $0.value.guessStatus == .right }.count
+        } else {
+            return guessHistory.filter { $0.value.continent == continent && $0.value.guessStatus == .right }.count
+        }
     }
 }
 
