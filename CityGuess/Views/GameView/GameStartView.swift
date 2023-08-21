@@ -51,12 +51,22 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
     }
 
     var gameStartButton: some View {
-        Button(viewModel.startGameButtonText) {
-            viewModel.startGame(with: viewModel.numberOfRounds)
-            historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
+        HStack {
+            Spacer()
+            Button(viewModel.startGameButtonText) {
+                viewModel.startGame(with: viewModel.numberOfRounds)
+                historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
+            }
+            .disabled(viewModel.filteredCityImages.isEmpty)
+            .padding()
+
+            if viewModel.filteredCityImages.isEmpty {
+                ProgressView()
+            }
+
+            Spacer()
         }
-        .disabled(viewModel.filteredCityImages.isEmpty)
-        .padding()
+
     }
 }
 
