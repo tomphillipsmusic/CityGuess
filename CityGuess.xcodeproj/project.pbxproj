@@ -26,6 +26,7 @@
 		3E0A438829E981DF00A9D2BE /* TeleportImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */; };
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
 		3E0D22662A93B93E00445981 /* NavigationPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */; };
+		3E0D22682A93F20400445981 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22672A93F20400445981 /* Date+Extension.swift */; };
 		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
 		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
@@ -41,7 +42,6 @@
 		3E210FE62A0C13A3000FA523 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */; };
 		3E25FC062A1BF01E0040E50C /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC052A1BF01E0040E50C /* RingView.swift */; };
 		3E25FC0A2A1C0B8C0040E50C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC092A1C0B8C0040E50C /* City.swift */; };
-		3E25FC0C2A1C0C0A0040E50C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC0B2A1C0C0A0040E50C /* Constants.swift */; };
 		3E25FC0E2A1C0D850040E50C /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC0D2A1C0D850040E50C /* MainMenuButton.swift */; };
 		3E25FC102A1C0E450040E50C /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25FC0F2A1C0E450040E50C /* LockView.swift */; };
 		3E298FB929F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */; };
@@ -145,6 +145,7 @@
 		3E0A438729E981DF00A9D2BE /* TeleportImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportImageResponse.swift; sourceTree = "<group>"; };
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
 		3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationPath+Extension.swift"; sourceTree = "<group>"; };
+		3E0D22672A93F20400445981 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
 		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 		3E210FE52A0C13A3000FA523 /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		3E25FC052A1BF01E0040E50C /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		3E25FC092A1C0B8C0040E50C /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		3E25FC0B2A1C0C0A0040E50C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E25FC0D2A1C0D850040E50C /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 		3E25FC0F2A1C0E450040E50C /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		3E298FB829F7FEA300A861F0 /* VerticalTextAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAnimationViewModel.swift; sourceTree = "<group>"; };
@@ -464,7 +464,6 @@
 				3E093C632A6B20CD00C7D28B /* InitialJsonData */,
 				3E64ADAA29DEFD5400DCCF2E /* Assets.xcassets */,
 				3E64ADAC29DEFD5400DCCF2E /* Preview Content */,
-				3E25FC0B2A1C0C0A0040E50C /* Constants.swift */,
 			);
 			path = CityGuess;
 			sourceTree = "<group>";
@@ -554,6 +553,7 @@
 				3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */,
 				3E093C5B2A6AB76700C7D28B /* URL+Identifiable.swift */,
 				3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */,
+				3E0D22672A93F20400445981 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -776,6 +776,7 @@
 				3E46F9C62A4CC4C200EA67ED /* OnboardingView.swift in Sources */,
 				3EEB99A229E491E000514F79 /* GameStartView.swift in Sources */,
 				3E093C5A2A6AB5F200C7D28B /* SafariWebView.swift in Sources */,
+				3E0D22682A93F20400445981 /* Date+Extension.swift in Sources */,
 				3E0D22662A93B93E00445981 /* NavigationPath+Extension.swift in Sources */,
 				3E210FE42A0AEB71000FA523 /* Router.swift in Sources */,
 				3EF5BF572A1FAB30006B5DE8 /* CoordinatesService.swift in Sources */,
@@ -803,7 +804,6 @@
 				3EEB999E29E47E4400514F79 /* TrainingViewModel.swift in Sources */,
 				3E2B498229F96F8B00260B88 /* String+Extension.swift in Sources */,
 				3E46E3FE2A40D18200ED3646 /* CityGuessHistory.swift in Sources */,
-				3E25FC0C2A1C0C0A0040E50C /* Constants.swift in Sources */,
 				3E0A438429E9818400A9D2BE /* TeleportCitiesResponse.swift in Sources */,
 				3EF5BF5F2A1FAC2F006B5DE8 /* CoordinateBox.swift in Sources */,
 				3E210FE22A09806E000FA523 /* PublishedAppStorage.swift in Sources */,
