@@ -15,11 +15,15 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @EnvironmentObject var router: Router
     @ObservedObject var viewModel: ViewModel
     @State private var hasUpdatedGauges = false
-
+    @State private var screenshotMaker: ScreenshotMaker?
+    
+    
+    let photo = Photo(image: Image("cityguess-logo"), caption: "Check Out My High Score")
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         VStack {
+            
             header
             Divider()
             progressGauges
@@ -34,10 +38,19 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         }
         .largeTextScrollView()
         .navigationBarBackButtonHidden()
+        .toolbar {
+            ShareLink(
+                item: URL(string: "https://testflight.apple.com/join/9AOjhroT")!,
+                subject: Text("Download City Guess"),
+                message: Text("I just guessed \(viewModel.score) cities correctly on the City Guess Daily Challenge! How many can you guess?"),
+                preview: SharePreview(
+                    photo.caption,
+                    image: photo.image))
+        }
         .onAppear {
             UIApplication.shared.endEditing()
             historyManager.saveHistory()
-
+            
             if let viewModel = viewModel as? DailyChallengeViewModel {
                 if !firstTimeCompletingDailyChallenge {
                     viewModel.scheduleNotification()
@@ -61,6 +74,9 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                     }
                 }
         })
+        .screenshotView { screenshotMaker in
+            self.screenshotMaker = screenshotMaker
+        }
     }
 
     var header: some View {
@@ -117,6 +133,14 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         }
         .padding()
     }
+    
+    var shareableImage: Image {
+        if let screenshotMaker, let screenshot = screenshotMaker.screenshot() {
+            return Image(uiImage: screenshot)
+        }
+        
+        return Image(uiImage: UIImage(named: "cityguess-logo") ?? UIImage())
+    }
 }
 
 struct GameOverOver_Previews: PreviewProvider {
@@ -124,5 +148,46 @@ struct GameOverOver_Previews: PreviewProvider {
         GameEndView(viewModel: TrainingViewModel())
             .environmentObject(Router())
             .environmentObject(CityGuessGameHistoryManager())
+    }
+}
+
+typealias ScreenshotMakerClosure = (ScreenshotMaker) -> Void
+
+struct ScreenshotMakerView: UIViewRepresentable {
+    let closure: ScreenshotMakerClosure
+    
+    init(_ closure: @escaping ScreenshotMakerClosure) {
+        self.closure = closure
+    }
+    
+    func makeUIView(context: Context) -> ScreenshotMaker {
+        let view = ScreenshotMaker(frame: CGRect.zero)
+        return view
+    }
+    
+    func updateUIView(_ uiView: ScreenshotMaker, context: Context) {
+        DispatchQueue.main.async {
+            closure(uiView)
+        }
+    }
+}
+
+class ScreenshotMaker: UIView {
+    /// Takes the screenshot of the superview of this superview
+    /// - Returns: The UIImage with the screenshot of the view
+    func screenshot() -> UIImage? {
+        guard let containerView = self.superview?.superview,
+              let containerSuperview = containerView.superview else { return nil }
+        let renderer = UIGraphicsImageRenderer(bounds: containerView.frame)
+        return renderer.image { (context) in
+            containerSuperview.layer.render(in: context.cgContext)
+        }
+    }
+}
+
+extension View {
+    func screenshotView(_ closure: @escaping ScreenshotMakerClosure) -> some View {
+        let screenshotView = ScreenshotMakerView(closure)
+        return overlay(screenshotView.allowsHitTesting(false))
     }
 }
