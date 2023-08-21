@@ -29,7 +29,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     var filteredCityImages: [CityImage] { cityImages }
 
-    @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
+    @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockTime: TimeInterval = 0
+    @PublishedAppStorage("dailyChallengeModeLockInterval") var lockTime: TimeInterval = 0
 
     var cities: [CGCity] = []
     let cityService: CityService
@@ -44,7 +45,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     let notificationDescription: String = """
         Congratulations on completing your first Daily Challenge!\n\n
-        - The next challenge will unlock in 24 hours\n\n
+        - The next challenge will unlock at midnight\n\n
         - You can opt in to notifications to get a reminder when the next challenge unlocks\n\n
         - You can adjust notification settings anytime under your device settings
     """
@@ -105,14 +106,17 @@ class DailyChallengeViewModel: CityGuessViewModel {
     }
 
     func scheduleNotification() {
+        guard let secondsUntilNextDay = Date().secondsUntilNextDay else { return }
+        let now = Date().timeIntervalSince1970
+        lockTime = now
+        unlockTime = now + secondsUntilNextDay
+
         LocalNotificationService.shared.removeDeliveredNotifications()
         LocalNotificationService.shared.requestNotificationPermission()
         LocalNotificationService.shared.scheduleLocalNotification(
             with: "Daily Challenge Mode Unlocked!",
-            scheduledIn: DateConstants.unlockInterval
+            scheduledIn: secondsUntilNextDay
         )
-
-        unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
     }
 }
 
@@ -121,18 +125,18 @@ extension DailyChallengeViewModel: Unlockable {
     var unlockText: String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
-        let formattedDate = dateFormatter.string(from: Date(timeIntervalSince1970: unlockInterval))
+        let formattedDate = dateFormatter.string(from: Date(timeIntervalSince1970: unlockTime))
 
         return "Daily Challenge will unlock at \(formattedDate)"
     }
 
     var isLocked: Bool {
-        unlockInterval >= Date().timeIntervalSince1970
+        unlockTime >= Date().timeIntervalSince1970
     }
 
     func calculateUnlockProgress() {
-        let unlockDate = Date(timeIntervalSince1970: unlockInterval)
-        let startDate = unlockDate.addingTimeInterval(-DateConstants.unlockInterval)
+        let unlockDate = Date(timeIntervalSince1970: unlockTime)
+        let startDate = Date(timeIntervalSince1970: lockTime)
         let duration = unlockDate.timeIntervalSince(startDate)
         let elapsed = Date().timeIntervalSince(startDate)
         unlockProgress = elapsed / duration
