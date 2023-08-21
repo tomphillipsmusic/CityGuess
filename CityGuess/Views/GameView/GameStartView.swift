@@ -23,7 +23,10 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
                 Text(viewModel.gameDescription)
                     .font(.headline)
 
-                GameConfigurationPickers(viewModel: viewModel)
+                if viewModel is TrainingViewModel {
+                    GameConfigurationPickers(viewModel: viewModel)
+                }
+
                 gameStartButton
             }
             .padding()

@@ -42,7 +42,6 @@ struct ProgressMapView: View {
                                 )
                                 .onTapGesture {
                                     viewModel.selectedContinent = continent
-                                    print("SelectedContinent: \(viewModel.selectedContinent)")
                                 }
                             }
                         }
