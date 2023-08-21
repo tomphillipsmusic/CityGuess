@@ -11,6 +11,6 @@ class Router: ObservableObject {
     @Published var path = NavigationPath()
 
     enum Screen {
-        case training, challenge, explore
+        case training, challenge, progressMap
     }
 }

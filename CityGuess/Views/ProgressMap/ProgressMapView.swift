@@ -38,7 +38,7 @@ struct ProgressMapView: View {
                                 ProgressGauge(
                                     numberCompleted: totalNumberOfCitiesGuessedCorrectly,
                                     totalNumber: totalNumberOfCities,
-                                    label: "\(continent.rawValue) Cities Guessed Correctly \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
+                                    label: "\(continent.progressGaugeLabel) \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
                                 )
                                 .onTapGesture {
                                     viewModel.selectedContinent = continent

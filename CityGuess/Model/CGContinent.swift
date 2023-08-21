@@ -17,6 +17,17 @@ enum CGContinent: String, Codable, CaseIterable {
     case northAmerica = "North America"
 }
 
+extension CGContinent {
+    var progressGaugeLabel: String {
+        switch self {
+        case .all:
+            return "Total Cities Guessed Correctly"
+        default:
+            return "\(rawValue) Cities GuessedCorrectly"
+        }
+    }
+}
+
 import MapKit
 
 extension CGContinent {

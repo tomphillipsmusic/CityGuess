@@ -67,7 +67,7 @@ extension ContentView {
 
         return ZStack {
             MainMenuButton("Progress Map") {
-                router.path.append(Router.Screen.explore)
+                router.path.append(Router.Screen.progressMap)
             }
             .disabled(isLocked)
             .opacity(isLocked ? 0.8 : 1.0)

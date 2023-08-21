@@ -29,6 +29,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             }
 
             reviewCitiesButton
+            checkProgressButton
             endGameButton
         }
         .largeTextScrollView()
@@ -76,7 +77,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var progressGauges: some View {
         VStack {
-            Text("\(viewModel.selectedContinent.rawValue) Cities Guessed Correctly")
+            Text(viewModel.selectedContinent.progressGaugeLabel)
                 .font(.headline)
                 .padding()
 
@@ -129,7 +130,17 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         NavigationLink("Review Cities") {
             ReviewCitiesView()
         }
+        .padding()
         .disabled(historyManager.roundHistory.isEmpty)
+    }
+
+    var checkProgressButton: some View {
+        Button("Check Progress") {
+            viewModel.endGame()
+            router.path.removeAll()
+            router.path.append(Router.Screen.progressMap)
+        }
+        .padding()
     }
 
     var endGameButton: some View {

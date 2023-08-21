@@ -28,7 +28,7 @@ struct ContentView: View {
                         GameView(viewModel: trainingViewModel)
                     case .challenge:
                         GameView(viewModel: dailyChallengeViewModel)
-                    case .explore:
+                    case .progressMap:
                         ProgressMapView()
                     }
                 }
