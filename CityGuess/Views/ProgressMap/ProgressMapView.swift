@@ -46,6 +46,9 @@ struct ProgressMapView: View {
                                 }
                             }
                         }
+                    } else {
+                        ProgressView()
+                            .padding()
                     }
                 }
                 .largeTextScrollView()
