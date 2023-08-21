@@ -27,7 +27,6 @@
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
 		3E0D22662A93B93E00445981 /* NavigationPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */; };
 		3E0D22682A93F20400445981 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22672A93F20400445981 /* Date+Extension.swift */; };
-		3E0D226A2A93F66900445981 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22692A93F66900445981 /* Photo.swift */; };
 		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
 		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
@@ -147,7 +146,6 @@
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
 		3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationPath+Extension.swift"; sourceTree = "<group>"; };
 		3E0D22672A93F20400445981 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		3E0D22692A93F66900445981 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
 		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
@@ -507,7 +505,6 @@
 				3E39A29E2A575CB300C9B72B /* Onboarding.swift */,
 				3E1BE1752A85574E0075AC1C /* CGCity.swift */,
 				3E4C822F2A86B8F90061F90C /* CGContinent.swift */,
-				3E0D22692A93F66900445981 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -798,7 +795,6 @@
 				3E25FC0A2A1C0B8C0040E50C /* City.swift in Sources */,
 				3EF5BF592A1FAB61006B5DE8 /* CoordinateFetching.swift in Sources */,
 				3E5973CD2A6ECEB000C43CB6 /* CityDetailViewModel.swift in Sources */,
-				3E0D226A2A93F66900445981 /* Photo.swift in Sources */,
 				3EEF7F6F29EEEB7900EEBE9D /* CityGuessTextField.swift in Sources */,
 				3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */,
 				3EEB998C29E43C6000514F79 /* RedditClient.swift in Sources */,

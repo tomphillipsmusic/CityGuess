@@ -16,9 +16,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
     @State private var hasUpdatedGauges = false
     @State private var screenshotMaker: ScreenshotMaker?
-    
-    
-    let photo = Photo(image: Image("cityguess-logo"), caption: "Check Out My High Score")
+        
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
@@ -44,8 +42,8 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 subject: Text("Download City Guess"),
                 message: Text("I just guessed \(viewModel.score) cities correctly on the City Guess Daily Challenge! How many can you guess?"),
                 preview: SharePreview(
-                    photo.caption,
-                    image: photo.image))
+                    "Check Out My New Score!",
+                    image: Image("cityguess-logo")))
         }
         .onAppear {
             UIApplication.shared.endEditing()
