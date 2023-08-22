@@ -32,13 +32,14 @@ struct ProgressMapView: View {
 
                         ForEach(CGContinent.allCases, id: \.self) { continent in
                             let totalNumberOfCities = viewModel.totalNumberOfCities(in: continent)
-                            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: continent)
+                            let totalGuessedCorrectly = historyManager.numberOfCitiesGuessedCorrectly(in: continent)
 
                             if totalNumberOfCities > 0 {
                                 ProgressGauge(
-                                    numberCompleted: totalNumberOfCitiesGuessedCorrectly,
+                                    numberCompleted: totalGuessedCorrectly,
                                     totalNumber: totalNumberOfCities,
-                                    label: "\(continent.progressGaugeLabel) \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
+                                    label: "\(continent.progressGaugeLabel)" +
+                                    " \(totalGuessedCorrectly) / \(totalNumberOfCities)"
                                 )
                                 .onTapGesture {
                                     viewModel.selectedContinent = continent

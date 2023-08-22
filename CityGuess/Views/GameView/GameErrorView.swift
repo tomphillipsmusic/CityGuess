@@ -20,7 +20,7 @@ struct GameErrorView: View {
                 .font(.largeTitle)
                 .padding()
 
-            Text(error.localizedDescription + "Please try again later.")
+            Text(error.localizedDescription + " Please try again later.")
                 .multilineTextAlignment(.center)
                 .padding()
 

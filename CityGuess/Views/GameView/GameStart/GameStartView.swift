@@ -63,8 +63,7 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
         HStack {
             Spacer()
             Button(viewModel.startGameButtonText) {
-                viewModel.startGame(with: viewModel.numberOfRounds)
-                historyManager.resetRoundHistory(withTotalNumberOfCities: viewModel.cities.count)
+                startGamePressed()
             }
             .disabled(viewModel.filteredCityImages.isEmpty)
             .padding()
@@ -76,6 +75,13 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
             Spacer()
         }
 
+    }
+
+    func startGamePressed() {
+        viewModel.startGame(with: viewModel.numberOfRounds)
+        let totalCities = viewModel.totalNumberOfCities(in: .all)
+        let totalGuessedCorrectly = historyManager.numberOfCitiesGuessedCorrectly(in: viewModel.selectedContinent)
+        historyManager.resetRoundHistory(totalNumber: totalCities, totalGuessedCorrectly: totalGuessedCorrectly)
     }
 }
 

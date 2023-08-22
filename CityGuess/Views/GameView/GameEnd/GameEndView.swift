@@ -35,7 +35,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 self.screenshotMaker = screenshotMaker
             }
 
-            if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
+            if !reduceMotionEnabled {
                 LottieView(animationType: .skyscraper, removeWhenFinished: false)
             }
 
@@ -81,9 +81,6 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                     }
                 }
         })
-        .screenshotView { screenshotMaker in
-            self.screenshotMaker = screenshotMaker
-        }
     }
 
     var header: some View {
@@ -98,18 +95,36 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         }
     }
 
+    var totalNumberOfCities: Int {
+        gameViewModel.totalNumberOfCities(in: gameViewModel.selectedContinent)
+    }
+
+    var totalNumberOfCitiesGuessedCorrectly: Int {
+        if hasUpdatedGauges {
+            return historyManager.numberOfCitiesGuessedCorrectly(in: gameViewModel.selectedContinent)
+        } else {
+            return historyManager.roundStartTotalCitiesGuessedCorrectly
+        }
+    }
+
+    var progressGaugeLabel: String {
+        if dynamicTypeSize > .large {
+            return gameViewModel.selectedContinent.progressGaugeLabel
+        } else {
+            return gameViewModel.selectedContinent.progressGaugeLabel +
+            " \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
+        }
+    }
+
     var progressGauges: some View {
         VStack {
-            let totalNumberOfCities = gameViewModel.totalNumberOfCities(in: gameViewModel.selectedContinent)
-            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: gameViewModel.selectedContinent)
-            Text("\(gameViewModel.selectedContinent.progressGaugeLabel) \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)")
+            Text(progressGaugeLabel)
                 .font(.headline)
-                .padding()
 
             ProgressGauge(
                 numberCompleted: totalNumberOfCitiesGuessedCorrectly,
                 totalNumber: totalNumberOfCities,
-                label: "\(totalNumberOfCitiesGuessedCorrectly)/\(totalNumberOfCities)"
+                label: "\(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
             )
         }
     }
