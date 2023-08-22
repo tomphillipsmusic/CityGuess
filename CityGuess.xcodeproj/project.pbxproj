@@ -29,6 +29,8 @@
 		3E0D22682A93F20400445981 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22672A93F20400445981 /* Date+Extension.swift */; };
 		3E0D226E2A950D3C00445981 /* View+ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D226D2A950D3C00445981 /* View+ScreenshotView.swift */; };
 		3E0D22732A950E0300445981 /* ScreenshotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22722A950E0300445981 /* ScreenshotMaker.swift */; };
+		3E0D22752A95348900445981 /* trophy.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E0D22742A95348900445981 /* trophy.json */; };
+		3E0D22772A9539B900445981 /* perfect.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E0D22762A9539B900445981 /* perfect.json */; };
 		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
 		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
@@ -150,6 +152,8 @@
 		3E0D22672A93F20400445981 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		3E0D226D2A950D3C00445981 /* View+ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ScreenshotView.swift"; sourceTree = "<group>"; };
 		3E0D22722A950E0300445981 /* ScreenshotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotMaker.swift; sourceTree = "<group>"; };
+		3E0D22742A95348900445981 /* trophy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trophy.json; sourceTree = "<group>"; };
+		3E0D22762A9539B900445981 /* perfect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = perfect.json; sourceTree = "<group>"; };
 		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
 		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 				3EEF7F7629F2BE9D00EEBE9D /* correct.json */,
 				3EEF7F7829F2BEDC00EEBE9D /* incorrect.json */,
 				3EBC176029F86B3E00A0B353 /* skyscraper.json */,
+				3E0D22742A95348900445981 /* trophy.json */,
+				3E0D22762A9539B900445981 /* perfect.json */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
@@ -734,7 +740,9 @@
 				3E64ADAB29DEFD5400DCCF2E /* Assets.xcassets in Resources */,
 				3E093C602A6ACD4A00C7D28B /* InitialCityCoordinates.json in Resources */,
 				3E093C5E2A6ACCA300C7D28B /* InitialCities.json in Resources */,
+				3E0D22772A9539B900445981 /* perfect.json in Resources */,
 				3E093C622A6ACDAC00C7D28B /* InitialCityImages.json in Resources */,
+				3E0D22752A95348900445981 /* trophy.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
