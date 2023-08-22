@@ -8,7 +8,11 @@
 import Foundation
 
 enum AnimationType: String {
-    case correct, incorrect, skyscraper
+    case correct
+    case incorrect
+    case skyscraper
+    case trophy
+    case perfect
 
     var name: String { rawValue }
 

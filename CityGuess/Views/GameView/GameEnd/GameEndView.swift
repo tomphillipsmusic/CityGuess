@@ -36,7 +36,8 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             }
 
             if !reduceMotionEnabled {
-                LottieView(animationType: .skyscraper, removeWhenFinished: false)
+                let animation = animation
+                LottieView(animationType: animation.type, removeWhenFinished: animation.removeWhenFinished)
             }
 
             reviewCitiesButton
@@ -79,7 +80,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var header: some View {
         VStack {
-            Text(gameViewModel.gameOverText)
+            Text(isPerfectGame ? "Perfect Game!" : gameViewModel.gameOverText)
                 .font(.largeTitle)
                 .padding()
 
@@ -170,6 +171,30 @@ extension GameEndView {
         }
 
         return Image(uiImage: UIImage(named: "cityguess-logo") ?? UIImage())
+    }
+
+    var isPerfectGame: Bool {
+        gameViewModel.score == gameViewModel.numberOfRounds
+    }
+
+    var isProgressGaugeFilledUpForTheFirstTime: Bool {
+        let totalCities = gameViewModel.totalNumberOfCities(in: gameViewModel.selectedContinent)
+        let totalGuessedCorrectly = historyManager.numberOfCitiesGuessedCorrectly(in: gameViewModel.selectedContinent)
+        let hasNotFilledUpGaugeBefore = historyManager.roundStartTotalCitiesGuessedCorrectly < totalCities
+        let hasGuessedEveryCityCorrectly = totalGuessedCorrectly == totalCities
+        return hasNotFilledUpGaugeBefore && hasGuessedEveryCityCorrectly
+    }
+
+    var animation: (type: AnimationType, removeWhenFinished: Bool) {
+        if isProgressGaugeFilledUpForTheFirstTime {
+            HapticsManager.shared.correct()
+            return (.trophy, false)
+        } else if isPerfectGame {
+            HapticsManager.shared.correct()
+            return (.perfect, true)
+        } else {
+            return (.skyscraper, false)
+        }
     }
 }
 

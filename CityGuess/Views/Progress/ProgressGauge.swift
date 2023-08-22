@@ -24,11 +24,19 @@ struct ProgressGauge: View {
             value: Double(numberCompleted),
             in: 0.0...Double(totalNumber)
         ) {
-            Text(label)
-                .bold()
-                .scaledToFit()
-                .minimumScaleFactor(0.1)
-                .lineLimit(1)
+            HStack {
+                Text(label)
+                    .bold()
+                    .scaledToFit()
+                    .minimumScaleFactor(0.1)
+                    .lineLimit(1)
+
+                if isComplete {
+                    Image(systemName: "crown.fill")
+                        .foregroundColor(tintColor)
+                }
+            }
+
         }
         .tint(tintColor)
         .padding()
