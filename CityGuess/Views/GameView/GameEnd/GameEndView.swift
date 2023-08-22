@@ -46,13 +46,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         .largeTextScrollView()
         .navigationBarBackButtonHidden()
         .toolbar {
-            ShareLink(
-                item: shareableImage,
-                subject: Text("Share score"),
-                message: Text("I just guessed \(gameViewModel.score) cities correctly on City Guess!"),
-                preview: SharePreview(
-                    "Check Out My New Score!",
-                    image: Image("cityguess-logo")))
+            shareLink
         }
         .onAppear {
             UIApplication.shared.endEditing()
@@ -95,27 +89,6 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         }
     }
 
-    var totalNumberOfCities: Int {
-        gameViewModel.totalNumberOfCities(in: gameViewModel.selectedContinent)
-    }
-
-    var totalNumberOfCitiesGuessedCorrectly: Int {
-        if hasUpdatedGauges {
-            return historyManager.numberOfCitiesGuessedCorrectly(in: gameViewModel.selectedContinent)
-        } else {
-            return historyManager.roundStartTotalCitiesGuessedCorrectly
-        }
-    }
-
-    var progressGaugeLabel: String {
-        if dynamicTypeSize > .large {
-            return gameViewModel.selectedContinent.progressGaugeLabel
-        } else {
-            return gameViewModel.selectedContinent.progressGaugeLabel +
-            " \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
-        }
-    }
-
     var progressGauges: some View {
         VStack {
             Text(progressGaugeLabel)
@@ -154,6 +127,41 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             }
         }
         .padding()
+    }
+
+    var shareLink: some View {
+        ShareLink(
+            item: shareableImage,
+            subject: Text("Share score"),
+            message: Text("I just guessed \(gameViewModel.score) cities correctly on City Guess!"),
+            preview: SharePreview(
+                "Check Out My New Score!",
+                image: Image("cityguess-logo")))
+    }
+}
+
+// MARK: View Computed Properties
+extension GameEndView {
+
+    var totalNumberOfCities: Int {
+        gameViewModel.totalNumberOfCities(in: gameViewModel.selectedContinent)
+    }
+
+    var totalNumberOfCitiesGuessedCorrectly: Int {
+        if hasUpdatedGauges {
+            return historyManager.numberOfCitiesGuessedCorrectly(in: gameViewModel.selectedContinent)
+        } else {
+            return historyManager.roundStartTotalCitiesGuessedCorrectly
+        }
+    }
+
+    var progressGaugeLabel: String {
+        if dynamicTypeSize > .large {
+            return gameViewModel.selectedContinent.progressGaugeLabel
+        } else {
+            return gameViewModel.selectedContinent.progressGaugeLabel +
+            " \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
+        }
     }
 
     var shareableImage: Image {
