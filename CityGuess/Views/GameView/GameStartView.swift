@@ -12,32 +12,38 @@ struct GameStartView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
-        ZStack {
-            backgroundImage
+        VStack {
+            ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
+                .frame(height: 20)
+                .padding()
 
-            VStack {
-                Text(viewModel.gameHeadline)
-                    .font(.title)
-                    .padding()
+            ZStack {
+                backgroundImage
 
-                Text(viewModel.gameDescription)
-                    .font(.headline)
+                VStack {
+                    Text(viewModel.gameHeadline)
+                        .font(.title)
+                        .padding()
 
-                if viewModel is TrainingViewModel {
-                    GameConfigurationPickers(viewModel: viewModel)
+                    Text(viewModel.gameDescription)
+                        .font(.headline)
+
+                    if viewModel is TrainingViewModel {
+                        GameConfigurationPickers(viewModel: viewModel)
+                    }
+
+                    gameStartButton
                 }
-
-                gameStartButton
+                .padding()
+                .largeTextScrollView(whenBiggerThan: .accessibilityLarge)
+                .background(
+                    .background
+                        .opacity(0.9)
+                )
+                .cornerRadius(5)
+                .shadow(radius: 0.2)
+                .animation(.default, value: viewModel.selectedContinent)
             }
-            .padding()
-            .largeTextScrollView(whenBiggerThan: .accessibilityLarge)
-            .background(
-                .background
-                    .opacity(0.9)
-            )
-            .cornerRadius(5)
-            .shadow(radius: 0.2)
-            .animation(.default, value: viewModel.selectedContinent)
         }
     }
 

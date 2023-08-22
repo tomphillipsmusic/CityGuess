@@ -26,7 +26,7 @@ struct CityDetailView: View {
         VStack {
             heading
             flippableCityImage
-            
+
             HStack {
                 learnMoreButton
                 Spacer()
