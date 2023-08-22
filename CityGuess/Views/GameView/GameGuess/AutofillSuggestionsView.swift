@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct AutofillSuggestionsView<T: City>: View {
-    let autofillSuggestions: [T]
-    let action: (String) -> Void
+struct AutofillSuggestionsView: View {
+    let autofillSuggestions: [CGCity]
+    let action: (CGCity) -> Void
 
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(autofillSuggestions, id: \.name) { autofill in
-                    let cityName = autofill.name
+                ForEach(autofillSuggestions, id: \.name) { city in
+                    let cityName = city.name
 
                     Button(cityName) {
-                        action(cityName)
+                        action(city)
                     }
                     .padding()
                     .buttonStyle(.bordered)
@@ -30,8 +30,7 @@ struct AutofillSuggestionsView<T: City>: View {
 
 struct AutofillSuggestionsView_Previews: PreviewProvider {
     static var previews: some View {
-        AutofillSuggestionsView(autofillSuggestions: [TeleportCity(href: "", name: "Test")]) { _ in
-
+        AutofillSuggestionsView(autofillSuggestions: [CGCity(name: "Test", href: "", continent: .africa)]) { _ in
         }
     }
 }

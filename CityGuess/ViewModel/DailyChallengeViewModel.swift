@@ -21,23 +21,34 @@ class DailyChallengeViewModel: CityGuessViewModel {
     @Published var unlockProgress: CGFloat = 0
     @Published var errorMessage: String = "Error"
     @Published var isShowingError: Bool = false
+    @Published var selectedContinent: CGContinent = .all
 
-    var roundOptions: [Int] = [5, 10]
+    var roundOptions: [Int] {
+        [filterValid(cityImages).count]
+    }
 
-    @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockInterval: TimeInterval = 0
+    var filteredCityImages: [CityImage] { cityImages }
 
-    var cities: [TeleportCity] = []
+    @PublishedAppStorage("dailyChallengeUnlockInterval") var unlockTime: TimeInterval = 0
+    @PublishedAppStorage("dailyChallengeModeLockInterval") var lockTime: TimeInterval = 0
+
+    var cities: [CGCity] = []
     let cityService: CityService
     let cityFetcher: RedditClient
-    let roundLength = 10
 
     let modeTitle: String = "Daily Challenge"
     let gameHeadline: String = "Do you have what it takes to take on the Daily Challenge?"
-    let gameDescription: String = """
-        Check in once a day to see some of the latest and greatest city photos from
-        around the world. How many can you guess??
-    """
+    let gameDescription: String = "Check in once a day to see some of the latest"
+        + " and greatest city photos from around the world. How many can you guess??"
+
     let startGameButtonText: String = "Start Daily Challenge"
+
+    let notificationDescription: String = """
+        Congratulations on completing your first Daily Challenge!\n\n
+        - The next challenge will unlock at midnight\n\n
+        - You can opt in to notifications to get a reminder when the next challenge unlocks\n\n
+        - You can adjust notification settings anytime under your device settings
+    """
 
     required init(cityService: CityService = LocalCityService(), cityFetcher: RedditClient = RedditClient()) {
         self.cityService = cityService
@@ -53,7 +64,8 @@ class DailyChallengeViewModel: CityGuessViewModel {
         do {
             let cityImages = try await cityFetcher.fetchCityImages().shuffled()
             self.cityImages = filterValid(cityImages)
-            print("City images count: " + "\(cityImages.count)")
+            numberOfRounds = roundOptions[0]
+            questions = resetQuestions()
         } catch {
             errorMessage = "Error loading city images. Please try again later."
             isShowingError = true
@@ -62,7 +74,7 @@ class DailyChallengeViewModel: CityGuessViewModel {
 
     func fetchCities() async {
         do {
-            if let cities: [CityModel] = try? cityService.loadCities(),
+            if let cities: [CGCity] = try? cityService.loadCities(),
                !cities.isEmpty {
                 self.cities = cities
                 return
@@ -94,14 +106,17 @@ class DailyChallengeViewModel: CityGuessViewModel {
     }
 
     func scheduleNotification() {
+        guard let secondsUntilNextDay = Date().secondsUntilNextDay else { return }
+        let now = Date().timeIntervalSince1970
+        lockTime = now
+        unlockTime = now + secondsUntilNextDay
+
         LocalNotificationService.shared.removeDeliveredNotifications()
         LocalNotificationService.shared.requestNotificationPermission()
         LocalNotificationService.shared.scheduleLocalNotification(
             with: "Daily Challenge Mode Unlocked!",
-            scheduledIn: DateConstants.unlockInterval
+            scheduledIn: secondsUntilNextDay
         )
-
-        unlockInterval = Date().timeIntervalSince1970 + DateConstants.unlockInterval
     }
 }
 
@@ -110,18 +125,18 @@ extension DailyChallengeViewModel: Unlockable {
     var unlockText: String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
-        let formattedDate = dateFormatter.string(from: Date(timeIntervalSince1970: unlockInterval))
+        let formattedDate = dateFormatter.string(from: Date(timeIntervalSince1970: unlockTime))
 
         return "Daily Challenge will unlock at \(formattedDate)"
     }
 
     var isLocked: Bool {
-        unlockInterval >= Date().timeIntervalSince1970
+        unlockTime >= Date().timeIntervalSince1970
     }
 
     func calculateUnlockProgress() {
-        let unlockDate = Date(timeIntervalSince1970: unlockInterval)
-        let startDate = unlockDate.addingTimeInterval(-DateConstants.unlockInterval)
+        let unlockDate = Date(timeIntervalSince1970: unlockTime)
+        let startDate = Date(timeIntervalSince1970: lockTime)
         let duration = unlockDate.timeIntervalSince(startDate)
         let elapsed = Date().timeIntervalSince(startDate)
         unlockProgress = elapsed / duration

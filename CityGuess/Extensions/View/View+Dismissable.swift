@@ -22,6 +22,8 @@ struct Dismissable: ViewModifier {
             }
 
             content
+
+            Spacer()
         }
     }
 }

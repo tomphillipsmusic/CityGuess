@@ -9,7 +9,7 @@ import Foundation
 
 protocol Unlockable {
     var isLocked: Bool { get }
-    var unlockInterval: TimeInterval { get set }
+    var unlockTime: TimeInterval { get set }
     var unlockText: String { get }
     func calculateUnlockProgress()
 }

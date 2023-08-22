@@ -12,7 +12,8 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     @ObservedObject var viewModel: ViewModel
     @State private var guess = ""
     @State var lastScaleValue: CGFloat = 1.0
-    @State private var autofillSuggestions = [ViewModel.CityModel]()
+    @State private var autofillSuggestions = [CGCity]()
+    @State private var isShowingExitAlert = false
     let image: Image
 
     var body: some View {
@@ -34,22 +35,26 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
             CityGuessTextField(text: $guess, isLoadingNextQuestion: $viewModel.isShowingAnimation)
 
-            AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { cityName in
-                withAnimation(.linear(duration: 1.0)) {
-                    viewModel.submit(guess: cityName)
-                    if let formattedImage = formatImageForHistoryStorage(ofCityNamed: cityName) {
-                        gameHistory.updateHistory(forImage: formattedImage, with: viewModel.isCorrect ? .right : .wrong)
-                    }
-                }
-
-                self.guess = ""
+            AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { city in
+                handle(guess: city)
             }
         }
         .navigationBarBackButtonHidden()
         .toolbar {
             scoreLabel
-            roundCounterLabel
+            quitButton
         }
+        .alert("Stop Playing?", isPresented: $isShowingExitAlert, actions: {
+            Button("Continue Playing", role: .cancel) {}
+
+            Button(role: .destructive) {
+                viewModel.endGame()
+            } label: {
+                Text("End Game")
+            }
+        }, message: {
+            Text("If you end the game, cities you have seen and guessed will not be saved.")
+        })
         .onChange(of: guess) { guess in
             withAnimation {
                 autofillSuggestions = viewModel.autofillSuggestions(for: guess)
@@ -61,15 +66,38 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     var scoreLabel: some ToolbarContent {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Text(viewModel.scoreLabelText)
-                    .font(.title2)
             }
     }
 
-    var roundCounterLabel: some ToolbarContent {
+    var quitButton: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
-            Text(viewModel.roundLabelText)
-                .font(.title3)
+            Button {
+                isShowingExitAlert = true
+            } label: {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .font(.title3)
+                        .bold()
+                }
+            }
+
         }
+    }
+
+    func handle(guess: CGCity) {
+        withAnimation(.linear(duration: 1.0)) {
+            viewModel.submit(guess: guess.name)
+            if let formattedImage = formatImageForHistoryStorage(ofCityNamed: viewModel.currentCityImage.title),
+                let correctCity = viewModel.cities.first(where: { $0.name == formattedImage.title }) {
+                gameHistory.updateHistory(
+                    forImage: formattedImage,
+                    with: correctCity.continent,
+                    and: viewModel.isCorrect ? .right : .wrong
+                )
+            }
+        }
+
+        self.guess = ""
     }
 
     func formatImageForHistoryStorage(ofCityNamed cityName: String) -> CityImage? {
@@ -95,6 +123,10 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
 struct CityGuessView_Previews: PreviewProvider {
     static var previews: some View {
-        CityGuessView(viewModel: TrainingViewModel(), image: Image(systemName: "building"))
+        NavigationStack {
+            CityGuessView(viewModel: TrainingViewModel(), image: Image(systemName: "building"))
+                .navigationTitle("Training")
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }

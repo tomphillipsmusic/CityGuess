@@ -13,7 +13,7 @@ struct ProgressGauge: View {
     let label: String
 
     var tintColor: Color {
-        isComplete ? .green : .blue
+        isComplete ? .mint : .green
     }
     var isComplete: Bool {
         numberCompleted >= totalNumber
@@ -24,10 +24,19 @@ struct ProgressGauge: View {
             value: Double(numberCompleted),
             in: 0.0...Double(totalNumber)
         ) {
-            Text(label)
-                .scaledToFit()
-                .minimumScaleFactor(0.1)
-                .lineLimit(1)
+            HStack {
+                Text(label)
+                    .bold()
+                    .scaledToFit()
+                    .minimumScaleFactor(0.1)
+                    .lineLimit(1)
+
+                if isComplete {
+                    Image(systemName: "crown.fill")
+                        .foregroundColor(tintColor)
+                }
+            }
+
         }
         .tint(tintColor)
         .padding()
@@ -36,6 +45,9 @@ struct ProgressGauge: View {
 
 struct ProgressGauge_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressGauge(numberCompleted: 50, totalNumber: 100, label: "50 / 100 Completed")
+        VStack {
+            ProgressGauge(numberCompleted: 50, totalNumber: 100, label: "50 / 100 Completed")
+            ProgressGauge(numberCompleted: 100, totalNumber: 100, label: "50 / 100 Completed")
+        }
     }
 }

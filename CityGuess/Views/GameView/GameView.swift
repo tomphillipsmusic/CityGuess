@@ -13,14 +13,11 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
 
     var body: some View {
         VStack {
-            ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
-                .frame(height: 20)
-                .padding()
 
             if !viewModel.isPlaying {
                 GameStartView(viewModel: viewModel)
             } else if viewModel.isGameOver {
-                GameEndView(viewModel: viewModel)
+                GameEndView(gameViewModel: viewModel)
             } else {
                 loadGameView
             }
@@ -43,19 +40,25 @@ struct GameView<ViewModel: CityGuessViewModel>: View {
     }
 
     var loadGameView: some View {
-        AsyncImage(url: URL(string: viewModel.currentCityImage.url)) { phase in
-            switch phase {
-            case .success(let image):
-                CityGuessView(viewModel: viewModel, image: image)
-            case .empty:
-                loadingView
-            case .failure(let error):
-                GameErrorView(error: error, confirmationMessage: "Return Home") {
-                    router.path.removeLast()
-                    viewModel.endGame()
+        VStack {
+            ProgressBar(progress: viewModel.gameProgress, questions: viewModel.questions)
+                .frame(height: 20)
+                .padding()
+
+            AsyncImage(url: URL(string: viewModel.currentCityImage.url)) { phase in
+                switch phase {
+                case .success(let image):
+                    CityGuessView(viewModel: viewModel, image: image)
+                case .empty:
+                    loadingView
+                case .failure(let error):
+                    GameErrorView(error: error, confirmationMessage: "Return Home") {
+                        router.path.removeLast()
+                        viewModel.endGame()
+                    }
+                @unknown default:
+                    Text("Unknown error has occured")
                 }
-            @unknown default:
-                Text("Unknown error has occured")
             }
         }
     }

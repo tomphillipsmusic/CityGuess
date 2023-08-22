@@ -15,6 +15,7 @@ actor TeleportApiClient: CityFetching {
         static let urbanAreas = "urban_areas"
         static let images = "images"
         static let scores = "scores"
+        static let continents = "continents"
     }
 
     private let baseUrl = "https://api.teleport.org/api/"
@@ -46,6 +47,25 @@ actor TeleportApiClient: CityFetching {
         return cities
     }
 
+    func fetchCities() async throws -> [CGCity] {
+        let continents = try await fetchContinents()
+
+        var cgCities: [CGCity] = []
+
+        for continent in continents {
+
+            let cities = try await fetchCities(for: continent)
+
+            for city in cities {
+                if let city = CGCity(name: city.name, href: city.href, continent: continent) {
+                    cgCities.append(city)
+                }
+            }
+        }
+
+        return cgCities
+    }
+
     func fetchCoordinateBox(for city: TeleportCity) async throws -> CoordinateBox {
         let response: TeleportCityDetailsResponse = try await NetworkManager.shared.fetch(from: city.href)
         return response.boundingBox.latlon
@@ -56,4 +76,22 @@ actor TeleportApiClient: CityFetching {
         let response: TeleportCityScoresResponse = try await NetworkManager.shared.fetch(from: url)
         return response.categories
     }
+}
+
+extension TeleportApiClient: ContinentFetching {
+    func fetchContinents() async throws -> [TeleportContinent] {
+        let url = "\(baseUrl)\(Endpoint.continents)"
+        let response: TeleportContinentsResponse = try await NetworkManager.shared.fetch(from: url)
+        return response.links.continents
+    }
+
+    func fetchCities(for continent: TeleportContinent) async throws -> [TeleportCity] {
+        let url = "\(continent.href)\(Endpoint.urbanAreas)"
+        let response: TeleportContinentsResponse.CitiesResponse = try await NetworkManager.shared.fetch(from: url)
+        let decodedCities = response.links.cities
+        return decodedCities
+    }
+
+    typealias CityModel = TeleportCity
+
 }
