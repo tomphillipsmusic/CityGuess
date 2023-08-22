@@ -27,6 +27,8 @@
 		3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A438A29E9C34400A9D2BE /* GameEndView.swift */; };
 		3E0D22662A93B93E00445981 /* NavigationPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */; };
 		3E0D22682A93F20400445981 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22672A93F20400445981 /* Date+Extension.swift */; };
+		3E0D226E2A950D3C00445981 /* View+ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D226D2A950D3C00445981 /* View+ScreenshotView.swift */; };
+		3E0D22732A950E0300445981 /* ScreenshotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D22722A950E0300445981 /* ScreenshotMaker.swift */; };
 		3E100A5E2A77EC8600CDD2B5 /* ReviewCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */; };
 		3E100A602A77F28600CDD2B5 /* DismissableMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */; };
 		3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */; };
@@ -146,6 +148,8 @@
 		3E0A438A29E9C34400A9D2BE /* GameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndView.swift; sourceTree = "<group>"; };
 		3E0D22652A93B93E00445981 /* NavigationPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationPath+Extension.swift"; sourceTree = "<group>"; };
 		3E0D22672A93F20400445981 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		3E0D226D2A950D3C00445981 /* View+ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ScreenshotView.swift"; sourceTree = "<group>"; };
+		3E0D22722A950E0300445981 /* ScreenshotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotMaker.swift; sourceTree = "<group>"; };
 		3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCitiesView.swift; sourceTree = "<group>"; };
 		3E100A5F2A77F28600CDD2B5 /* DismissableMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableMessage.swift; sourceTree = "<group>"; };
 		3E1168CA2A4F91E300F16188 /* UIApplication+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+EndEditing.swift"; sourceTree = "<group>"; };
@@ -301,6 +305,37 @@
 			path = Reddit;
 			sourceTree = "<group>";
 		};
+		3E0D226F2A950D8300445981 /* GameStart */ = {
+			isa = PBXGroup;
+			children = (
+				3E4C822D2A86A30B0061F90C /* GameConfigurationPickers.swift */,
+				3EEB99A129E491E000514F79 /* GameStartView.swift */,
+			);
+			path = GameStart;
+			sourceTree = "<group>";
+		};
+		3E0D22702A950D9F00445981 /* GameGuess */ = {
+			isa = PBXGroup;
+			children = (
+				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
+				3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */,
+				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
+				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
+			);
+			path = GameGuess;
+			sourceTree = "<group>";
+		};
+		3E0D22712A950DCA00445981 /* GameEnd */ = {
+			isa = PBXGroup;
+			children = (
+				3E0A438A29E9C34400A9D2BE /* GameEndView.swift */,
+				3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */,
+				3E43DD322A71776400F85C69 /* FlippableContent.swift */,
+				3E0D22722A950E0300445981 /* ScreenshotMaker.swift */,
+			);
+			path = GameEnd;
+			sourceTree = "<group>";
+		};
 		3E1BE1692A7C45460075AC1C /* City */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +422,7 @@
 				3EDE43E62A6F078A009B4E59 /* View+Dismissable.swift */,
 				3E9B321A2A4C7FC100973E2A /* View+LargeTextScrollView.swift */,
 				3E43DD2D2A701E5000F85C69 /* View+If.swift */,
+				3E0D226D2A950D3C00445981 /* View+ScreenshotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,16 +611,10 @@
 			isa = PBXGroup;
 			children = (
 				3E64ADA829DEFD5300DCCF2E /* GameView.swift */,
-				3EEB99A129E491E000514F79 /* GameStartView.swift */,
-				3EEB99A329E4923100514F79 /* CityGuessView.swift */,
-				3E0A438A29E9C34400A9D2BE /* GameEndView.swift */,
-				3EEF7F7029EEEC8E00EEBE9D /* AutofillSuggestionsView.swift */,
-				3EEF7F6E29EEEB7900EEBE9D /* CityGuessTextField.swift */,
-				3E065B6329EEE6AD0057A250 /* ZoomableScrollView.swift */,
 				3ED91B3E2A55C5F1006D25D0 /* GameErrorView.swift */,
-				3E43DD322A71776400F85C69 /* FlippableContent.swift */,
-				3E100A5D2A77EC8600CDD2B5 /* ReviewCitiesView.swift */,
-				3E4C822D2A86A30B0061F90C /* GameConfigurationPickers.swift */,
+				3E0D226F2A950D8300445981 /* GameStart */,
+				3E0D22702A950D9F00445981 /* GameGuess */,
+				3E0D22712A950DCA00445981 /* GameEnd */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -786,6 +816,7 @@
 				3E39A29F2A575CB300C9B72B /* Onboarding.swift in Sources */,
 				3E9C7D4729EDDCA30073CCE4 /* CityGuessViewModel.swift in Sources */,
 				3E0A437729E97B4F00A9D2BE /* JsonService.swift in Sources */,
+				3E0D226E2A950D3C00445981 /* View+ScreenshotView.swift in Sources */,
 				3EDE43E72A6F078A009B4E59 /* View+Dismissable.swift in Sources */,
 				3E25FC062A1BF01E0040E50C /* RingView.swift in Sources */,
 				3E1168CB2A4F91E300F16188 /* UIApplication+EndEditing.swift in Sources */,
@@ -830,6 +861,7 @@
 				3E0A438B29E9C34400A9D2BE /* GameEndView.swift in Sources */,
 				3E43DD2E2A701E5000F85C69 /* View+If.swift in Sources */,
 				3EC3688F29F3032B00AE92D9 /* VerticalTextAnimationView.swift in Sources */,
+				3E0D22732A950E0300445981 /* ScreenshotMaker.swift in Sources */,
 				3E1BE1682A7C44EC0075AC1C /* ContinentsService.swift in Sources */,
 				3EBC175F29F851D800A0B353 /* Question.swift in Sources */,
 				3E0A437229E84E1500A9D2BE /* TeleportApiClient.swift in Sources */,
