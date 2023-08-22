@@ -37,7 +37,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
             if !reduceMotionEnabled {
                 let animation = animation
-                LottieView(animationType: animation, removeWhenFinished: animation == .perfect ? true : false)
+                LottieView(animationType: animation.type, removeWhenFinished: animation.removeWhenFinished)
             }
 
             reviewCitiesButton
@@ -185,15 +185,15 @@ extension GameEndView {
         return hasNotFilledUpGaugeBefore && hasGuessedEveryCityCorrectly
     }
 
-    var animation: AnimationType {
+    var animation: (type: AnimationType, removeWhenFinished: Bool) {
         if isProgressGaugeFilledUpForTheFirstTime {
             HapticsManager.shared.correct()
-            return .trophy
+            return (.trophy, false)
         } else if isPerfectGame {
             HapticsManager.shared.correct()
-            return .perfect
+            return (.perfect, true)
         } else {
-            return .skyscraper
+            return (.skyscraper, false)
         }
     }
 }
