@@ -13,18 +13,29 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
     @Environment(\.accessibilityReduceMotion) var reduceMotionEnabled
     @EnvironmentObject var historyManager: CityGuessGameHistoryManager
     @EnvironmentObject var router: Router
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var gameViewModel: ViewModel
     @State private var hasUpdatedGauges = false
+    @State private var screenshotMaker: ScreenshotMaker?
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         VStack {
-            header
-            Divider()
-            progressGauges
 
-            if dynamicTypeSize < .accessibility5 && !reduceMotionEnabled {
+            VStack {
+                ProgressBar(progress: gameViewModel.gameProgress, questions: gameViewModel.questions)
+                    .frame(height: 20)
+                    .padding()
+
+                header
+                Divider()
+                progressGauges
+            }
+            .screenshotView { screenshotMaker in
+                self.screenshotMaker = screenshotMaker
+            }
+
+            if !reduceMotionEnabled {
                 LottieView(animationType: .skyscraper, removeWhenFinished: false)
             }
 
@@ -34,11 +45,14 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         }
         .largeTextScrollView()
         .navigationBarBackButtonHidden()
+        .toolbar {
+            shareLink
+        }
         .onAppear {
             UIApplication.shared.endEditing()
             historyManager.saveHistory()
 
-            if let viewModel = viewModel as? DailyChallengeViewModel {
+            if let viewModel = gameViewModel as? DailyChallengeViewModel {
                 if !firstTimeCompletingDailyChallenge {
                     viewModel.scheduleNotification()
                 }
@@ -50,10 +64,10 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
                 }
             }
         }
-        .if(viewModel is DailyChallengeViewModel, transform: { view in
+        .if(gameViewModel is DailyChallengeViewModel, transform: { view in
             view
                 .sheet(isPresented: $firstTimeCompletingDailyChallenge) {
-                    if let viewModel = viewModel as? DailyChallengeViewModel {
+                    if let viewModel = gameViewModel as? DailyChallengeViewModel {
                         DismissableMessage(message: viewModel.notificationDescription) {
                             viewModel.scheduleNotification()
                             firstTimeCompletingDailyChallenge = false
@@ -65,11 +79,11 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var header: some View {
         VStack {
-            Text(viewModel.gameOverText)
+            Text(gameViewModel.gameOverText)
                 .font(.largeTitle)
                 .padding()
 
-            Text(viewModel.gameOverScoreText)
+            Text(gameViewModel.gameOverScoreText)
                 .font(.title3)
                 .padding()
         }
@@ -77,16 +91,13 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var progressGauges: some View {
         VStack {
-            Text(viewModel.selectedContinent.progressGaugeLabel)
+            Text(progressGaugeLabel)
                 .font(.headline)
-                .padding()
 
-            let totalNumberOfCities = viewModel.totalNumberOfCities(in: viewModel.selectedContinent)
-            let totalNumberOfCitiesGuessedCorrectly = historyManager.totalNumberOfCitiesGuessedCorrectly(in: viewModel.selectedContinent)
             ProgressGauge(
                 numberCompleted: totalNumberOfCitiesGuessedCorrectly,
                 totalNumber: totalNumberOfCities,
-                label: "\(totalNumberOfCitiesGuessedCorrectly)/\(totalNumberOfCities)"
+                label: "\(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
             )
         }
     }
@@ -101,7 +112,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
 
     var checkProgressButton: some View {
         Button("Check Progress") {
-            viewModel.endGame()
+            gameViewModel.endGame()
             router.path.removeAll()
             router.path.append(Router.Screen.progressMap)
         }
@@ -109,19 +120,62 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
     }
 
     var endGameButton: some View {
-        Button(viewModel.gameEndText) {
+        Button(gameViewModel.gameEndText) {
             withAnimation {
-                viewModel.endGame()
+                gameViewModel.endGame()
                 router.path.removeLast()
             }
         }
         .padding()
     }
+
+    var shareLink: some View {
+        ShareLink(
+            item: shareableImage,
+            subject: Text("Share score"),
+            message: Text("I just guessed \(gameViewModel.score) cities correctly on City Guess!"),
+            preview: SharePreview(
+                "Check Out My New Score!",
+                image: Image("cityguess-logo")))
+    }
+}
+
+// MARK: View Computed Properties
+extension GameEndView {
+
+    var totalNumberOfCities: Int {
+        gameViewModel.totalNumberOfCities(in: gameViewModel.selectedContinent)
+    }
+
+    var totalNumberOfCitiesGuessedCorrectly: Int {
+        if hasUpdatedGauges {
+            return historyManager.numberOfCitiesGuessedCorrectly(in: gameViewModel.selectedContinent)
+        } else {
+            return historyManager.roundStartTotalCitiesGuessedCorrectly
+        }
+    }
+
+    var progressGaugeLabel: String {
+        if dynamicTypeSize > .large {
+            return gameViewModel.selectedContinent.progressGaugeLabel
+        } else {
+            return gameViewModel.selectedContinent.progressGaugeLabel +
+            " \(totalNumberOfCitiesGuessedCorrectly) / \(totalNumberOfCities)"
+        }
+    }
+
+    var shareableImage: Image {
+        if let screenshotMaker, let screenshot = screenshotMaker.screenshot() {
+            return Image(uiImage: screenshot)
+        }
+
+        return Image(uiImage: UIImage(named: "cityguess-logo") ?? UIImage())
+    }
 }
 
 struct GameOverOver_Previews: PreviewProvider {
     static var previews: some View {
-        GameEndView(viewModel: TrainingViewModel())
+        GameEndView(gameViewModel: TrainingViewModel())
             .environmentObject(Router())
             .environmentObject(CityGuessGameHistoryManager())
     }

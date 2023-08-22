@@ -36,18 +36,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             CityGuessTextField(text: $guess, isLoadingNextQuestion: $viewModel.isShowingAnimation)
 
             AutofillSuggestionsView(autofillSuggestions: autofillSuggestions) { city in
-                withAnimation(.linear(duration: 1.0)) {
-                    viewModel.submit(guess: city.name)
-                    if let formattedImage = formatImageForHistoryStorage(ofCityNamed: city.name) {
-                        gameHistory.updateHistory(
-                            forImage: formattedImage,
-                            with: city.continent,
-                            and: viewModel.isCorrect ? .right : .wrong
-                        )
-                    }
-                }
-
-                self.guess = ""
+                handle(guess: city)
             }
         }
         .navigationBarBackButtonHidden()
@@ -93,6 +82,22 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
             }
 
         }
+    }
+
+    func handle(guess: CGCity) {
+        withAnimation(.linear(duration: 1.0)) {
+            viewModel.submit(guess: guess.name)
+            if let formattedImage = formatImageForHistoryStorage(ofCityNamed: viewModel.currentCityImage.title),
+                let correctCity = viewModel.cities.first(where: { $0.name == formattedImage.title }) {
+                gameHistory.updateHistory(
+                    forImage: formattedImage,
+                    with: correctCity.continent,
+                    and: viewModel.isCorrect ? .right : .wrong
+                )
+            }
+        }
+
+        self.guess = ""
     }
 
     func formatImageForHistoryStorage(ofCityNamed cityName: String) -> CityImage? {

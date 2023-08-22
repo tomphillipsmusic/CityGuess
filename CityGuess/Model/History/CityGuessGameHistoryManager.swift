@@ -16,7 +16,6 @@ class CityGuessGameHistoryManager: ObservableObject {
     @Published var roundHistory = CityGuessHistoryDictionary()
     @Published private(set) var newCitiesSeen = 0
     @Published private(set) var newCitiesGuessedCorrectly = 0
-    @Published var roundStartTotalCitiesSeen = 0
     @Published var roundStartTotalCitiesGuessedCorrectly = 0
 
     let historyService: ReadWrite
@@ -91,14 +90,13 @@ class CityGuessGameHistoryManager: ObservableObject {
         tempGuessHistory[cityName]?.timesSeen += 1
     }
 
-    func resetRoundHistory(withTotalNumberOfCities totalCitiesSeen: Int) {
+    func resetRoundHistory(totalNumber: Int, totalGuessedCorrectly: Int) {
         newCitiesSeen = 0
         newCitiesGuessedCorrectly = 0
         roundHistory = [:]
         tempGuessHistory = guessHistory
-        roundStartTotalCitiesSeen = totalCitiesSeen
-        roundStartTotalCitiesGuessedCorrectly = citiesGuessedCorrectly
-        self.totalNumberOfCities = totalCitiesSeen
+        roundStartTotalCitiesGuessedCorrectly = totalGuessedCorrectly
+        self.totalNumberOfCities = totalNumber
     }
 
     private func updateRoundHistory(guessStatus: CityGuessStatus) {
@@ -118,7 +116,7 @@ class CityGuessGameHistoryManager: ObservableObject {
         try historyService.read(from: Self.cityGuessHistoryFilename)
     }
 
-    func totalNumberOfCitiesGuessedCorrectly(in continent: CGContinent) -> Int {
+    func numberOfCitiesGuessedCorrectly(in continent: CGContinent) -> Int {
         let guessHistory = tempGuessHistory.isEmpty ? guessHistory : tempGuessHistory
         if continent == .all {
             return guessHistory.filter { $0.value.guessStatus == .right }.count

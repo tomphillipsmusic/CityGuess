@@ -27,5 +27,6 @@ struct ReviewCitiesView: View {
 struct ReviewCitiesView_Previews: PreviewProvider {
     static var previews: some View {
         ReviewCitiesView()
+            .environmentObject(CityGuessGameHistoryManager())
     }
 }
