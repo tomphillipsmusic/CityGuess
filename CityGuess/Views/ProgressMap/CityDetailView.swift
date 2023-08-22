@@ -11,6 +11,7 @@ import MapKit
 struct CityDetailView: View {
     @StateObject var viewModel: CityDetailViewModel
     @StateObject var exploreCityViewModel: ProgressMapViewModel<TeleportCoordinatesService, TeleportApiClient>
+    @State private var image: Image?
 
     init(viewModel: CityDetailViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -25,7 +26,12 @@ struct CityDetailView: View {
         VStack {
             heading
             flippableCityImage
-            learnMoreButton
+            
+            HStack {
+                learnMoreButton
+                Spacer()
+                shareSheet
+            }
             Divider()
 
             if viewModel.shouldDisplayCityStats {
@@ -78,6 +84,9 @@ struct CityDetailView: View {
                     .scaledToFit()
                     .cornerRadius(20)
                     .padding()
+                    .onAppear {
+                        self.image = image
+                    }
             case .empty:
                 ProgressView()
             case .failure:
@@ -91,11 +100,28 @@ struct CityDetailView: View {
 
     var learnMoreButton: some View {
         Link(destination: viewModel.learnMoreUrl!) {
-            Text("Learn More")
+            Image(systemName: "book")
                 .font(.title)
                 .disabled(viewModel.learnMoreUrl == nil)
                 .padding()
         }
+    }
+
+    var shareSheet: some View {
+        ShareLink(
+            item: image ?? Image("cityguess-logo"),
+            subject: Text(viewModel.cityName),
+            message: Text("Check out this photo of \(viewModel.cityName) I saw while playing City Guess!"),
+            preview: SharePreview(
+                viewModel.cityName,
+                image: image ?? Image("cityguess-logo"))
+        ) {
+            Image(systemName: "square.and.arrow.up")
+                .font(.title)
+                .disabled(image == nil)
+                .padding()
+        }
+
     }
 }
 
