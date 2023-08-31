@@ -42,10 +42,11 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
 
     func updateUIView(_ scrollView: UIScrollView, context: Context) {
         if isNewImage {
-            scrollView.zoomScale = 1
-            
             DispatchQueue.main.async {
-                isNewImage = false
+                UIView.animate(withDuration: 1.0) {
+                    scrollView.zoomScale = 1
+                    isNewImage = false
+                }
             }
         }
 
