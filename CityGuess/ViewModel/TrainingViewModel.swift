@@ -24,6 +24,7 @@ class TrainingViewModel: CityGuessViewModel {
     @Published var isShowingError: Bool = false
     @Published var selectedContinent: CGContinent = .all
     @Published var filteredCityImages: [CityImage] = []
+    @Published var isShowingNewImage = true
 
     var cities: [CGCity] = []
     let cityService: CityService

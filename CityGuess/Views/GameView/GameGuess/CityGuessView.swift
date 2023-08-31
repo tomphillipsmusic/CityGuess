@@ -20,7 +20,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
         VStack {
             ZStack {
-                ZoomableScrollView {
+                ZoomableScrollView(isNewImage: $viewModel.isShowingNewImage) {
                     image
                         .resizable()
                         .scaledToFit()

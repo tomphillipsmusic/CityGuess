@@ -92,6 +92,7 @@ extension CityGuessViewModel {
         questions[currentCityIndex].state = isCorrect ? .correct : .incorrect
         currentCityIndex += 1
         isShowingAnimation = false
+        isShowingNewImage = true
     }
 
     var gameProgress: CGFloat {
