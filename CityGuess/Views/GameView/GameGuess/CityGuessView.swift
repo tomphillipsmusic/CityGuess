@@ -20,7 +20,7 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
 
         VStack {
             ZStack {
-                ZoomableScrollView {
+                ZoomableScrollView(isNewImage: $viewModel.isShowingNewImage) {
                     image
                         .resizable()
                         .scaledToFit()
@@ -103,18 +103,12 @@ struct CityGuessView<ViewModel: CityGuessViewModel>: View {
     func formatImageForHistoryStorage(ofCityNamed cityName: String) -> CityImage? {
         let image: CityImage
 
-        // Replaces image name with name of the city since the city name is the key of the history dictionary
-        if viewModel.isCorrect {
-            image = CityImage(title: cityName, url: viewModel.currentCityImage.url)
+        if let correctCityName = viewModel.cities.first(where: { city in
+            viewModel.currentCityImage.title.caseInsensitiveContains(city.name)
+        })?.name {
+            image = CityImage(title: correctCityName, url: viewModel.currentCityImage.url)
         } else {
-
-            if let correctCityName = viewModel.cities.first(where: { city in
-                viewModel.currentCityImage.title.caseInsensitiveContains(city.name)
-            })?.name {
-                image = CityImage(title: correctCityName, url: viewModel.currentCityImage.url)
-            } else {
-                return nil
-            }
+            return nil
         }
 
         return image

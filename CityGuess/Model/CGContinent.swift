@@ -23,7 +23,7 @@ extension CGContinent {
         case .all:
             return "Total Cities Guessed Correctly"
         default:
-            return "\(rawValue) Cities GuessedCorrectly"
+            return "\(rawValue) Cities Guessed Correctly"
         }
     }
 }
