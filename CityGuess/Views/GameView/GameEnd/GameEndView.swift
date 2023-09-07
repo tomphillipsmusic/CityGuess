@@ -41,7 +41,11 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
             }
 
             reviewCitiesButton
-            checkProgressButton
+
+            if gameViewModel is DailyChallengeViewModel == false {
+                playAgainButton
+            }
+
             endGameButton
         }
         .largeTextScrollView()
@@ -111,11 +115,9 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         .disabled(historyManager.roundHistory.isEmpty)
     }
 
-    var checkProgressButton: some View {
-        Button("Check Progress") {
+    var playAgainButton: some View {
+        Button("Play Again") {
             gameViewModel.endGame()
-            router.path.removeAll()
-            router.path.append(Router.Screen.progressMap)
         }
         .padding()
     }
