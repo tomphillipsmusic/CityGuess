@@ -14,7 +14,6 @@ class LocalNotificationService: NSObject {
 
     private override init() {
         super.init()
-        configureDailyChallengeNotificationAction()
         UNUserNotificationCenter.current().delegate = self
     }
 
@@ -32,7 +31,6 @@ class LocalNotificationService: NSObject {
         let content = UNMutableNotificationContent()
         content.title = title
         content.sound = .default
-        content.categoryIdentifier = Self.dailyChallengeCategoryId
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: Notification.Name.dailyChallengeUnlockedNotification.rawValue, content: content, trigger: trigger)
@@ -51,15 +49,6 @@ class LocalNotificationService: NSObject {
 
 // MARK: Daily Challenge Unlocked Notification
 extension LocalNotificationService {
-    static let dailyChallengeCategoryId = "dailyChallengeCategory"
-    static let playDailyChallengeActionId = "\(Notification.Name.dailyChallengeUnlockedNotification.rawValue).playDailyChallenge"
-
-    private func configureDailyChallengeNotificationAction() {
-        let playDailyChallenge = UNNotificationAction(identifier: Self.playDailyChallengeActionId, title: "Play Daily Challenge", options: [.foreground])
-        let dailyChallengeCategory = UNNotificationCategory(identifier: Self.dailyChallengeCategoryId, actions: [playDailyChallenge], intentIdentifiers: [])
-        UNUserNotificationCenter.current().setNotificationCategories([dailyChallengeCategory])
-    }
-
     func cancelDailyChallengeNotification() {
         cancelLocalNotification(withIdentifier: Notification.Name.dailyChallengeUnlockedNotification.rawValue)
     }
@@ -72,12 +61,11 @@ extension Notification.Name {
 // MARK: UNUserNotificationCenterDelegate
 extension LocalNotificationService: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        switch response.actionIdentifier {
-        case Self.playDailyChallengeActionId:
+        
+        if response.notification.request.identifier == Notification.Name.dailyChallengeUnlockedNotification.rawValue {
             NotificationCenter.default.post(name: .dailyChallengeUnlockedNotification, object: response.notification.request.content)
-        default:
-            break
         }
+
         completionHandler()
     }
 }

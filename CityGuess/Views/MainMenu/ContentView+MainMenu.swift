@@ -26,6 +26,8 @@ extension ContentView {
             }
         })
         .onReceive(NotificationCenter.default.publisher(for: .dailyChallengeUnlockedNotification)) { _ in
+            router.path.removeAll()
+            dailyChallengeViewModel.endGame()
             router.path.append(Router.Screen.challenge)
         }
         .navigationTitle("City Guess")
