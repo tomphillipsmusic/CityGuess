@@ -126,7 +126,7 @@ struct GameEndView<ViewModel: CityGuessViewModel>: View {
         Button(gameViewModel.gameEndText) {
             withAnimation {
                 gameViewModel.endGame()
-                router.path.removeLast()
+                router.path.removeAll()
             }
         }
         .padding()

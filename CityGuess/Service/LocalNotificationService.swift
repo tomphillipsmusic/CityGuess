@@ -9,9 +9,13 @@ import Foundation
 
 import UserNotifications
 
-class LocalNotificationService {
+class LocalNotificationService: NSObject {
     static let shared = LocalNotificationService()
-    private init() { }
+
+    private override init() {
+        super.init()
+        UNUserNotificationCenter.current().delegate = self
+    }
 
     func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
@@ -29,7 +33,7 @@ class LocalNotificationService {
         content.sound = .default
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: Notification.Name.dailyChallengeUnlockedNotification.rawValue, content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request)
     }
@@ -40,5 +44,28 @@ class LocalNotificationService {
 
     func removeDeliveredNotifications() {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
+}
+
+// MARK: Daily Challenge Unlocked Notification
+extension LocalNotificationService {
+    func cancelDailyChallengeNotification() {
+        cancelLocalNotification(withIdentifier: Notification.Name.dailyChallengeUnlockedNotification.rawValue)
+    }
+}
+
+extension Notification.Name {
+    static let dailyChallengeUnlockedNotification = Notification.Name("dailyChallengeUnlocked")
+}
+
+// MARK: UNUserNotificationCenterDelegate
+extension LocalNotificationService: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.notification.request.identifier == Notification.Name.dailyChallengeUnlockedNotification.rawValue {
+            NotificationCenter.default.post(name: .dailyChallengeUnlockedNotification, object: response.notification.request.content)
+        }
+
+        completionHandler()
     }
 }
